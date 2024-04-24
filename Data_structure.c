@@ -10,3 +10,4 @@ typedef struct
     int hp_plyr; //25 - 50    
 }Skills;
 testtesttest
+123
