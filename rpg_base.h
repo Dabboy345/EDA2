@@ -13,7 +13,3 @@ typedef struct{
     int hp_plyr; //25 - 50
 }Skill;
 
-
-Skill:
-dmg:uigfhfguh,
-fscanf("dg:%s,")
