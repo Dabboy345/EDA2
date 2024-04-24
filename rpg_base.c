@@ -1,14 +1,16 @@
 #include"rpg_base.h"
-#define MAX_NAME 40
-#define MAX_TXT 200
+int main(){
+    FILE *fp;
+    fp = fopen("rpg_data.txt", "r");
+    char array[MAX_NAME];
+    for (int i = 0; i<2;i++){
+        fscanf(fp, ":%s;", &array[0]);
+        //printf("%s", array);
+    };
+    for (int i = 0; i<strlen(array)-1;i++){
+        printf("%c", array[i]);
+    }
+    fclose(fp);
+}
 
-typedef struct {
-    char name[MAX_NAME];
-    char description[MAX_TXT];
-    int of_def; //1 for offensive, 0 for deffensive
-    int dmg_skll;
-    int modifier;
-    int dmg_plyr; //3 - 8
-    int def_plyr; //0 - 8
-    int hp_plyr; //25 - 50    
-}Skills;
+
