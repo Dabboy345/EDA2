@@ -1,3 +1,4 @@
+#include"rpg_base.h"
 #define MAX_NAME 40
 #define MAX_TXT 200
 

@@ -1,4 +1,5 @@
 #include "stdio.h"
+#include "string.h"
 #define MAX_NAME 30 
 #define MAX_TXT 200 
 
