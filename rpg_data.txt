@@ -1,4 +1,7 @@
 Skills
-Name:kills;
-Dmg:456;
-Name:sghsghj;
+Name_sk:skill_1
+Des_sk:Loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong description
+Hp_plyr: 40
+Def_plyr:5
+Dmg_plyr: 10
+Name_sk:skill_2

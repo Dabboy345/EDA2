@@ -2,13 +2,13 @@
 int main(){
     FILE *fp;
     fp = fopen("rpg_data.txt", "r");
+    char s[MAX_TXT];
     char array[MAX_NAME];
-    for (int i = 0; i<2;i++){
-        fscanf(fp, ":%s;", &array[0]);
-        //printf("%s", array);
-    };
-    for (int i = 0; i<strlen(array)-1;i++){
-        printf("%c", array[i]);
+    while(fgets(s, 10, fp)) {
+        if(1==fscanf(fp, "Name_sk:%s\n", array)){
+            printf("%s\n", array);
+            fgets(s, strlen(array), fp);
+        }
     }
     fclose(fp);
 }
