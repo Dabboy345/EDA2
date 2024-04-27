@@ -15,3 +15,12 @@ typedef struct{
     int hp_plyr; //25 - 50
 }Skill;
 
+void print_menu(){
+    printf("GAME LOGO");
+    printf("GAME TITLE");
+    printf("1. NEW GAME");
+    printf("2. SAVE GAME");
+    printf("3. Load GAME");
+    printf("4. Exit GAME");
+}
+
