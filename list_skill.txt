@@ -2,11 +2,9 @@ Skills
 Name_sk: Stick
 des_sk: Stick enables the user to give a damage to the opponent with a hit with the stick. 
 of_def: 1
-dmg_skill: 
-modifier: 
-dmg_plyr: 5
-def_plyr: 3
-hp_plyr: 5
+dmg_skill: 10
+modifier: Nothing
+dmg_plyr: 5, def_plyr: 3, hp_plyr: 5
 
 Name_sk: Denture
 des_sk: Denture is a skill that takes a turn to equip and another turn to use, it has only 1 use for a fight(Recharge: one turn to repair it and then in another turn you can use it).

@@ -9,7 +9,7 @@ typedef struct{ //Our data stucture for the skills
     char description[MAX_TXT];
     int of_def; //1 for offensive, 0 for deffensive
     int dmg_skll;
-    int modifier;
+    char modifier[MAX_NAME];
     int stats_plyr[3]; //dmg(0), def(1), hp(2)
     /*int dmg_plyr; 3 - 8       int def_plyr; 0 - 8       int hp_plyr; 25 - 50 */
 }Skill;
@@ -65,18 +65,19 @@ void print_menu(){//This will be the print function which will print the users m
     printf("3. Load GAME");
     printf("4. Exit GAME");
 }
-char get_Name_sk(){
+void get_skill(Skill *skill){
     FILE *fp;
-    fp = fopen("rpg_data.txt", "r");
+    fp = fopen("list_skill.txt", "r");
     char s[MAX_TXT];
-    char array[MAX_NAME];
     while(fgets(s, 10, fp)) {
-        if(1==fscanf(fp, "Name_sk:%s\n", array)){
-            //printf("%s\n", array);
-            fgets(s, strlen(array), fp);
+        if(1==fscanf(fp, "Name_sk:%s\n", skill->name)){
+            printf("%s\n", skill->name);
+            fgets(s, strlen(skill->name), fp);
+        }else if(1==fscanf(fp, "dmg_plyr: %d, def_plyr: %d, hp_plyr: %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2])){
+            printf("%s\n", skill->stats_plyr[1]);
+            fgets(s, strlen(skill->name), fp);
         }
     }
     fclose(fp); 
-    return array;
 }
 
