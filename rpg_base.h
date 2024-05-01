@@ -4,6 +4,15 @@
 #define MAX_NAME 30 
 #define MAX_TXT 200 
 
+void print_menu(){//This will be the print function which will print the users menu
+    printf("GAME LOGO");
+    printf("GAME TITLE");
+    printf("1. NEW GAME");
+    printf("2. SAVE GAME");
+    printf("3. Load GAME");
+    printf("4. Exit GAME");
+}
+
 typedef struct{ //Our data stucture for the skills
     char name[MAX_NAME];
     char description[MAX_TXT];
@@ -57,14 +66,6 @@ void print_logo();//We will use this funtion to print our logo
 
 void print_game_name();//We will use this function to print the game name
 
-void print_menu(){//This will be the print function which will print the users menu
-    printf("GAME LOGO");
-    printf("GAME TITLE");
-    printf("1. NEW GAME");
-    printf("2. SAVE GAME");
-    printf("3. Load GAME");
-    printf("4. Exit GAME");
-}
 void get_skill(Skill *skill){
     FILE *fp;
     fp = fopen("list_skill.txt", "r");
