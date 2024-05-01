@@ -1,19 +1,20 @@
-Skills
-Name_sk: Stick
-des_sk: Stick enables the user to give a damage to the opponent with a hit with the stick. 
-of_def: 1
-dmg_skill: 10
-modifier: Nothing
-dmg_plyr: 5, def_plyr: 3, hp_plyr: 5
+Stick
+Stick enables the user to give a damage to the opponent with a hit with the stick. 
+1
+7
+Stun
+5, 3, 5
 
-Name_sk: Denture
-des_sk: Denture is a skill that takes a turn to equip and another turn to use, it has only 1 use for a fight(Recharge: one turn to repair it and then in another turn you can use it).
-of_def: 2
-dmg_skill: 
-modifier: recharge
-dmg_plyr: 3
-def_plyr: 6
-hp_plyr: 25
+Denture
+Denture is a skill that takes a turn to equip and another turn to use, it has only 1 use for a fight(Recharge: one turn to repair it and then in another turn you can use it).
+1
+30
+recharge
+3, 6, 25
 
-Name_sk: Carnivorus Plant 
-des_sk: 
+Carnivorus Plant
+Giant carnivorus plant two meters tall bites you and deals damage
+1
+15
+Nothing
+4, 7, 37

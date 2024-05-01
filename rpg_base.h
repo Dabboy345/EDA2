@@ -69,15 +69,20 @@ void print_game_name();//We will use this function to print the game name
 void get_skill(Skill *skill){
     FILE *fp;
     fp = fopen("list_skill.txt", "r");
-    char s[MAX_TXT];
-    while(fgets(s, 10, fp)) {
-        if(1==fscanf(fp, "Name_sk:%s\n", skill->name)){
-            printf("%s\n", skill->name);
-            fgets(s, strlen(skill->name), fp);
-        }else if(1==fscanf(fp, "dmg_plyr: %c, def_plyr: %c, hp_plyr: %c\n", &skill->stats_plyr[0], &skill->stats_plyr[1], &skill->stats_plyr[2])){
-            printf("%s\n", skill->stats_plyr[1]);
-            fgets(s, strlen(skill->name), fp);
-        }
+    while(!feof(fp)){
+        fgets(skill->name, MAX_NAME, fp);
+        fgets(skill->description, MAX_TXT, fp);
+        fscanf(fp, "%d\n", &skill->of_def);
+        fscanf(fp, "%d\n", &skill->dmg_skll);
+        fgets(skill->modifier, MAX_TXT, fp);
+        fscanf(fp, "%d, %d, %d\n", &skill->stats_plyr[0], &skill->stats_plyr[1], &skill->stats_plyr[2]);
+
+        printf("______%s\n", skill->name);
+        printf("%s\n", skill->description);
+        printf("%d\n", skill->of_def);
+        printf("%d\n", skill->dmg_skll);
+        printf("%s\n", skill->modifier);
+        printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);
     }
     fclose(fp); 
 }
