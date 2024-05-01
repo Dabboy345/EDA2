@@ -15,6 +15,10 @@ typedef struct{//Our data stucture for the skills
     int hp_plyr; //25 - 50
 }Skill;
 
+void print_logo();//We will use this funtion to print our logo
+
+void print_game_name();//We will use this function to print the game name
+
 void print_menu(){//This will be the print function which will print the users menu
     printf("GAME LOGO");
     printf("GAME TITLE");
