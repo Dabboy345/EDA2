@@ -25,9 +25,8 @@ typedef struct{ //Our data stucture for the skills
 
 typedef struct{ //This is our data structures for the character
     char name[MAX_NAME];
-    int dmg; //12 - 32
-    int def; //0 - 32
-    int hp; //100 - 200
+    int stats[3];//dmg(0), def(1), hp(2)
+    //int dmg; 12 - 32      int def; 0 - 32       int hp; 100 - 200
     Skill skill[4];
 }Character;
 
@@ -50,7 +49,7 @@ typedef struct{
 
 typedef struct{
     char question_txt[MAX_TXT];
-    Option option[2];
+    Option* option[2];
 }Decision;
 //question text, options, number of options
 
@@ -66,23 +65,25 @@ void print_logo();//We will use this funtion to print our logo
 
 void print_game_name();//We will use this function to print the game name
 
-void get_skill(Skill *skill){
+void get_skill(Skill skill[]){
     FILE *fp;
+    int i = 0;
     fp = fopen("list_skill.txt", "r");
     while(!feof(fp)){
-        fgets(skill->name, MAX_NAME, fp);
-        fgets(skill->description, MAX_TXT, fp);
-        fscanf(fp, "%d\n", &skill->of_def);
-        fscanf(fp, "%d\n", &skill->dmg_skll);
-        fgets(skill->modifier, MAX_TXT, fp);
-        fscanf(fp, "%d, %d, %d\n", &skill->stats_plyr[0], &skill->stats_plyr[1], &skill->stats_plyr[2]);
-
+        fgets((skill[i]).name, MAX_NAME, fp);
+        fgets((skill[i]).description, MAX_TXT, fp);
+        fscanf(fp, "%d\n", &(skill[i]).of_def);
+        fscanf(fp, "%d\n", &(skill[i]).dmg_skll);
+        fgets((skill[i]).modifier, MAX_TXT, fp);
+        fscanf(fp, "%d, %d, %d\n", &(skill[i]).stats_plyr[0], &(skill[i]).stats_plyr[1], &(skill[i]).stats_plyr[2]);
+        
         printf("______%s\n", skill->name);
-        printf("%s\n", skill->description);
-        printf("%d\n", skill->of_def);
-        printf("%d\n", skill->dmg_skll);
-        printf("%s\n", skill->modifier);
-        printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);
+        printf("%s\n", (skill[i]).description);
+        printf("%d\n", (skill[i]).of_def);
+        printf("%d\n", (skill[i]).dmg_skll);
+        printf("%s\n", (skill[i]).modifier);
+        printf("%d, %d, %d\n", (skill[i]).stats_plyr[0], (skill[i]).stats_plyr[1], (skill[i]).stats_plyr[2]);
+        i++;
     }
     fclose(fp); 
 }
