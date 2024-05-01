@@ -31,12 +31,6 @@ typedef struct{ //This is our data structures for the Enemy
 }Enemy;
 
 typedef struct{
-    char question_txt[MAX_TXT];
-    Option option[2];
-}Decision;
-//question text, options, number of options
-
-typedef struct{
     char description[MAX_TXT];
     char pre_txt[MAX_TXT];
     Enemy enemy[3];
@@ -44,6 +38,12 @@ typedef struct{
 }Option;
 //response text, narrative text (before battling the enemies), enemies (can be reused from other scenarios), 
 //narrative text (after battling the enemies)
+
+typedef struct{
+    char question_txt[MAX_TXT];
+    Option option[2];
+}Decision;
+//question text, options, number of options
 
 typedef struct{
     char name[MAX_NAME];
