@@ -4,7 +4,7 @@
 #define MAX_NAME 30 
 #define MAX_TXT 200 
 
-typedef struct{
+typedef struct{//Our data stucture for the skills
     char name[MAX_NAME];
     char description[MAX_TXT];
     int of_def; //1 for offensive, 0 for deffensive
@@ -15,7 +15,7 @@ typedef struct{
     int hp_plyr; //25 - 50
 }Skill;
 
-void print_menu(){
+void print_menu(){//This will be the print function which will print the users menu
     printf("GAME LOGO");
     printf("GAME TITLE");
     printf("1. NEW GAME");
