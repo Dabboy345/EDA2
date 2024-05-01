@@ -17,11 +17,21 @@ typedef struct{ //Our data stucture for the skills
 
 typedef struct{ //This is our data structures for the character
     char name[MAX_NAME];
-    int dmg_plyr; //12 - 32
-    int def_plyr; //0 - 32
-    int hp_plyr; //100 - 200
+    int dmg; //12 - 32
+    int def; //0 - 32
+    int hp; //100 - 200
     Skill skill[4];
 }Character;
+
+typedef struct{ //This is our data structures for the Enemy
+    char name[MAX_NAME];
+    int dmg;
+    int def;
+    int hp;
+    Skill skill[4];
+}Enemy;
+
+
 
 
 

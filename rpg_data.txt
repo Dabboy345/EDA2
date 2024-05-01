@@ -4,4 +4,5 @@ Des_sk:Loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 Hp_plyr: 40
 Def_plyr:5
 Dmg_plyr: 10
+
 Name_sk:skill_2
