@@ -1,7 +1,8 @@
 #include"rpg_base.h"
 int main(){
     print_menu();
-    get_skll();
+    Skill *skill = (Skill*)malloc(sizeof(Skill));
+    get_skill(skill);
 }
 
 

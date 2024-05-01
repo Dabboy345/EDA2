@@ -5,12 +5,12 @@
 #define MAX_TXT 200 
 
 void print_menu(){//This will be the print function which will print the users menu
-    printf("GAME LOGO");
-    printf("GAME TITLE");
-    printf("1. NEW GAME");
-    printf("2. SAVE GAME");
-    printf("3. Load GAME");
-    printf("4. Exit GAME");
+    printf("GAME LOGO\n");
+    printf("GAME TITLE\n");
+    printf("1. NEW GAME\n");
+    printf("2. SAVE GAME\n");
+    printf("3. Load GAME\n");
+    printf("4. Exit GAME\n");
 }
 
 typedef struct{ //Our data stucture for the skills
@@ -74,7 +74,7 @@ void get_skill(Skill *skill){
         if(1==fscanf(fp, "Name_sk:%s\n", skill->name)){
             printf("%s\n", skill->name);
             fgets(s, strlen(skill->name), fp);
-        }else if(1==fscanf(fp, "dmg_plyr: %d, def_plyr: %d, hp_plyr: %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2])){
+        }else if(1==fscanf(fp, "dmg_plyr: %c, def_plyr: %c, hp_plyr: %c\n", &skill->stats_plyr[0], &skill->stats_plyr[1], &skill->stats_plyr[2])){
             printf("%s\n", skill->stats_plyr[1]);
             fgets(s, strlen(skill->name), fp);
         }
