@@ -10,9 +10,8 @@ typedef struct{ //Our data stucture for the skills
     int of_def; //1 for offensive, 0 for deffensive
     int dmg_skll;
     int modifier;
-    int dmg_plyr; //3 - 8
-    int def_plyr; //0 - 8
-    int hp_plyr; //25 - 50
+    int stats_plyr[3]; //dmg(0), def(1), hp(2)
+    /*int dmg_plyr; 3 - 8       int def_plyr; 0 - 8       int hp_plyr; 25 - 50 */
 }Skill;
 
 typedef struct{ //This is our data structures for the character
@@ -31,8 +30,27 @@ typedef struct{ //This is our data structures for the Enemy
     Skill skill[4];
 }Enemy;
 
+typedef struct{
+    char question_txt[MAX_TXT];
+    Option option[2];
+}Decision;
+//question text, options, number of options
 
+typedef struct{
+    char description[MAX_TXT];
+    char pre_txt[MAX_TXT];
+    Enemy enemy[3];
+    char post_txt[MAX_TXT];
+}Option;
+//response text, narrative text (before battling the enemies), enemies (can be reused from other scenarios), 
+//narrative text (after battling the enemies)
 
+typedef struct{
+    char name[MAX_NAME];
+    char description[MAX_TXT];
+    Decision decision[10];
+}Scenario;
+//name and description, and decision (or decision list).
 
 
 void print_logo();//We will use this funtion to print our logo
