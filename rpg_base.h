@@ -4,7 +4,7 @@
 #define MAX_NAME 30 
 #define MAX_TXT 200 
 
-typedef struct{//Our data stucture for the skills
+typedef struct{ //Our data stucture for the skills
     char name[MAX_NAME];
     char description[MAX_TXT];
     int of_def; //1 for offensive, 0 for deffensive
@@ -14,6 +14,16 @@ typedef struct{//Our data stucture for the skills
     int def_plyr; //0 - 8
     int hp_plyr; //25 - 50
 }Skill;
+
+typedef struct{ //This is our data structures for the character
+    char name[MAX_NAME];
+    int dmg_plyr; //12 - 32
+    int def_plyr; //0 - 32
+    int hp_plyr; //100 - 200
+    Skill skill[4];
+}Character;
+
+
 
 void print_logo();//We will use this funtion to print our logo
 
