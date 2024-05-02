@@ -1,3 +1,4 @@
+SKILLS
 Stick
 Stick enables the user to give a damage to the opponent with a hit with the stick. 
 1

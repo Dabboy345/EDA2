@@ -1,6 +1,7 @@
 #include"rpg_base.h"
+#include"rpg_game.h"
 
-Character create_character(Skill skills[20]){
+Character* create_character(Skill skills[20]){
     Character *player = (Character*)malloc(sizeof(Character));
     printf("Choose you character's name: \n");
     scanf("%s", &player->name);
@@ -19,8 +20,9 @@ Character create_character(Skill skills[20]){
     for(int i = 0; i<3; i++){
         temp = 0;
         for(int j = 0; j<4; j++){
-            temp += player->(skill[j])->(stats_plyr[i]); //With errors
+            temp += player->skill[j].stats_plyr[i]; //With errors
         }
         player->stats[i] = temp;
     }
+    return player;
 }

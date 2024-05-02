@@ -1,10 +1,9 @@
 #include"rpg_base.h"
-#include"rpg_game.c"
 
 void new_game(){
-    Skill skill[20] = (Skill*)malloc(sizeof(Skill));
+    Skill skill[20] = (Skill*)malloc(20*sizeof(Skill));
     get_skill(skill);
-
+    create_character(skill);
 
 }
 

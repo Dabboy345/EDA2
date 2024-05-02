@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+#include"rpg_game.h"
 #define MAX_NAME 30 
 #define MAX_TXT 200 
 
@@ -68,7 +70,9 @@ void print_game_name();//We will use this function to print the game name
 void get_skill(Skill skill[]){
     FILE *fp;
     int i = 0;
+    char c[MAX_NAME];
     fp = fopen("list_skill.txt", "r");
+    while("SKILLS"!=fgets(c, MAX_NAME, fp)){;};
     while(!feof(fp)){
         fgets((skill[i]).name, MAX_NAME, fp);
         fgets((skill[i]).description, MAX_TXT, fp);
