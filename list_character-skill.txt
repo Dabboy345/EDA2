@@ -1,9 +1,12 @@
 SKILLS
 Knife 
-The user can attack you with the Knife
+The user can attack you with the knife
 1
 30
 Unconcscious
 7, 3, 30
 
-Sword 
+Sword
+The user can attack you with a sword
+1
+ 
