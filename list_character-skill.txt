@@ -2,11 +2,87 @@ SKILLS
 Knife 
 The user can attack you with the knife
 1
-30
+25
 Unconcscious
 7, 3, 30
 
 Sword
 The user can attack you with a sword
 1
- 
+20
+Nothing
+1, 5, 30
+
+Pistol
+User can attack you with pistol
+1
+30
+Nothing
+2, 3, 25
+
+Bow
+User can attack you with a bow 
+1
+15
+Nothing 
+2, 4, 30
+
+Flail
+User can attack you with a flail 
+1
+15
+Nothing
+1, 5, 25
+
+Fire 
+User can attack you with fire
+1
+30
+Nothing 
+2, 2, 15
+
+Force
+User gains extra force 
+1
+15
+Nothing
+1, 5, 35
+
+Shield
+User can defend himself with a shield
+0
+10
+Nothing 
+1, 7, 40
+
+Dodge 
+You can dodge the attack of the opponent
+0
+10
+Nothing
+1, 6, 35
+
+Rebound 
+The attack from the opponent gets rebound
+0
+10
+Nothing 
+1, 8, 40
+
+Healing 
+You can use this ability to heal yourself
+0
+10
+Nothing 
+1, 6, 45
+
+Thorns 
+When you recive some damage x% of the damage will go to your opponent
+0
+10
+Nothing 
+1, 5, 30
+
+
+
+
