@@ -35,7 +35,7 @@ Unconcscious
 5, 2, 30
 
 Knife 
-The user is can attack you with the Knife
+The user can attack you with the Knife
 1
 30
 Unconcscious
