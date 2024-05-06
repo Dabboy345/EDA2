@@ -1,3 +1,6 @@
+#ifndef _COMMON_H_
+#define _COMMON_H_
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -5,7 +8,7 @@
 #define MAX_NAME 30 
 #define MAX_TXT 200 
 
-typedef struct{ //Our data stucture for the skills
+typedef struct { //Our data stucture for the skills
     char name[MAX_NAME];
     char description[MAX_TXT];
     int of_def; //1 for offensive, 0 for deffensive
@@ -13,7 +16,7 @@ typedef struct{ //Our data stucture for the skills
     char modifier[MAX_NAME];
     int stats_plyr[3]; //dmg(0), def(1), hp(2)
     /*int dmg_plyr; 1-2       int def_plyr; 0 - 8       int hp_plyr; 25 - 50 */
-}Skill;
+} Skill;
 
 typedef struct{ //This is our data structures for the character
     char name[MAX_NAME];
@@ -51,3 +54,5 @@ typedef struct{
     Decision decision[10];
 }Scenario;
 //name and description, and decision (or decision list).
+
+#endif

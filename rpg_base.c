@@ -23,8 +23,7 @@ void exit_game(){
 
 int main(){
     print_menu();
-    Skill *skill = (Skill*)malloc(sizeof(Skill));
-    get_skill(skill);
+    new_game();
 
 }
 
