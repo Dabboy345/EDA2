@@ -1,4 +1,3 @@
-#include"rpg_base.h"
 #include"rpg_game.h"
 
 Character* create_character(Skill skills[20]){
