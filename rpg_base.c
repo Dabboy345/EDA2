@@ -5,6 +5,8 @@ void new_game(){
     get_skill(skill);
     create_character(skill);
 
+    //Decision* main_decision = decision[0];
+
 }
 
 void save_game(){

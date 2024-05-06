@@ -5,7 +5,11 @@ Character* create_character(Skill skills[20]){
     printf("Choose you character's name: \n");
     scanf("%s", &player->name);
     //Choose skills
+
     //print all skills
+    for(int i = 0; i<20; i++){
+        printf("%s\t", skills[i].name);
+    }
     //create a function to try a skill "try_skill(skills[20], n)" n = number of skill
     //                                  description + test
     //...
@@ -24,4 +28,14 @@ Character* create_character(Skill skills[20]){
         player->stats[i] = temp;
     }
     return player;
+}
+
+execute_option(Option* opt, Decision* main_d){
+    printf("%s\n", opt->description);
+    printf("%s\n", opt->pre_txt);
+
+    //Combat
+
+    printf("%s\n", opt->post_txt);
+
 }
