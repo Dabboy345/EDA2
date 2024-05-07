@@ -5,9 +5,12 @@ void try_skill(Skill *skll){
     printf("\nDefense: %d\t", skll->stats_plyr[1]);
     for(int i = 0; i<skll->stats_plyr[1]; i++){printf("|");}
     printf("\nDamage: %d\t", skll->stats_plyr[0]);
-    for(int i = 0; i<skll->stats_plyr[0]; i++){printf("|");}
+    for(int i = 0; i<skll->stats_plyr[0]; i++){printf("|");};
+    printf("\n");
+    if(skll->of_def==0){printf("%d damage dealt\n", skll->dmg_skll);}
+    else if(skll->of_def==1){printf("%d damage dealt\n", skll->dmg_skll);};
 }
-Character* create_character(Skill skills[20]){
+Character* create_character(Skill *skills){
     Character *player = (Character*)malloc(sizeof(Character));
     printf("Choose you character's name: \n");
     scanf("%s", &player->name);
@@ -38,6 +41,7 @@ Character* create_character(Skill skills[20]){
 }
 
 void do_option(int n_opt, Decision* main_d){
+    
     printf("%s\n", main_d->option[n_opt]->pre_txt);
 
     //Combat
