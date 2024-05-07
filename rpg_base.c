@@ -23,6 +23,8 @@ void exit_game(){
 
 int main(){
     print_menu();
+//choose menu option
+
     new_game();
 
 }
