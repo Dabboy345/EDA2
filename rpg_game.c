@@ -1,5 +1,12 @@
 #include"rpg_game.h"
-
+void try_skill(Skill *skll){
+    printf("\nHealth points: %d\t", skll->stats_plyr[2]);
+    for(int i = 0; i<skll->stats_plyr[2]; i++){printf("|");}
+    printf("\nDefense: %d\t", skll->stats_plyr[1]);
+    for(int i = 0; i<skll->stats_plyr[1]; i++){printf("|");}
+    printf("\nDamage: %d\t", skll->stats_plyr[0]);
+    for(int i = 0; i<skll->stats_plyr[0]; i++){printf("|");}
+}
 Character* create_character(Skill skills[20]){
     Character *player = (Character*)malloc(sizeof(Character));
     printf("Choose you character's name: \n");
