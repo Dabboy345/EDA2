@@ -55,4 +55,10 @@ typedef struct{
 }Scenario;
 //name and description, and decision (or decision list).
 
+typedef struct _Node { //This is our decion tree fro the descion making
+    Option option;
+    Decision descions;
+    struct _Node *left;
+    struct _Node *right;
+}Node;
 #endif

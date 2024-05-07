@@ -41,7 +41,6 @@ Character* create_character(Skill *skills){
 }
 
 void do_option(int n_opt, Decision* main_d){
-    
     printf("%s\n", main_d->option[n_opt]->pre_txt);
 
     //Combat
@@ -57,3 +56,5 @@ void do_decision(Decision* main_d){
     scanf("%d", opt);
     do_option(opt-1, main_d);
 }
+
+
