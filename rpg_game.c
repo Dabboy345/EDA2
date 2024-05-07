@@ -1,3 +1,4 @@
+#include "common.h"
 #include"rpg_game.h"
 void try_skill(Skill *skll){
     printf("\nHealth points: %d\t", skll->stats_plyr[2]);
@@ -40,13 +41,29 @@ Character* create_character(Skill *skills){
     return player;
 }
 
+Node *create_node(){//This function will create us a tree
+    Node *root = (Node*)malloc(sizeof(Node));
+    root->left = NULL;
+    root->right = NULL;
+    return root;
+}
+
+void add_Node_right( Node *root/*We could other valrable*/){ //This function enables to add new node to our tree
+    Node *new = create_node();
+    root->right = new;
+}
+
+void add_Node_left(Node *root){
+    Node *new =  create_node();
+    root->left = new;
+}
+
 void do_option(int n_opt, Decision* main_d){
     printf("%s\n", main_d->option[n_opt]->pre_txt);
 
     //Combat
 
     printf("%s\n", main_d->option[n_opt]->post_txt);
-
 }
 
 void do_decision(Decision* main_d){

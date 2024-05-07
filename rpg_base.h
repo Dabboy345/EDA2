@@ -3,7 +3,8 @@
 
 void print_menu(){//This will be the print function which will print the users menu
     printf("GAME LOGO\n");
-    printf("GAME TITLE\n");
+    printf("PROSOMOÍOSI\n");
+    printf("\n");
     printf("1. NEW GAME\n");
     printf("2. SAVE GAME\n");
     printf("3. Load GAME\n");
