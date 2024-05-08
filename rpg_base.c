@@ -1,6 +1,4 @@
 #include "rpg_base.h"
-#include "rpg_game.c"
-#include "common.h"
 
 void new_game(){//Our new game function
     Skill *skill = (Skill*)calloc(20, sizeof(Skill));

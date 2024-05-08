@@ -58,7 +58,7 @@ void add_Node_left(Node *root){
     root->left = new;
 }
 
-void do_option(int n_opt, Decision* main_d){
+/*void do_option(int n_opt, Decision* main_d){
     printf("%s\n", main_d->option[n_opt].pre_txt);
 
     //Combat
@@ -72,6 +72,6 @@ void do_decision(Decision* main_d){
     int opt;
     scanf("%d", opt);
     do_option(opt-1, main_d);
-}
+}*/
 
 

@@ -38,8 +38,14 @@ Knife
 The user can attack you with the Knife
 1
 30
-Unconcscious
+Unconscious
 7, 3, 30
+
+Lighter
+The user burns you
+1
+Unconscious
+6, 2, 30
 
 Microphone 
 The user is able to use a microphone which will do damage to the opponent

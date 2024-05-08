@@ -1,20 +1,7 @@
 #include "common.h"
 #include "rpg_game.h"
+#include "prints.h"
 
-void print_menu(){//This will be the print function which will print the users menu
-    printf("GAME LOGO\n");
-    printf("PROSOMOÍOSI\n");
-    printf("\n");
-    printf("1. NEW GAME\n");
-    printf("2. SAVE GAME\n");
-    printf("3. Load GAME\n");
-    printf("4. Exit GAME\n");
-}
-
-
-void print_logo();//We will use this funtion to print our logo
-
-void print_game_name();//We will use this function to print the game name
 
 void get_skill(Skill skill[]){
     FILE *fp;
@@ -39,5 +26,18 @@ void get_skill(Skill skill[]){
         */i++;
     }
     fclose(fp); 
+}
+
+Node* get_node(int i1, int i2, Node* node){
+    FILE *fp;
+    int a = 0;
+    int b = 0;
+    fp = fopen("option.txt", "r");
+
+    while (a!=i1 && b!=i2){fscanf(fp, "%d.%d\n", &a, &b);}
+    while(!feof(fp)){
+        //fgets((skill[i]).name, MAX_NAME, fp);
+    fclose(fp); 
+    } 
 }
 

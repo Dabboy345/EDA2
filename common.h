@@ -44,7 +44,7 @@ typedef struct{
 
 typedef struct{
     char question_txt[MAX_TXT];
-    Option option[2];
+    //Option option[2];
 }Decision;
 //question text, options, number of options
 
