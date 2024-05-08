@@ -20,7 +20,7 @@ void get_skill(Skill skill[]){
     FILE *fp;
     int i = 0;
     char c[MAX_NAME];
-    fp = fopen("list_character-skill.txt", "r");
+    fp = fopen("list_character_skill.txt", "r");
     while("SKILLS"!=fgets(c, MAX_NAME, fp)){;};
     while(!feof(fp)){
         fgets((skill[i]).name, MAX_NAME, fp);

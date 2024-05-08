@@ -40,7 +40,7 @@ void exit_game(){//Our exit game function
 int main(){
     print_menu();//We will print the menu
     int a;
-    fscanf("%d", &a);//We will ask the user what option would he like to choose
+    scanf("%d", &a);//We will ask the user what option would he like to choose
     switch(a){
         case 1:
             new_game();
