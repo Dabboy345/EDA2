@@ -1,7 +1,5 @@
 #include "common.h"
-void print_game_logo(){ //We will use this funtion to print our logo
-    
-}
+
 void print_game_name(){ //We will use this funtion to print our logo
     const char *ascii_art = 
     "                         ___                                                ___                              \n"
@@ -33,7 +31,6 @@ void print_game_name(){ //We will use this funtion to print our logo
 }
 
 void print_menu(){//This will be the print function which will print the users menu
-    print_game_logo();
     print_game_name();
     printf("\n");
     printf("1. NEW GAME\n");
@@ -42,4 +39,4 @@ void print_menu(){//This will be the print function which will print the users m
     printf("4. Exit GAME\n");
 }
 
-void print_node(); 
+void print_node(); //This function will help us to the information that we have in each node

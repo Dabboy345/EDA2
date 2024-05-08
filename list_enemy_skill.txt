@@ -44,6 +44,7 @@ Unconscious
 Lighter
 The user burns you
 1
+20
 Unconscious
 6, 2, 30
 
