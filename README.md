@@ -32,7 +32,7 @@ Hello, we are Noel, Arlet, and Sushant. We are group 14 from Practice 102. The p
       int hp;
       Skill skill[4];
     } Enemy;
-  ```
+    ```
   - Option 
     ```C
     typedef struct{
@@ -41,7 +41,33 @@ Hello, we are Noel, Arlet, and Sushant. We are group 14 from Practice 102. The p
         Enemy enemy[3];
         char post_txt[MAX_TXT];
     }Option;
-  ```
+    ```
+  - Decision
+    ```C
+    typedef struct{
+        char question_txt[MAX_TXT];
+        Option* option[2];
+    }Decision;
+    //question text, options, number of options
+    ```
+  - Scenario
+    ```C
+    typedef struct{
+        char name[MAX_NAME];
+        char description[MAX_TXT];
+        Decision decision[10];
+    }Scenario;
+    //name and description, and decision (or decision list).
+    ```
+  - Node
+    ```C
+    typedef struct _Node { //This is our decion tree fro the descion making
+        Option option;
+        Decision descions;
+        struct _Node *left;
+        struct _Node *right;
+    }Node;
+    ```
   
 
   
