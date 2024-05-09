@@ -1,5 +1,5 @@
 #ifndef _RPG_BASE_H
-#define _RPG_BASE_H
+#define _RPG_BASE_H //Thsi local libary will contain the main functions for the game 
 
 
 #include "prints.h"

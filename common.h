@@ -1,5 +1,5 @@
 #ifndef _COMMON_H_
-#define _COMMON_H_
+#define _COMMON_H_ // In this libary we have our data structures 
 
 #include <stdio.h>
 #include <string.h>
