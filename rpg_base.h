@@ -75,13 +75,14 @@ void get_skill(Skill skill[]){
         fgets((skill[i]).modifier, MAX_NAME, fp);
         fscanf(fp, "%d, %d, %d\n", &(skill[i]).stats_plyr[0], &(skill[i]).stats_plyr[1], &(skill[i]).stats_plyr[2]);
         
-        printf("-%s\n", (skill[i]).name);
+        /*printf("-%s\n", (skill[i]).name);
         printf("%s\n", (skill[i]).description);
         printf("%d\n", (skill[i]).of_def);
         printf("%d\n", (skill[i]).dmg_skll);
         printf("%s\n", (skill[i]).modifier);
         printf("%d, %d, %d\n", (skill[i]).stats_plyr[0], (skill[i]).stats_plyr[1], (skill[i]).stats_plyr[2]);
-        i++;
+        */
+       i++;
     }
     fclose(fp); 
 }

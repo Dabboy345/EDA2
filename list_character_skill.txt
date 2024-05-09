@@ -110,5 +110,9 @@ User is able to summon a helper which can attack(only one time during fight)
 no
 2, 6, 30
 
-
-
+Redbull
+Redbull gives you wiiiiiings
+1
+100
+no
+1, 0, 25
