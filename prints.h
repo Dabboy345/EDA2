@@ -1,3 +1,6 @@
+#ifndef _PRINTS_H_
+#define _PRINTS_H_
+
 #include "common.h"
 
 void print_game_name(){ //We will use this funtion to print our logo
@@ -40,3 +43,8 @@ void print_menu(){//This will be the print function which will print the users m
 }
 
 void print_node(); //This function will help us to the information that we have in each node
+
+
+
+
+#endif

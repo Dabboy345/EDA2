@@ -1,5 +1,7 @@
-#include "common.h"
-#include "rpg_game.h"
+#ifndef _RPG_BASE_H
+#define _RPG_BASE_H
+
+
 #include "prints.h"
 
 void try_skill(Skill *skll){
@@ -99,4 +101,7 @@ Node* get_node(int i1, int i2, Node* node){
     fclose(fp); 
     } 
 }
+
+
+#endif
 
