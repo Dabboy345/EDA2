@@ -29,9 +29,7 @@ typedef struct{ //This is our data structures for the character
 
 typedef struct{ //This is our data structures for the Enemy
     char name[MAX_NAME];
-    int dmg;
-    int def;
-    int hp;
+    int stats[3];//dmg(0), def(1), hp(2)
     Skill skill[4];
 }Enemy;
 

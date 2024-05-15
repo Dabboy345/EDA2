@@ -3,8 +3,10 @@
 
 
 #include "prints.h"
+#include"queueu.h"
 
 void try_skill(Skill *skll){
+    printf("_- %s -_\n", skll->name);
     printf("Health points: %d\n", skll->stats_plyr[2]);
     for(int i = 0; i<skll->stats_plyr[2]; i++){printf("/");}
     printf("\n");
@@ -89,13 +91,32 @@ void get_skill(Skill skill[]){
     fclose(fp); 
 }
 
-Node* get_node(int i1, int i2, Node* node){
+void combat(Character *plyr, Enemy *enmy, int size){
+    Queueu* q = init_queueu();
+    for(int i = 0; i<size; i++){
+        q = enqueue(q, *plyr, *enmy);
+    }
+    
+
+
+    int rand_n = rand();
+        if(rand_n%2 == 0){
+            int a;
+            for(int j = 0; j<4; j++){printf("%d - %s\n",j+1, plyr->skill[i]);}
+            printf("Choose skill: ");
+            scanf("%d", &a);
+
+        }
+
+}
+
+
+Node* get_node(int i, Node* node){
     FILE *fp;
     int a = 0;
-    int b = 0;
     fp = fopen("option.txt", "r");
 
-    while (a!=i1 && b!=i2){fscanf(fp, "%d.%d\n", &a, &b);}
+    while (a!=i){fscanf(fp,"%d.%d\n",&a);}
     while(!feof(fp)){
         //fgets((skill[i]).name, MAX_NAME, fp);
     fclose(fp); 
