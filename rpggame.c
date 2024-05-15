@@ -159,7 +159,7 @@ Enemy *put_the_enemy(char const *a){//it will recive a line which is not modific
         printf("memory allocation failed/n");//The malloc failed
         return NULL;
     }
-    //fscanf("")
+    fscanf("%s: %d, %d, %d\n", temp->name, temp->stats[0],temp->stats[1],temp->stats[2]);
     return temp; //Aqui tambien tendriamos q hacer una funcion q recibendo el nombre de skill ya ponga los valores q toca
 }
 
