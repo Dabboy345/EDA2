@@ -36,7 +36,7 @@ typedef struct{ //This is our data structures for the Enemy
 typedef struct{
     char description[MAX_TXT];
     char pre_txt[MAX_TXT];
-    Enemy enemy[3];
+    Enemy enemy;
     char post_txt[MAX_TXT];
 }Option;
 //response text, narrative text (before battling the enemies), enemies (can be reused from other scenarios), 

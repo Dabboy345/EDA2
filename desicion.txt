@@ -1,6 +1,6 @@
 N.- <description> N representera el numero de nodo
 <pre_txt> Si no hay pre_txt se deja en blanco
-<enemy_data> Name: dmg, def, hp, skill1 "recharge",....
+<enemy_data> Name: dmg, def, hp, skill1, ....
 <post_txt>
 <question_txt>
 1.<option1_description>

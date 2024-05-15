@@ -24,12 +24,12 @@ void get_skill(Skill *skill, int n){
     char c[MAX_NAME];
     fp = fopen("list_character_skill.txt", "r");
     int a;
-    fscanf(fp,"%dskill\n", &a);
-    getc(fp);
-    while(n!=a){
-        fscanf(fp,"%dskill\n", &a);
-        getc(fp);
-        printf("%d", a);
+    while(!feof(fp)){
+        if(a==n && 1==fscanf(fp,"%dskill\n", &a)){
+            long line = ftell(fp);
+            fseek(fp, line, SEEK_SET);
+            break;
+        }
     }
     fgets(skill->name, MAX_NAME, fp);
     fgets(skill->description, MAX_TXT, fp);
@@ -150,15 +150,15 @@ void add_Node_left(Node *root){
 
 Enemy *put_the_enemy(char const *a){//it will recive a line which is not modificable 
     if((a[0]=='n')&&(a[1]=='o')){
-        return ; //It means that we ha no enemy
+        return ; //It means that we have no enemy
     }
 
     Enemy *temp = (Enemy*)malloc(sizeof(Enemy));//We create a local variable 
     if (temp = NULL){
-        printf("memory allocation failed/n");
+        printf("memory allocation failed/n");//The malloc failed
         return;
     }
-    
+    //fscanf("")
     return temp; //Aqui tambien tendriamos q hacer una funcion q recibendo el nombre de skill ya ponga los valores q toca
 }
 
