@@ -151,13 +151,13 @@ void add_Node_left(Node *root){
 
 Enemy *put_the_enemy(char const *a){//it will recive a line which is not modificable 
     if((a[0]=='n')&&(a[1]=='o')){
-        return ; //It means that we have no enemy
+        return NULL; //It means that we have no enemy
     }
 
     Enemy *temp = (Enemy*)malloc(sizeof(Enemy));//We create a local variable 
     if (temp = NULL){
         printf("memory allocation failed/n");//The malloc failed
-        return;
+        return NULL;
     }
     //fscanf("")
     return temp; //Aqui tambien tendriamos q hacer una funcion q recibendo el nombre de skill ya ponga los valores q toca
