@@ -30,6 +30,7 @@ void get_skill(Skill *skill, int n){
             fseek(fp, line, SEEK_SET);
             break;
         }
+        getc(fp);
     }
     fgets(skill->name, MAX_NAME, fp);
     fgets(skill->description, MAX_TXT, fp);
