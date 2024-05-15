@@ -17,5 +17,16 @@ what would you like to do?
 
 1.- "You decide to grab the food while the seller is distracted"
 The seller is coughts you stealing and he gets angry 
-Seller: 10, 10,10, Stick, denture “recharge”, Carnivorous Plant, Life medicine
+Seller: 10, 10,10, Stick, denture, Carnivorous Plant, Life medicine
 You have food, and you can eat now.
+What do you do?
+3. Go to the center, you will know what is happening
+4. Go to a mall, as it’s where most people will be
+
+2.- You steal a newspaper but you encounter a big man who is the seller
+A big men who is the seller coughts you
+Big seller: Stomp, Newspaper Hit, Shout “Duration”, Self-defense blind
+You read the newspaper and see “Gigantic insects”, “ Celebrating 100th anniversary of radioactive rain in the center".
+What would you like to do?
+5. 
+6.

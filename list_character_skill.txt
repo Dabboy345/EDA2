@@ -1,145 +1,144 @@
-0s
--Knife 
+0skill
+-Knife
 The user can attack you with the knife
 1
 25
 stun
-7, 3, 30
-
-1s
+7, 3, 30,
+1skill
 -Sword
 The user can attack you with a sword
 1
 20
 no
-1, 5, 30
-
-2s
+1, 5, 30,
+2skill
 -Pistol
 User can attack you with pistol
 1
 30
 no
-2, 3, 25
+2, 3, 25,
 
-3s
+3skill
 -Bow
-User can attack you with a bow 
-1
-15
-no 
-2, 4, 30
-
-4s
--Flail
-User can attack you with a flail 
+User can attack you with a bow
 1
 15
 no
-1, 5, 25
+2, 4, 30,
 
-5s
--Fire 
+4skill
+-Flail
+User can attack you with a flail
+1
+15
+no
+1, 5, 25,
+
+5skill
+-Fire
 User can attack you with fire
 1
 30
 lasting
-2, 2, 15
+2, 2, 15,
 
-6s
+6skill
 -Force
-User gains extra force 
+User gains extra force
 1
 15
 no
-1, 5, 35
+1, 5, 35,
 
-7s
+7skill
 -Shield
 User can defend himself with a shield
 0
 10
-no 
-1, 7, 40
+no
+1, 7, 40,
 
-8s
--Dodge 
+8skill
+-Dodge
 You can dodge the attack of the opponent
 0
 0
 no
-1, 6, 35
+1, 6, 35,
 
-9s
--Rebound 
+9skill
+-Rebound
 The attack from the opponent gets rebound
 0
 0
-no 
-1, 8, 40
+no
+1, 8, 40,
 
-10s
+10skill
 -Healing 
 You can use this ability to heal yourself
 0
 10
 no
-1, 6, 45
+1, 6, 45,
 
-11s
--Thorns 
+11skill
+-Thorns
 When you recive some damage x% of the damage will go to your opponent
 0
 10
-no 
-1, 5, 30
+no
+1, 5, 30,
 
-12s
+12skill
 -Thunder 
 User is able to cast a thunder and attack
 1
 18
 stun
-2, 3, 30
+2, 3, 30,
 
-13s
+13skill
 -Camouflage
 User is able to camouflage
 0
 10
 no
-1, 5, 27
+1, 5, 27,
 
-14s
+14skill
 -Summon defender
 User is able to summon a helper which can recive damage (only one time during fight) 
 0
 10
 no
-1, 3, 25
+1, 3, 25,
 
-15s
+15skill
 -Summon attacker
 User is able to summon a helper which can attack(only one time during fight)
 1
 14
 no
-2, 6, 30
+2, 6, 30,
 
-16s
+16skill
 -Redbull
 Redbull gives you wiiiiiings
 1
 27
 no
-1, 0, 25
+1, 0, 25,
 
-17s
+17skill
 -Power of friendship 
 It will you get rid of negative thoughts and build up the force/energy
+1
 30
 no
-2, 8, 33
+2, 8, 33,
 
 
 

@@ -7,9 +7,11 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${fileDirname}/queue.c",
+                "${fileDirname}/rpggame.c",
+                "${fileDirname}/rpgbase.c",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/rpgbase"
             ],
             "options": {
                 "cwd": "${fileDirname}"

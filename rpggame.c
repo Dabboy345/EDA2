@@ -24,21 +24,23 @@ void get_skill(Skill *skill, int n){
     char c[MAX_NAME];
     fp = fopen("list_character_skill.txt", "r");
     int a;
-    fscanf(fp,"%ds\n", &a);
-    printf("%d", a);
+    fscanf(fp,"%dskill\n", &a);
+    getc(fp);
     while(n!=a){
-        fscanf(fp,"%ds\n", &a);
+        fscanf(fp,"%dskill\n", &a);
         getc(fp);
         printf("%d", a);
     }
     fgets(skill->name, MAX_NAME, fp);
     fgets(skill->description, MAX_TXT, fp);
-    fscanf(fp, "%d\n", &skill->of_def);
-    fscanf(fp, "%d\n", &skill->dmg_skll);
+    fscanf(fp, "%d\n%d\n", &skill->of_def, &skill->dmg_skll);
+    //fscanf(fp, "%d\n", &skill->dmg_skll);
     fgets(skill->modifier, MAX_NAME, fp);
-    fscanf(fp, "%d, %d, %d\n", &skill->stats_plyr[0], skill->stats_plyr[1], &skill->stats_plyr[2]);
+    for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
+    //fscanf(fp, "%d,%d,%d\n", &skill->stats_plyr[0], skill->stats_plyr[1], &skill->stats_plyr[2]);
 
-    printf("-%s\n", skill->name);
+    printf("\n");
+    printf("_______________%s\n", skill->name);
     printf("%s\n", skill->description);
     printf("%d\n", skill->of_def);
     printf("%d\n", skill->dmg_skll);

@@ -2,10 +2,10 @@
 
 void new_game(){//Our new game function
     Skill *skill = (Skill*)calloc(20, sizeof(Skill));
-    /*for(int i =0; i<20;i++){
-        get_skill(&skill[i], i+1);
+    /*for(int i =0; i<18;i++){
+        get_skill(&skill[i], i);
     }*/
-    get_skill(&skill[6], 6);
+    get_skill(&skill[0], 1);
     
     //create_character(skill);
     //Decision* main_decision = decision[0];
