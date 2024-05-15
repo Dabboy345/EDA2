@@ -1,9 +1,13 @@
-#include "rpg_base.h"
+#include "rpgbase.h"
 
 void new_game(){//Our new game function
     Skill *skill = (Skill*)calloc(20, sizeof(Skill));
-    get_skill(skill);
-    create_character(skill);
+    /*for(int i =0; i<20;i++){
+        get_skill(&skill[i], i+1);
+    }*/
+    get_skill(&skill[6], 6);
+    
+    //create_character(skill);
     //Decision* main_decision = decision[0];
 
     /*This is an example of the implatiaion of what we would like to do, we will create/add functions necessary to make it more automatic

@@ -1,7 +1,21 @@
-“There is a difference between knowing the path and walking the path.”
+N.- <description> N representera el numero de nodo
+<pre_txt> Si no hay pre_txt se deja en blanco
+<enemy_data> Name: dmg, def, hp, skill1 "recharge",....
+<post_txt>
+<question_txt>
+1.<option1_description>
+2.<option2_description>
 
-"YOU JUST WAKED UP"
-Ugh, my eyes and head are hurting, and I am also hungry, where am I (you get up from the bed)
-1. Search for food
-2. Search fot information
 
+0.- “There is a difference between knowing the path and walking the path.”
+You wake up, you don’t know where you are.Your head is hurting.
+Cashier: 10, 10, 10, Stick, Denture, Carnivorus Plant, Life medicine
+You get up from the bed
+what would you like to do?
+1. Search for food 
+2. Search Information
+
+1.- "You decide to grab the food while the seller is distracted"
+The seller is coughts you stealing and he gets angry 
+Seller: 10, 10,10, Stick, denture “recharge”, Carnivorous Plant, Life medicine
+You have food, and you can eat now.
