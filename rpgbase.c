@@ -6,7 +6,7 @@ void new_game(){//Our new game function
         get_skill(&skill[i], i);
     }
     
-    //create_character(skill);
+    create_character(skill);
     //Decision* main_decision = decision[0];
 
     /*This is an example of the implatiaion of what we would like to do, we will create/add functions necessary to make it more automatic

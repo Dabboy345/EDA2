@@ -34,13 +34,13 @@ void get_skill(Skill *skill, int n){
         for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
         //fscanf(fp, "%d,%d,%d\n", &skill->stats_plyr[0], skill->stats_plyr[1], &skill->stats_plyr[2]);
         if(n==a){
-            printf("\n");
+            /*printf("\n");
             printf("_______________%s\n", skill->name);
             printf("%s\n", skill->description);
             printf("%d\n", skill->of_def);
             printf("%d\n", skill->dmg_skll);
             printf("%s\n", skill->modifier);
-            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);
+            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);*/
             
             fclose(fp); 
             return;
@@ -56,7 +56,7 @@ Character* create_character(Skill *skills){
 
     //print all skills
     for(int i = 0; i<20; i++){
-        printf("%d.-%s",i+1, skills[i].name);
+        printf("%d.%s",i+1, skills[i+1].name);
     }
 
     printf("\n");
@@ -100,8 +100,6 @@ void combat(Character *plyr, Enemy *enmy, int size){
     for(int i = 0; i<size; i++){
         q = enqueue(q, *plyr, *enmy);
     }
-    
-
 
     int rand_n = rand();
         if(rand_n%2 == 0){
