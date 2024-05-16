@@ -21,34 +21,31 @@ void try_skill(Skill *skll){
 void get_skill(Skill *skill, int n){
     FILE *fp;
     int i = 0;
-    char c[MAX_NAME];
+    char c[MAX_TXT];
     fp = fopen("list_character_skill.txt", "r");
     int a;
     while(!feof(fp)){
-        if(a==n && 1==fscanf(fp,"%dskill\n", &a)){
-            long line = ftell(fp);
-            fseek(fp, line, SEEK_SET);
-            break;
+        fscanf(fp, "%dskill\n", &a);
+        fgets(skill->name, MAX_NAME, fp);
+        fgets(skill->description, MAX_TXT, fp);
+        fscanf(fp, "%d\n%d\n", &skill->of_def, &skill->dmg_skll);
+        //fscanf(fp, "%d\n", &skill->dmg_skll);
+        fgets(skill->modifier, MAX_NAME, fp);
+        for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
+        //fscanf(fp, "%d,%d,%d\n", &skill->stats_plyr[0], skill->stats_plyr[1], &skill->stats_plyr[2]);
+        if(n==a){
+            printf("\n");
+            printf("_______________%s\n", skill->name);
+            printf("%s\n", skill->description);
+            printf("%d\n", skill->of_def);
+            printf("%d\n", skill->dmg_skll);
+            printf("%s\n", skill->modifier);
+            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);
+            
+            fclose(fp); 
+            return;
         }
-        getc(fp);
     }
-    fgets(skill->name, MAX_NAME, fp);
-    fgets(skill->description, MAX_TXT, fp);
-    fscanf(fp, "%d\n%d\n", &skill->of_def, &skill->dmg_skll);
-    //fscanf(fp, "%d\n", &skill->dmg_skll);
-    fgets(skill->modifier, MAX_NAME, fp);
-    for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
-    //fscanf(fp, "%d,%d,%d\n", &skill->stats_plyr[0], skill->stats_plyr[1], &skill->stats_plyr[2]);
-
-    printf("\n");
-    printf("_______________%s\n", skill->name);
-    printf("%s\n", skill->description);
-    printf("%d\n", skill->of_def);
-    printf("%d\n", skill->dmg_skll);
-    printf("%s\n", skill->modifier);
-    printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);
-    
-    fclose(fp); 
 }
 
 Character* create_character(Skill *skills){
