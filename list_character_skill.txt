@@ -5,6 +5,7 @@ The user can attack you with the knife
 25
 stun
 7, 3, 30,
+
 1skill
 -Sword
 The user can attack you with a sword
@@ -12,6 +13,7 @@ The user can attack you with a sword
 20
 no
 1, 5, 30,
+
 2skill
 -Pistol
 User can attack you with pistol
@@ -140,5 +142,130 @@ It will you get rid of negative thoughts and build up the force/energy
 no
 2, 8, 33,
 
+50skill
+-Stick
+Stick enables the user to give a damage to the opponent with a hit with the stick
+1
+7
+Stun
+5, 3, 5
 
+51skill
+-Denture
+Denture is a skill that takes a turn to equip and another turn to use, it has only 1 use for a fight
+1
+30
+Recharge
+3, 6, 25
 
+52skill
+-Carnivorus Plant
+Giant carnivorus plant two meters tall bites you and deals damage
+1
+15
+Nothing
+4, 7, 37
+
+53skill
+-Life Medicine
+Life medicine adds some points to your health points
+0
+10
+Nothing
+3, 4, 45
+
+54skill
+-Punch
+Punch enables attacker to throw punch at you and deal damage
+1
+25
+Unconcscious
+5, 2, 30
+
+55skill
+-Knife 
+The user can attack you with the Knife
+1
+30
+Unconscious
+7, 3, 30
+
+56skill
+-Lighter
+The user burns you
+1
+20
+Unconscious
+6, 2, 30
+
+57skill
+-Microphone 
+The user is able to use a microphone which will do damage to the opponent
+1
+20
+Duration
+4, 2, 25
+
+58skill
+-Stomp
+The user steps on you very strongly 
+1
+25
+Nothing 
+4, 2, 25
+
+59skill
+-Newspaper Hit 
+This skills enables the user to attack with newspaper
+1
+25
+Nothing 
+4, 1, 25
+
+60skill
+-Shout
+Smiliar to microphone but there shouts at you without the microphone
+1
+30
+Duration
+5, 0, 25
+
+61skill
+-Self Defence Blind 
+It permits the user to defend himself with a blind
+0
+15
+Nothing 
+3, 5, 25 
+
+62skill
+-Venom
+The user throws venom
+1
+15
+Duration
+2, 3, 25
+
+63skill
+-Clamp
+The user attack you with a Clamp
+1
+20
+Nothing
+3, 5, 20
+
+64skill
+-Wings
+it allows the user to protect its self creating a shield
+0
+15
+Nothing
+2, 3, 25
+
+65skill
+-Double
+The user make twice the damage in that hit
+1
+30
+Nothing
+2, 5, 30

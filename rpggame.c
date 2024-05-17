@@ -3,7 +3,7 @@
 
 
 void try_skill(Skill *skll){
-    printf("_- %s -_\n", skll->name);
+    printf("%s\n", skll->name);
     printf("Health points: %d\n", skll->stats_plyr[2]);
     for(int i = 0; i<skll->stats_plyr[2]; i++){printf("/");}
     printf("\n");
@@ -23,16 +23,19 @@ void get_skill(Skill *skill, int n){
     int i = 0;
     char c[MAX_TXT];
     fp = fopen("list_character_skill.txt", "r");
+    if (fp==NULL){
+        printf("Error opening opening the file\n");
+        fclose(fp);
+        return;
+    }
     int a;
     while(!feof(fp)){
         fscanf(fp, "%dskill\n", &a);
         fgets(skill->name, MAX_NAME, fp);
         fgets(skill->description, MAX_TXT, fp);
         fscanf(fp, "%d\n%d\n", &skill->of_def, &skill->dmg_skll);
-        //fscanf(fp, "%d\n", &skill->dmg_skll);
         fgets(skill->modifier, MAX_NAME, fp);
         for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
-        //fscanf(fp, "%d,%d,%d\n", &skill->stats_plyr[0], skill->stats_plyr[1], &skill->stats_plyr[2]);
         if(n==a){
             /*printf("\n");
             printf("_______________%s\n", skill->name);
@@ -50,6 +53,10 @@ void get_skill(Skill *skill, int n){
 
 Character* create_character(Skill *skills){
     Character *player = (Character*)malloc(sizeof(Character));
+    if(player == NULL){
+        printf("Memory allocation failed\n");
+        return NULL;
+    }
     printf("Choose you character's name: ");
     scanf("%s", &player->name);
     //Choose skills
@@ -63,7 +70,7 @@ Character* create_character(Skill *skills){
     int temp=1;
     int test=0;
     while(temp!=0){
-        printf("Try a skill (1-20): ");
+        printf("Type 0 to choose final skills\nTry a skill (1-20): ");
         test = scanf("%d", &temp);
         if((test!=0)&&(1<=temp) && (temp<=20)){
             try_skill(&(skills[temp]));
@@ -96,19 +103,18 @@ Character* create_character(Skill *skills){
 
 
 void combat(Character *plyr, Enemy *enmy, int size){
-    Queue* q = init_queue();
+    Queue* q = init_queue(size);
     for(int i = 0; i<size; i++){
         q = enqueue(q, *plyr, *enmy);
     }
 
-    int rand_n = rand();
-        if(rand_n%2 == 0){
-            int a;
-            for(int j = 0; j<4; j++){printf("%d - %s\n",j+1, plyr->skill[j]);}
-            printf("Choose skill: ");
-            scanf("%d", &a);
-
-        }
+    int rand_n = rand()+1;//Fix random number always 41
+    if(rand_n%2 == 0){
+        int a;
+        for(int j = 0; j<4; j++){printf("%d - %s\n",j+1, plyr->skill[j]);}
+        printf("Choose skill: ");
+        scanf("%d", &a);
+    }
 
 }
 
@@ -129,19 +135,19 @@ void combat(Character *plyr, Enemy *enmy, int size){
 
 Node *create_node(){//This function will create us a tree
     Node *root = (Node*)malloc(sizeof(Node));
-    root->left = NULL;
-    root->right = NULL;
+    //root->left = NULL;
+    //root->right = NULL;
     return root;
 }
 
 void add_Node_right( Node *root/*We could other valrable*/){ //This function enables to add new node to our tree
     Node *new = create_node();
-    root->right = new;
+    //root->right = new;
 }
 
 void add_Node_left(Node *root){
     Node *new =  create_node();
-    root->left = new;
+    //root->left = new;
 }
 
 Enemy *put_the_enemy(char const *a){//it will recive a line which is not modificable 
@@ -154,7 +160,10 @@ Enemy *put_the_enemy(char const *a){//it will recive a line which is not modific
         printf("memory allocation failed/n");//The malloc failed
         return NULL;
     }
-    fscanf("%s: %d, %d, %d\n", temp->name, temp->stats[0],temp->stats[1],temp->stats[2]);
+    Skill *s = (Skill*)malloc(sizeof(Skill));
+    
+
+    //fscanf("%s: %d, %d, %d\n", temp->name, temp->stats[0],temp->stats[1],temp->stats[2]);
     return temp; //Aqui tambien tendriamos q hacer una funcion q recibendo el nombre de skill ya ponga los valores q toca
 }
 
@@ -164,8 +173,8 @@ void get_info(Node *root,int a ){//the integer represent what is the information
     if(fp==NULL){ //Error handeling 
         printf("Error openning the file /n");
         fclose(fp);
+        return;
     } 
-
     //char buffer[MAX_TXT];//We will use this temp variable to save the description
 
 

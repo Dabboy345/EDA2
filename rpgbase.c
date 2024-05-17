@@ -2,11 +2,25 @@
 
 void new_game(){//Our new game function
     Skill *skill = (Skill*)calloc(20, sizeof(Skill));
-    for(int i =0; i<18;i++){
+    if(skill == NULL){
+        printf("Memory allocation failed\n");
+        return;
+    }
+    for(int i =0; i<17;i++){
         get_skill(&skill[i], i);
     }
-    
-    create_character(skill);
+
+    Character *plyr = create_character(skill);
+
+    Enemy* e = (Enemy*)malloc(sizeof(Enemy));
+    char s[MAX_NAME];
+    scanf("%s", e->name);
+    for(int i =0; i<3;i++){e->stats[i]=10;}
+    for(int i =0; i<4;i++){get_skill(&e->skill[i], 50+i);}
+    combat(plyr, e, 10);
+
+
+
     //Decision* main_decision = decision[0];
 
     /*This is an example of the implatiaion of what we would like to do, we will create/add functions necessary to make it more automatic

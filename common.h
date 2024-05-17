@@ -48,18 +48,19 @@ typedef struct{
 }Decision;
 //question text, options, number of options
 
-typedef struct{
-    char name[MAX_NAME];
-    char description[MAX_TXT];
-    Decision decision[10];
-}Scenario;
-//name and description, and decision (or decision list).
-
 typedef struct _Node { //This is our decion tree from the descion making
     Option option;
     Decision descions;
-    struct _Node *left;
-    struct _Node *right;
+    //struct _Node *left;
+    //struct _Node *right;
 }Node;
+
+typedef struct{
+    char name[MAX_NAME];
+    char description[MAX_TXT];
+    Node *head;
+    Node *end;
+}Scenario;
+//name and description, and decision (or decision list).
 
 #endif

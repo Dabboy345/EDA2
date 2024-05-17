@@ -6,8 +6,8 @@ typedef struct{
     int head;
     int tail;
     int elements;
-    Character* c;
-    Enemy* e;
+    Character c[MAX_NAME];
+    Enemy e[MAX_NAME];
 }Queue;
 
 Queue* init_queue();
