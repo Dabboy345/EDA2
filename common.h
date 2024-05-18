@@ -10,6 +10,7 @@
 
 #define MAX_NAME 30 
 #define MAX_TXT 200 
+#define MAX_SKILL 4
 
 typedef struct { //Our data stucture for the skills
     char name[MAX_NAME];
