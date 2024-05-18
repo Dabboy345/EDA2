@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <math.h> //Libary  with math functions
 #include <ctype.h> //Libary that can convert Capital to small letter or vice versa, it can also check if something is alphabet, alphanemeric...etc. 
+#include <stdbool.h> //Libary which enabels us to work with booleans
 
 #define MAX_NAME 30 
 #define MAX_TXT 200 
