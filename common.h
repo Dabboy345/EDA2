@@ -62,5 +62,5 @@ typedef struct{
     Node *start;
     Node *end;
 }Scenario;
-//name and description, and decision (or decision list).
+//name and description and link list of nodes
 #endif
