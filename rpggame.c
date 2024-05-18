@@ -118,101 +118,119 @@ void combat(Character *plyr, Enemy *enmy, int size){
 
 }
 
+void put_enemy_info(char *line, Enemy *boss) {
+    if (strcmp(line, "no enemy") == 0) {
+        for (int i = 0; i < MAX_SKILL; i++) {
+            get_skill(&boss->skill[i], 100);  
+        }
+        return;
+    }
+    char buffer[MAX_TXT];//We create a copy of our string to manipulate by spliting the string
+    int list_n_skills[4];
+    strcpy(buffer, line);
 
-// Node* get_node(int i, Node* node){
-//     FILE *fp;
-//     int a = 0;
-//     fp = fopen("option.txt", "r");
-
-//     while (a!=i){fscanf(fp,"%d.%d\n",&a);}
-//     while(!feof(fp)){
-//         //fgets((skill[i]).name, MAX_NAME, fp);
-//     fclose(fp); 
-//     } 
-// }
-
-
-
-Node *create_node(){//This function will create us a tree
-    Node *root = (Node*)malloc(sizeof(Node));
-    //root->left = NULL;
-    //root->right = NULL;
-    return root;
-}
-
-void add_Node_right( Node *root/*We could other valrable*/){ //This function enables to add new node to our tree
-    Node *new = create_node();
-    //root->right = new;
-}
-
-void add_Node_left(Node *root){
-    Node *new =  create_node();
-    //root->left = new;
-}
-
-Enemy *put_the_enemy(char const *a){//it will recive a line which is not modificable 
-    if((a[0]=='n')&&(a[1]=='o')){
-        return NULL; //It means that we have no enemy
+    char *token = strtok(buffer, ":"); //Enemy name, strtoken helps us to split the string
+    if (token != NULL) {
+        strcpy(boss->name,token);
+    }
+    // Get the stats
+    for (int i = 0; i < 3; i++) {
+        token = strtok(NULL, ",");
+        if (token != NULL) {
+            boss->stats[i] = atoi(token); //Convesion of char to int with atoi 
+        }
     }
 
-    Enemy *temp = (Enemy*)malloc(sizeof(Enemy));//We create a local variable 
-    if (temp = NULL){
-        printf("memory allocation failed/n");//The malloc failed
-        return NULL;
+    // Get the skill numbers
+    for (int i = 0; i < MAX_SKILL; i++) {
+        token = strtok(NULL, ",");
+        if (token != NULL) {
+            list_n_skills[i] = atoi(token);
+            get_skill(&boss->skill[i], list_n_skills[i]);
+        }
     }
-    Skill *s = (Skill*)malloc(sizeof(Skill));
-    
-
-    //fscanf("%s: %d, %d, %d\n", temp->name, temp->stats[0],temp->stats[1],temp->stats[2]);
-    return temp; //Aqui tambien tendriamos q hacer una funcion q recibendo el nombre de skill ya ponga los valores q toca
 }
 
 
-void get_info(Node *root,int a ){//the integer represent what is the information we want and in which node we want it to put 
-    FILE *fp = fopen("scenario.txt","r");
-    if(fp==NULL){ //Error handeling 
-        printf("Error openning the file /n");
+void get_info(Node *root, int a){
+    FILE *fp = fopen("scenario.txt", "r");
+    if (fp == NULL) {
+        printf("Cannot open the file\n");
+        return;
+    }
+    int current_section = 0;
+    char line[MAX_TXT];
+    // Loop until we find the desired section
+    while (fgets(line, MAX_TXT, fp)) {
+        if (isdigit(line[0])) {
+            sscanf(line, "%d.", &current_section);
+            if (current_section == a) {
+                break;
+            }
+        }
+    }
+    // If the desired section wasn't found
+    if (current_section != a) {
+        printf("Section %d not found\n", a);
         fclose(fp);
         return;
-    } 
-    //char buffer[MAX_TXT];//We will use this temp variable to save the description
-
-
-    //We get the description
-    // fscanf(fp, "%d.- %s", buffer);
-    // strcpy(buffer,root->option.description);
+    }
+    // Read the necessary lines from the file
     fgets(root->option.description, MAX_TXT, fp);
-
-    // //We get the pre_text
-    // fgets(buffer, MAX_TXT, fp);
-    // strcpy(buffer,root->option.pre_txt);
     fgets(root->option.pre_txt, MAX_TXT, fp);
+    
+    fgets(line, MAX_TXT, fp);
+    put_enemy_info(line, &root->option.enemy);
 
-    // //We get the enemy information
-    // fgets(buffer, MAX_TXT, fp);
-    // strcpy(buffer,root->option.enemy);
-    //fgets(root->option.enemy, MAX_TXT, fp); //No tiene sentido
-    // Use the function put enemy 
-
-    // //We get the post_text
-    // fgets(buffer, MAX_TXT, fp);
-    // strcpy(buffer,root->option.post_txt);
     fgets(root->option.post_txt, MAX_TXT, fp);
-
-    // //We get the question txt
-    // fgets(buffer, MAX_TXT, fp);
-    // strcpy(buffer,root->descions.question_txt);
     fgets(root->descions.question_txt, MAX_TXT, fp);
-    // //We get the descriptions of  option 1 
-    // fscanf(fp, "%d. ", buffer);
-    // strcpy(buffer,root->descions.option[0].description);
     fgets(root->descions.option[0].description, MAX_TXT, fp);
-
-    // //We get the descriptions of  option 2
-    // fscanf(fp, "%d. ", buffer);
-    // strcpy(buffer,root->descions.option[1].description);
     fgets(root->descions.option[1].description, MAX_TXT, fp);
+
     fclose(fp);
+}
+
+
+Scenario *create_ini_scenario() {
+    Scenario *scene = (Scenario*)malloc(sizeof(Scenario));
+    if (scene == NULL) {
+        printf("Memory allocation failed\n");
+        return NULL;
+    }
+    scene->start = (Node*)malloc(sizeof(Node));
+    if (scene->start == NULL) {
+        printf("Memory allocation failed\n");
+        free(scene);
+        return NULL;
+    }
+    scene->start->next = NULL;
+    scene->end = scene->start;
+    return scene;
+}
+
+void free_node(Node *node) {
+    if (node != NULL) {
+        free(node);
+    }
+}
+
+void free_scenario(Scenario *scene) {
+    if (scene == NULL) {
+        return;
+    }
+
+    Node *current = scene->start;
+    Node *next;
+
+    // Traverse the linked list and free each node
+    while (current != NULL) {
+        next = current->next;
+        free_node(current);
+        current = next;
+    }
+
+    // Free the Scenario structure itself
+    free(scene);
 }
 
 

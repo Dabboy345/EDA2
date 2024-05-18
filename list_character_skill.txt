@@ -269,3 +269,11 @@ The user make twice the damage in that hit
 30
 Nothing
 2, 5, 30
+
+100skill
+-None
+None
+0
+0
+Nothing
+0, 0, 0

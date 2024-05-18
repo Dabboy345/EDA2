@@ -42,7 +42,22 @@ void print_menu(){//This will be the print function which will print the users m
     printf("4. Exit GAME\n");
 }
 
-void print_node(); //This function will help us to the information that we have in each node
+void print_node(Node *node) { //Function to print the nodes
+    printf("%s\n", node->option.description);
+    printf("%s\n", node->option.pre_txt);
+    if (strcmp(node->option.enemy.name, "None") != 0) {
+        printf("Enemy is %s with skills %s, %s, %s and %s\n",
+               node->option.enemy.name,
+               node->option.enemy.skill[0].name,
+               node->option.enemy.skill[1].name,
+               node->option.enemy.skill[2].name,
+               node->option.enemy.skill[3].name);
+    }
+    printf("%s\n", node->option.post_txt);
+    printf("%s\n", node->descions.question_txt);
+    printf("%s\n", node->descions.option[0].description);
+    printf("%s\n", node->descions.option[1].description);
+}
 
 
 

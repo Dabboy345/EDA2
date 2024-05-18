@@ -8,7 +8,7 @@
 #include <ctype.h> //Libary that can convert Capital to small letter or vice versa, it can also check if something is alphabet, alphanemeric...etc. 
 #include <stdbool.h> //Libary which enabels us to work with booleans
 
-#define MAX_NAME 30 
+#define MAX_NAME 50 
 #define MAX_TXT 200 
 #define MAX_SKILL 4
 
@@ -50,19 +50,17 @@ typedef struct{
 }Decision;
 //question text, options, number of options
 
-typedef struct _Node { //This is our decion tree from the descion making
+typedef struct _Node { //This is our node
     Option option;
     Decision descions;
-    //struct _Node *left;
-    //struct _Node *right;
+    struct _Node *next;
 }Node;
 
 typedef struct{
     char name[MAX_NAME];
     char description[MAX_TXT];
-    Node *head;
+    Node *start;
     Node *end;
 }Scenario;
 //name and description, and decision (or decision list).
-
 #endif
