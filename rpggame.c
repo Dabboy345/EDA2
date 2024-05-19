@@ -118,7 +118,7 @@ void combat(Character *plyr, Enemy *enmy, int size){
 
 }
 
-void put_enemy_info(char *line, Enemy *boss) {
+/*void put_enemy_info(char *line, Enemy *boss) {
     if (strcmp(line, "no enemy") == 0) {
         for (int i = 0; i < MAX_SKILL; i++) {
             get_skill(&boss->skill[i], 100);  
@@ -231,6 +231,6 @@ void free_scenario(Scenario *scene) {
 
     // Free the Scenario structure itself
     free(scene);
-}
+} */
 
 
