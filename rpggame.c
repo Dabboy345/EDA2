@@ -20,7 +20,6 @@ void try_skill(Skill *skll){
 
 void get_skill(Skill *skill, int n){
     FILE *fp;
-    int i = 0;
     char c[MAX_TXT];
     fp = fopen("list_character_skill.txt", "r");
     if (fp==NULL){
@@ -63,7 +62,7 @@ Character* create_character(Skill *skills){
 
     //print all skills
     for(int i = 0; i<20; i++){
-        printf("%d.%s",i+1, skills[i+1].name);
+        printf("%d.%s",i+1, skills[i].name);
     }
 
     printf("\n");
@@ -72,9 +71,9 @@ Character* create_character(Skill *skills){
     while(temp!=0){
         printf("Type 0 to choose final skills\nTry a skill (1-20): ");
         test = scanf("%d", &temp);
-        if((test!=0)&&(1<=temp) && (temp<=20)){
-            try_skill(&(skills[temp]));
-        }else{printf("Wrong input\n");}//When typing a letter it crashes
+        if((1<=temp) && (temp<=20)){
+            try_skill(&(skills[temp-1]));
+        }else if (test!=0){printf("Wrong input\n");}//When typing a letter it crashes
         
     }
    
@@ -101,22 +100,6 @@ Character* create_character(Skill *skills){
 }
 
 
-
-void combat(Character *plyr, Enemy *enmy, int size){
-    Queue* q = init_queue(size);
-    for(int i = 0; i<size; i++){
-        q = enqueue(q, *plyr, *enmy);
-    }
-
-    int rand_n = rand()+1;//Fix random number always 41
-    if(rand_n%2 == 0){
-        int a;
-        for(int j = 0; j<4; j++){printf("%d - %s\n",j+1, plyr->skill[j]);}
-        printf("Choose skill: ");
-        scanf("%d", &a);
-    }
-
-}
 
 /*void put_enemy_info(char *line, Enemy *boss) {
     if (strcmp(line, "no enemy") == 0) {

@@ -10,6 +10,7 @@
                 "${fileDirname}/queue.c",
                 "${fileDirname}/rpggame.c",
                 "${fileDirname}/rpgbase.c",
+                "${fileDirname}/combat.c",
                 "-o",
                 "${fileDirname}/rpgbase"
             ],

@@ -6,7 +6,7 @@ void new_game(){//Our new game function
         printf("Memory allocation failed\n");
         return;
     }
-    for(int i =0; i<17;i++){
+    for(int i =0; i<19;i++){
         get_skill(&skill[i], i);
     }
 
@@ -15,8 +15,11 @@ void new_game(){//Our new game function
     Enemy* e = (Enemy*)malloc(sizeof(Enemy));
     char s[MAX_NAME];
     scanf("%s", e->name);
-    for(int i =0; i<3;i++){e->stats[i]=10;}
-    for(int i =0; i<4;i++){get_skill(&e->skill[i], 50+i);}
+    //for(int i=0; i<3;i++){e->stats[i]=10;}
+    e->stats[0]=5;
+    e->stats[1]=10;
+    e->stats[2]=150;
+    for(int i=0; i<4;i++){get_skill(&e->skill[i], 50+i);}
     combat(plyr, e, 10);
 
 
