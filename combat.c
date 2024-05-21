@@ -5,9 +5,13 @@ void print_enemy(Enemy* e){
     printf("- %s\n", e->name);
     printf("HP: ");
     for(int i=0;i<(e->stats[2]+1)/2;i++){printf("|");}
-    for(int i=0;i<(e->stats[1]+1)/2;i++){printf("]");}
-    printf(" %d", e->stats[2]);
-    if(e->stats[1]!=0){printf(" + [%d]", e->stats[1]);}
+    
+    
+    if(e->stats[1]>0){
+        for(int i=0;i<(e->stats[1]+1)/2;i++){printf("]");}
+        printf(" %d", e->stats[2]);
+        printf(" + [%d]", e->stats[1]);
+    }else{printf(" %d", e->stats[2]);}
     printf("\n________________________________________________________________________________\n");
 }
 
@@ -16,9 +20,13 @@ void print_player(Character* p){
     printf("- You (%s)\n", p->name);
     printf("HP: ");
     for(int i=0;i<(p->stats[2])/2;i++){printf("|");}
-    for(int i=0;i<(p->stats[1])/2;i++){printf("]");}
-    printf(" %d", p->stats[2]);
-    if(p->stats[1]!=0){printf(" + [%d]", p->stats[1]);}
+    
+    
+    if(p->stats[1]>0){
+        for(int i=0;i<(p->stats[1])/2;i++){printf("]");}
+        printf(" %d", p->stats[2]);
+        printf(" + [%d]", p->stats[1]);
+    }else{printf(" %d", p->stats[2]);}
     printf("\n________________________________________________________________________________\n");
 }
 
@@ -37,7 +45,8 @@ int combat(Character *plyr, Enemy *enmy, int size){
             for(int j = 0; j<4; j++){printf("%d - %s",j+1, plyr->skill[j]);}
             printf("Choose skill: ");
             scanf("%d", &a);
-            int p_dmg = (plyr->skill[a].dmg_skll + plyr->stats[0])*plyr->skill[a].of_def;//Segmentation fault?
+            a--;
+            int p_dmg = (plyr->skill[a].of_def)*(plyr->skill[a].dmg_skll + plyr->stats[0]);//Segmentation fault?
             if(enmy->stats[1]>0){
                 enmy->stats[1]-= p_dmg;
                 if(enmy->stats[1]<=0){enmy->stats[1]=0;printf("Defense broken\n");}
@@ -46,7 +55,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
                 if(enmy->stats[2]<0){enmy->stats[2]=0;printf("GG");return 1;}//Return 1 = playr wins
             }
             if(plyr->skill[a].of_def==1){
-                printf("%s dealt %d damage to %s\n", plyr->name, p_dmg, enmy->name);
+                printf("%s dealt %d damage to %s\n\n", plyr->name, p_dmg, enmy->name);
             }  
         }
         int rand_t = rand();
@@ -61,7 +70,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
             if(plyr->stats[2]<0){plyr->stats[2]=0;printf("FFFFF");return 2;}//Return 2 = Enemy wins
         }
         if(plyr->skill[b].of_def==1){
-            printf("%s dealt %d damage to %s\n", enmy->name, e_dmg, plyr->name);
+            printf("%s dealt %d damage to %s\n\n", enmy->name, e_dmg, plyr->name);
         }  
 
         //Create function do_turn(atacker, reciever)?

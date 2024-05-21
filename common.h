@@ -11,6 +11,7 @@
 #define MAX_NAME 50 
 #define MAX_TXT 300 
 #define MAX_SKILL 4
+#define MAX_DECISIONS 20
 
 typedef struct { //Our data stucture for the skills
     char name[MAX_NAME];
@@ -38,29 +39,39 @@ typedef struct{ //This is our data structures for the Enemy
 typedef struct{
     char description[MAX_TXT];
     char pre_txt[MAX_TXT];
-    Enemy enemy;
+    Enemy *enemy;
     char post_txt[MAX_TXT];
+    char option1[MAX_TXT];
+    char option2[MAX_TXT];
 }Option;
 //response text, narrative text (before battling the enemies), enemies (can be reused from other scenarios), 
 //narrative text (after battling the enemies)
 
 typedef struct{
-    char question_txt[MAX_TXT];
-    Option option[2];
+    //char question_txt[MAX_TXT];
+    Option *option;
+    int node_number;//This will help us to save the game 
 }Decision;
 //question text, options, number of options
 
-typedef struct _Node { //This is our node
-    Option option;
-    Decision descions;
-    struct _Node *next;
-}Node;
+// typedef struct _Node { //This is our node
+//     Option option;
+//     Decision descions;
+//     struct _Node *next;
+// }Node;
 
-typedef struct{
+typedef struct Node{
+    Decision *decision;
+    struct Node *options;
+}Node;
+//name and description and link list of nodes
+
+
+typedef struct Scenariograph{
     char name[MAX_NAME];
     char description[MAX_TXT];
+    Node choices[MAX_DECISIONS];
     Node *start;
     Node *end;
-}Scenario;
-//name and description and link list of nodes
+}Scenariograph;
 #endif
