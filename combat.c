@@ -47,7 +47,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
     Mod stun = {1,0,'s',0};
     Mod recharge = {1,0,'r',0};
 
-    while(q!=NULL){
+    while(q->elements>0){
         print_enemy(enmy);
         printf("\n\n\n");//Print enemy?
         print_player(plyr);

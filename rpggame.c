@@ -16,8 +16,8 @@ void try_skill(Skill *skll){
     printf("Damage: %d\n", skll->stats_plyr[0]);
     for(int i = 0; i<skll->stats_plyr[0]; i++){printf("/");};
     printf("\n\n");
-    if(skll->of_def==0){printf("It doesn't deal damage\n");}
-    else if(skll->of_def==1){printf("%d damage dealt\n", skll->dmg_skll);};
+    if(skll->of_def==0){printf("It doesn't deal damage\n\n");}
+    else if(skll->of_def==1){printf("%d damage dealt\n\n", skll->dmg_skll);};
     //print_mod(Skill* skill)
 }
 
