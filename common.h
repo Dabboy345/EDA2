@@ -39,7 +39,7 @@ typedef struct{ //This is our data structures for the Enemy
 typedef struct{
     char description[MAX_TXT];
     char pre_txt[MAX_TXT];
-    Enemy *enemy;
+    Enemy enemy;
     char post_txt[MAX_TXT];
     char option1[MAX_TXT];
     char option2[MAX_TXT];
@@ -49,7 +49,8 @@ typedef struct{
 
 typedef struct{
     //char question_txt[MAX_TXT];
-    Option *option;
+    Option option;
+    struct Decision *next;
     int node_number;//This will help us to save the game 
 }Decision;
 //question text, options, number of options
@@ -59,19 +60,8 @@ typedef struct{
 //     Decision descions;
 //     struct _Node *next;
 // }Node;
-
-typedef struct Node{
-    Decision *decision;
-    struct Node *options;
-}Node;
-//name and description and link list of nodes
-
-
-typedef struct Scenariograph{
-    char name[MAX_NAME];
-    char description[MAX_TXT];
-    Node choices[MAX_DECISIONS];
-    Node *start;
-    Node *end;
-}Scenariograph;
-#endif
+typedef struct{
+    Decision *start;
+    Decision *end;
+    int decions_added;
+}Scenario;
