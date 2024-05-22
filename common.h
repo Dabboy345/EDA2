@@ -62,10 +62,10 @@ typedef struct{
     int decisions_added;
 }Scenario;
 
-typedef struct{
+/*typedef struct{
     Character main;
     Decision last_descion;
-}Save_game;
+}Save_game;*/
 
 typedef struct{
     int max;
