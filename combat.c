@@ -34,6 +34,11 @@ int combat(Character *plyr, Enemy *enmy, int size){
     int a;
     int rand_n = rand()+1;//Fix random number always 41
 
+    int max_hp_plyr = 0;
+    for(int i = 0; i<4; i++){max_hp_plyr += plyr->skill[i].stats_plyr[2];}
+
+    int max_hp_enmy = enmy->stats[2];
+
     while(q!=NULL){
         print_enemy(enmy);
         printf("\n\n\n");//Print enemy?
@@ -55,7 +60,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
             plyr->stats[1]+=plyr->skill[a].dmg_skll;
         }else if(plyr->skill[a].mod == heal){
             plyr->stats[2]+=plyr->skill[a].dmg_skll;
-
+            if(plyr->stats[2]>max_hp_plyr){plyr->stats[2]=max_hp_plyr;}
         }
 
         if(enmy->stats[1]>0){
