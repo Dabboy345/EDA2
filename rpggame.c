@@ -4,7 +4,7 @@
 
 void try_skill(Skill *skll){
     printf("---------------------------\n");
-    printf("%s\n", skll->name);
+    printf("%s", skll->name);
     printf("---------------------------\n\n");
     printf("%s\n", skll->description);
     printf("Health points: %d\n", skll->stats_plyr[2]);
@@ -15,8 +15,8 @@ void try_skill(Skill *skll){
     printf("\n");
     printf("Damage: %d\n", skll->stats_plyr[0]);
     for(int i = 0; i<skll->stats_plyr[0]; i++){printf("/");};
-    printf("\n");
-    if(skll->of_def==0){printf("%d def or heal?\n", skll->dmg_skll);}
+    printf("\n\n");
+    if(skll->of_def==0){printf("It doesn't deal damage\n");}
     else if(skll->of_def==1){printf("%d damage dealt\n", skll->dmg_skll);};
     //print_mod(Skill* skill)
 }
@@ -39,13 +39,13 @@ void get_skill(Skill *skill, int n){
         skill->mod = fgetc(fp);
         for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
         if(n==a){
-            printf("\n");
+            /*printf("\n");
             printf("_______________%s\n", skill->name);
             printf("%s\n", skill->description);
             printf("%d\n", skill->of_def);
             printf("%d\n", skill->dmg_skll);
             printf("%c\n", skill->mod);
-            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);
+            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);*/
             
             fclose(fp); 
             return;

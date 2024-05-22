@@ -270,6 +270,8 @@ The user make twice the damage in that hit
 n
 2, 5, 30
 
+
+
 100skill
 None
 None

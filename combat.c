@@ -78,11 +78,15 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
 /////////////////////////////////////////////7
 
+        print_enemy(enmy);
+        printf("\n\n\n");//Print enemy?
+        print_player(plyr);
+
+/////////////////////////////////////////////7
+
         int rand_t = rand();
         int b = 0; //rand_t%4;
         int e_dmg = (enmy->skill[b].dmg_skll + enmy->stats[0])*enmy->skill[b].of_def;
-
-
 
         if(plyr->stats[1]>0){
             plyr->stats[1]-= e_dmg;
