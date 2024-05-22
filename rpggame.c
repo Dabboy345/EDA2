@@ -3,7 +3,10 @@
 
 
 void try_skill(Skill *skll){
+    printf("---------------------------\n");
     printf("%s\n", skll->name);
+    printf("---------------------------\n\n");
+    printf("%s\n", skll->description);
     printf("Health points: %d\n", skll->stats_plyr[2]);
     for(int i = 0; i<skll->stats_plyr[2]; i++){printf("/");}
     printf("\n");
@@ -15,7 +18,7 @@ void try_skill(Skill *skll){
     printf("\n");
     if(skll->of_def==0){printf("%d def or heal?\n", skll->dmg_skll);}
     else if(skll->of_def==1){printf("%d damage dealt\n", skll->dmg_skll);};
-    printf("It has %s modifier\n", skll->modifier);
+    //print_mod(Skill* skill)
 }
 
 void get_skill(Skill *skill, int n){
@@ -33,16 +36,16 @@ void get_skill(Skill *skill, int n){
         fgets(skill->name, MAX_NAME, fp);
         fgets(skill->description, MAX_TXT, fp);
         fscanf(fp, "%d\n%d\n", &skill->of_def, &skill->dmg_skll);
-        fgets(skill->modifier, MAX_NAME, fp);
+        skill->mod = fgetc(fp);
         for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
         if(n==a){
-            /*printf("\n");
+            printf("\n");
             printf("_______________%s\n", skill->name);
             printf("%s\n", skill->description);
             printf("%d\n", skill->of_def);
             printf("%d\n", skill->dmg_skll);
-            printf("%s\n", skill->modifier);
-            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);*/
+            printf("%c\n", skill->mod);
+            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);
             
             fclose(fp); 
             return;
@@ -71,6 +74,7 @@ Character* create_character(Skill *skills){
     while(temp!=0){
         printf("Type 0 to choose final skills\nTry a skill (1-20): ");
         test = scanf("%d", &temp);
+        printf("\n");
         if((1<=temp) && (temp<=20)){
             try_skill(&(skills[temp-1]));
         }else if (test!=0){printf("Wrong input\n");}//When typing a letter it crashes

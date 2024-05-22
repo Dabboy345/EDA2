@@ -1,279 +1,279 @@
 0skill
--Knife
+Knife
 The user can attack you with the knife
 1
 25
-stun
+n
 7, 3, 30,
 
 1skill
--Sword
+Sword
 The user can attack you with a sword
 1
 20
-no
+n
 1, 5, 30,
 
 2skill
--Pistol
+Pistol
 User can attack you with pistol
 1
 30
-no
+n
 2, 3, 25,
 
 3skill
--Bow
+Bow
 User can attack you with a bow
 1
 15
-no
+n
 2, 4, 30,
 
 4skill
--Flail
+Flail
 User can attack you with a flail
 1
 15
-no
+n
 1, 5, 25,
 
 5skill
--Fire
+Fire
 User can attack you with fire
 1
 30
-lasting
+n
 2, 2, 15,
 
 6skill
--Force
+Force
 User gains extra force
 1
 15
-no
+n
 1, 5, 35,
 
 7skill
--Shield
+Shield
 User can defend himself with a shield
 0
 10
-no
+n
 1, 7, 40,
 
 8skill
--Dodge
+Dodge
 You can dodge the attack of the opponent
 0
 0
-no
+n
 1, 6, 35,
 
 9skill
--Rebound
+Rebound
 The attack from the opponent gets rebound
 0
 0
-no
+n
 1, 8, 40,
 
 10skill
--Healing 
+Healing 
 You can use this ability to heal yourself
 0
 10
-no
+h
 1, 6, 45,
 
 11skill
--Thorns
+Thorns
 When you recive some damage x% of the damage will go to your opponent
 0
 10
-no
+n
 1, 5, 30,
 
 12skill
--Thunder 
+Thunder 
 User is able to cast a thunder and attack
 1
 18
-stun
+n
 2, 3, 30,
 
 13skill
--Camouflage
+Camouflage
 User is able to camouflage
 0
 10
-no
+n
 1, 5, 27,
 
 14skill
--Summon defender
+Summon defender
 User is able to summon a helper which can recive damage (only one time during fight) 
 0
 10
-no
+d
 1, 3, 25,
 
 15skill
--Summon attacker
+Summon attacker
 User is able to summon a helper which can attack(only one time during fight)
 1
 14
-no
+n
 2, 6, 30,
 
 16skill
--Redbull
+Redbull
 Redbull gives you wiiiiiings
 1
 27
-no
+n
 1, 0, 25,
 
 17skill
--Power of friendship 
+Power of friendship 
 It will you get rid of negative thoughts and build up the force/energy
 1
 30
-no
+n
 2, 8, 33,
 
 50skill
--Stick
+Stick
 Stick enables the user to give a damage to the opponent with a hit with the stick
 1
 7
-Stun
+s
 5, 3, 5
 
 51skill
--Denture
+Denture
 Denture is a skill that takes a turn to equip and another turn to use, it has only 1 use for a fight
 1
 30
-Recharge
+r
 3, 6, 25
 
 52skill
--Carnivorus Plant
+Carnivorus Plant
 Giant carnivorus plant two meters tall bites you and deals damage
 1
 15
-Nothing
+n
 4, 7, 37
 
 53skill
--Life Medicine
+Life Medicine
 Life medicine adds some points to your health points
 0
 10
-Nothing
+n
 3, 4, 45
 
 54skill
--Punch
+Punch
 Punch enables attacker to throw punch at you and deal damage
 1
 25
-Unconcscious
+s
 5, 2, 30
 
 55skill
--Knife 
+Knife 
 The user can attack you with the Knife
 1
 30
-Unconscious
+s
 7, 3, 30
 
 56skill
--Lighter
+Lighter
 The user burns you
 1
 20
-Unconscious
+s
 6, 2, 30
 
 57skill
--Microphone 
+Microphone 
 The user is able to use a microphone which will do damage to the opponent
 1
 20
-Duration
+d
 4, 2, 25
 
 58skill
--Stomp
+Stomp
 The user steps on you very strongly 
 1
 25
-Nothing 
+n
 4, 2, 25
 
 59skill
--Newspaper Hit 
+Newspaper Hit 
 This skills enables the user to attack with newspaper
 1
 25
-Nothing 
+n
 4, 1, 25
 
 60skill
--Shout
+Shout
 Smiliar to microphone but there shouts at you without the microphone
 1
 30
-Duration
+v
 5, 0, 25
 
 61skill
--Self Defence Blind 
+Self Defence Blind 
 It permits the user to defend himself with a blind
 0
 15
-Nothing 
+n
 3, 5, 25 
 
 62skill
--Venom
+Venom
 The user throws venom
 1
 15
-Duration
+d
 2, 3, 25
 
 63skill
--Clamp
+Clamp
 The user attack you with a Clamp
 1
 20
-Nothing
+n
 3, 5, 20
 
 64skill
--Wings
+Wings
 it allows the user to protect its self creating a shield
 0
 15
-Nothing
+n
 2, 3, 25
 
 65skill
--Double
+Double
 The user make twice the damage in that hit
 1
 30
-Nothing
+n
 2, 5, 30
 
 100skill
--None
+None
 None
 0
 0
-Nothing
+n
 0, 0, 0
