@@ -21,6 +21,7 @@ typedef struct { //Our data stucture for the skills
     char mod;
     int stats_plyr[3]; //dmg(0), def(1), hp(2)
     /*int dmg_plyr; 1-2       int def_plyr; 0 - 8       int hp_plyr; 25 - 50 */
+    int skill_number;
 } Skill;
 
 typedef struct{ //This is our data structures for the character
