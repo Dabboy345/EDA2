@@ -63,5 +63,19 @@ typedef struct{
 typedef struct{
     Decision *start;
     Decision *end;
-    int decions_added;
+    int decisions_added;
 }Scenario;
+
+typedef struct{
+    Character main;
+    Decision last_descion;
+}Save_game;
+
+typedef struct{
+    int max;
+    int n;
+    char chr;
+    int temp;
+}Mod;
+
+#endif

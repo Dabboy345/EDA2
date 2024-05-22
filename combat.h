@@ -3,6 +3,6 @@
 #include "common.h"
 #include "queue.h"
 
-//int combat(Character *plyr, Enemy *enmy, int size);
+int combat(Character *plyr, Enemy *enmy, int size);
 
 #endif

@@ -41,13 +41,18 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
     int max_hp_enmy = enmy->stats[2];
 
+    Mod def = {1,0,'d',0};
+    Mod heal = {1,0,'h',0};
+    Mod venom = {2,0,'v',3};
+    Mod stun = {1,0,'s',0};
+
     while(q!=NULL){
         print_enemy(enmy);
         printf("\n\n\n");//Print enemy?
         print_player(plyr);
         
 /////////////////////////////////////////////7
-
+    choose_skill:
         for(int j = 0; j<4; j++){printf("%d - %s",j+1, plyr->skill[j]);}
         printf("Choose skill: ");
         scanf("%d", &a);
@@ -56,13 +61,15 @@ int combat(Character *plyr, Enemy *enmy, int size){
 /////////////////////////////////////////////7
 
         int p_dmg = (plyr->skill[a].of_def)*(plyr->skill[a].dmg_skll + plyr->stats[0]);//Segmentation fault?
-        char def = 'd';
-        char heal = 'h';
-        if(plyr->skill[a].mod == def){
+        if(plyr->skill[a].mod == def.chr){
+            if(def.n==def.max){printf("You cannot use that hability again\n");goto choose_skill;}
             plyr->stats[1]+=plyr->skill[a].dmg_skll;
-        }else if(plyr->skill[a].mod == heal){
+            def.n++;
+        }else if(plyr->skill[a].mod == heal.chr){
+            if(heal.n==heal.max){printf("You cannot use that hability again\n");goto choose_skill;}
             plyr->stats[2]+=plyr->skill[a].dmg_skll;
             if(plyr->stats[2]>max_hp_plyr){plyr->stats[2]=max_hp_plyr;}
+            heal.n++;
         }
 
         if(enmy->stats[1]>0){
@@ -100,7 +107,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
         }  
 
         dequeue(q);
-        printf("\n-_------____----_____---------_____--_____------_____---_____\n");
+        printf("%d turns remaining\n", q->elements);
     }
     
     

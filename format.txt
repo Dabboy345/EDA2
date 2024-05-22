@@ -1,12 +1,12 @@
-Option 1.
+1node
 Description  //Si no hay nada se deja en blaco
 Pre_text    //Si no hay nada se deja en blaco
-Enemay_name: stat1, stat2, stat3, numberskill1, numberskill2, numberskill3, numberskill4  //si no hay enemy poned no enemy
+Enemy_name: stat1, stat2, stat3, numberskill1, numberskill2, numberskill3, numberskill4  //si no hay enemy poned no enemy
 Post_text  //Si no hay nada se deja en blaco
-Option Numer. mm 
-Option Number. mm
+- mm 
+- mm
 
-Option 2.
+
 Description
 Pre_text
 Enemay_name: stat1, stat2, stat3, numberskill1, numberskill2, numberskill3, numberskill4 

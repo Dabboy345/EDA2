@@ -270,7 +270,141 @@ The user make twice the damage in that hit
 n
 2, 5, 30
 
+66skill
+Peper spray
+The user throws spray and make you blind during some time
+1
+15
+d
+2, 3, 25
 
+67skill
+Backflip
+It allows the user to scape a hit
+0
+15
+n
+1, 5, 25
+
+68skill
+Belt
+The user hits with a belt
+1
+25
+n
+2, 5, 30
+
+69skill
+bite
+The user bites you 
+1
+25
+n
+2, 5, 25
+
+70skill 
+Jump
+The user jumps at you throwing you to the ground
+1
+20
+n
+2, 3, 25
+
+71skill
+claws
+The user attacks you with its claws
+1
+15
+n
+1, 3, 25
+
+72skill
+glass bottle
+The user attacks with a broken glass bottle
+1
+25
+n
+2, 5, 30
+
+73skill
+Punch
+Punch enables attacker to throw punch at you and deal damage
+1
+25
+n
+2, 2, 30
+
+74skill
+Fall
+The user falls on you very strongly 
+1
+25
+n
+4, 2, 25
+
+75skill
+Stink
+The user stincks very badlly affecting you during some time
+1
+15
+d
+2, 3, 25
+
+76skill
+root
+The root of the plant sorrounds you chocking you
+1
+25
+n
+2, 3, 25
+
+77skill
+grow
+The plant regenerates itself and it recuperates hp
+0
+10
+r
+2, 3, 40
+
+78skill
+Camouflage
+The user camouflages and can't be seen
+0
+15
+n
+3, 5, 25
+
+79skill
+bomb
+The user throws a bomb from above
+1
+25
+s
+2, 5, 30
+
+80skill
+Flash 
+The user is able to activate a flash that blinds the user 
+1
+20
+d
+4, 2, 25
+
+81skill
+sticky
+The user throws balls that limit your movements
+1
+20
+s
+2, 3, 25
+
+82skill
+spikes
+the user trows spikes
+1
+20
+n
+2, 5, 25
 
 100skill
 None

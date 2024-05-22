@@ -2,7 +2,7 @@
 #define _RPGGAME_H_
 
 #include "common.h"
-#include "queue.h"
+#include "prints.h"
 
 void try_skill(Skill *skll);
 
@@ -10,14 +10,19 @@ void get_skill(Skill *skill, int n);
 
 Character* create_character(Skill *skills);
 
-void combat(Character *plyr, Enemy *enmy, int size);
+void put_enemy_info(char *line, Enemy *boss);
 
-Node* get_node(int i, Node* node);
+void get_info_decision(Decision *choice, int node_number, char *filename_txt);
 
-Node *create_node();
+Decision *create_desicion();
 
-void add_Node_right( Node *root/*We could other valrable*/);
+Scenario *create_inizialize_Scenario();
 
-void add_Node_left(Node *root);
+//Function to add a Decision to the Scenario
+void addDecisionToScenario(Scenario *scenario, Decision *decision);
+
+void *go_to_node_select_and_add(int node,char *filename,Scenario *scene);
+
+void freeScenario(Scenario *scenario);
 
 #endif  

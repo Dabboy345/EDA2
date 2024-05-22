@@ -1,135 +1,114 @@
-City World
+
+1node
 You are waking up, feeling dizzy and disoriented. You recognise the room however everything feels different. When you look out the window, the city is almost empty, the tall buildings surrounding you look old and a little destroyed, the few people that are in the streets have some mutations, giant people, angrier, parts of the body modified… After observing all this you feel more disoriented than before, but you can’t stay in that room for long.
 
-Option 1.
-
-
 no enemy
-Your first decision
-What would you like to do?
+Your first decision, What would you like to do?
 2. Search for food
 3. Search Information
 
-Option 2.
+2node
 
 You decide to grab the food while the seller is distracted
-Seller: 
-Now that you have eaten
-What do you want do?
+Seller: 50, 51, 52, 53
+Now that you have eaten, what do you want do?
 4. Go to the center, you will know what is happening
 5. Go to a mall, as it usually is a big place with a lot of resources
 
-Option 3.
+3node
 
 You rob a newspaper but you encounter a big man who is the seller
-Big seller: (Stomp, Newspaper Hit, Shout “Duration”, Self-defense blind). 
-You read the newspaper "Celebrating 100th anniversary of radioactive rain in the center". There are group people going to the center. 
-What would you like to do?
+Big seller: 58, 59, 60, 61 
+You read the newspaper "Celebrating 100th anniversary of radioactive rain in the center". There are group people going to the center. What would you like to do?
 6. Search for the food 
 7. Follow the crowd of people to the center
 
-Option 4.
-
+4node
 Going to the center of the city, a person sees that you are wearing a good jacket so they go to steal it. 
-Thief: ( knife, pepper spray ”duration”, backflip “defensive”, belt).
-After surviving this attack you realise that not many people can be trusted
-What do you do now?
+Thief: 55, 66, 67, 68
+After surviving this attack you realise that not many people can be trusted. What do you do now?
 8. You go to a bar with TV 
 9. You escape to a tall building to see the city
 
-Option 5.
-
+5node
 You go to the mall, as it usually is a big place with a lot of resources. You enter and there is nobody there, suddenly you see a dangerous looking dog in front of you 
-Dog: (bite, jump, venom “duration”, claws). 
-After this attack, you can figure out that animals aren't exactly how you used to know them
-What do you want to do now?
+Dog: 69, 70, 62, 71
+After this attack, you can figure out that animals aren't exactly how you used to know them. What do you want to do now?
 10. You decide to leave and explore the city 
 11. You get inside a hotel to rest 
 
-Option 6.
-
+6node
 You decide to grab the food while the seller is distracted 
-Seller: (Stick, denture “recharge”, Carnivorous Plant, Life medicine). 
-Now you have eaten
-What do you do now?
+Seller: 50, 51, 52, 53 
+Now you have eaten. What do you do now?
 12. You see a person and follow them
 10. You decide to leave and explore the city
 
-Option 7. 
-
+7node
 Going to the center of the city, a person sees that you are wearing a good jacket so they go to steal it. 
-Thief: ( knife, pepper spray ”duration”, backflip “defensive”, belt). 
-After surviving this attack you realise that not many people can be trusted
-What do you do now?
+Thief: 55, 66, 67, 68 
+After surviving this attack you realise that not many people can be trusted. What do you do now?
 13. You go to a restaurant
 9. You escape to a tall building to see the city
 
-Option 8. 
+8node 
 
 You go inside a bar to see what are the news saying in the TV, you ask the bartender to turn up the volume, and a drunk men gets angry with you 
-Drunk man: (glass bottle, stink”defensive”, punch, fall). 
-After surviving so many obstacles you need a secure place and some answers
-What do you want to do?
+Drunk man: 72, 75, 73, 74  
+After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 14. You ask a person to explain what is really happening
 15. You go inside a safe venue
 
-Option 9. 
+9node 
 
 You go into the building, once you reach the roof to look at the hole city you feel something touch your arm, as you turn around there is a carnivorous plant 
-Plant: (root, leave, grows “defensive”, camouflage). 
-After surviving so many obstacles you need a secure place and some answers
-What do you want to do?
+Plant: 76, 52, 77, 78
+After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 14. You ask a person to explain what is really happening
 15. You go inside a safe venue
 
-Option 10. 
+10node
 
 You decide to go explore the streets of the city, when you hear a gentile noise from a possible machine, you look up and there is a drone above your head 
-Drone: (bomb, strong wind, flash “duration”,  fly to you).
-After surviving so many obstacles you need a secure place and some answers
-What do you want to do?
+Drone: 79, 60, 80, 74
+After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 14. You ask a person to explain what is really happening
 15. You go inside a safe venue
 
-Option 11.
+11node
 
 You go inside a hotel in order to rest and try to recover, but you see a figure inside that doesn’t have a form, his body is made of a slimy matter 
-Slipy: (slip(through places), venom, balls, sticky)
-After surviving so many obstacles you need a secure place and some answers
-What do you want to do?
+Slipy: 78, 62, 79, 81
+After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 14. You ask a person to explain what is really happening
 15. You go inside a safe venue
 
-Option 12. 
+12node
 
 You are following this person to see if you discover something, suddenlly the figure of that person disappears and turns into a bunch of small creatures that start running to you 
-Small creatures: (spikes, bite, fusion, fast)
-After surviving so many obstacles you need a secure place and some answers
-What do you want to do?
+Small creatures: 82, 69, 65, 64
+After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 14. You ask a person to explain what is really happening
 15. You go inside a safe venue
 
-Option 13.
+13node
 
 You go inside a restaurant to eat, and drunk man tries to steal your food 
-Drunk man: (glass bottle, stink”defensive”, punch, fall)
-After surviving so many obstacles you need a secure place and some answers
-What do you want to do?
+Drunk man: 72, 75, 73, 74
+After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 14. You ask a person to explain what is really happening
 15. You go inside a safe venue
 
-Option 14.
+14node
 
 You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious. 
-(Punch, Knife “unconscious”,  Microphone” Duration”) 
-Now you know what is happening, it starts to rain acid rain, and your feet start hurting
-Final move
+suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting. Final move
 16. Go to the next scenario 
 
-Option 15. 
+15node
 
 You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
-Giant insect: (venom(duration), clamp, wings (defense), division).
-You fall into the ground exhausted. 
-Final move
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
 16. Go to the next scenario

@@ -104,27 +104,32 @@ Character* create_character(Skill *skills){
 }
 
 
-
-/*void put_enemy_info(char *line, Enemy *boss) {
-    if (strcmp(line, "no enemy") == 0) {
+void put_enemy_info(char *line, Enemy *boss) {
+    if (strcmp(line, "no enemy\n") == 0 || strcmp(line, "no enemy") == 0) {
+        strcpy(boss->name, "None");
+        for (int i = 0; i < 3; i++) {
+            boss->stats[i] = 0;
+        }
         for (int i = 0; i < MAX_SKILL; i++) {
-            get_skill(&boss->skill[i], 100);  
+            get_skill(&boss->skill[i], 100);
         }
         return;
     }
-    char buffer[MAX_TXT];//We create a copy of our string to manipulate by spliting the string
+
+    char buffer[MAX_TXT]; // Create a copy of the string to manipulate by splitting the string
     int list_n_skills[4];
     strcpy(buffer, line);
 
-    char *token = strtok(buffer, ":"); //Enemy name, strtoken helps us to split the string
+    char *token = strtok(buffer, ":"); // Enemy name, strtok helps us to split the string
     if (token != NULL) {
-        strcpy(boss->name,token);
+        strcpy(boss->name, token);
     }
+
     // Get the stats
     for (int i = 0; i < 3; i++) {
         token = strtok(NULL, ",");
         if (token != NULL) {
-            boss->stats[i] = atoi(token); //Convesion of char to int with atoi 
+            boss->stats[i] = atoi(token); // Conversion of char to int with atoi
         }
     }
 
@@ -138,86 +143,85 @@ Character* create_character(Skill *skills){
     }
 }
 
-
-void get_info(Node *root, int a){
-    FILE *fp = fopen("scenario.txt", "r");
+void get_info_decision(Decision *choice, int node_number, char *filename_txt) {
+    FILE *fp = fopen(filename_txt, "r");
     if (fp == NULL) {
-        printf("Cannot open the file\n");
+        printf("Error opening the file\n");
         return;
     }
-    int current_section = 0;
-    char line[MAX_TXT];
-    // Loop until we find the desired section
-    while (fgets(line, MAX_TXT, fp)) {
-        if (isdigit(line[0])) {
-            sscanf(line, "%d.", &current_section);
-            if (current_section == a) {
-                break;
-            }
+    int a;
+    char buffer[MAX_TXT];
+    while(!feof(fp)){
+        fscanf(fp, "%dnode\n", &a);
+        fgets(choice->option.description, MAX_TXT,fp);
+        fgets(choice->option.pre_txt, MAX_TXT,fp);
+        fgets(buffer, MAX_TXT,fp);
+        put_enemy_info(buffer, &choice->option.enemy);
+        fgets(choice->option.post_txt,MAX_TXT,fp);
+        fgets(choice->option.option1,MAX_TXT,fp);
+        fgets(choice->option.option2,MAX_TXT,fp);
+        if(node_number == a){
+            fclose(fp);
+            return;
         }
     }
-    // If the desired section wasn't found
-    if (current_section != a) {
-        printf("Section %d not found\n", a);
-        fclose(fp);
-        return;
-    }
-    // Read the necessary lines from the file
-    fgets(root->option.description, MAX_TXT, fp);
-    fgets(root->option.pre_txt, MAX_TXT, fp);
-    
-    fgets(line, MAX_TXT, fp);
-    put_enemy_info(line, &root->option.enemy);
-
-    fgets(root->option.post_txt, MAX_TXT, fp);
-    fgets(root->descions.question_txt, MAX_TXT, fp);
-    fgets(root->descions.option[0].description, MAX_TXT, fp);
-    fgets(root->descions.option[1].description, MAX_TXT, fp);
-
-    fclose(fp);
 }
 
 
-Scenario *create_ini_scenario() {
+Decision *create_desicion(){
+    Decision *new_decision = (Decision*)malloc(sizeof(Decision));
+    if (new_decision == NULL) {
+        printf("Memory allocation failed\n");
+        return NULL;
+    }
+    new_decision->next = NULL;
+    return new_decision;
+}
+
+Scenario *create_inizialize_Scenario(){
     Scenario *scene = (Scenario*)malloc(sizeof(Scenario));
-    if (scene == NULL) {
-        printf("Memory allocation failed\n");
-        return NULL;
-    }
-    scene->start = (Node*)malloc(sizeof(Node));
-    if (scene->start == NULL) {
-        printf("Memory allocation failed\n");
-        free(scene);
-        return NULL;
-    }
-    scene->start->next = NULL;
-    scene->end = scene->start;
+    scene->start = NULL;
+    scene->end = NULL;
     return scene;
 }
 
-void free_node(Node *node) {
-    if (node != NULL) {
-        free(node);
+
+//Function to add a Decision to the Scenario
+void addDecisionToScenario(Scenario *scenario, Decision *decision) { //Function to add a decion to the scenario
+    if (scenario->start == NULL) {
+        scenario->start = decision;
+        scenario->end = decision;
+    } else {
+        scenario->end->next = decision;
+        scenario->end = decision;
     }
+    scenario->decisions_added++;
 }
 
-void free_scenario(Scenario *scene) {
-    if (scene == NULL) {
-        return;
-    }
+void *go_to_node_select_and_add(int node,char *filename,Scenario *scene){
+    Decision *test = create_desicion();
+    get_info_decision(test, node, filename);
+    addDecisionToScenario(scene, test);
+    print_decision(test);
+}
 
-    Node *current = scene->start;
-    Node *next;
+void freeScenario(Scenario *scenario) { //Function to free the scenario
+    Decision *current = scenario->start;
+    Decision *next;
 
-    // Traverse the linked list and free each node
     while (current != NULL) {
         next = current->next;
-        free_node(current);
+        free(current);
         current = next;
     }
 
-    // Free the Scenario structure itself
-    free(scene);
-} */
+    scenario->start = NULL;
+    scenario->end = NULL;
+    scenario->decisions_added = 0;
+}
+
+void is_terminal(){
+    
+}
 
 
