@@ -161,6 +161,7 @@ void get_info_decision(Decision *choice, int node_number, char *filename_txt) {
         fgets(choice->option.option1,MAX_TXT,fp);
         fgets(choice->option.option2,MAX_TXT,fp);
         if(node_number == a){
+            choice->node_number = node_number;
             fclose(fp);
             return;
         }

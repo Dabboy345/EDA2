@@ -9,23 +9,23 @@ Your first decision, What would you like to do?
 
 2node
 You decide to grab the food while the seller is distracted
-pretext
-Seller: 50, 51, 52, 53
+Fight
+Seller: 10, 10, 10, 50, 51, 52, 53
 Now that you have eaten, what do you want do?
 - Go to the center, you will know what is happening
 - Go to a mall, as it usually is a big place with a lot of resources
 
 3node
 You rob a newspaper but you encounter a big man who is the seller
-pretext
-Big seller: 58, 59, 60, 61 
+Fight
+Big seller: 10, 10, 10, 58, 59, 60, 61 
 You read the newspaper "Celebrating 100th anniversary of radioactive rain in the center". There are group people going to the center. What would you like to do?
 - Search for the food 
 - Follow the crowd of people to the center
 
 4node
 Going to the center of the city, a person sees that you are wearing a good jacket so they go to steal it. 
-pretext
+Fight
 Thief: 55, 66, 67, 68
 After surviving this attack you realise that not many people can be trusted. What do you do now?
 - You go to a bar with TV 
@@ -33,6 +33,7 @@ After surviving this attack you realise that not many people can be trusted. Wha
 
 5node
 You go to the mall, as it usually is a big place with a lot of resources. You enter and there is nobody there, suddenly you see a dangerous looking dog in front of you 
+Fight
 Dog: 69, 70, 62, 71
 After this attack, you can figure out that animals aren't exactly how you used to know them. What do you want to do now?
 - You decide to leave and explore the city 
@@ -40,6 +41,7 @@ After this attack, you can figure out that animals aren't exactly how you used t
 
 6node
 You decide to grab the food while the seller is distracted 
+
 Seller: 50, 51, 52, 53 
 Now you have eaten. What do you do now?
 - You see a person and follow them

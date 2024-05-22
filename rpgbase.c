@@ -23,14 +23,32 @@ void new_game(){//Our new game function
 
 
     /*Scenario *scene = create_inizialize_Scenario();
-    go_to_node_select_and_add(2,"scenario1.txt",scene);
+    go_to_node_select_and_add(1,"scenario1.txt",scene);
     Decision temporary_checker;
     saveLastDecisionData(scene, &temporary_checker);
     int a;
-    while(!is_terminal(&temporary_checker)){
+    int option_selected;
+    do{
         a= get_valid_input();
-        break;
-    }*/
+        switch(a){
+            case 1:
+                option_selected = (temporary_check.node_number) *2;
+                go_to_node_select_and_add(option_selected,"scenario.txt",scene);
+                saveLastDecisionData(scene, &temporary_checker);
+            case 2:
+                option_selected = (temporary_check.node_number) *(2+1);
+                go_to_node_select_and_add(option_selected,"scenario.txt",scene);
+                saveLastDecisionData(scene, &temporary_checker);
+            case 3:
+
+            case 4:
+
+        }
+    }while(is_terminal(&temporary_checker)!=0)
+    printf("You have the scenario\n");
+    printf("Thanks for playing our game\n");
+    freeScenario(scene);*/
+
     Enemy* e = (Enemy*)malloc(sizeof(Enemy));
     char line[] = "Seller: 5, 10, 150, 50, 51, 52, 53";
     put_enemy_info(line , e);
