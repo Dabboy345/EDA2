@@ -12,26 +12,29 @@ void new_game(){//Our new game function
 
     Character *plyr = create_character(skill);
 
-    Enemy* e = (Enemy*)malloc(sizeof(Enemy));
-    char s[MAX_NAME];
+    
+    /*char s[MAX_NAME];
     scanf("%s", e->name);
     e->stats[0]=5;
     e->stats[1]=10;
     e->stats[2]=150;
-    for(int i=0; i<4;i++){get_skill(&e->skill[i], 50+i);}
-    combat(plyr, e, 10);
+    for(int i=0; i<4;i++){get_skill(&e->skill[i], 50+i);}*/
+
 
 
     /*Scenario *scene = create_inizialize_Scenario();
-    go_to_node_select_and_add(1,"scenario1.txt",scene);
-    Descion temporary_checker;
+    go_to_node_select_and_add(2,"scenario1.txt",scene);
+    Decision temporary_checker;
     saveLastDecisionData(scene, &temporary_checker);
     int a;
-    while(!is_terminal(&temporary checker)){
+    while(!is_terminal(&temporary_checker)){
         a= get_valid_input();
-        
-    }
-    */
+        break;
+    }*/
+    Enemy* e = (Enemy*)malloc(sizeof(Enemy));
+    char line[] = "Seller: 5, 10, 150, 50, 51, 52, 53";
+    put_enemy_info(line , e);
+    combat(plyr, e, 20);
 
 }
 
@@ -64,7 +67,6 @@ int main(){
         case 4:
             exit_game();
             break;
-
     }
 }
 

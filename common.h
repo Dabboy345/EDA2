@@ -9,7 +9,7 @@
 #include <stdbool.h> //Libary which enabels us to work with booleans
 
 #define MAX_NAME 50 
-#define MAX_TXT 300 
+#define MAX_TXT 350 
 #define MAX_SKILL 4
 #define MAX_DECISIONS 20
 

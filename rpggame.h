@@ -29,5 +29,10 @@ void saveLastDecisionData(Scenario* scenario, Decision* tempDecision);
 
 int is_terminal(Decision *scene);
 
+int get_valid_input();
+
+
+
+
 
 #endif  

@@ -1,30 +1,31 @@
 
 1node
-You are waking up, feeling dizzy and disoriented. You recognise the room however everything feels different. When you look out the window, the city is almost empty, the tall buildings surrounding you look old and a little destroyed, the few people that are in the streets have some mutations, giant people, angrier, parts of the body modified… After observing all this you feel more disoriented than before, but you can’t stay in that room for long.
-
+You are waking up, feeling dizzy and disoriented. You recognise the room however everything feels different. 
+When you look out the window, the city is almost empty, the tall buildings surrounding you look old and a little destroyed, the few people that are in the streets have some mutations, giant people, angrier, parts of the body modified… After observing all this you feel more disoriented than before, but you can’t stay in that room for long.
 no enemy
 Your first decision, What would you like to do?
-2. Search for food
-3. Search Information
+- Search for food
+- Search Information
 
 2node
-
 You decide to grab the food while the seller is distracted
+pretext
 Seller: 50, 51, 52, 53
 Now that you have eaten, what do you want do?
-4. Go to the center, you will know what is happening
-5. Go to a mall, as it usually is a big place with a lot of resources
+- Go to the center, you will know what is happening
+- Go to a mall, as it usually is a big place with a lot of resources
 
 3node
-
 You rob a newspaper but you encounter a big man who is the seller
+pretext
 Big seller: 58, 59, 60, 61 
 You read the newspaper "Celebrating 100th anniversary of radioactive rain in the center". There are group people going to the center. What would you like to do?
-6. Search for the food 
-7. Follow the crowd of people to the center
+- Search for the food 
+- Follow the crowd of people to the center
 
 4node
 Going to the center of the city, a person sees that you are wearing a good jacket so they go to steal it. 
+pretext
 Thief: 55, 66, 67, 68
 After surviving this attack you realise that not many people can be trusted. What do you do now?
 - You go to a bar with TV 

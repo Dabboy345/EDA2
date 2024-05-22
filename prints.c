@@ -54,8 +54,8 @@ void print_decision(Decision *choice) {
                choice->option.enemy.skill[3]);
     }
     printf("%s\n", choice->option.post_txt);
-    printf("%s\n", choice->option.option1);
-    printf("%s\n", choice->option.option2);
+    printf("1.%s\n", choice->option.option1);
+    printf("2.%s\n", choice->option.option2);
 }
 
 void print_menu_option(){
