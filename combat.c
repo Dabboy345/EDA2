@@ -26,6 +26,8 @@ void print_player(Character* p){
     printf("\n________________________________________________________________________________\n");
 }
 
+/////////////////////////////////////////////7
+
 int combat(Character *plyr, Enemy *enmy, int size){
     Queue* q = init_queue(size);
     for(int i = 0; i<size; i++){
