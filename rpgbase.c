@@ -10,25 +10,28 @@ void new_game(){//Our new game function
         get_skill(&skill[i], i);
     }
 
-    //Character *plyr = create_character(skill);
+    Character *plyr = create_character(skill);
 
-    /*Enemy* e = (Enemy*)malloc(sizeof(Enemy));
+    Enemy* e = (Enemy*)malloc(sizeof(Enemy));
     char s[MAX_NAME];
     scanf("%s", e->name);
-    //for(int i=0; i<3;i++){e->stats[i]=10;}
     e->stats[0]=5;
     e->stats[1]=10;
     e->stats[2]=150;
     for(int i=0; i<4;i++){get_skill(&e->skill[i], 50+i);}
-    combat(plyr, e, 10);*/
+    combat(plyr, e, 10);
 
 
-    Scenario *scene = create_inizialize_Scenario();
+    /*Scenario *scene = create_inizialize_Scenario();
     go_to_node_select_and_add(1,"scenario1.txt",scene);
-    // while(!is_terminal()){
-    //     scanf("")
-    // }
-
+    Descion temporary_checker;
+    saveLastDecisionData(scene, &temporary_checker);
+    int a;
+    while(!is_terminal(&temporary checker)){
+        a= get_valid_input();
+        
+    }
+    */
 
 }
 

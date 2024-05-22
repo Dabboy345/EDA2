@@ -43,7 +43,7 @@ Fire
 User can attack you with fire
 1
 30
-n
+v
 2, 2, 15,
 
 6skill
@@ -171,7 +171,7 @@ Life Medicine
 Life medicine adds some points to your health points
 0
 10
-n
+h
 3, 4, 45
 
 54skill

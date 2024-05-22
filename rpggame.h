@@ -25,4 +25,9 @@ void *go_to_node_select_and_add(int node,char *filename,Scenario *scene);
 
 void freeScenario(Scenario *scenario);
 
+void saveLastDecisionData(Scenario* scenario, Decision* tempDecision);
+
+int is_terminal(Decision *scene);
+
+
 #endif  

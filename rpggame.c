@@ -220,8 +220,59 @@ void freeScenario(Scenario *scenario) { //Function to free the scenario
     scenario->decisions_added = 0;
 }
 
-void is_terminal(){
+void saveLastDecisionData(Scenario* scenario, Decision* tempDecision) {// Function to save the data of the last decision in the scenario linked list, this will be used for the function is terminal
+    // Check if the scenario is valid and not empty
+    if (scenario == NULL || scenario->start == NULL || tempDecision == NULL) {
+        return;
+    }
+
+    // Initialize a pointer to traverse the list
+    Decision* current = scenario->start;
+
+    // Traverse the list until we reach the last node
+    while (current->next != NULL) {
+        current = current->next;
+    }
+
+    // Copy the data from the last decision to the temporary decision variable
+    *tempDecision = *current;
+}
+
+int is_terminal(Decision *scene) { // This function will check if a node is an end node or not
+    if (scene == NULL) { 
+        return 0; // If the scene is NULL, it's not a valid end node
+    }
+
+    int a = strcmp(scene->option.option1, "- end node");
+    int b = strcmp(scene->option.option2, "- end node");
     
+    if (a == 0 && b == 0) {
+        return 1; // The node is an end node the both options description is "- end node"
+    } else {
+        return 0; // The node is not an end node
+    }
 }
 
 
+
+int get_valid_input() {
+    int a;
+    int valid = 0;
+
+    while (!valid) { //if valid is 1 it is true and then the while will stop
+        print_menu_option();
+        printf("Your choice: ");
+        
+        if (scanf("%d", &a) != 1) {
+            // Clear the invalid input
+            while (getchar() != '\n'); // Discard invalid input until a newline is found
+            printf("Invalid input. Please enter a number between 1 and 4.\n");
+        } else if (a != 1 && a != 2 && a != 3 && a != 4) {
+            printf("Please enter a valid option (1, 2, 3, or 4).\n");
+        } else {
+            valid = 1; // Valid input received
+        }
+    }
+
+    return a;
+}

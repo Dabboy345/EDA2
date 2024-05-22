@@ -55,11 +55,6 @@ typedef struct{
 }Decision;
 //question text, options, number of options
 
-// typedef struct _Node { //This is our node
-//     Option option;
-//     Decision descions;
-//     struct _Node *next;
-// }Node;
 typedef struct{
     Decision *start;
     Decision *end;
