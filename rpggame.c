@@ -39,6 +39,7 @@ void get_skill(Skill *skill, int n){
         skill->mod = fgetc(fp);
         for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
         if(n==a){
+            skill->skill_number = a;
             /*printf("\n");
             printf("_______________%s\n", skill->name);
             printf("%s\n", skill->description);
