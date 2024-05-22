@@ -31,8 +31,10 @@ int is_terminal(Decision *scene);
 
 int get_valid_input();
 
+int get_last_node_numeber(Scenario *scenario);
 
 
+void save_game(Scenario *scene, Character *character);
 
 
 #endif  

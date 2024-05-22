@@ -278,3 +278,44 @@ int get_valid_input() {
 
     return a;
 }
+
+int get_last_node_numeber(Scenario *scenario) {
+    if (scenario == NULL || scenario->start == NULL) {
+        return -1; // Indicate error if the scenario is NULL or empty
+    }
+
+    Decision *current = scenario->start; //Traverse the list until we find the last node
+    while (current->next != NULL) {
+        current = current->next;
+    }
+
+    return current->node_number;//Return the node number
+}
+
+
+void save_game(Scenario *scene, Character *character){
+    char buffer[MAX_NAME]; //to save the name of the file
+    Decision lastdescion;
+    FILE *fp = fopen(buffer,"w");
+    if (fp==NULL){
+        printf("Error saving the file\n");
+        return;
+    }
+    fprintf(fp,"%s\n",character->name);
+    fprintf(fp, "%d\n", character->skill[0].skill_number);
+    fprintf(fp, "%d\n", character->skill[1].skill_number);
+    fprintf(fp, "%d\n", character->skill[2].skill_number);
+    fprintf(fp, "%d\n", character->skill[3].skill_number);
+    int a = get_last_node_numeber(scene);
+    if( a != -1){
+        fprintf(fp, "%d\n", a);
+        printf("File Saved Sucesfully\n");
+        return;
+    }
+    else {
+        printf("Error saving the file\n");
+        fclose(fp);
+        return;
+    }
+
+}
