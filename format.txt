@@ -8,6 +8,9 @@ Post_text  //Si no hay nada se deja en blaco
 
 Save_game format
 Name_character
+stat1
+stat2
+stat3
 Skill_number1
 Skill_number2
 Skill_number3
