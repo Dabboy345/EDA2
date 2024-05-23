@@ -409,3 +409,82 @@ void load_game_and_play(){
 
 
 }
+
+// order skills
+// Utility function to swap two Skill structures
+void swap(Skill* p1, Skill* p2) {
+    Skill temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+
+// Partition function for quicksort
+int partition(Skill arr[], int low, int high) {
+    // Choose the pivot as the damage value of the high element
+    int pivot = arr[high].dmg_skll;
+    int i = low - 1;
+
+    for (int j = low; j <= high - 1; j++) {
+        // If the current element's damage is greater than the pivot
+        if (arr[j].dmg_skll > pivot) {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+
+// Quicksort function for Skill array
+void quickSort(Skill arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+// Function to read skills from a file and sort them by damage
+void order_skills_dmg() {
+    // Open the file
+    FILE *fp = fopen("list_character_skill.txt", "r");
+    if (fp == NULL) {
+        printf("Error opening the file\n");
+        return;
+    }
+
+    // Read skills into an array
+    Skill skills[100]; // Assume there are at most 100 skills
+    int count = 0;
+
+    while (!feof(fp) && count < 100) {
+        fscanf(fp, "%*dskill\n"); // Skip skill number in the file
+        fgets(skills[count].name, MAX_NAME, fp);
+        fgets(skills[count].description, MAX_TXT, fp);
+        fscanf(fp, "%d\n%d\n", &skills[count].of_def, &skills[count].dmg_skll);
+        skills[count].mod.chr = fgetc(fp);
+        for (int i = 0; i < 3; i++) {
+            fscanf(fp, "%d,", &skills[count].stats_plyr[i]);
+        }
+        fgetc(fp); // To consume the newline character
+        count++;
+    }
+    fclose(fp);
+
+    // Sort the skills by damage
+    quickSort(skills, 0, count - 1);
+
+    // Print sorted skills
+    printf("Sorted skills by damage:\n");
+    for (int i = 0; i < count; i++) {
+        printf("Name: %s", skills[i].name);
+        printf("Description: %s", skills[i].description);
+        printf("Damage: %d\n", skills[i].dmg_skll);
+        printf("---------------------------\n");
+    }
+}
+
+/*int main() {
+    order_skills_dmg();
+    return 0;
+}*/

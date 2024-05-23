@@ -40,4 +40,19 @@ Now you can look through the files and fotos and you discover that they have bee
 - Take the files and try to free the animals that haven allready been modified.
 
 6node
+You go to the investigation room, it seems to be empty, however there are a lot of files and fotos at the table.
+While you are going to grab the files someone grabs you and throws you to the ground. This person is wearing a white coat and looks bigger than a normal person
+white coat: ()
+Now you can look through the files 
+- 
+- 
+
+7node
+You enter to the room where your friend is, he is conected to a lot of cables, just like you where. All this cables are connected to screen where you can see the medieval world that you where a while ago.
+You disconect him, and he starts to wake up.
+No enemy
+You explain him the situation that you are in, but now you can't stay in that room for long or someone will discover you. What do you do?
+-
+-
+
 
