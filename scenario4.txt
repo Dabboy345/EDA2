@@ -35,4 +35,9 @@ You explain him the situation that you are in, but now you can't stay in that ro
 You arrive to the reunion room, it seems to be empty, however there are a lot of files and fotos at the table.
 While you are going to grab the files someone grabs you and throws you to the ground. This person is wearing a white coat and looks bigger than a normal person
 white coat: ()
+Now you can look through the files and fotos and you discover that they have been experimenting on animals with the resources that they have been taking from you and all the other subjects while you where at the simulation. What do you do now?
+- Look for the monkey that has allready been modified to have more proof.
+- Take the files and try to free as most subjects as you can.
+
+6node
 

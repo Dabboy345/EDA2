@@ -57,8 +57,8 @@ void load_game(){//Our load game function
 
 int main(){
     int a = 0;
-    print_menu();//We will print the menu
     while(a!=3){
+        print_menu();//We will print the menu
         a = get_valid_input(1,3);//We will ask the user what option would he like to choose
         switch(a){
             case 1:
