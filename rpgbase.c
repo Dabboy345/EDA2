@@ -21,7 +21,9 @@ void new_game(){//Our new game function
     int option_selected;
     do{
         print_menu_option();
+        printf("Your choice: ");
         a= get_valid_input(1, 4);
+        printf("\n");
         switch(a){
             case 1:
                 option_selected = (temporary_checker.node_number) *2;
