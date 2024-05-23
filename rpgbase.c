@@ -36,48 +36,40 @@ void new_game(){//Our new game function
                 saveLastDecisionData(scene, &temporary_checker);
                 break;
             case 3:
+                save_game(scene, plyr);
                 break;
             case 4:
+                goto exit;
                 break;
 
         }
         printf("\n_____________________________________________________\n");
     }while(is_terminal(&temporary_checker)==0);
-    printf("You have the scenario\n");
+    //printf("You have the scenario\n");
+    exit:
     printf("Thanks for playing our game\n");
     freeScenario(scene);
 }
 
-void save_game(){//Our save game function
-
-}
-
 void load_game(){//Our load game function
-    
-}
-
-void exit_game(){//Our exit game function 
-    
+    load_game_and_play();
 }
 
 int main(){
+    int a = 0;
     print_menu();//We will print the menu
-    int a;
-    scanf("%d", &a);//We will ask the user what option would he like to choose
-    switch(a){
-        case 1:
-            new_game();
-            break;
-        case 2:
-            save_game();
-            break;
-        case 3:
-            load_game();
-            break;
-        case 4:
-            exit_game();
-            break;
+    while(a!=3){
+        a = get_valid_input(1,3);//We will ask the user what option would he like to choose
+        switch(a){
+            case 1:
+                new_game();
+                break;
+            case 2:
+                load_game();
+                break;
+        }
     }
+    
 }
 
 

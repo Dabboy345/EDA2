@@ -1,8 +1,9 @@
 1node
-Description  //Si no hay nada se deja en blaco
-Pre_text    //Si no hay nada se deja en blaco
-Enemy_name: stat1, stat2, stat3, numberskill1, numberskill2, numberskill3, numberskill4  //si no hay enemy poned no enemy
-Post_text  //Si no hay nada se deja en blaco
+Description
+Pre_text
+Enemy_name: damage, defense, health, numberskill1, numberskill2, numberskill3, numberskill4
+//si no hay enemy poned "no enemy"
+Post_text
 - Option1desripton mm //Si es un nodo final poned (- end node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
 - Option2description mm //Si es un nodo final poned (- end node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
 

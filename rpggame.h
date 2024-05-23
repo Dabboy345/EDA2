@@ -33,7 +33,7 @@ int get_valid_input(int first, int size);
 
 int get_last_node_numeber(Scenario *scenario);
 
-void save_gamef(Scenario *scene, Character *character);
+void save_game(Scenario *scene, Character *character);
 
 void load_game_and_play();
 

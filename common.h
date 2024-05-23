@@ -67,11 +67,9 @@ typedef struct{
     Decision *start;
     Decision *end;
     int decisions_added;
+    char filename[MAX_NAME];
 }Scenario;
 
-/*typedef struct{
-    Character main;
-    Decision last_descion;
-}Save_game;*/
+
 
 #endif

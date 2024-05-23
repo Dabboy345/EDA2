@@ -56,7 +56,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
     while(q->elements>0){
         print_enemy(enmy);
-        printf("\n\n");//Print enemy?
+        printf("\n");//Print enemy?
         print_player(plyr);
         
 /////////////////////////////////////////////7
@@ -94,7 +94,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
         }else{
             enmy->stats[2]-= p_dmg;
             if(enmy->stats[2]<=0){enmy->stats[2]=0;
-            printf("You won the fight against %sCongratulations!\n", enmy->name);return 1;}//Return 1 = playr wins
+            printf("You won the fight against %s\nCongratulations!\n", enmy->name);return 1;}//Return 1 = playr wins
         }
         if(plyr->skill[a].of_def==1){printf("%s dealt %d damage to %s\n\n", plyr->name, p_dmg, enmy->name);}
         if(pvenom>0){printf("\n%s received %d of residual damage\n\n", enmy->name, plyr->stats[0]);pvenom--;}
@@ -105,7 +105,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
 /////////////////////////////////////////////7
 
         print_enemy(enmy);
-        printf("\n\n");//Print enemy?
+        printf("\n");//Print enemy?
         print_player(plyr);
 
 /////////////////////////////////////////////7
@@ -141,7 +141,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
         }else{
             plyr->stats[2]-= e_dmg;
             if(plyr->stats[2]<=0){plyr->stats[2]=0;
-            printf("You lost against %sTry again next time\n", enmy->name);return 2;}//Return 2 = Enemy wins
+            printf("You lost against %s\nTry again next time\n", enmy->name);return 2;}//Return 2 = Enemy wins
         }
         if(enmy->skill[b].of_def==1){
             printf("%s dealt %d damage to %s\n\n", enmy->name, e_dmg, plyr->name);

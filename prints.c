@@ -34,9 +34,8 @@ void print_menu(){//This will be the print function which will print the users m
     print_game_name();
     printf("\n");
     printf("1. NEW GAME\n");
-    printf("2. SAVE GAME\n");
-    printf("3. Load GAME\n");
-    printf("4. Exit GAME\n");
+    printf("2. Load GAME\n");
+    printf("3. Exit GAME\n");
 }
 
 
@@ -66,6 +65,6 @@ void print_menu_option(){
     printf("Please select the next options\n");
     printf("Press 1 for first option\n");
     printf("Press 2 for second option\n");
-    printf("If you want to save the progress and exit, Press 3\n");
-    printf("If you want to  exit, Press 4\n");
+    printf("Press 3 to save the progress\n");
+    printf("Press 4 to exit\n");
 }

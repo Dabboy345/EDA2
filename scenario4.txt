@@ -1,0 +1,38 @@
+
+1node
+You wake up, yet again, but this time you have a different feeling. You look around and you are in a hospital room, a bunch of cables are connected to your body. 
+Your instincts kick in and you disconnect all the cables and go to the door. What will happen this time?
+no enemy
+As you open the door there is an aisle full of rooms. Where do you go?
+- Go to the reception computers
+- Go to the control room (security cameras)
+
+2node
+You decide to go look at the computers of the reception. 
+As you aproach the computer the nurse that works there caughts you and tries to stop you.
+Nurse: (needle, punch, cable, knife)
+Looking at the computer you see a list of name in which you see the name of your best friend, but you also see the room where a reunion is happening. What are you going to do?
+- Go at your friends room
+- Go at the reunion to find out why are you there
+
+3node
+You enter the control room which is full of screens of the whole place.
+You start to look but the security guard that is there sees you and wants to kick you out.
+Security guard: (punch, knife, heals it self, ...)
+Now you have the room to yourself, as you look through the different cameras, you see your best firend in a room conected as you were, and a room with files and fotos. What do you do?
+- Go to your best friends room 
+- Go to the investigation room
+
+4node
+You enter to the room where your friend is, he is conected to a lot of cables, just like you where. All this cables are connected to screen where you can see the medieval world that you where a while ago.
+You disconect him, and he starts to wake up.
+No enemy
+You explain him the situation that you are in, but now you can't stay in that room for long or someone will discover you. What do you do?
+- Go investigate what they are doing in that hospital?
+- Leave the buling and try to investigate from outside
+
+5node
+You arrive to the reunion room, it seems to be empty, however there are a lot of files and fotos at the table.
+While you are going to grab the files someone grabs you and throws you to the ground. This person is wearing a white coat and looks bigger than a normal person
+white coat: ()
+

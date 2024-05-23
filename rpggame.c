@@ -303,25 +303,29 @@ int get_last_node_numeber(Scenario *scenario) {
 }
 
 
-void save_gamef(Scenario *scene, Character *character){
+void save_game(Scenario *scene, Character *character){
     char buffer[MAX_NAME]; //to save the name of the file
     Decision lastdescion;
-    FILE *fp = fopen(buffer,"w");
+    printf("Write the file name (finishing with .txt): ");
+    scanf("%s", buffer);
+    FILE *fp;
+    fp = fopen(buffer,"w");
     if (fp==NULL){
         printf("Error saving the file\n");
         return;
-    }
+    }   
     fprintf(fp,"%s\n",character->name);
     for(int i=0; i<3;i++){
-         fprintf(fp, "%d\n", character->stats[i]); //We save the stat that player had
+        fprintf(fp, "%d\n", character->stats[i]); //We save the stat that player had
     }
     for(int i=0;i<4;i++){
-         fprintf(fp, "%d\n", character->skill[i].skill_number); //We save the skill numbers
+        fprintf(fp, "%d\n", character->skill[i].skill_number); //We save the skill numbers
     }
     int a = get_last_node_numeber(scene);
     if( a != -1){
         fprintf(fp, "%d\n", a);
         printf("File Saved Sucesfully\n");
+        fclose(fp);
         return;
     }
     else {
@@ -335,29 +339,26 @@ void save_gamef(Scenario *scene, Character *character){
 void load_game_and_play(){
 
     Scenario *scene = create_inizialize_Scenario();
-    Character *main = (Character*)malloc(sizeof(Character));
+    Character *plyr = (Character*)malloc(sizeof(Character));
 
     char buffer[MAX_NAME];
-    scanf("Please put the filename with txt: ",buffer);
-    while(strlen(buffer)>MAX_NAME){
-        printf("You have put the file above the limit permited, please reduce it\n");
-        scanf("Please put the filename with txt: ",buffer);
-    }
+    printf("Please put the filename with .txt: ");
+    scanf("%s",buffer);
 
     FILE *fp = fopen(buffer,"r");
     if (fp==NULL){
         printf("Error loading the file information or file doesn't exist\n");
         return;
     }
-    fgets(main->name,MAX_NAME,fp);//We get the saved name
+    fscanf(fp, "%s\n", plyr->name);//We get the saved name
     for (int i = 0; i < 3; i++) { //We put the character stats
-        fscanf(fp, "%d\n", &main->stats[i]);
+        fscanf(fp, "%d\n", &plyr->stats[i]);
     }
 
     int skill_number;//Skill number
     for (int i = 0; i < 4; i++) {
         fscanf(fp, "%d\n", &skill_number);
-        get_skill(&main->skill[i], skill_number);
+        get_skill(&plyr->skill[i], skill_number);
     }
 
     int last_node_number;
@@ -367,34 +368,44 @@ void load_game_and_play(){
     printf("Game loaded successfully. Starting from node %d...\n", last_node_number);
     printf("Starting to play\n");
 
-    /*
-    go_to_node_select_and_add(last_node_number,"scenario1.txt",scene);
+    
+    go_to_node_select_and_add(last_node_number,"scenario1.txt",scene, plyr);
     Decision temporary_checker;
     saveLastDecisionData(scene, &temporary_checker);
     int a;
     int option_selected;
     do{
+        print_menu_option();
+        printf("Your choice: ");
         a= get_valid_input(1, 4);
+        printf("\n");
         switch(a){
             case 1:
-                option_selected = (temporary_check.node_number) *2;
-                go_to_node_select_and_add(option_selected,"scenario.txt",scene);
+                option_selected = (temporary_checker.node_number) *2;
+                go_to_node_select_and_add(option_selected,"scenario1.txt",scene, plyr);
                 saveLastDecisionData(scene, &temporary_checker);
+                break;
             case 2:
-                option_selected = (temporary_check.node_number) *(2+1);
-                go_to_node_select_and_add(option_selected,"scenario.txt",scene);
+                option_selected = ((temporary_checker.node_number) *2)+1;
+                go_to_node_select_and_add(option_selected,"scenario1.txt",scene, plyr);
                 saveLastDecisionData(scene, &temporary_checker);
+                break;
             case 3:
-
+                save_game(scene, plyr);
+                break;
             case 4:
+                goto exit;
+                break;
 
         }
-    }while(is_terminal(&temporary_checker)!=0)
+        printf("\n_____________________________________________________\n");
+    }while(is_terminal(&temporary_checker)==0);
     printf("You have the scenario\n");
+    exit:
     printf("Thanks for playing our game\n");
     freeScenario(scene);
-    free(main);
-    */
+    free(plyr);
+    
 
 
 }
