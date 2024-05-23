@@ -21,7 +21,7 @@ Scenario *create_inizialize_Scenario();
 //Function to add a Decision to the Scenario
 void addDecisionToScenario(Scenario *scenario, Decision *decision);
 
-void *go_to_node_select_and_add(int node,char *filename,Scenario *scene);
+void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr);
 
 void freeScenario(Scenario *scenario);
 
@@ -29,11 +29,11 @@ void saveLastDecisionData(Scenario* scenario, Decision* tempDecision);
 
 int is_terminal(Decision *scene);
 
-int get_valid_input();
+int get_valid_input(int first, int size);
 
 int get_last_node_numeber(Scenario *scenario);
 
-void save_game(Scenario *scene, Character *character);
+void save_gamef(Scenario *scene, Character *character);
 
 void load_game_and_play();
 

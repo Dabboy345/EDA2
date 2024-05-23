@@ -40,19 +40,21 @@ void print_menu(){//This will be the print function which will print the users m
 }
 
 
-void print_decision(Decision *choice) {
+void print_decision(Decision *choice, Character* plyr) {
     printf("%s\n", choice->option.description);
     printf("%s\n", choice->option.pre_txt);
     if (strcmp(choice->option.enemy.name, "None") == 0) {
         printf("No enemy\n");
     } else {
-        printf("Enemy is %s with skills %s, %s, %s and %s\n",
+        printf("Enemy is %s with skills:\n1.%s2.%s3.%s4.%s\n",
                choice->option.enemy.name,
                choice->option.enemy.skill[0],
                choice->option.enemy.skill[1],
                choice->option.enemy.skill[2],
                choice->option.enemy.skill[3]);
+               combat(plyr, &choice->option.enemy, 20);
     }
+    
     printf("%s\n", choice->option.post_txt);
     printf("1.%s\n", choice->option.option1);
     printf("2.%s\n", choice->option.option2);
@@ -62,6 +64,6 @@ void print_menu_option(){
     printf("Please select the next options\n");
     printf("Press 1 for first option\n");
     printf("Press 2 for second option\n");
-    printf("If you want to save the progress and exit, Press 3");
-    printf("If you want to  exit, Press 4");
+    printf("If you want to save the progress and exit, Press 3\n");
+    printf("If you want to  exit, Press 4\n");
 }

@@ -10,7 +10,7 @@ Your first decision, What would you like to do?
 2node
 You decide to grab the food while the seller is distracted
 Fight
-Seller: 10, 10, 10, 50, 51, 52, 53
+Seller: 5, 20, 150, 50, 51, 52, 53
 Now that you have eaten, what do you want do?
 - Go to the center, you will know what is happening
 - Go to a mall, as it usually is a big place with a lot of resources
@@ -18,7 +18,7 @@ Now that you have eaten, what do you want do?
 3node
 You rob a newspaper but you encounter a big man who is the seller
 Fight
-Big seller: 10, 10, 10, 58, 59, 60, 61 
+Big seller: 5, 20, 150, 58, 59, 60, 61 
 You read the newspaper "Celebrating 100th anniversary of radioactive rain in the center". There are group people going to the center. What would you like to do?
 - Search for the food 
 - Follow the crowd of people to the center
@@ -26,7 +26,7 @@ You read the newspaper "Celebrating 100th anniversary of radioactive rain in the
 4node
 Going to the center of the city, a person sees that you are wearing a good jacket so they go to steal it. 
 Fight
-Thief: 55, 66, 67, 68
+Thief: 5, 20, 150, 55, 66, 67, 68
 After surviving this attack you realise that not many people can be trusted. What do you do now?
 - You go to a bar with TV 
 - You escape to a tall building to see the city
@@ -34,78 +34,87 @@ After surviving this attack you realise that not many people can be trusted. Wha
 5node
 You go to the mall, as it usually is a big place with a lot of resources. You enter and there is nobody there, suddenly you see a dangerous looking dog in front of you 
 Fight
-Dog: 69, 70, 62, 71
+Dog: 5, 20, 150, 69, 70, 62, 71
 After this attack, you can figure out that animals aren't exactly how you used to know them. What do you want to do now?
 - You decide to leave and explore the city 
 - You get inside a hotel to rest 
 
 6node
 You decide to grab the food while the seller is distracted 
-
-Seller: 50, 51, 52, 53 
+Pretxt
+Seller: 5, 20, 150, 50, 51, 52, 53 
 Now you have eaten. What do you do now?
 - You see a person and follow them
 - You decide to leave and explore the city
 
 7node
-Going to the center of the city, a person sees that you are wearing a good jacket so they go to steal it. 
-Thief: 55, 66, 67, 68 
+Going to the center of the city, a person sees that you are wearing a good jacket so they go to steal it.
+Pretxt
+Thief: 5, 20, 150, 55, 66, 67, 68 
 After surviving this attack you realise that not many people can be trusted. What do you do now?
 - You go to a restaurant
 - You escape to a tall building to see the city
 
 8node 
 You go inside a bar to see what are the news saying in the TV, you ask the bartender to turn up the volume, and a drunk men gets angry with you 
-Drunk man: 72, 75, 73, 74  
+Pretxt
+Drunk man: 5, 20, 150, 72, 75, 73, 74  
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening
 - You go inside a safe venue
 
 9node 
 You go into the building, once you reach the roof to look at the hole city you feel something touch your arm, as you turn around there is a carnivorous plant 
-Plant: 76, 52, 77, 78
+Pretxt
+Plant: 5, 20, 150, 76, 52, 77, 78
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening
 - You go inside a safe venue
 
 10node
 You decide to go explore the streets of the city, when you hear a gentile noise from a possible machine, you look up and there is a drone above your head 
-Drone: 79, 60, 80, 74
+Pretxt
+Drone: 5, 20, 150, 79, 60, 80, 74
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening
 - You go inside a safe venue
 
 11node
 You go inside a hotel in order to rest and try to recover, but you see a figure inside that doesn’t have a form, his body is made of a slimy matter 
-Slipy: 78, 62, 79, 81
+Pretxt
+Slipy: 5, 20, 150, 78, 62, 79, 81
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening
 - You go inside a safe venue
 
 12node
 You are following this person to see if you discover something, suddenlly the figure of that person disappears and turns into a bunch of small creatures that start running to you 
-Small creatures: 82, 69, 65, 64
+Pretxt
+Small creatures: 5, 20, 150, 82, 69, 65, 64
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening
 - You go inside a safe venue
 
 13node
 You go inside a restaurant to eat, and drunk man tries to steal your food 
-Drunk man: 72, 75, 73, 74
+Pretxt
+Drunk man: 5, 20, 150, 72, 75, 73, 74
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening
 - You go inside a safe venue
 
 14node
 You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious. 
-suspicious attacker: 73, 55, 57, 62 
+Pretxt
+Suspicious attacker: 5, 20, 150, 73, 55, 57, 62 
 Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
-- end node
-- end node
+- End node
+- End node
 
 15node
 You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
-Giant insect: 62, 63, 64, 65
+Pretxt
+Giant insect: 5, 20, 150, 62, 63, 64, 65
 You fall into the ground exhausted. Final move
-- end node
-- end node
+- End node
+- End node

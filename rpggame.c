@@ -62,9 +62,7 @@ Character* create_character(Skill *skills){
     }
     printf("Choose you character's name: ");
     scanf("%s", &player->name);
-    //Choose skills
-
-    //print all skills
+    printf("\n");
     for(int i = 0; i<20; i++){
         printf("%d.%s",i+1, skills[i].name);
     }
@@ -73,25 +71,21 @@ Character* create_character(Skill *skills){
     int temp=1;
     int test=0;
     while(temp!=0){
-        printf("Type 0 to choose final skills\nTry a skill (1-20): ");
-        test = scanf("%d", &temp);
+        printf("\nType 0 to choose final skills\nTry a skill (1-20): ");
         printf("\n");
+        temp = get_valid_input(0, 20);
         if((1<=temp) && (temp<=20)){
             try_skill(&(skills[temp-1]));
         }else if (test!=0){printf("Wrong input\n");}//When typing a letter it crashes
         
     }
-   
-    //create a function to try a skill "try_skill(skills[20], n)" n = number of skill
-    //                                  description + test
-    //...
     
     for(int i = 0; i<4; i++){
-        printf("Choose a skill %d: ", i+1);
-        scanf("%d", &temp); //We need to code so that the player can't have repeated skills
+        printf("Choose skill %d: ", i+1);
+        temp = get_valid_input(1, 20); //We need to code so that the player can't have repeated skills
+        //for(int j = 0;j<i;i++){}
         player->skill[i] = skills[temp-1];
         printf(" %s\n", &(player->skill[i].name));
-
     }
     
     for(int i = 0; i<3; i++){
@@ -200,11 +194,11 @@ void addDecisionToScenario(Scenario *scenario, Decision *decision) { //Function 
     scenario->decisions_added++;
 }
 
-void *go_to_node_select_and_add(int node,char *filename,Scenario *scene){
+void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr){
     Decision *test = create_desicion();
     get_info_decision(test, node, filename);
     addDecisionToScenario(scene, test);
-    print_decision(test);
+    print_decision(test, plyr);
 }
 
 void freeScenario(Scenario *scenario) { //Function to free the scenario
@@ -242,11 +236,12 @@ void saveLastDecisionData(Scenario* scenario, Decision* tempDecision) {// Functi
 
 int is_terminal(Decision *scene) { // This function will check if a node is an end node or not
     if (scene == NULL) { 
+        printf("NULL");
         return 0; // If the scene is NULL, it's not a valid end node
     }
 
-    int a = strcmp(scene->option.option1, "- end node");
-    int b = strcmp(scene->option.option2, "- end node");
+    int a = (scene->option.option1[2]=='E' && scene->option.option1[6]=='n')? 0:1;
+    int b = (scene->option.option2[2]=='E' && scene->option.option2[6]=='n')? 0:1;
     
     if (a == 0 && b == 0) {
         return 1; // The node is an end node the both options description is "- end node"
@@ -257,20 +252,17 @@ int is_terminal(Decision *scene) { // This function will check if a node is an e
 
 
 
-int get_valid_input() {
+int get_valid_input(int first, int size) {
     int a;
     int valid = 0;
 
-    while (!valid) { //if valid is 1 it is true and then the while will stop
-        print_menu_option();
-        printf("Your choice: ");
-        
+    while (!valid) { //if valid is 1 it is true and then the while will stop        
         if (scanf("%d", &a) != 1) {
             // Clear the invalid input
             while (getchar() != '\n'); // Discard invalid input until a newline is found
-            printf("Invalid input. Please enter a number between 1 and 4.\n");
-        } else if (a != 1 && a != 2 && a != 3 && a != 4) {
-            printf("Please enter a valid option (1, 2, 3, or 4).\n");
+            printf("\n----> Invalid input. Please enter a number between %d and %d\n\n", first, size);
+        } else if (a < first || a > size) {
+            printf("\n----> Invalid input. Please enter a number between %d and %d\n\n", first, size);
         } else {
             valid = 1; // Valid input received
         }
@@ -293,7 +285,7 @@ int get_last_node_numeber(Scenario *scenario) {
 }
 
 
-void save_game(Scenario *scene, Character *character){
+void save_gamef(Scenario *scene, Character *character){
     char buffer[MAX_NAME]; //to save the name of the file
     Decision lastdescion;
     FILE *fp = fopen(buffer,"w");
@@ -364,7 +356,7 @@ void load_game_and_play(){
     int a;
     int option_selected;
     do{
-        a= get_valid_input();
+        a= get_valid_input(1, 4);
         switch(a){
             case 1:
                 option_selected = (temporary_check.node_number) *2;

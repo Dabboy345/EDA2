@@ -2,7 +2,6 @@
 #define _RPGBASE_H_ //This local libary will contain the main functions for the game 
 
 #include "rpggame.h"
-#include "combat.h"
 #include "prints.h"
 
 #endif

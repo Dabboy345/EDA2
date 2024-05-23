@@ -12,52 +12,48 @@ void new_game(){//Our new game function
 
     Character *plyr = create_character(skill);
 
-    
-    /*char s[MAX_NAME];
-    scanf("%s", e->name);
-    e->stats[0]=5;
-    e->stats[1]=10;
-    e->stats[2]=150;
-    for(int i=0; i<4;i++){get_skill(&e->skill[i], 50+i);}*/
 
-
-
-    /*Scenario *scene = create_inizialize_Scenario();
-    go_to_node_select_and_add(1,"scenario1.txt",scene);
+    Scenario *scene = create_inizialize_Scenario();
+    go_to_node_select_and_add(1,"scenario1.txt",scene, plyr);
     Decision temporary_checker;
     saveLastDecisionData(scene, &temporary_checker);
     int a;
     int option_selected;
     do{
-        a= get_valid_input();
+        print_menu_option();
+        a= get_valid_input(1, 4);
         switch(a){
             case 1:
-                option_selected = (temporary_check.node_number) *2;
-                go_to_node_select_and_add(option_selected,"scenario.txt",scene);
+                option_selected = (temporary_checker.node_number) *2;
+                go_to_node_select_and_add(option_selected,"scenario1.txt",scene, plyr);
                 saveLastDecisionData(scene, &temporary_checker);
+                break;
             case 2:
-                option_selected = (temporary_check.node_number) *(2+1);
-                go_to_node_select_and_add(option_selected,"scenario.txt",scene);
+                option_selected = ((temporary_checker.node_number) *2)+1;
+                go_to_node_select_and_add(option_selected,"scenario1.txt",scene, plyr);
                 saveLastDecisionData(scene, &temporary_checker);
+                break;
             case 3:
-
+                break;
             case 4:
+                break;
 
         }
-    }while(is_terminal(&temporary_checker)!=0)
+        printf("\n_____________________________________________________\n");
+    }while(is_terminal(&temporary_checker)==0);
     printf("You have the scenario\n");
     printf("Thanks for playing our game\n");
-    freeScenario(scene);*/
+    freeScenario(scene);
 
-    Enemy* e = (Enemy*)malloc(sizeof(Enemy));
+    /*Enemy* e = (Enemy*)malloc(sizeof(Enemy));
     char line[] = "Seller: 5, 10, 150, 50, 51, 52, 53";
     put_enemy_info(line , e);
-    combat(plyr, e, 20);
-
+    combat(plyr, e, 20);*/
+    
 }
 
 void save_game(){//Our save game function
-    
+
 }
 
 void load_game(){//Our load game function
