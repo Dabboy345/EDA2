@@ -17,6 +17,7 @@ Skill_number2
 Skill_number3
 Skill_number4
 Ultimo_numero_de_nodo //Si aqui hay un -1 pues diremos q hubo error al guard partida y q no se puede cargar 
+Filename //Con esto podremos saber en que escenario se encuentra ese nodo
 
 
 

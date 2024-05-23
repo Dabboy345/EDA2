@@ -1,7 +1,7 @@
 #include "rpgbase.h"
 
 void new_game(){//Our new game function
-    Skill *skill = (Skill*)calloc(20, sizeof(Skill));
+    /*Skill *skill = (Skill*)calloc(20, sizeof(Skill));
     if(skill == NULL){
         printf("Memory allocation failed\n");
         return;
@@ -47,8 +47,10 @@ void new_game(){//Our new game function
     }while(is_terminal(&temporary_checker)==0);
     //printf("You have the scenario\n");
     exit:
-    printf("Thanks for playing our game\n");
-    freeScenario(scene);
+    //printf("Thanks for playing our game\n");
+    freeScenario(scene);*/
+
+    // function run game
 }
 
 void load_game(){//Our load game function

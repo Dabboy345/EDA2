@@ -11,7 +11,7 @@
 #define MAX_NAME 50 
 #define MAX_TXT 350 
 #define MAX_SKILL 4
-#define MAX_DECISIONS 20
+#define MAX_NUMBER_SKILL_PLAYER 20
 
 typedef struct{
     int max;

@@ -303,9 +303,9 @@ int get_last_node_numeber(Scenario *scenario) {
 }
 
 
-void save_game(Scenario *scene, Character *character){
+void save_game(Scenario *scene, Character *character, char *filename){
     char buffer[MAX_NAME]; //to save the name of the file
-    Decision lastdescion;
+    //Decision lastdescion;
     printf("Write the file name (finishing with .txt): ");
     scanf("%s", buffer);
     FILE *fp;
@@ -325,6 +325,7 @@ void save_game(Scenario *scene, Character *character){
     if( a != -1){
         fprintf(fp, "%d\n", a);
         printf("File Saved Sucesfully\n");
+        fprintf("%s\n",filename);
         fclose(fp);
         return;
     }
@@ -335,6 +336,61 @@ void save_game(Scenario *scene, Character *character){
     }
 
 }
+
+
+void run_game(int node_number, char *filename){
+    Skill *skill = (Skill*)calloc(20, sizeof(Skill));
+    if(skill == NULL){
+        printf("Memory allocation failed\n");
+        return;
+    }
+    for(int i =0; i<19;i++){
+        get_skill(&skill[i], i);
+    }
+
+    Character *plyr = create_character(skill);
+
+
+    Scenario *scene = create_inizialize_Scenario();
+    go_to_node_select_and_add(node_number,filename,scene, plyr);
+    Decision temporary_checker;
+    saveLastDecisionData(scene, &temporary_checker);
+    int a;
+    int option_selected;
+    do{
+        print_menu_option();
+        printf("Your choice: ");
+        a= get_valid_input(1, 4);
+        printf("\n");
+        switch(a){
+            case 1:
+                option_selected = (temporary_checker.node_number) *2;
+                go_to_node_select_and_add(option_selected,"scenario1.txt",scene, plyr);
+                saveLastDecisionData(scene, &temporary_checker);
+                break;
+            case 2:
+                option_selected = ((temporary_checker.node_number) *2)+1;
+                go_to_node_select_and_add(option_selected,"scenario1.txt",scene, plyr);
+                saveLastDecisionData(scene, &temporary_checker);
+                break;
+            case 3:
+                save_game(scene, plyr);
+                break;
+            case 4:
+                goto exit;
+                break;
+
+        }
+        printf("\n_____________________________________________________\n");
+    }while(is_terminal(&temporary_checker)==0);
+    //printf("You have the scenario\n");
+    exit:
+    //printf("Thanks for playing our game\n");
+    freeScenario(scene);
+    free(plyr);
+    free(skill);
+}
+
 
 void load_game_and_play(){
 
@@ -368,7 +424,8 @@ void load_game_and_play(){
     printf("Game loaded successfully. Starting from node %d...\n", last_node_number);
     printf("Starting to play\n");
 
-    
+    // run game function
+    /*
     go_to_node_select_and_add(last_node_number,"scenario1.txt",scene, plyr);
     Decision temporary_checker;
     saveLastDecisionData(scene, &temporary_checker);
@@ -404,7 +461,7 @@ void load_game_and_play(){
     exit:
     printf("Thanks for playing our game\n");
     freeScenario(scene);
-    free(plyr);
+    free(plyr);*/
     
 
 
