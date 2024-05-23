@@ -43,6 +43,16 @@ int combat(Character *plyr, Enemy *enmy, int size){
     for(int i = 0; i<4; i++){max_hp_plyr += plyr->skill[i].stats_plyr[2];}
 
     int max_hp_enmy = enmy->stats[2];
+    plyr->stats[1] = 0;
+    for(int i=0;i<4;i++){
+        enmy->skill[i].mod.n = 0;
+
+//We need to reset the enemy's health and defense after each death
+
+        plyr->skill[i].mod.n = 0; //Reset counter limited uses skills
+        plyr->stats[1]+=plyr->skill[i].stats_plyr[1];//Reset defense
+    }
+        
 
     while(q->elements>0){
         print_enemy(enmy);
@@ -77,13 +87,14 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
 /////////////////////////////////////////////7
 
-        if(pvenom>0){enmy->stats[2]+=p_dmg;}
+        if(pvenom>0){p_dmg+=plyr->stats[0];}
         if(enmy->stats[1]>0){
             enmy->stats[1]-= p_dmg;
             if(enmy->stats[1]<=0){enmy->stats[1]=0;printf("Defense broken\n");}
         }else{
             enmy->stats[2]-= p_dmg;
-            if(enmy->stats[2]<0){enmy->stats[2]=0;printf("GG\n");return 1;}//Return 1 = playr wins
+            if(enmy->stats[2]<=0){enmy->stats[2]=0;
+            printf("You won the fight against %sCongratulations!\n", enmy->name);return 1;}//Return 1 = playr wins
         }
         if(plyr->skill[a].of_def==1){printf("%s dealt %d damage to %s\n\n", plyr->name, p_dmg, enmy->name);}
         if(pvenom>0){printf("\n%s received %d of residual damage\n\n", enmy->name, plyr->stats[0]);pvenom--;}
@@ -123,13 +134,14 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
 /////////////////////////////////////////////7
 
-        if(evenom>0){plyr->stats[2]+= e_dmg;}
+        if(evenom>0){e_dmg += enmy->stats[0];}
         if(plyr->stats[1]>0){
             plyr->stats[1]-= e_dmg;
             if(plyr->stats[1]<0){plyr->stats[1]=0;printf("Defense broken\n");}
         }else{
             plyr->stats[2]-= e_dmg;
-            if(plyr->stats[2]<0){plyr->stats[2]=0;printf("FFFFF\n");return 2;}//Return 2 = Enemy wins
+            if(plyr->stats[2]<=0){plyr->stats[2]=0;
+            printf("You lost against %sTry again next time\n", enmy->name);return 2;}//Return 2 = Enemy wins
         }
         if(enmy->skill[b].of_def==1){
             printf("%s dealt %d damage to %s\n\n", enmy->name, e_dmg, plyr->name);

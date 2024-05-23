@@ -47,18 +47,20 @@ void print_decision(Decision *choice, Character* plyr) {
         printf("No enemy\n");
     } else {
         printf("Enemy is %s with skills:\n1.%s2.%s3.%s4.%s\n",
-               choice->option.enemy.name,
-               choice->option.enemy.skill[0],
-               choice->option.enemy.skill[1],
-               choice->option.enemy.skill[2],
-               choice->option.enemy.skill[3]);
-               combat(plyr, &choice->option.enemy, 20);
+            choice->option.enemy.name,
+            choice->option.enemy.skill[0],
+            choice->option.enemy.skill[1],
+            choice->option.enemy.skill[2],
+            choice->option.enemy.skill[3]);
+        while(combat(plyr, &choice->option.enemy, 20)==2){
+            for(int i=0;i<4;i++){plyr->stats[2]+=plyr->skill[i].stats_plyr[2];}//Reset health
+        }
+
     }
-    
     printf("%s\n", choice->option.post_txt);
     printf("1.%s\n", choice->option.option1);
     printf("2.%s\n", choice->option.option2);
-}
+};
 
 void print_menu_option(){
     printf("Please select the next options\n");

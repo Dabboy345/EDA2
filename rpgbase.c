@@ -46,12 +46,6 @@ void new_game(){//Our new game function
     printf("You have the scenario\n");
     printf("Thanks for playing our game\n");
     freeScenario(scene);
-
-    /*Enemy* e = (Enemy*)malloc(sizeof(Enemy));
-    char line[] = "Seller: 5, 10, 150, 50, 51, 52, 53";
-    put_enemy_info(line , e);
-    combat(plyr, e, 20);*/
-    
 }
 
 void save_game(){//Our save game function
