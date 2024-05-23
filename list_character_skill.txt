@@ -147,7 +147,7 @@ Stick
 Stick enables the user to give a damage to the opponent with a hit with the stick
 1
 7
-s
+n
 5, 3, 5
 
 51skill
@@ -155,7 +155,7 @@ Denture
 Denture is a skill that takes a turn to equip and another turn to use, it has only 1 use for a fight
 1
 30
-r
+n
 3, 6, 25
 
 52skill
@@ -170,7 +170,7 @@ n
 Life Medicine
 Life medicine adds some points to your health points
 0
-10
+40
 h
 3, 4, 45
 

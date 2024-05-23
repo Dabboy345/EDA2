@@ -36,20 +36,17 @@ int combat(Character *plyr, Enemy *enmy, int size){
     int a;
     int rand_n = rand()+1;//Fix random number always 41
 
+    int pvenom = 0;
+    int evenom = 0;
+
     int max_hp_plyr = 0;
     for(int i = 0; i<4; i++){max_hp_plyr += plyr->skill[i].stats_plyr[2];}
 
     int max_hp_enmy = enmy->stats[2];
 
-    Mod def = {1,0,'d',0};
-    Mod heal = {2,0,'h',0};
-    Mod venom = {2,0,'v',0};
-    Mod stun = {1,0,'s',0};
-    Mod recharge = {1,0,'r',0};
-
     while(q->elements>0){
         print_enemy(enmy);
-        printf("\n\n\n");//Print enemy?
+        printf("\n\n");//Print enemy?
         print_player(plyr);
         
 /////////////////////////////////////////////7
@@ -62,44 +59,34 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
 /////////////////////////////////////////////7
 
-        if(venom.temp>0){venom.temp--;enmy->stats[2]-= plyr->stats[0];printf("\n%s received %d of residual damage\n\n", enmy->name, plyr->stats[0]);}
-
-        if(plyr->skill[a].mod == def.chr){
-            if(def.n==def.max){printf("You cannot use that hability again\n");goto choose_skill;}
+        if(plyr->skill[a].mod.chr == 'd'){
             plyr->stats[1]+=plyr->skill[a].dmg_skll;
             printf("%s gained %d defense\n\n", plyr->name, plyr->skill[a].dmg_skll);
-            def.n++;
-        }else if(plyr->skill[a].mod == heal.chr){
-            if(heal.n==heal.max){printf("You cannot use that hability again\n");goto choose_skill;}
+        }else if(plyr->skill[a].mod.chr == 'h'){
             plyr->stats[2]+=plyr->skill[a].dmg_skll;
             printf("%s healed %d\n\n", plyr->name, plyr->skill[a].dmg_skll);
             if(plyr->stats[2]>max_hp_plyr){plyr->stats[2]=max_hp_plyr;}
-            heal.n++;
-        }else if(plyr->skill[a].mod == venom.chr){
-            if(venom.n==venom.max){printf("You cannot use that hability again\n");goto choose_skill;}
-            venom.n++;
-            venom.temp = 3;
-        }else if(plyr->skill[a].mod == stun.chr){
-            if(stun.n==stun.max){printf("You cannot use that hability again\n");goto choose_skill;}
-            stun.n++;
+        }else if(plyr->skill[a].mod.chr == 'v'){pvenom = 3;}
+        else if(plyr->skill[a].mod.chr == 's'){
+            
         }
-
-
-
-
-
-
+        if((plyr->skill[a].mod.n==plyr->skill[a].mod.max)&&(plyr->skill[a].mod.chr!='n')){
+            printf("You cannot use that hability again\n");
+            goto choose_skill;}
+        plyr->skill[a].mod.n++;
 
 /////////////////////////////////////////////7
 
+        if(pvenom>0){enmy->stats[2]+=p_dmg;}
         if(enmy->stats[1]>0){
             enmy->stats[1]-= p_dmg;
             if(enmy->stats[1]<=0){enmy->stats[1]=0;printf("Defense broken\n");}
         }else{
             enmy->stats[2]-= p_dmg;
-            if(enmy->stats[2]<0){enmy->stats[2]=0;printf("GG");return 1;}//Return 1 = playr wins
+            if(enmy->stats[2]<0){enmy->stats[2]=0;printf("GG\n");return 1;}//Return 1 = playr wins
         }
         if(plyr->skill[a].of_def==1){printf("%s dealt %d damage to %s\n\n", plyr->name, p_dmg, enmy->name);}
+        if(pvenom>0){printf("\n%s received %d of residual damage\n\n", enmy->name, plyr->stats[0]);pvenom--;}
 
         dequeue(q);
         printf("%d turns remaining\n", q->elements);
@@ -107,25 +94,48 @@ int combat(Character *plyr, Enemy *enmy, int size){
 /////////////////////////////////////////////7
 
         print_enemy(enmy);
-        printf("\n\n\n");//Print enemy?
+        printf("\n\n");//Print enemy?
         print_player(plyr);
 
 /////////////////////////////////////////////7
+
     enemy_combat:
+
         int rand_t = rand();
         int b = rand_t%4;
         int e_dmg = (enmy->skill[b].dmg_skll + enmy->stats[0])*enmy->skill[b].of_def;
 
+/////////////////////////////////////////////7
+
+        if(enmy->skill[b].mod.chr == 'd'){
+            enmy->stats[1]+=enmy->skill[b].dmg_skll;
+            printf("%s gained %d defense\n\n", enmy->name, enmy->skill[b].dmg_skll);
+        }else if(enmy->skill[b].mod.chr == 'h'){
+            enmy->stats[2]+=enmy->skill[b].dmg_skll;
+            printf("%s healed %d\n\n", enmy->name, enmy->skill[b].dmg_skll);
+            if(enmy->stats[2]>max_hp_enmy){enmy->stats[2]=max_hp_enmy;}
+        }else if(enmy->skill[b].mod.chr == 'v'){evenom = 3;}
+        else if(enmy->skill[b].mod.chr == 's'){
+            
+        }
+        if((enmy->skill[b].mod.n==enmy->skill[b].mod.max)&&(enmy->skill[b].mod.chr!='n')){goto enemy_combat;}
+        enmy->skill[a].mod.n++;
+
+/////////////////////////////////////////////7
+
+        if(evenom>0){plyr->stats[2]+= e_dmg;}
         if(plyr->stats[1]>0){
             plyr->stats[1]-= e_dmg;
             if(plyr->stats[1]<0){plyr->stats[1]=0;printf("Defense broken\n");}
         }else{
             plyr->stats[2]-= e_dmg;
-            if(plyr->stats[2]<0){plyr->stats[2]=0;printf("FFFFF");return 2;}//Return 2 = Enemy wins
+            if(plyr->stats[2]<0){plyr->stats[2]=0;printf("FFFFF\n");return 2;}//Return 2 = Enemy wins
         }
         if(enmy->skill[b].of_def==1){
             printf("%s dealt %d damage to %s\n\n", enmy->name, e_dmg, plyr->name);
+            if(evenom>0){printf("\n%s received %d of residual damage\n\n", plyr->name, enmy->stats[0]);evenom--;}
         }  
+
     end_combat:
         dequeue(q);
         printf("%d turns remaining\n", q->elements);

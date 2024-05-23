@@ -36,16 +36,36 @@ void get_skill(Skill *skill, int n){
         fgets(skill->name, MAX_NAME, fp);
         fgets(skill->description, MAX_TXT, fp);
         fscanf(fp, "%d\n%d\n", &skill->of_def, &skill->dmg_skll);
-        skill->mod = fgetc(fp);
+        skill->mod.chr = fgetc(fp);
         for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
         if(n==a){
             skill->skill_number = a;
+            skill->mod.temp = 0;
+            skill->mod.n = 0;
+            switch(skill->mod.chr){
+                case 'h':
+                    skill->mod.max = 2;
+                    break;
+                case 'd':
+                    skill->mod.max = 1;
+                    break;
+                case 'v':
+                    skill->mod.max = 2;
+                    break;
+                case 's':
+                    skill->mod.max = 1;
+                    break;
+                case 'r':
+                    skill->mod.max = 3;
+                    break;
+            }
+
             /*printf("\n");
             printf("_______________%s\n", skill->name);
             printf("%s\n", skill->description);
             printf("%d\n", skill->of_def);
             printf("%d\n", skill->dmg_skll);
-            printf("%c\n", skill->mod);
+            printf("%c\n", skill->mod.chr);
             printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);*/
             
             fclose(fp); 
@@ -74,9 +94,7 @@ Character* create_character(Skill *skills){
         printf("\nType 0 to choose final skills\nTry a skill (1-20): ");
         printf("\n");
         temp = get_valid_input(0, 20);
-        if((1<=temp) && (temp<=20)){
-            try_skill(&(skills[temp-1]));
-        }else if (test!=0){printf("Wrong input\n");}//When typing a letter it crashes
+        if(0!=temp){try_skill(&(skills[temp-1]));}
         
     }
     

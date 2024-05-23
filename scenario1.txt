@@ -10,7 +10,7 @@ Your first decision, What would you like to do?
 2node
 You decide to grab the food while the seller is distracted
 Fight
-Seller: 5, 20, 150, 50, 51, 52, 53
+Seller: 5, 20, 150, 53, 51, 52, 50
 Now that you have eaten, what do you want do?
 - Go to the center, you will know what is happening
 - Go to a mall, as it usually is a big place with a lot of resources

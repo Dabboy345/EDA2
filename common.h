@@ -13,12 +13,19 @@
 #define MAX_SKILL 4
 #define MAX_DECISIONS 20
 
+typedef struct{
+    int max;
+    int n;
+    char chr;
+    int temp;
+}Mod;
+
 typedef struct { //Our data stucture for the skills
     char name[MAX_NAME];
     char description[MAX_TXT];
     int of_def; //1 for offensive, 0 for deffensive
     int dmg_skll;// 10-35
-    char mod;
+    Mod mod;
     int stats_plyr[3]; //dmg(0), def(1), hp(2)
     /*int dmg_plyr; 0-2       int def_plyr; 0 - 8       int hp_plyr; 25 - 50 */
     int skill_number;
@@ -66,12 +73,5 @@ typedef struct{
     Character main;
     Decision last_descion;
 }Save_game;*/
-
-typedef struct{
-    int max;
-    int n;
-    char chr;
-    int temp;
-}Mod;
 
 #endif
