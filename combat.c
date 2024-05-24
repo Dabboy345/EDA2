@@ -1,7 +1,7 @@
 #include "combat.h"
 
 void print_enemy(Enemy* e){
-    printf("\n________________________________________________________________________________\n");
+    printf("\n___________________________________________________________________________________________\n");
     printf("- %s\n", e->name);
     printf("HP: ");
     for(int i=0;i<(e->stats[2]+1)/2;i++){printf("|");}
@@ -10,11 +10,11 @@ void print_enemy(Enemy* e){
         printf(" %d", e->stats[2]);
         printf(" + [%d]", e->stats[1]);
     }else{printf(" %d", e->stats[2]);}
-    printf("\n________________________________________________________________________________\n");
+    printf("\n___________________________________________________________________________________________\n");
 }
 
 void print_player(Character* p){
-    printf("\n________________________________________________________________________________\n");
+    printf("\n___________________________________________________________________________________________\n");
     printf("- You (%s)\n", p->name);
     printf("HP: ");
     for(int i=0;i<(p->stats[2])/2;i++){printf("|");}
@@ -23,7 +23,7 @@ void print_player(Character* p){
         printf(" %d", p->stats[2]);
         printf(" + [%d]", p->stats[1]);
     }else{printf(" %d", p->stats[2]);}
-    printf("\n________________________________________________________________________________\n");
+    printf("\n___________________________________________________________________________________________\n");
 }
 
 /////////////////////////////////////////////7
@@ -69,6 +69,11 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
 /////////////////////////////////////////////7
 
+        if((plyr->skill[a].mod.n==plyr->skill[a].mod.max)&&(plyr->skill[a].mod.chr!='n')){
+            printf("You cannot use that hability again\n");
+            goto choose_skill;}
+        plyr->skill[a].mod.n++;
+
         if(plyr->skill[a].mod.chr == 'd'){
             plyr->stats[1]+=plyr->skill[a].dmg_skll;
             printf("%s gained %d defense\n\n", plyr->name, plyr->skill[a].dmg_skll);
@@ -80,10 +85,6 @@ int combat(Character *plyr, Enemy *enmy, int size){
         else if(plyr->skill[a].mod.chr == 's'){
             
         }
-        if((plyr->skill[a].mod.n==plyr->skill[a].mod.max)&&(plyr->skill[a].mod.chr!='n')){
-            printf("You cannot use that hability again\n");
-            goto choose_skill;}
-        plyr->skill[a].mod.n++;
 
 /////////////////////////////////////////////7
 
@@ -111,12 +112,14 @@ int combat(Character *plyr, Enemy *enmy, int size){
 /////////////////////////////////////////////7
 
     enemy_combat:
-
         int rand_t = rand();
         int b = rand_t%4;
         int e_dmg = (enmy->skill[b].dmg_skll + enmy->stats[0])*enmy->skill[b].of_def;
 
 /////////////////////////////////////////////7
+
+        if((enmy->skill[b].mod.n==enmy->skill[b].mod.max)&&(enmy->skill[b].mod.chr!='n')){goto enemy_combat;}
+        enmy->skill[a].mod.n++;
 
         if(enmy->skill[b].mod.chr == 'd'){
             enmy->stats[1]+=enmy->skill[b].dmg_skll;
@@ -129,8 +132,6 @@ int combat(Character *plyr, Enemy *enmy, int size){
         else if(enmy->skill[b].mod.chr == 's'){
             
         }
-        if((enmy->skill[b].mod.n==enmy->skill[b].mod.max)&&(enmy->skill[b].mod.chr!='n')){goto enemy_combat;}
-        enmy->skill[a].mod.n++;
 
 /////////////////////////////////////////////7
 

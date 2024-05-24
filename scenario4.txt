@@ -43,9 +43,9 @@ Now you can look through the files and fotos and you discover that they have bee
 You go to the investigation room, it seems to be empty, however there are a lot of files and fotos at the table.
 While you are going to grab the files someone grabs you and throws you to the ground. This person is wearing a white coat and looks bigger than a normal person
 white coat: ()
-Now you can look through the files 
-- 
-- 
+Now you can look through the files, you see that they have been experimenting on how to improve people thanks to all the information and resources that they got from you and all the subjects in the simulations. What do you do ?
+- Wake the other subjects from their simulations
+- Go look for the subject they have been trying to improve
 
 7node
 You enter to the room where your friend is, he is conected to a lot of cables, just like you where. All this cables are connected to screen where you can see the medieval world that you where a while ago.
@@ -54,5 +54,15 @@ No enemy
 You explain him the situation that you are in, but now you can't stay in that room for long or someone will discover you. What do you do?
 -
 -
+
+8node
+You are investigating in the hospital, suddenly you see a table full of files and fotos.
+While you are going to grab the files someone grabs you and throws you to the ground. He looks bigger than any person and his eyes are red.
+Crazy scientist: ()
+Now you can look through the files, you see that they have been experimenting on how to improve people thanks to all the information and resources that they got from you and all the subjects in the simulations. You connect the ideas and realise that the scientist that you just fought had injected those discover What do you do ?
+- Go to the police 
+- Get out and publish everything to social media
+
+9node
 
 

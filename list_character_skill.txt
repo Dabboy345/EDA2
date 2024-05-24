@@ -82,7 +82,7 @@ n
 Healing 
 You can use this ability to heal yourself
 0
-10
+30
 h
 1, 6, 45,
 

@@ -13,6 +13,10 @@
 #define MAX_SKILL 4
 #define MAX_NUMBER_SKILL_PLAYER 20
 
+int get_valid_input(int first, int size); 
+
+void pause();
+
 typedef struct{
     int max;
     int n;
