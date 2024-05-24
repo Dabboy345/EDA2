@@ -20,7 +20,6 @@ void load_game(){//Our load game function
 }
 
 int main(){
-    pause();
     int a = 0;
     while(a!=3){
         print_menu();//We will print the menu

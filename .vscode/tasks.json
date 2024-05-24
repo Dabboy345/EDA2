@@ -11,6 +11,7 @@
                 "${fileDirname}/rpggame.c",
                 "${fileDirname}/rpgbase.c",
                 "${fileDirname}/combat.c",
+                "${fileDirname}/common.c",
                 "${fileDirname}/prints.c",
                 "-o",
                 "${fileDirname}/rpgbase"

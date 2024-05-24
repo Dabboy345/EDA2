@@ -74,6 +74,8 @@ int combat(Character *plyr, Enemy *enmy, int size){
             goto choose_skill;}
         plyr->skill[a].mod.n++;
 
+        printf("%s used %s", plyr->name, plyr->skill[a].name);
+
         if(plyr->skill[a].mod.chr == 'd'){
             plyr->stats[1]+=plyr->skill[a].dmg_skll;
             printf("%s gained %d defense\n\n", plyr->name, plyr->skill[a].dmg_skll);
@@ -110,8 +112,8 @@ int combat(Character *plyr, Enemy *enmy, int size){
         print_player(plyr);
 
 /////////////////////////////////////////////7
-
-    enemy_combat:
+        pause();
+        enemy_combat:
         int rand_t = rand();
         int b = rand_t%4;
         int e_dmg = (enmy->skill[b].dmg_skll + enmy->stats[0])*enmy->skill[b].of_def;
@@ -119,7 +121,9 @@ int combat(Character *plyr, Enemy *enmy, int size){
 /////////////////////////////////////////////7
 
         if((enmy->skill[b].mod.n==enmy->skill[b].mod.max)&&(enmy->skill[b].mod.chr!='n')){goto enemy_combat;}
-        enmy->skill[a].mod.n++;
+        enmy->skill[b].mod.n++;
+
+        printf("%s used %s", enmy->name, enmy->skill[b].name);
 
         if(enmy->skill[b].mod.chr == 'd'){
             enmy->stats[1]+=enmy->skill[b].dmg_skll;

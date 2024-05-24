@@ -235,7 +235,7 @@ Self Defence Blind
 It permits the user to defend himself with a blind
 0
 15
-n
+d
 3, 5, 25 
 
 62skill
@@ -243,7 +243,7 @@ Venom
 The user throws venom
 1
 15
-d
+v
 2, 3, 25
 
 63skill
@@ -275,7 +275,7 @@ Peper spray
 The user throws spray and make you blind during some time
 1
 15
-d
+v
 2, 3, 25
 
 67skill
@@ -347,7 +347,7 @@ Stink
 The user stincks very badlly affecting you during some time
 1
 15
-d
+v
 2, 3, 25
 
 76skill
@@ -362,8 +362,8 @@ n
 grow
 The plant regenerates itself and it recuperates hp
 0
-10
-r
+35
+h
 2, 3, 40
 
 78skill
@@ -371,7 +371,7 @@ Camouflage
 The user camouflages and can't be seen
 0
 15
-n
+d
 3, 5, 25
 
 79skill

@@ -18,6 +18,8 @@ int get_valid_input(int first, int size) {
 }
 
 void pause(){
-    printf("Press enter to continue\n");
-    while(scanf("%d")!=1){}
+    int a;
+    printf("-Press anything to continue-");
+    scanf("%d", &a);
+    while (getchar() != '\n');
 }
