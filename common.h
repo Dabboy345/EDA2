@@ -80,6 +80,7 @@ typedef struct dic_element{
     Skill skill; //We save the skill usde
     char *key;//The key will be the name of the skill 
     int usage_counter;//We will updrage the counter if it used
+    bool isempty;
     struct dic_element *next; // Pointer to the next element in the linked list
 }dic_element; 
 

@@ -495,10 +495,9 @@ void create_inizialize_dic(int size){
     dicionary->size_dicionary = size;
     dicionary->hashmap= (dic_element*)calloc(size,sizeof(dic_element));
     for (int i = 0; i < MAX_DICTONARY_SIZE; i++) {
-        dicionary->hashmap[i] = NULL;
+        dicionary->hashmap[i].isempty = true;
     }
     dicionary->skills_added = 0;
-    dicionary->size_dicionary = MAX_DICTONARY_SIZE;
 }
 
 void insert_skill (Skill_usuage_dicionary *dic, Skill skill){
@@ -507,6 +506,8 @@ void insert_skill (Skill_usuage_dicionary *dic, Skill skill){
     strcpy(new_element->key,skill.name);//We put the key as the item
     new_element->skill = skill; //We put the skill info in the dictionary
     new_element->usage_counter = 0; //When we put it to the dictionary it will have 0 usage
-
+    while(dic->hashmap[index] != true){
+        index++;
+    }
 
 }
