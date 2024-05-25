@@ -19,7 +19,7 @@ int get_valid_input(int first, int size) {
 
 void pause(){
     int a;
-    printf("-Press anything to continue-");
+    printf("-Type anything to continue-\n");
     scanf("%d", &a);
     while (getchar() != '\n');
 }

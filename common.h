@@ -12,6 +12,7 @@
 #define MAX_TXT 350 
 #define MAX_SKILL 4
 #define MAX_NUMBER_SKILL_PLAYER 20
+#define MAX_DICTONARY_SIZE 20 //IT is becuase we have maximum number of 20 skills  
 
 int get_valid_input(int first, int size); 
 
@@ -73,6 +74,21 @@ typedef struct{
     int decisions_added;
     char filename[MAX_NAME];
 }Scenario;
+
+
+typedef struct dic_element{
+    Skill skill; //We save the skill usde
+    char *key;//The key will be the name of the skill 
+    int usage_counter;//We will updrage the counter if it used
+    struct dic_element *next; // Pointer to the next element in the linked list
+}dic_element; 
+
+
+typedef struct{
+    dic_element *hashmap;
+    int skills_added; // Count of skills added to the dictionary
+    int size_dicionary; // Size of the hashmap array
+}Skill_usuage_dicionary;
 
 
 

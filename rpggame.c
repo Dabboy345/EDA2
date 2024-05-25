@@ -80,8 +80,9 @@ Character* create_character(Skill *skills){
         printf("Memory allocation failed\n");
         return NULL;
     }
-    printf("Choose you character's name: ");
+    printf("Choose you character's name (no spaces): ");
     scanf("%s", &player->name);
+    while (getchar() != '\n');
     printf("\n");
     for(int i = 0; i<20; i++){
         printf("%d.%s",i+1, skills[i].name);
@@ -382,17 +383,18 @@ void load_game_and_play(){
     int skill_number;//Skill number
     for (int i = 0; i < 4; i++) {
         fscanf(fp, "%d\n", &skill_number);
-        get_skill(&plyr->skill[i], skill_number);
+        get_skill(&plyr->skill[i], skill_number);//We put the skills
     }
 
     int last_node_number;
-    fscanf(fp, "%d\n", &last_node_number);
+    fscanf(fp, "%d\n", &last_node_number);//We get the node played
+    fscanf(fp,"%s\n",scene->filename );
     fclose(fp);
 
     printf("Game loaded successfully. Starting from node %d...\n", last_node_number);
     printf("Starting to play\n\n. . .\n\n");
 
-    run_game(last_node_number, "scenario1.txt", plyr);
+    run_game(last_node_number,scene->filename, plyr);
 }
 
 
@@ -474,3 +476,37 @@ void order_skills_dmg() {
     order_skills_dmg();
     return 0;
 }*/
+
+
+//Functions related with dictionary
+
+long int hash_function(char *skill_name){
+    int name_skill_size = strlen(skill_name);
+    int addition_ascii_value = 0;
+    for(int i =0; i<name_skill_size; i++){
+        addition_ascii_value += (int)skill_name[i]; //This int insisde paraentesis helps us to get Ascii value of each character
+    }
+    
+    return addition_ascii_value % MAX_DICTONARY_SIZE;
+}
+
+void create_inizialize_dic(int size){
+    Skill_usuage_dicionary *dicionary = (Skill_usuage_dicionary*)malloc(sizeof(Skill_usuage_dicionary));
+    dicionary->size_dicionary = size;
+    dicionary->hashmap= (dic_element*)calloc(size,sizeof(dic_element));
+    for (int i = 0; i < MAX_DICTONARY_SIZE; i++) {
+        dicionary->hashmap[i] = NULL;
+    }
+    dicionary->skills_added = 0;
+    dicionary->size_dicionary = MAX_DICTONARY_SIZE;
+}
+
+void insert_skill (Skill_usuage_dicionary *dic, Skill skill){
+    long int index = hash_function(skill.name); //We do the hash function of the skill name
+    dic_element *new_element = (dic_element*)malloc(sizeof(dic_element)); //We create a new element 
+    strcpy(new_element->key,skill.name);//We put the key as the item
+    new_element->skill = skill; //We put the skill info in the dictionary
+    new_element->usage_counter = 0; //When we put it to the dictionary it will have 0 usage
+
+
+}

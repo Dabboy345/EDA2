@@ -33,7 +33,7 @@ void print_game_name(){ //We will use this funtion to print our logo
 void print_menu(){//This will be the print function which will print the users menu
     print_game_name();
     printf("\n");
-    printf("1. NEW GAME\n");
+    printf("1. New GAME\n");
     printf("2. Load GAME\n");
     printf("3. Exit GAME\n");
 }

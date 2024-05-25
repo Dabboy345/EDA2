@@ -44,4 +44,7 @@ void swap(Skill* p1, Skill* p2);
 int partition(Skill arr[], int low, int high);
 void quickSort(Skill arr[], int low, int high);
 void order_skills_dmg();
+
+
+
 #endif  

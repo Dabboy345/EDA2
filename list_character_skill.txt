@@ -147,7 +147,7 @@ Stick
 Stick enables the user to give a damage to the opponent with a hit with the stick
 1
 7
-n
+s
 5, 3, 5
 
 51skill
@@ -187,7 +187,7 @@ Knife
 The user can attack you with the Knife
 1
 30
-s
+n
 7, 3, 30
 
 56skill
@@ -195,7 +195,7 @@ Lighter
 The user burns you
 1
 20
-s
+v
 6, 2, 30
 
 57skill
@@ -203,7 +203,7 @@ Microphone
 The user is able to use a microphone which will do damage to the opponent
 1
 20
-d
+v
 4, 2, 25
 
 58skill
@@ -235,7 +235,7 @@ Self Defence Blind
 It permits the user to defend himself with a blind
 0
 15
-d
+s
 3, 5, 25 
 
 62skill
@@ -275,7 +275,7 @@ Peper spray
 The user throws spray and make you blind during some time
 1
 15
-v
+s
 2, 3, 25
 
 67skill
