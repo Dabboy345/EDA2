@@ -1,6 +1,6 @@
 #include "prints.h"
 
-void print_game_name(){ //We will use this funtion to print our logo
+void print_game_name(){ //To print name of our game
     const char *ascii_art = 
     "                         ___                                                ___                              \n"
     "                        (   )                                              (   )                             \n"
@@ -39,12 +39,12 @@ void print_menu(){//This will be the print function which will print the users m
 }
 
 
-void print_decision(Decision *choice, Character* plyr) {
-    printf("%s\n", choice->option.description);
-    printf("%s\n", choice->option.pre_txt);
-    if (strcmp(choice->option.enemy.name, "None") == 0) {
+void print_decision(Decision *choice, Character* plyr) { //This fucntion helps us to print the informacion that we have in the decision
+    printf("%s\n", choice->option.description);//Print the description
+    printf("%s\n", choice->option.pre_txt);//Print pre text
+    if (strcmp(choice->option.enemy.name, "None") == 0) { //If there is no enemy then we print no enemy
         printf("No enemy\n");
-    } else {
+    } else {     //If there is a enemy we print the enemy name and skills
         printf("Enemy is %s with skills:\n1.%s2.%s3.%s4.%s\n",
             choice->option.enemy.name,
             choice->option.enemy.skill[0],
@@ -56,12 +56,12 @@ void print_decision(Decision *choice, Character* plyr) {
         }
 
     }
-    printf("%s\n", choice->option.post_txt);
-    printf("1.%s\n", choice->option.option1);
-    printf("2.%s\n", choice->option.option2);
+    printf("%s\n", choice->option.post_txt);//We print the post text 
+    printf("1.%s\n", choice->option.option1);//We print the description for option 1 
+    printf("2.%s\n", choice->option.option2);//We print the description for option 2
 };
 
-void print_menu_option(){
+void print_menu_option(){ //We print what the user is able to do after a decisiom and combat 
     printf("Please select the next options\n");
     printf("Press 1 for first option\n");
     printf("Press 2 for second option\n");

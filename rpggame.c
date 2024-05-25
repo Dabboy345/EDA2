@@ -121,121 +121,124 @@ Character* create_character(Skill *skills){
 }
 
 
-void put_enemy_info(char *line, Enemy *boss) {
-    if (strcmp(line, "no enemy\n") == 0 || strcmp(line, "no enemy") == 0) {
+void put_enemy_info(char *line, Enemy *boss) { //Function to helps us put the enemy info, we recive as parameter a line from the txt and a enemy where to save the information recived 
+    if (strcmp(line, "no enemy\n") == 0 || strcmp(line, "no enemy") == 0) { //If there is not an enemy then we put None to name 
         strcpy(boss->name, "None");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) { //We put the stats to 0
             boss->stats[i] = 0;
         }
         for (int i = 0; i < MAX_SKILL; i++) {
-            get_skill(&boss->skill[i], 100);
+            get_skill(&boss->skill[i], 100); //in the list_character skill the skill 100 is for the when ther is no enemy
         }
         return;
     }
-
-    char buffer[MAX_TXT]; // Create a copy of the string to manipulate by splitting the string
-    int list_n_skills[4];
-    strcpy(buffer, line);
-
-    char *token = strtok(buffer, ":"); // Enemy name, strtok helps us to split the string
+    //If there is an enemy 
+    char buffer[MAX_TXT]; // Create a buffer to manipulate the give line
+    int list_n_skills[4]; //We create a temporary array to save the number of skills
+    strcpy(buffer, line); //We copy the given line into the buffer
+    //Strtok is a function provided by string.h which helps us mapulate string
+    char *token = strtok(buffer, ":"); // We separate the string until its name and put it ot the enemy name
     if (token != NULL) {
         strcpy(boss->name, token);
     }
 
     // Get the stats
     for (int i = 0; i < 3; i++) {
-        token = strtok(NULL, ",");
-        if (token != NULL) {
-            boss->stats[i] = atoi(token); // Conversion of char to int with atoi
+        token = strtok(NULL, ","); //We now have 3 seuqential stat so we do the same thing and put the stats 
+        if (token != NULL) { //Null in this case is the pointer for the string that we manipulated before
+            boss->stats[i] = atoi(token); // Atoi helps us to convert a character ot integer
         }
     }
 
     // Get the skill numbers
-    for (int i = 0; i < MAX_SKILL; i++) {
+    for (int i = 0; i < MAX_SKILL; i++) { //We do the same thing as we did before to get the information about the skilss
         token = strtok(NULL, ",");
         if (token != NULL) {
             list_n_skills[i] = atoi(token);
-            get_skill(&boss->skill[i], list_n_skills[i]);
+            get_skill(&boss->skill[i], list_n_skills[i]); //We use the function get skill to get the information about the skills
         }
     }
 }
 
-void get_info_decision(Decision *choice, int node_number, char *filename_txt) {
-    FILE *fp = fopen(filename_txt, "r");
-    if (fp == NULL) {
+void get_info_decision(Decision *choice, int node_number, char *filename_txt) { //Function to helps us to put the the info for a decision
+    FILE *fp = fopen(filename_txt, "r"); //We open the file which we want to read the information from
+    if (fp == NULL) { //Error Handeling 
         printf("Error opening the file\n");
         return;
     }
-    int a;
-    char buffer[MAX_TXT];
-    while(!feof(fp)){
-        fscanf(fp, "%dnode\n", &a);
-        fgets(choice->option.description, MAX_TXT,fp);
-        fgets(choice->option.pre_txt, MAX_TXT,fp);
-        fgets(buffer, MAX_TXT,fp);
-        put_enemy_info(buffer, &choice->option.enemy);
-        fgets(choice->option.post_txt,MAX_TXT,fp);
-        fgets(choice->option.option1,MAX_TXT,fp);
+    int a; //Create a temporary varable to check if the if the number is same as the node_number 
+    char buffer[MAX_TXT]; //To put the line of enenmy and pass it to the function put enemy info
+    while(!feof(fp)){ //We repeat this process until we haven't reached the End of file
+        fscanf(fp, "%dnode\n", &a); //We get the node number and save it to the a 
+        fgets(choice->option.description, MAX_TXT,fp); //We get the description
+        fgets(choice->option.pre_txt, MAX_TXT,fp); //We get the pre text
+        fgets(buffer, MAX_TXT,fp); //We get the line which has the information about the enemy
+        put_enemy_info(buffer, &choice->option.enemy);// we pass the inforamtion about the enemy to the functio we programmed before
+        fgets(choice->option.post_txt,MAX_TXT,fp); //We get the post text 
+        fgets(choice->option.option1,MAX_TXT,fp); //We get the desciption of option one and option 2 
         fgets(choice->option.option2,MAX_TXT,fp);
-        if(node_number == a){
-            choice->node_number = node_number;
-            fclose(fp);
+        if(node_number == a){ //We check if the if the a is same as the node number
+            choice->node_number = node_number; //if it then we updrage the choice node number
+            fclose(fp); //And we close the file 
             return;
         }
     }
 }
 
 
-Decision *create_desicion(){
+Decision *create_desicion(){//Funciton which helps us allocate memory dynamically and inizilate  a decision 
     Decision *new_decision = (Decision*)malloc(sizeof(Decision));
-    if (new_decision == NULL) {
+    if (new_decision == NULL) { //Error Handeling 
         printf("Memory allocation failed\n");
         return NULL;
     }
-    new_decision->next = NULL;
+    new_decision->next = NULL; //We put the created decision pointer null because at the moment it isn't pointing at anything 
     return new_decision;
 }
 
-Scenario *create_inizialize_Scenario(){
-    Scenario *scene = (Scenario*)malloc(sizeof(Scenario));
-    scene->start = NULL;
+Scenario *create_inizialize_Scenario(){ //Function to allocate memory and iniziale a scenario link list 
+    Scenario *scene = (Scenario*)malloc(sizeof(Scenario)); // We do a malloc 
+    if(scene == NULL){ //Error hadeling
+        printf("Memory allocation failed\n");
+    }
+    scene->start = NULL; //We put both of the pointer to null because at the beginging we don't have anything
     scene->end = NULL;
     return scene;
 }
 
 
-//Function to add a Decision to the Scenario
+
 void addDecisionToScenario(Scenario *scenario, Decision *decision) { //Function to add a decion to the scenario
-    if (scenario->start == NULL) {
+    if (scenario->start == NULL) { //If the node recived is first in the list then we put it as the first and last node 
         scenario->start = decision;
         scenario->end = decision;
     } else {
-        scenario->end->next = decision;
-        scenario->end = decision;
+        scenario->end->next = decision; //We move the pointer of the end->next to the decision 
+        scenario->end = decision; //We say that the decision is the end 
     }
-    scenario->decisions_added++;
+    scenario->decisions_added++; //We increemt the number of decision added to the list 
 }
 
-void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr){
+void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr){ 
     Decision *test = create_desicion();
     get_info_decision(test, node, filename);
     addDecisionToScenario(scene, test);
     print_decision(test, plyr);
-}
+} //This function helps us create a desicion, get the information, add it to the the link list and print its information
 
 void freeScenario(Scenario *scenario) { //Function to free the scenario
-    Decision *current = scenario->start;
+    Decision *current = scenario->start; //We create a temporary pointer and point at the start 
     Decision *next;
 
-    while (current != NULL) {
-        next = current->next;
-        free(current);
-        current = next;
+    while (current != NULL) { //We go by freeing node by node 
+        next = current->next; //We save the save the next of the current pointer 
+        free(current); //We free the current 
+        current = next; // And we say that the current one is the next we saved and we repat this process until the end 
     }
 
-    scenario->start = NULL;
+    scenario->start = NULL; //After freeing all the nodes we put the pointers to null
     scenario->end = NULL;
-    scenario->decisions_added = 0;
+    scenario->decisions_added = 0; //By freeing we remove the nodes so we put it ot 0
 }
 
 void saveLastDecisionData(Scenario* scenario, Decision* tempDecision) {// Function to save the data of the last decision in the scenario linked list, this will be used for the function is terminal
@@ -289,15 +292,15 @@ int get_last_node_numeber(Scenario *scenario) {
 void save_game(Scenario *scene, Character *character){
     char buffer[MAX_NAME]; //to save the name of the file
     //Decision lastdescion;
-    printf("Write the file name: ");
+    printf("Write the file name(with txt): "); //We ask the user to what would he like teh file to be called 
     scanf("%s", buffer);
     FILE *fp;
-    fp = fopen(buffer,"w");
-    if (fp==NULL){
+    fp = fopen(buffer,"w"); //We open a file poiner in the wirting mode 
+    if (fp==NULL){ //Error Handeling 
         printf("Error saving the file\n");
         return;
     }   
-    fprintf(fp,"%s\n",character->name);
+    fprintf(fp,"%s\n",character->name); //We print the character name into the file 
     for(int i=0; i<3;i++){
         fprintf(fp, "%d\n", character->stats[i]); //We save the stat that player had
     }
@@ -305,10 +308,10 @@ void save_game(Scenario *scene, Character *character){
         fprintf(fp, "%d\n", character->skill[i].skill_number); //We save the skill numbers
     }
     int a = get_last_node_numeber(scene);
-    if( a != -1){
-        fprintf(fp, "%d\n", a);
+    if( a != -1){ //If it is different than -1 means that ther is no error getting the last number
+        fprintf(fp, "%d\n", a); //We save the last decion node numeber he played 
         printf("File Saved Sucesfully\n");
-        fclose(fp);
+        fclose(fp); //We close the file 
         return;
     }
     else {
@@ -479,7 +482,7 @@ void order_skills_dmg() {
 
 
 //Functions related with dictionary
-
+/*
 long int hash_function(char *skill_name){
     int name_skill_size = strlen(skill_name);
     int addition_ascii_value = 0;
@@ -511,3 +514,5 @@ void insert_skill (Skill_usuage_dicionary *dic, Skill skill){
     }
 
 }
+
+*/
