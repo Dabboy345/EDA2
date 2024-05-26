@@ -9,26 +9,31 @@ void new_game(){//Our new game function
     for(int i =0; i<19;i++){
         get_skill(&skill[i], i);
     }
-
     Character *plyr = create_character(skill);
 
     //Scenario1
-    run_game(1,"scenario1.txt", plyr);
+    if(run_game(1,"scenario1.txt",plyr)==0){
+        return;
+    }
     choose_skill(skill, plyr);
 
     //Scenario2
-    //run_game(1,"scenario2.txt",plyr);
-    //choose_skill(skill, plyr);
+    if(run_game(1,"scenario2.txt",plyr)==0){
+        return;
+    }
+    choose_skill(skill, plyr);
 
+    
     //Scenario3
-    run_game(1,"scenario3.txt",plyr);
+    if(run_game(1,"scenario3.txt",plyr)==0){
+        return;
+    }
     choose_skill(skill, plyr);
 
     //Scenario4
-    //run game(1,"scenario4.txt",plyr);
-    //choose_skill(skill, plyr);
-  
-
+    if(run_game(1,"scenario4.txt",plyr)==0){
+        return;
+    }else{printf("\nYou won the game!!!!!!!!!!!!!\n");}
 }
 
 void load_game(char* buffer){//Our load game function
@@ -65,8 +70,7 @@ void load_game(char* buffer){//Our load game function
             
         case 3: 
             //Scenario3
-            int run = run_game(*node_num,"scenario3.txt",plyr);
-            if(run==0){
+            if(run_game(*node_num,"scenario3.txt",plyr)==0){
                 break;
             }
             *node_num = 1;
