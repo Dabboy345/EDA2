@@ -148,11 +148,11 @@ int combat(Character *plyr, Enemy *enmy, int size){
             print_enemy(enmy);
             printf("\n");//Print enemy?
             print_player(plyr);
-        enemy_combat:
             pause();
+
+        enemy_combat:
             int rand_t = rand();
             int b = rand_t%4;
-            printf("--------------%d\n", b);
             int e_dmg = (enmy->skill[b].dmg_skll + enmy->stats[0])*enmy->skill[b].of_def;
 
             if((enmy->skill[b].mod.n==enmy->skill[b].mod.max)&&(enmy->skill[b].mod.chr!='n')){goto enemy_combat;}
@@ -165,8 +165,9 @@ int combat(Character *plyr, Enemy *enmy, int size){
                 dequeue(q);
                 printf("%d turns remaining\n", q->elements);
                 print_enemy(enmy);
-                printf("\n");//Print enemy?
+                printf("\n");
                 print_player(plyr);
+                pause();
                 goto enemy_combat;
             }
 

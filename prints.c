@@ -34,8 +34,9 @@ void print_menu(){//This will be the print function which will print the users m
     print_game_name();
     printf("\n");
     printf("1. New GAME\n");
-    printf("2. Load GAME\n");
-    printf("3. Exit GAME\n");
+    printf("2. Continue GAME\n");   
+    printf("3. Load GAME\n");
+    printf("4. Exit GAME\n");
 }
 
 
@@ -43,7 +44,6 @@ void print_decision(Decision *choice, Character* plyr) { //This fucntion helps u
     printf("%s\n", choice->option.description);//Print the description
     printf("%s\n", choice->option.pre_txt);//Print pre text
     if (strcmp(choice->option.enemy.name, "None") == 0) { //If there is no enemy then we print no enemy
-        printf("No enemy\n");
     } else {     //If there is a enemy we print the enemy name and skills
         printf("Enemy is %s with skills:\n1.%s2.%s3.%s4.%s\n",
             choice->option.enemy.name,
@@ -54,11 +54,14 @@ void print_decision(Decision *choice, Character* plyr) { //This fucntion helps u
         while(combat(plyr, &choice->option.enemy, 20)==2){
             for(int i=0;i<4;i++){plyr->stats[2]+=plyr->skill[i].stats_plyr[2];}//Reset health
         }
-
     }
+    int a = (choice->option.option1[2]=='E' && choice->option.option1[6]=='n')? 0:1;
+    int b = (choice->option.option2[2]=='E' && choice->option.option2[6]=='n')? 0:1;
     printf("%s\n", choice->option.post_txt);//We print the post text 
-    printf("1.%s\n", choice->option.option1);//We print the description for option 1 
-    printf("2.%s\n", choice->option.option2);//We print the description for option 2
+    if(a==1 || b==1){
+        printf("1.%s\n", choice->option.option1);//We print the description for option 1 
+        printf("2.%s\n", choice->option.option2);//We print the description for option 2
+    }
 };
 
 void print_menu_option(){ //We print what the user is able to do after a decisiom and combat 

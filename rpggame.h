@@ -35,7 +35,7 @@ int get_valid_input(int first, int size);
 
 int get_last_node_numeber(Scenario *scenario);
 
-void save_game(Scenario *scene, Character *character);
+void save_game(Scenario *scene, Character *character, char* buffer);
 
 int run_game(int node_number, char *filename, Character *plyr);
 

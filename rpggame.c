@@ -1,9 +1,34 @@
 #include"rpggame.h"
 
+void print_mod(Skill* skll){
+    switch(skll->mod.chr){
+        case 'h':
+            printf("It heals you %d hp\n\n", skll->dmg_skll);
+            break;
+        case 'd':
+            printf("It adds %d defense\n\n", skll->dmg_skll);
+            break;
+        case 'v':
+            printf("It deals some extra damage (depends on the character's attack) during 3 turns\n\n");
+            break;
+        case 's':
+            printf("It  stuns the opponent, not allowing them to attack next turn\n\n");
+            break;
+        case 'r':
+            printf("It takes 1 turn to charge it and another one to use it\n\n");
+            break;
+        case 'f':
+            printf("It increases the general damage (depends on the character's attack)\n\n");
+            break;
+        case 'p':
+            printf("It gives you a %d %% chance of dodging the next attack\n\n", skll->dmg_skll*3);
+            break;
+    }
+}
 
 
 void try_skill(Skill *skll){
-    printf("---------------------------\n");
+    printf("\n---------------------------\n");
     printf("%s", skll->name);
     printf("---------------------------\n\n");
     printf("%s\n", skll->description);
@@ -17,8 +42,8 @@ void try_skill(Skill *skll){
     for(int i = 0; i<skll->stats_plyr[0]; i++){printf("/");};
     printf("\n\n");
     if(skll->of_def==0){printf("It doesn't deal damage\n\n");}
-    else if(skll->of_def==1){printf("%d damage dealt\n\n", skll->dmg_skll);};
-    //print_mod(Skill* skill)
+    else if(skll->of_def==1){printf("It deals %d damage\n\n", skll->dmg_skll);};
+    print_mod(skll);
 }
 
 void get_skill(Skill *skill, int n){
@@ -90,10 +115,9 @@ void choose_skill(Skill *skills, Character *player){
     int test=0;
     while(temp!=0){
         printf("\nType 0 to choose final skills\nTry a skill (1-20): ");
-        printf("\n");
         temp = get_valid_input(0, 20);
+        printf("\n");
         if(0!=temp){try_skill(&(skills[temp-1]));}
-        
     }
     
     for(int i = 0; i<4; i++){
@@ -128,6 +152,17 @@ Character* create_character(Skill *skills){
     while (getchar() != '\n');
     printf("\n");
     choose_skill(skills, player);
+    printf("\n\nFinal character:\n%s\n\n", player->name);
+
+    printf("Health points: %d\n", player->stats[2]);
+    for(int i = 0; i<player->stats[2]; i++){printf("|");}
+    printf("\n");
+    printf("Defense: %d\n", player->stats[1]);
+    for(int i = 0; i<player->stats[1]; i++){printf("]");}
+    printf("\n");
+    printf("Damage: %d\n", player->stats[0]);
+    for(int i = 0; i<player->stats[0]; i++){printf("}");};
+    printf("\n\n");   
     return player;
 }
 
@@ -226,6 +261,7 @@ void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Characte
     Decision *test = create_desicion();
     get_info_decision(test, node, filename);
     addDecisionToScenario(scene, test);
+    save_game(scene, plyr, "auto_save.txt");
     print_decision(test, plyr);
 } //This function helps us create a desicion, get the information, add it to the the link list and print its information
 
@@ -292,11 +328,7 @@ int get_last_node_numeber(Scenario *scenario) {
 }
 
 
-void save_game(Scenario *scene, Character *character){
-    char buffer[MAX_NAME]; //to save the name of the file
-    //Decision lastdescion;
-    printf("Write the file name(with txt): "); //We ask the user to what would he like teh file to be called 
-    scanf("%s", buffer);
+void save_game(Scenario *scene, Character *character, char* buffer){
     FILE *fp;
     fp = fopen(buffer,"w"); //We open a file poiner in the wirting mode 
     if (fp==NULL){ //Error Handeling 
@@ -314,7 +346,7 @@ void save_game(Scenario *scene, Character *character){
     if( a != -1){ //If it is different than -1 means that ther is no error getting the last number
         fprintf(fp, "%d\n", a); //We save the last decion node numeber he played 
         fprintf(fp, "%s\n", scene->filename); //We print in which scenario we were situated 
-        printf("File Saved Sucesfully\n");
+        printf("Game saved\n");
         fclose(fp); //We close the file 
         return;
     }
@@ -335,6 +367,7 @@ int run_game(int node_number, char *filename, Character *plyr){
     saveLastDecisionData(scene, &temporary_checker);
     int a;
     int option_selected;
+    char* buffer;
     do{
         print_menu_option();
         printf("Your choice: ");
@@ -342,6 +375,7 @@ int run_game(int node_number, char *filename, Character *plyr){
         printf("\n");
         switch(a){
             case 1:
+
                 option_selected = (temporary_checker.node_number) *2;
                 go_to_node_select_and_add(option_selected,scene->filename,scene, plyr);
                 saveLastDecisionData(scene, &temporary_checker);
@@ -352,14 +386,16 @@ int run_game(int node_number, char *filename, Character *plyr){
                 saveLastDecisionData(scene, &temporary_checker);
                 break;
             case 3:
-                save_game(scene, plyr);
+                printf("Write the file name(with txt): "); //We ask the user to what would he like teh file to be called 
+                scanf("%s", buffer);
+                save_game(scene, plyr, buffer);
                 break;
             case 4:
                 return 0;
                 break;
 
         }
-        printf("\n\n_____________________________________________________\n\n");
+        printf("________________________________________________________________________________\n\n");
     }while(is_terminal(&temporary_checker)==0);
     //printf("You have the scenario\n");
     //printf("Thanks for playing our game\n");

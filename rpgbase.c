@@ -31,7 +31,7 @@ void new_game(){//Our new game function
 
 }
 
-void load_game(){//Our load game function
+void load_game(char* buffer){//Our load game function
     Skill *skill = (Skill*)calloc(20, sizeof(Skill));
     Character *plyr = (Character*)malloc(sizeof(Character));
 
@@ -42,9 +42,7 @@ void load_game(){//Our load game function
     for(int i =0; i<19;i++){
         get_skill(&skill[i], i);
     }
-    char buffer[MAX_NAME];
-    printf("Please put the filename: ");
-    scanf("%s", buffer);
+    
     int* node_num = (int*)malloc(sizeof(int));
     int a = load_game_and_play(buffer, plyr, node_num);
     switch(a){
@@ -84,15 +82,21 @@ void load_game(){//Our load game function
 
 int main(){
     int a = 0;
-    while(a!=3){
+    while(a!=4){
         print_menu();//We will print the menu
-        a = get_valid_input(1,3);//We will ask the user what option would he like to choose
+        a = get_valid_input(1,4);//We will ask the user what option would he like to choose
         switch(a){
             case 1:
                 new_game();
                 break;
             case 2:
-                load_game();
+                load_game("auto_save.txt");
+                break;
+            case 3:
+                char buffer[MAX_NAME];
+                printf("Please put the filename: ");
+                scanf("%s", buffer);
+                load_game(buffer);
                 break;
         }
     }
