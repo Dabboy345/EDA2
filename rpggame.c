@@ -56,7 +56,13 @@ void get_skill(Skill *skill, int n){
                     skill->mod.max = 1;
                     break;
                 case 'r':
+                    skill->mod.max = 4;
+                    break;
+                case 'f':
                     skill->mod.max = 3;
+                    break;
+                case 'p':
+                    skill->mod.max = 4;
                     break;
             }
 
@@ -74,16 +80,7 @@ void get_skill(Skill *skill, int n){
     }
 }
 
-Character* create_character(Skill *skills){
-    Character *player = (Character*)malloc(sizeof(Character));
-    if(player == NULL){
-        printf("Memory allocation failed\n");
-        return NULL;
-    }
-    printf("Choose you character's name (no spaces): ");
-    scanf("%s", &player->name);
-    while (getchar() != '\n');
-    printf("\n");
+void choose_skill(Skill *skills, Character *player){
     for(int i = 0; i<20; i++){
         printf("%d.%s",i+1, skills[i].name);
     }
@@ -117,6 +114,20 @@ Character* create_character(Skill *skills){
         }
         player->stats[i] = temp;
     }
+}
+
+Character* create_character(Skill *skills){
+    Character *player = (Character*)malloc(sizeof(Character));
+    if(player == NULL){
+        printf("Memory allocation failed\n");
+        return NULL;
+    }
+    printf("Choose you character's name (no spaces): ");
+    scanf("%s", &player->name);
+    for(int i=0;i<strlen(player->name);i++){rand();}//More random factor
+    while (getchar() != '\n');
+    printf("\n");
+    choose_skill(skills, player);
     return player;
 }
 
@@ -142,16 +153,8 @@ void put_enemy_info(char *line, Enemy *boss) { //Function to helps us put the en
         strcpy(boss->name, token);
     }
 
-    // Get the stats
-    for (int i = 0; i < 3; i++) {
-        token = strtok(NULL, ","); //We now have 3 seuqential stat so we do the same thing and put the stats 
-        if (token != NULL) { //Null in this case is the pointer for the string that we manipulated before
-            boss->stats[i] = atoi(token); // Atoi helps us to convert a character ot integer
-        }
-    }
-
     // Get the skill numbers
-    for (int i = 0; i < MAX_SKILL; i++) { //We do the same thing as we did before to get the information about the skilss
+    for (int i = 0; i < MAX_SKILL; i++) { //We do the same thing as we did before to get the information about the skills
         token = strtok(NULL, ",");
         if (token != NULL) {
             list_n_skills[i] = atoi(token);
@@ -310,6 +313,7 @@ void save_game(Scenario *scene, Character *character){
     int a = get_last_node_numeber(scene);
     if( a != -1){ //If it is different than -1 means that ther is no error getting the last number
         fprintf(fp, "%d\n", a); //We save the last decion node numeber he played 
+        fprintf(fp, "%s\n", scene->filename); //We print in which scenario we were situated 
         printf("File Saved Sucesfully\n");
         fclose(fp); //We close the file 
         return;
@@ -323,9 +327,10 @@ void save_game(Scenario *scene, Character *character){
 }
 
 
-void run_game(int node_number, char *filename, Character *plyr){
+int run_game(int node_number, char *filename, Character *plyr){
     Scenario *scene = create_inizialize_Scenario();
-    go_to_node_select_and_add(node_number,filename,scene, plyr);
+    strcpy(scene->filename,filename);
+    go_to_node_select_and_add(node_number,scene->filename,scene, plyr);
     Decision temporary_checker;
     saveLastDecisionData(scene, &temporary_checker);
     int a;
@@ -338,45 +343,40 @@ void run_game(int node_number, char *filename, Character *plyr){
         switch(a){
             case 1:
                 option_selected = (temporary_checker.node_number) *2;
-                go_to_node_select_and_add(option_selected,filename,scene, plyr);
+                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr);
                 saveLastDecisionData(scene, &temporary_checker);
                 break;
             case 2:
                 option_selected = ((temporary_checker.node_number) *2)+1;
-                go_to_node_select_and_add(option_selected,filename,scene, plyr);
+                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr);
                 saveLastDecisionData(scene, &temporary_checker);
                 break;
             case 3:
                 save_game(scene, plyr);
                 break;
             case 4:
-                goto exit;
+                return 0;
                 break;
 
         }
-        printf("\n_____________________________________________________\n");
+        printf("\n\n_____________________________________________________\n\n");
     }while(is_terminal(&temporary_checker)==0);
     //printf("You have the scenario\n");
-    exit:
     //printf("Thanks for playing our game\n");
     freeScenario(scene);
-    free(plyr);
+    return 1;
+    //free(plyr);
 }
+ 
 
-
-void load_game_and_play(){
-
+int load_game_and_play(char *buffer, Character* plyr, int* last_node_number){
+    int number_scenario;//To know in which scenario we are 
     Scenario *scene = create_inizialize_Scenario();
-    Character *plyr = (Character*)malloc(sizeof(Character));
-
-    char buffer[MAX_NAME];
-    printf("Please put the filename: ");
-    scanf("%s",buffer);
 
     FILE *fp = fopen(buffer,"r");
     if (fp==NULL){
         printf("Error loading the file information or file doesn't exist\n");
-        return;
+        return 0; //It means that there is error loading the information
     }
     fscanf(fp, "%s\n", plyr->name);//We get the saved name
     for (int i = 0; i < 3; i++) { //We put the character stats
@@ -389,15 +389,32 @@ void load_game_and_play(){
         get_skill(&plyr->skill[i], skill_number);//We put the skills
     }
 
-    int last_node_number;
-    fscanf(fp, "%d\n", &last_node_number);//We get the node played
+    fscanf(fp, "%d\n", last_node_number);//We get the node played
     fscanf(fp,"%s\n",scene->filename );
     fclose(fp);
 
-    printf("Game loaded successfully. Starting from node %d...\n", last_node_number);
+    printf("Game loaded successfully. Starting from node %d...\n", *last_node_number);
     printf("Starting to play\n\n. . .\n\n");
 
-    run_game(last_node_number,scene->filename, plyr);
+    //run_game(last_node_number,scene->filename, plyr);
+
+    if(scene->filename[8]=='1'){
+        number_scenario = 1;
+    }
+
+    else if(scene->filename[8]=='2'){
+        number_scenario = 2;
+    }
+
+    else if(scene->filename[8]=='3'){
+        number_scenario = 3;
+    }
+
+    else if(scene->filename[8]=='4'){
+        number_scenario = 4;
+    }
+    return number_scenario;
+
 }
 
 

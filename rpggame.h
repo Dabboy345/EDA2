@@ -8,6 +8,8 @@ void try_skill(Skill *skll);
 
 void get_skill(Skill *skill, int n);
 
+void choose_skill(Skill *skills, Character *player);
+
 Character* create_character(Skill *skills);
 
 void put_enemy_info(char *line, Enemy *boss);
@@ -35,9 +37,9 @@ int get_last_node_numeber(Scenario *scenario);
 
 void save_game(Scenario *scene, Character *character);
 
-void run_game(int node_number, char *filename, Character *plyr);
+int run_game(int node_number, char *filename, Character *plyr);
 
-void load_game_and_play();
+int load_game_and_play(char* buffer, Character* plyr, int* last_node_number);
 
 //order skills
 void swap(Skill* p1, Skill* p2);

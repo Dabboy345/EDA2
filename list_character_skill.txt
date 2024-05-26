@@ -2,7 +2,7 @@
 Knife
 The user can attack you with the knife
 1
-25
+20
 n
 7, 3, 30,
 
@@ -10,12 +10,12 @@ n
 Sword
 The user can attack you with a sword
 1
-20
+100
 n
 1, 5, 30,
 
 2skill
-Pistol
+AK-48
 User can attack you with pistol
 1
 30
@@ -23,11 +23,11 @@ n
 2, 3, 25,
 
 3skill
-Bow
+Legola's bow
 User can attack you with a bow
 1
-15
-n
+40
+r
 2, 4, 30,
 
 4skill
@@ -39,7 +39,7 @@ n
 1, 5, 25,
 
 5skill
-Fire
+Fireball 
 User can attack you with fire
 1
 30
@@ -47,11 +47,11 @@ v
 2, 2, 15,
 
 6skill
-Force
+The force
 User gains extra force
-1
-15
-n
+0
+20
+f
 1, 5, 35,
 
 7skill
@@ -59,23 +59,23 @@ Shield
 User can defend himself with a shield
 0
 10
-n
+d
 1, 7, 40,
 
 8skill
 Dodge
 You can dodge the attack of the opponent
 0
-0
-n
+25
+p
 1, 6, 35,
 
 9skill
 Rebound
 The attack from the opponent gets rebound
-0
-0
-n
+1
+15
+p
 1, 8, 40,
 
 10skill
@@ -87,19 +87,19 @@ h
 1, 6, 45,
 
 11skill
-Thorns
-When you recive some damage x% of the damage will go to your opponent
+KFC wings
+They taste so good that they heal you
 0
-10
-n
-1, 5, 30,
+37
+h
+1, 5, 40,
 
 12skill
 Thunder 
 User is able to cast a thunder and attack
 1
 18
-n
+s
 2, 3, 30,
 
 13skill
@@ -120,26 +120,26 @@ d
 
 15skill
 Summon attacker
-User is able to summon a helper which can attack(only one time during fight)
+User is able to summon a helper which can attack
 1
 14
-n
+v
 2, 6, 30,
 
 16skill
 Redbull
 Redbull gives you wiiiiiings
 1
-27
-n
+10
+f
 1, 0, 25,
 
 17skill
 Power of friendship 
 It will you get rid of negative thoughts and build up the force/energy
-1
+0
 30
-n
+f
 2, 8, 33,
 
 50skill
@@ -155,7 +155,7 @@ Denture
 Denture is a skill that takes a turn to equip and another turn to use, it has only 1 use for a fight
 1
 30
-n
+r
 3, 6, 25
 
 52skill
@@ -235,7 +235,7 @@ Self Defence Blind
 It permits the user to defend himself with a blind
 0
 15
-s
+d
 3, 5, 25 
 
 62skill
@@ -259,15 +259,15 @@ Wings
 it allows the user to protect its self creating a shield
 0
 15
-n
+d
 2, 3, 25
 
 65skill
 Double
 The user make twice the damage in that hit
 1
-30
-n
+15
+f
 2, 5, 30
 
 66skill
@@ -282,8 +282,8 @@ s
 Backflip
 It allows the user to scape a hit
 0
-15
-n
+17
+p
 1, 5, 25
 
 68skill
@@ -295,7 +295,7 @@ n
 2, 5, 30
 
 69skill
-bite
+Bite
 The user bites you 
 1
 25
@@ -311,7 +311,7 @@ n
 2, 3, 25
 
 71skill
-claws
+Claws
 The user attacks you with its claws
 1
 15
@@ -319,7 +319,7 @@ n
 1, 3, 25
 
 72skill
-glass bottle
+Glass bottle
 The user attacks with a broken glass bottle
 1
 25
@@ -351,15 +351,15 @@ v
 2, 3, 25
 
 76skill
-root
+Root
 The root of the plant sorrounds you chocking you
 1
 25
-n
+s
 2, 3, 25
 
 77skill
-grow
+Growth
 The plant regenerates itself and it recuperates hp
 0
 35
@@ -375,7 +375,7 @@ d
 3, 5, 25
 
 79skill
-bomb
+Bomb
 The user throws a bomb from above
 1
 25
@@ -385,13 +385,13 @@ s
 80skill
 Flash 
 The user is able to activate a flash that blinds the user 
-1
-20
-d
+0
+10
+s
 4, 2, 25
 
 81skill
-sticky
+Sticky
 The user throws balls that limit your movements
 1
 20
@@ -399,12 +399,29 @@ s
 2, 3, 25
 
 82skill
-spikes
+Spikes
 the user trows spikes
 1
 20
 n
 2, 5, 25
+
+83skill
+Electric_Pistol
+User is able to use a electric pistol
+1
+12
+s
+1, 6, 30
+
+84skill
+Hammer 
+User is able to attack use Hammer
+1
+17
+r
+3, 5, 20
+
 
 100skill
 None

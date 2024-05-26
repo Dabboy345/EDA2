@@ -1,0 +1,33 @@
+Time strike (stack)
+Changing to scenario
+Writing info os scenarios 2 and 3
+being able to use enemies habilities
+Balancing habilities
+Sorting algotithms for skills
+modifiers (probability) and printing in testing
+random turns
+
+Maybe
+Dictionary //No se si da tiempo a mi hacerlo 
+Easter egg names
+Asking are you sure in every input
+Option te see description of skill mid combat
+Changing skill when changing scenarios
+lifes system?
+
+Buenos dias
+holaparecen muchas cosas pero son cortitas de hacer, es ponerse
+Ahora me iba a ponerse a escribir mi escenario, luego estare estudiando metodes 
+
+
+
+
+
+
+    // Get the stats
+    for (int i = 0; i < 3; i++) {
+        token = strtok(NULL, ","); //We now have 3 seuqential stat so we do the same thing and put the stats 
+        if (token != NULL) { //Null in this case is the pointer for the string that we manipulated before
+            boss->stats[i] = atoi(token); // Atoi helps us to convert a character ot integer
+        }
+    }
