@@ -64,5 +64,24 @@ Now you can look through the files, you see that they have been experimenting on
 - Get out and publish everything to social media
 
 9node
+You decide to leave the bulding and try to investigate from the outside
+As you are leaving a guard caughts you at the door and tries to stop 
+Outside guard: ()
+Now that you are outside and are free to scape, what do you want to do?
+- Go to the police 
+- Make public what you have discovered
+
+10node
+You decide to go looking for the modified monkey
+When you finally find the monkey, he looks angry and is in a jail making a lot of noise, and hitting the bars. You see a bracelet on his foot with some lights on with which they are controlling him.
+modified monkey: ()
+Now that the bracelet is off, the monkey doesn't look angry anymore he is back to his true nature. What do you decide to do?
+- Free the monkey and all the animals
+- Go to the police to report the experiments
+
+11node
+You take the files and go looking for the animals that they have to experiment on
+When you go to the room 
+
 
 
