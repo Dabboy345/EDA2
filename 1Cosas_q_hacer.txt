@@ -1,12 +1,11 @@
 Time strike (stack)
 Writing info os scenarios 2 
 Balancing habilities
-sorting algorithm change number
 when winning game erase auto_save
 check if autosave empty
+time strike
+video
+readme
 
 Maybe
-Dictionary //No se si da tiempo a mi hacerlo 
 Easter egg names
-Asking are you sure in every input
-lifes system?
