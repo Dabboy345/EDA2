@@ -4,11 +4,11 @@ Someone gonnas get their body chooped
 1
 20
 n
-7, 3, 30,
+2, 3, 30,
 
 1skill
-Exalibur
-Able to attack you with a sword called Exalibur
+Excalibur
+King Arthur sword taken out from a craved stone
 1
 23
 n
@@ -16,15 +16,15 @@ n
 
 2skill
 AK-48
-Able to attack using AK-48
+Caution you can get might get some holes in your body 
 1
 30
 n
-2, 3, 25,
+2, 3, 17,
 
 3skill
-Legolas bow
-User can attack you with a bow 
+Legolas' bow
+Bow crafted by the elves
 1
 40
 r
@@ -32,7 +32,7 @@ r
 
 4skill
 Flail
-User can attack you with a flail
+Mantain your distance if not you are getting punished
 1
 15
 n
@@ -40,23 +40,23 @@ n
 
 5skill
 Fireball 
-User can attack you with fire which 
+Invoking a star form the heaven 
 1
-30
+25
 v
 2, 2, 15,
 
 6skill
 The force
-User gains extra force
+Right now you feel like you can destroy anyone 
 0
 20
 f
 1, 5, 35,
 
 7skill
-Shield
-User can defend himself with a shield
+Aegis
+ZEUS shield
 0
 10
 d
@@ -64,23 +64,23 @@ d
 
 8skill
 Dodge
-You can dodge the attack of the opponent
+Looks like you can dodge some attacks
 0
 25
 p
 1, 6, 35,
 
 9skill
-Rebound
-The attack from the opponent gets rebound
+Quickstep
+You quickly try to dodge the attack 
 1
 15
 p
 1, 8, 40,
 
 10skill
-Healing 
-You can use this ability to heal yourself
+Holy Blessing
+God heals you
 0
 30
 h
@@ -95,32 +95,32 @@ h
 1, 5, 40,
 
 12skill
-Thunder 
-User is able to cast a thunder and attack
+Electroshock 
+Unleashes a burst of electrical energy to stun and damage enemies.
 1
 18
 s
 2, 3, 30,
 
 13skill
-Camouflage
-User is able to camouflage
+Veil of Shadows
+Cloaks the user in darkness, making them nearly invisible.
 0
 30
 p
 1, 0, 25,
 
 14skill
-Summon defender
-User is able to summon a helper which can recive damage
+Defender's Shield
+Summoned defender creates a temporary barrier that absorbs damage.
 0
 10
 d
 1, 3, 25,
 
 15skill
-Summon attacker
-User is able to summon a helper which can attack
+Summon Berserker
+Calls forth a fierce attacker to assault enemies with powerful strikes.
 1
 14
 v
@@ -141,6 +141,31 @@ It will you get rid of negative thoughts and build up the energy
 30
 f
 2, 8, 33,
+
+18skill
+Phoenix Flame
+Summons a burst of flames that engulfs enemies
+1
+33
+s
+2, 1, 24,
+
+19skill
+Lifebloom
+Summons a field of magical flowers that heal allies over time and cure status ailments
+0
+11
+h
+1, 5, 37,
+
+20skill
+Ethereal Strike
+Unleashes a attack that phases through dealing damage to the target
+1
+33
+n
+2, 3, 34,
+
 
 50skill
 Stick
@@ -416,7 +441,7 @@ s
 
 84skill
 Mjolnir 
-Able to use the hammer if thor
+Able to use the thor hammer
 1
 17
 r
