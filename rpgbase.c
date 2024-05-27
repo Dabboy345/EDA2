@@ -1,12 +1,12 @@
 #include "rpgbase.h"
 
 void new_game(){//Our new game function
-    Skill *skill = (Skill*)calloc(20, sizeof(Skill));
-    if(skill == NULL){
+    Skill *skill = (Skill*)calloc(21, sizeof(Skill));
+    if(skill == NULL){ 
         printf("Memory allocation failed\n");
         return;
     }
-    for(int i =0; i<20;i++){
+    for(int i =0; i<21;i++){
         get_skill(&skill[i], i);
     }
     Character *plyr = create_character(skill);
@@ -15,20 +15,19 @@ void new_game(){//Our new game function
     if(run_game(1,"scenario1.txt",plyr)==0){
         return;
     }
-    choose_skill(skill, plyr);
+    change_skill(skill, plyr);
 
     //Scenario2
     if(run_game(1,"scenario2.txt",plyr)==0){
         return;
     }
-    choose_skill(skill, plyr);
+    change_skill(skill, plyr);
 
-    
     //Scenario3
     if(run_game(1,"scenario3.txt",plyr)==0){
         return;
     }
-    choose_skill(skill, plyr);
+    change_skill(skill, plyr);
 
     //Scenario4
     if(run_game(1,"scenario4.txt",plyr)==0){
@@ -37,15 +36,16 @@ void new_game(){//Our new game function
 }
 
 void load_game(char* buffer){//Our load game function
-    Skill *skill = (Skill*)calloc(20, sizeof(Skill));
+    Skill *skill = (Skill*)calloc(21, sizeof(Skill));
     Character *plyr = (Character*)malloc(sizeof(Character));
 
     if(skill == NULL){
         printf("Memory allocation failed\n");
         return;
     }
-    print_skills(skill);
-    
+    for(int i =0; i<21;i++){
+        get_skill(&skill[i], i);
+    }
     int* node_num = (int*)malloc(sizeof(int));
     int a = load_game_and_play(buffer, plyr, node_num);
     switch(a){
@@ -55,7 +55,7 @@ void load_game(char* buffer){//Our load game function
                 break;
             }
             *node_num = 1;
-            choose_skill(skill, plyr);
+            change_skill(skill, plyr);
 
         case 2:
             //Scenario2
@@ -63,7 +63,7 @@ void load_game(char* buffer){//Our load game function
                 break;
             }
             *node_num = 1;
-            choose_skill(skill, plyr);
+            change_skill(skill, plyr);
 
             
         case 3: 
@@ -72,7 +72,7 @@ void load_game(char* buffer){//Our load game function
                 break;
             }
             *node_num = 1;
-            choose_skill(skill, plyr);
+            change_skill(skill, plyr);
         
         case 4: 
             //Scenario4

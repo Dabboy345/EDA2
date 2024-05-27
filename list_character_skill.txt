@@ -1,6 +1,6 @@
 0skill
 Meat Cleaver
-Someone gonnas get their body chooped
+Someone is gonna get their body chooped
 1
 20
 n
@@ -16,7 +16,7 @@ n
 
 2skill
 AK-48
-Caution you can get might get some holes in your body 
+Caution you might get some holes in your body 
 1
 30
 n
@@ -40,7 +40,7 @@ n
 
 5skill
 Fireball 
-Invoking a star form the heaven 
+Invoking a star from the heaven 
 1
 25
 v
@@ -112,7 +112,7 @@ p
 
 14skill
 Defender's Shield
-Summoned defender creates a temporary barrier that absorbs damage.
+A summoned defender creates a temporary barrier that absorbs damage.
 0
 10
 d
@@ -165,7 +165,6 @@ Unleashes a attack that phases through dealing damage to the target
 33
 n
 2, 3, 34,
-
 
 50skill
 Stick

@@ -1,8 +1,9 @@
 Time strike (stack)
 Writing info os scenarios 2 
 Balancing habilities
-Sorting algotithms for skills
-
+sorting algorithm change number
+when winning game erase auto_save
+check if autosave empty
 
 Maybe
 Dictionary //No se si da tiempo a mi hacerlo 

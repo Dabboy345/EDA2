@@ -28,6 +28,7 @@ void print_mod(Skill* skll){
 }
 
 
+
 void try_skill(Skill *skll){
     printf("\n---------------------------\n");
     printf("%s", skll->name);
@@ -107,26 +108,32 @@ void get_skill(Skill *skill, int n){
     }
 }
 
+void change_skill(Skill* skill, Character*plyr){
+    printf("\nDo you want to change skills? Yes->0, No->1: ");
+    if(get_valid_input(0, 1)==0){
+        for(int i =0; i<19;i++){
+            get_skill(&skill[i], i);
+        }
+        choose_skill(skill, plyr);
+    }
+}
+
+
 void choose_skill(Skill *skills, Character *player){
     print_skills(skills);
-
-    printf("\n");
     int temp=1;
     int test=0;
     while(temp!=0){
-        printf("\nType 0 to choose final skills\nTry a skill (1-20): ");
-        temp = get_valid_input(0, 20);
+        printf("\nType 0 to choose final skills\nTry a skill (1-21): ");
+        temp = get_valid_input(0, 21);
         printf("\n");
         if(0!=temp){try_skill(&(skills[temp-1]));}
     }
-    for(int i = 0; i<20; i++){
-        printf("%d.%s",i+1, skills[i].name);
-    }
-    printf("\n\n");
+    print_skills(skills);
     for(int i = 0; i<4; i++){
         repeated_skill:
         printf("Choose skill %d: ", i+1);
-        temp = get_valid_input(1, 20); //We need to code so that the player can't have repeated skills
+        temp = get_valid_input(1, 21); //We need to code so that the player can't have repeated skills
         //for(int j = 0;j<i;i++){}
         for(int j=0;j<i;j++){if(player->skill[j].skill_number==temp-1){
             printf("\nYou can't have %stwice\n\n", player->skill[j].name);goto repeated_skill;}}
@@ -151,8 +158,8 @@ Character* create_character(Skill *skills){
     }
     printf("Choose you character's name (no spaces): ");
     scanf("%s", &player->name);
-    for(int i=0;i<strlen(player->name);i++){rand();}//More random factor
     while (getchar() != '\n');
+    for(int i=0;i<strlen(player->name);i++){rand();}//More random factor
     printf("\n");
     choose_skill(skills, player);
     printf("\n\nFinal character:\n%s\n\n", player->name);
@@ -493,34 +500,34 @@ void quickSort(Skill arr[], int low, int high, int n) {
 
 // Function to read skills from a file and sort them by damage
 void order_skills(int n) {
-    Skill *skills = (Skill*)calloc(20, sizeof(Skill));
+    Skill *skills = (Skill*)calloc(21, sizeof(Skill));
     if(skills == NULL){
         printf("Memory allocation failed\n");
         return;
     }
-    for(int i =0; i<20;i++){
+    for(int i =0; i<21;i++){
         get_skill(&skills[i], i);
     }
-    int count = 20;
+    int count = 21;
     // Sort the skills by damage
     quickSort(skills, 0, count - 1, n-1);
 
     // Print sorted skills
     char *stat;
     switch(n){
-        case 0:
+        case 1:
             stat = "attack";
             break;
-        case 1:
+        case 2:
             stat = "defense";
             break;
-        case 2:
+        case 3:
             stat = "health";
             break;
     }
     printf("Sorted skills by %s stat given to the player:\n\n", stat);
 
-    for(int i = 0; i<20; i++){
+    for(int i = 0; i<21; i++){
         printf("%d.(%d) %s\n", i+1, skills[i].stats_plyr[n-1], skills[i].name);
     }
     printf("\n\n");

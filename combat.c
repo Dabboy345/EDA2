@@ -4,9 +4,9 @@ void print_enemy(Enemy* e){
     printf("\n___________________________________________________________________________________________\n");
     printf("- %s\n", e->name);
     printf("HP: ");
-    for(int i=0;i<(e->stats[2]+1)/2;i++){printf("|");}
+    for(int i=0;i<=(e->stats[2]+1)/2;i++){printf("|");}
     if(e->stats[1]>0){
-        for(int i=0;i<(e->stats[1]+1)/2;i++){printf("]");}
+        for(int i=0;i<=(e->stats[1]+1)/2;i++){printf("]");}
         printf(" %d", e->stats[2]);
         printf(" + [%d]", e->stats[1]);
     }else{printf(" %d", e->stats[2]);}
@@ -17,9 +17,9 @@ void print_player(Character* p){
     printf("\n___________________________________________________________________________________________\n");
     printf("- You (%s)\n", p->name);
     printf("HP: ");
-    for(int i=0;i<(p->stats[2])/2;i++){printf("|");}
+    for(int i=0;i<=(p->stats[2]+1)/2;i++){printf("|");}
     if(p->stats[1]>0){
-        for(int i=0;i<(p->stats[1])/2;i++){printf("]");}
+        for(int i=0;i<=(p->stats[1]+1)/2;i++){printf("]");}
         printf(" %d", p->stats[2]);
         printf(" + [%d]", p->stats[1]);
     }else{printf(" %d", p->stats[2]);}
@@ -54,7 +54,7 @@ int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int m
         if(stats_d[1]<=0){stats_d[1]=0;printf("Defense broken\n\n");}
     }else{
         stats_d[2]-= dmg;
-        if(stats_d[2]<=0){stats_d[2]=0;;return 1;}
+        if(stats_d[2]<=0){stats_d[2]=0;return 1;}
     }}
     if(skll->of_def==1 && *prob<=prob_attack){printf("%s dealt %d damage to %s\n\n", n_atck, dmg, n_def);}
     else if(skll->of_def==1 && *prob>prob_attack){printf("%s avoided the attack\n\n", n_def);}
@@ -85,15 +85,21 @@ int combat(Character *plyr, Enemy *enmy, int size){
     int evenom = 0;
     int max_hp_plyr = 0;
     int max_hp_enmy = 0;
+    
     for(int i = 0; i<4; i++){
         max_hp_plyr += plyr->skill[i].stats_plyr[2];
+        plyr->skill[i].stats_plyr[2];
         max_hp_enmy += enmy->skill[i].stats_plyr[2];
+        if(plyr->skill[i].mod.chr == 'r'){plyr->skill[i].of_def=1;}
+        if(enmy->skill[i].mod.chr == 'r'){enmy->skill[i].of_def=1;}
     }
     enmy->stats[2]=max_hp_enmy;
+    
     for(int i = 0; i<2; i++){
         plyr->stats[i] = 0;
         enmy->stats[i] = 0;
     }
+    
     
     for(int i=0;i<4;i++){
         enmy->skill[i].mod.n = 0;
@@ -117,6 +123,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
             for(int j = 0; j<4; j++){printf("%d - %s",j+1, plyr->skill[j]);}
             printf("Choose skill: ");
             scanf("%d", &a);
+            printf("----%d---\n", plyr->skill[0].of_def);
             a--;
             int p_dmg = (plyr->skill[a].of_def)*(plyr->skill[a].dmg_skll + plyr->stats[0]);//Segmentation fault?
 

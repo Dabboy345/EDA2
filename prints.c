@@ -47,11 +47,11 @@ void print_skills(Skill* skills){
     int n = get_valid_input(0,3);
     printf("\n");
     if(n==0){
-        for(int i = 0; i<20; i++){
+        for(int i = 0; i<21; i++){
         printf("%d.%s",i+1, skills[i].name);
         }
     }else{order_skills(n);}
-    
+    printf("\n");
 }
 
 void print_decision(Decision *choice, Character* plyr) { //This fucntion helps us to print the informacion that we have in the decision
@@ -77,7 +77,7 @@ void print_decision(Decision *choice, Character* plyr) { //This fucntion helps u
                     get_skill(&skill[i], i);
                 }
                 choose_skill(skill, plyr);
-                }
+            }
             for(int i=0;i<4;i++){plyr->stats[2]+=plyr->skill[i].stats_plyr[2];}//Reset health
         }
     }

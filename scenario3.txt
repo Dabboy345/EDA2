@@ -1,121 +1,121 @@
 
 1node
-You wake up, and you go to turn on the light of the room and you notice that something feels different. 
-You decide to go outside of the room. You notice that there are many new technologies that you have not seen before. 
+You wake up, and you go to turn on the light of the room and you notice that something feels different
+You decide to go outside of the room. You notice that there are many new technologies that you have not seen before
 no enemy
 What would you like to do?
-- Ask one of the people in which year we are.
-- Ask one of the people where the hospital is because you think that you are hallucinating. 
+- Ask one of the people in which year we are
+- Ask one of the people where the hospital is because you think that you are hallucinating
 
 2node 
-You ask a person in which year we are and then the person replies in the year 3535. 
-Now you are certain that you are in the future. Suddenly you are attacked by a stranger.
-Stranger: 54, 50, 60, 69
-What would you like to do?
-- Go to the library and see how the world has changed. 
-- Buy the glasses that everybody has to not be suspicious.
+You ask a person in which year we are and then the person replies in the year 3535
+Now you are certain that you are in the future. Suddenly you are attacked by a Gangster
+Gangster: 54, 50, 60, 69
+After having a battle with gangster, what do you do?
+- Go to the library and see how the world has changed
+- Buy the glasses that everybody has to not be suspicious
 
 3node
-You ask the person and he gives you the address of the hospital.
-But you remember that to go to the hospital you will need an ID. Suddenly a stranger attacks you. 
-Stranger: 54, 50, 60, 69
-What would you like to do?
+You ask the person and he gives you the address of the hospital
+But you remember that to go to the hospital you will need an ID. Suddenly a big bully attacks you
+Big_Bully: 54, 50, 60, 69
+After teaching a lesson to the big bully about the life, what would you like to do?
 - Find a way to create a Fake ID
 - Cancel the plan to go to the hospital 
 
 4node
 You are on your way to the library
-You see there is a security guard
+You see there is a security guard. He seems very dangerous. 
 Security_guard: 83, 50, 58, 61
-What would you like to do?
+You just make past the security guard, what would you like to do?
 - Enter the library
 - Decide not to go to the library
 
 5node 
-You go buy the glasses, enter the shop, and try to steal one. 
-You fight the Seller.
-Seller: 84, 54, 72, 75 
-You defeat him. What would you like to do?
-- Run away far from the shop and try the glasses.
-- Keep the glasses in your pocket and return to your house.
+You go buy the glasses, enter the shop, and try to steal one
+You fight the Seller
+Merchant: 84, 54, 72, 75 
+You defeat him and get some food that he was eating. What would you like to do?
+- Run away far from the shop and try the glasses
+- Keep the glasses in your pocket and return to your house
 
 6node 
 After searching many backstreets and talking to many thugs.
-You find a person who can make a fake ID. You go to him and ask him to make a fake ID for you and he says that you have to pay first. 
-ID_Seller: 69, 66, 70, 59
-What would you like to do?
+You find a person who can make a fake ID. You go to him and ask him to make a fake ID for you and he says that you have to pay first 
+Scammer: 69, 66, 70, 59
+After deafiting the scammer he is begging you to spare hids life, what do you do?
 - Force him to make a fake ID
 - Cancel the plan to make the Fake ID
 
 7node 
 You decide not to go to the hospital 
-You are thinking about what to do now, suddenly you see some people going to the local market.
+You are thinking about what to do now, suddenly you see some people going to the local market
 no enemy
-What would you like to do?
+Some people beside you take that this market has very rich history adn there are many intresting things. What would you like to do?
 - Go to the local market
-- Search to do something fun
+- Not go to the market and serach another thing for fun 
 
 8node 
 You enter the library. You start to read the books and see everything that has happened.
-Your head starts hurting. After reading many books you start having flashbacks of scenes in your head that seem like another world.
+Your head starts hurting. After reading many books you start having flashbacks of scenes in your head that seem like another world
 no enemy
-After this, you start fainting, you start to lose consciousness.  
+After this, you start fainting, you start to lose consciousness  
 - End node
 - End node 
 
 9node
-You decide not to go to the library. You go to the park and join a group of elder's.
-They are very humble and they respond to all your questions. But a specific old grandpa is not very happy and he attacks you. 
-Grandpa: 50, 60, 53, 59
-You start having flashbacks of something that seems like it was in your memory. After this, you start fainting, you start to lose consciousness.  
+You decide not to go to the library. You go to the park and join a group of elder's
+They are very humble and they respond to all your questions. But a specific old grandpa is not very happy and he attacks you
+Angry_grandpa: 50, 60, 53, 59
+After convencing the grandpa that you are not dangerous. You start having flashbacks of something that seems like it was in your memory. After this, you start fainting, you start to lose consciousness
 - End node
 - End node
 
 10node
-You run far away from the glass shop. You go to a park.
-You start to try the glasses. You start to play games about pasts. While you are playing at some point your head starts hurting. You take out the glasses.
+You run far away from the glass shop. You go to a park
+You start to try the glasses. You start to play games about pasts. While you are playing at some point your head starts hurting. You take out the glasses
 no enemy
-You start having flashbacks of something that seems like it was in your memory. After this, you start fainting, you start to lose consciousness. 
+You start having flashbacks of something that seems like it was in your memory. After this, you start fainting, you start to lose consciousness
 - End node
 - End node
 
 11node 
-You return to your room. You go to the kitchen, eat some food, and come back. You start trying the glasses.
-You start to watch documentaries of the past things. At a certain point while you were watching your head starts to hurt. 
+You return to your room. You go to the kitchen, eat some food, and come back. You start trying the glasses
+You start to watch documentaries of the past things. At a certain point while you were watching your head starts to hurt
 no enemy
 You take off your glasses. And you go to bed. After sleeping, you start having weird dreams that feel real. 
 - End node
 - End node
 
 12node 
-Well, after fighting the Fake ID seller you force him to make the ID. And take some money from.
-After, having the Fake ID you go to the hospital as you planned before. You do the basic checkup which does not cost much. 
+Well, after fighting the Fake ID seller you force him to make the ID. And take some money from him
+After, having the Fake ID you go to the hospital as you planned before. You do the basic checkup which does not cost much money
 no enemy
-The doctor says that you are fine and you are not hallucinating but while you are talking suddenly your head hurts and you start to lose consciousness. 
+The doctor says that you are fine and you are not hallucinating but while you are talking suddenly your head hurts and you start to lose consciousness, you see the doctor calling for emergency
 - End node
 - End node
 
 13node
-You win the fight against the Fake ID seller but now you decide not to make the Fake ID.
-You take some money from the Fake ID Seller. You notice that you are seriously injured in the ribs. Everywhere in your body hurts. 
+You win the fight against the Fake ID seller but now you decide not to make the Fake ID
+You take some money from the Fake ID Seller. You notice that you are seriously injured in the ribs. Everywhere in your body hurts
 no enemy 
-While you were getting outside you started to lose consciousness and you faint.
+While you were getting outside you started to lose consciousness and you faint
 - End node
 - End node
 
 14node
-You decide to go to the local market. There you talk to the local people. You start to gather information. 
-While you are gathering information. A Market seller thinks that you are thief. He attacks you.
-Market_Seller: 55, 50, 54, 53
-After winning the battle you convince that him that you are not thief but you start to lose consciousness because you are injured. You faint.
+You decide to go to the local market. There you talk to the local people. You start to gather information
+While you are gathering information. A Market seller thinks that you are thief. This market seller trades product. He attacks you
+Trader: 55, 50, 54, 53
+After winning the battle you convince that him that you are not thief but you start to lose consciousness because you are injured. You faint
 - End node
 - End node
 
 15node
-You are wandering around to find something interesting. You are waiting for the traffic light to turn green.
-While you are waiting for the traffic light. A kid suddenly starts running towards another side of the road. To save him you jump.
+You are wandering around to find something interesting. You are waiting for the traffic light to turn green
+While you are waiting for the traffic light. A kid suddenly starts running towards another side of the road. To save him you jump
 no enemy
-You save the kid but a big truck hits, you fall and you see a lot of people running towards you. You start to lose consciousness. 
+You save the kid but a big truck hits, you fall and you see a lot of people running towards you. You start to lose consciousness. You see that people are calling ambulance
 - End node
 - End node
 

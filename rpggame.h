@@ -39,6 +39,8 @@ void save_game(Scenario *scene, Character *character, char* buffer);
 
 int run_game(int node_number, char *filename, Character *plyr);
 
+void change_skill(Skill* skill, Character*plyr);
+
 int load_game_and_play(char* buffer, Character* plyr, int* last_node_number);
 
 //order skills

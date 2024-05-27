@@ -1,0 +1,85 @@
+
+1node
+Greetings traveler! You wake up, it’s weird but you feel like you have been before in that room, it appears to be a bedroom in a small hut in the middle of the kingdom
+You look through the window and you perceive a colossal castle surrounded by wooden tiny houses and local markets. It appears to be some kind of medieval world. Are you alive?
+no enemy
+You see some kind of jester looking directly at your pockets, he wants to rob you, what do you do?
+- Engage against him
+- Run away
+
+2node
+You decide to call out the jester for trying to steal from you
+He gets angry and starts shouting and attacking you
+Jester: 2, 2, 2, 2 (surprise box , tomato throw, mockery, smoke bomb)
+You knock him down, but you find out he is the personal king’s jester and two knights enter the hut and try to arrest you
+- Fight the knights
+- Try to explain the situation
+
+3node
+You exit the door running without looking and you encounter a hooded figure
+At first it doesn't seem like a big deal but then you see his face, he is all over the wanted signs
+Hooded figure: 2, 2, 2, 2 (venomous dagger, magic dust(stun))shield cloak, heal potion
+After looking through his stuff you found out he was a wanted serial killer, what do you want to do?
+- Steal his hooded cloak
+- Steal his gold and go to the local market
+
+4node
+When they try to aprehend you you engage in combat
+They quickly pull out their swords and shields, its about to be a fight to the death
+Knights: 2, 2, 2, 2 (Sword, flail, shield block, silver gauntlet punch)
+After your victory you pick their armor, you go outside and you see two posters both with rewards one about catching a hooded guy and the other about a jousting tournament, what do you do?
+- Look for the murderer
+- Participate in the tournament
+
+5node
+You try to explain but the knights apprehend you and bring you to their prison to answer for your crimes in front of the king
+They put you in jail with a crazy man that tries to eat you alive
+Crazy old man: 2, 2, 2, 2 (sharp nails, bite, shouting(does nothing), choke you)
+After barely surviving you see a hole in the walls that trap you, what do you want to do?
+- Try to scape (10)
+- Wait to see the king (11)
+
+6node
+You put on his cloak and it suits you perfectly so you start to walk around to try to impress som ladies
+Suddenly a bounty hunter shouts "It's him! The murderer! While pointing at you" and starts running towards you
+Bounty hunter: 2, 2, 2, 2 crossbow, venomous dagger, grapling hook, punch
+It appears that you were mistaken by the serial killer himself by wearing his cloak, what do you want to do?
+- Keep the cloak (12)
+- Sell it in the local market (13)
+
+7node
+You arrive to the local market and you see its crowded and full of all kinds of characters
+While you are distracted a misterious wizard steals all your gold and makes fun of you, for no reason
+Evil wizard: 2, 2, 2, 2 (mockery, holy blessing, fireball, )
+Fortunately you get back all you gold, what do you want to buy?
+- Buy some fresh meat to fill your stomach 14
+- Check out the potionary 15
+
+8node
+You decide to go around the kingdom to see if you can claim his reward
+After looking for hours you see in the distance a hooded figure that seems to be who you have been looking for
+Hooded figure: 2, 2, 2, 2 (venomous dagger, magic dust(stun))shield cloak, heal potion
+After looking through his stuff you found out he was a wanted serial killer, what do you want to do?
+- Steal his hooded cloak 16
+- Steal his gold and go to the local market 17
+
+9node
+Since you recently acquired a brand new armor you decide to try luck in the jousting tournament. You see a lot of skilled knights sharpening their swords and polishing their armor
+While looking at the others contestants the referee of the tournament confronts you about not being able to participate
+Jousting referee: 2, 2, 2, 2 nose
+After showing off you fighting capabilities he allows you to choose your opponent for the tournament
+- Fight againts the bigger knight there, the "Soul Eater" 18
+- Fight againts some plant knight covered in roots and leaves 19 (druid)
+
+10node
+When trying, you see you fit through that hole so you get out the prison. When you are far gone you start to hear the alarm bell because of your scape
+After running and running you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 2, 2, 2, 2 (root, healing flower, wolf friend, water bubble)
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+11node
+You decide to wait, since getting to meet the king in person seems veru difficult in any other circunstance. After what seemed to be an eternety some guards come to your cell and bring you to the king
+The king
+
