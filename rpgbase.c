@@ -6,7 +6,7 @@ void new_game(){//Our new game function
         printf("Memory allocation failed\n");
         return;
     }
-    for(int i =0; i<19;i++){
+    for(int i =0; i<20;i++){
         get_skill(&skill[i], i);
     }
     Character *plyr = create_character(skill);
@@ -44,9 +44,7 @@ void load_game(char* buffer){//Our load game function
         printf("Memory allocation failed\n");
         return;
     }
-    for(int i =0; i<19;i++){
-        get_skill(&skill[i], i);
-    }
+    print_skills(skill);
     
     int* node_num = (int*)malloc(sizeof(int));
     int a = load_game_and_play(buffer, plyr, node_num);

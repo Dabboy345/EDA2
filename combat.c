@@ -34,7 +34,7 @@ int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int m
         if(skll->of_def==1){skll->of_def=0;
             printf("Charging %s...\n\n", skll->name);}
         else{skll->of_def=1;printf("%sis charged\n\n", skll->name);}   
-    }else if(skll->mod.chr == 'f'){printf("%s feels %d stronger\n\n", n_atck, skll->dmg_skll);stats_a[0]+=skll->dmg_skll;}
+    }else if(skll->mod.chr == 'f'){printf("%s feels %d times stronger\n\n", n_atck, skll->dmg_skll);stats_a[0]+=skll->dmg_skll;}
     int dmg = (skll->of_def)*(skll->dmg_skll + stats_a[0]);
     if(skll->mod.chr == 'd'){
         stats_a[1]+=skll->dmg_skll;
@@ -62,7 +62,7 @@ int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int m
     if(skll->mod.chr == 's'){
         printf("%s has been stunned, they can't attack next round\n\n", n_def);*prob = 0;
         return 2;
-    }else if(skll->mod.chr == 'p'){printf("There is a chance of %d %% to avoid being attacked", skll->dmg_skll*3);
+    }else if(skll->mod.chr == 'p'){printf("There is a chance of %d%% to avoid being attacked", skll->dmg_skll*3);
     *prob = skll->dmg_skll*3;return 0;}
     *prob = 0;
     return 0;
@@ -129,7 +129,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
             result = attack(&plyr->skill[a], plyr->name, enmy->name, plyr->stats, enmy->stats, max_hp_plyr, &pvenom, &prob);
 
-            if(result == 1){printf("You won the fight against %s\nCongratulations!\n", enmy->name);return 1;}
+            if(result == 1){printf("You won the fight against %s\nCongratulations!\n\n", enmy->name);return 1;}
             else if(result == 2){
                 dequeue(q);
                 printf("\n%d turns remaining\n", q->elements);

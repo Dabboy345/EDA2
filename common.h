@@ -32,7 +32,7 @@ typedef struct { //Our data stucture for the skills
     int dmg_skll;// 5-40
     Mod mod;
     int stats_plyr[3]; //dmg(0), def(1), hp(2)
-    /*int dmg_plyr; 0 - b3       int def_plyr; 0 - 8       int hp_plyr; 20 - 50 */
+    /*int dmg_plyr; 0 - 3       int def_plyr; 0 - 8       int hp_plyr; 20 - 50 */
     int skill_number;
 } Skill;
 

@@ -21,9 +21,10 @@ void print_mod(Skill* skll){
             printf("It increases the general damage (depends on the character's attack)\n\n");
             break;
         case 'p':
-            printf("It gives you a %d %% chance of dodging the next attack\n\n", skll->dmg_skll*3);
+            printf("It gives you a %d%% chance of dodging the next attack\n\n", skll->dmg_skll*3);
             break;
     }
+    if(skll->mod.max!=0){printf("You can only use this habilities %d times in combat\n\n", skll->mod.max);}
 }
 
 
@@ -67,6 +68,7 @@ void get_skill(Skill *skill, int n){
             skill->skill_number = a;
             skill->mod.temp = 0;
             skill->mod.n = 0;
+            skill->mod.max = 0;
             switch(skill->mod.chr){
                 case 'h':
                     skill->mod.max = 2;
@@ -106,9 +108,7 @@ void get_skill(Skill *skill, int n){
 }
 
 void choose_skill(Skill *skills, Character *player){
-    for(int i = 0; i<20; i++){
-        printf("%d.%s",i+1, skills[i].name);
-    }
+    print_skills(skills);
 
     printf("\n");
     int temp=1;
@@ -119,7 +119,10 @@ void choose_skill(Skill *skills, Character *player){
         printf("\n");
         if(0!=temp){try_skill(&(skills[temp-1]));}
     }
-    
+    for(int i = 0; i<20; i++){
+        printf("%d.%s",i+1, skills[i].name);
+    }
+    printf("\n\n");
     for(int i = 0; i<4; i++){
         repeated_skill:
         printf("Choose skill %d: ", i+1);
@@ -463,14 +466,14 @@ void swap(Skill* p1, Skill* p2) {
 }
 
 // Partition function for quicksort
-int partition(Skill arr[], int low, int high) {
+int partition(Skill arr[], int low, int high, int n) {
     // Choose the pivot as the damage value of the high element
-    int pivot = arr[high].dmg_skll;
+    int pivot = arr[high].stats_plyr[n];
     int i = low - 1;
 
     for (int j = low; j <= high - 1; j++) {
         // If the current element's damage is greater than the pivot
-        if (arr[j].dmg_skll > pivot) {
+        if (arr[j].stats_plyr[n] > pivot) {
             i++;
             swap(&arr[i], &arr[j]);
         }
@@ -480,52 +483,47 @@ int partition(Skill arr[], int low, int high) {
 }
 
 // Quicksort function for Skill array
-void quickSort(Skill arr[], int low, int high) {
+void quickSort(Skill arr[], int low, int high, int n) {
     if (low < high) {
-        int pi = partition(arr, low, high);
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+        int pi = partition(arr, low, high, n);
+        quickSort(arr, low, pi - 1, n);
+        quickSort(arr, pi + 1, high, n);
     }
 }
 
 // Function to read skills from a file and sort them by damage
-void order_skills_dmg() {
-    // Open the file
-    FILE *fp = fopen("list_character_skill.txt", "r");
-    if (fp == NULL) {
-        printf("Error opening the file\n");
+void order_skills(int n) {
+    Skill *skills = (Skill*)calloc(20, sizeof(Skill));
+    if(skills == NULL){
+        printf("Memory allocation failed\n");
         return;
     }
-
-    // Read skills into an array
-    Skill skills[100]; // Assume there are at most 100 skills
-    int count = 0;
-
-    while (!feof(fp) && count < 100) {
-        fscanf(fp, "%*dskill\n"); // Skip skill number in the file
-        fgets(skills[count].name, MAX_NAME, fp);
-        fgets(skills[count].description, MAX_TXT, fp);
-        fscanf(fp, "%d\n%d\n", &skills[count].of_def, &skills[count].dmg_skll);
-        skills[count].mod.chr = fgetc(fp);
-        for (int i = 0; i < 3; i++) {
-            fscanf(fp, "%d,", &skills[count].stats_plyr[i]);
-        }
-        fgetc(fp); // To consume the newline character
-        count++;
+    for(int i =0; i<20;i++){
+        get_skill(&skills[i], i);
     }
-    fclose(fp);
-
+    int count = 20;
     // Sort the skills by damage
-    quickSort(skills, 0, count - 1);
+    quickSort(skills, 0, count - 1, n-1);
 
     // Print sorted skills
-    printf("Sorted skills by damage:\n");
-    for (int i = 0; i < count; i++) {
-        printf("Name: %s", skills[i].name);
-        printf("Description: %s", skills[i].description);
-        printf("Damage: %d\n", skills[i].dmg_skll);
-        printf("---------------------------\n");
+    char *stat;
+    switch(n){
+        case 0:
+            stat = "attack";
+            break;
+        case 1:
+            stat = "defense";
+            break;
+        case 2:
+            stat = "health";
+            break;
     }
+    printf("Sorted skills by %s stat given to the player:\n\n", stat);
+
+    for(int i = 0; i<20; i++){
+        printf("%d.(%d) %s\n", i+1, skills[i].stats_plyr[n-1], skills[i].name);
+    }
+    printf("\n\n");
 }
 
 /*int main() {

@@ -1,13 +1,11 @@
 Time strike (stack)
 Writing info os scenarios 2 
-being able to use enemies habilities
 Balancing habilities
 Sorting algotithms for skills
-when choosing skill = 0, exit
+
 
 Maybe
 Dictionary //No se si da tiempo a mi hacerlo 
 Easter egg names
 Asking are you sure in every input
-Option te see description of skill mid combat
 lifes system?

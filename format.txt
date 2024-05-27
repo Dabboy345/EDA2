@@ -4,8 +4,8 @@ Pre_text
 Enemy_name: numberskill1, numberskill2, numberskill3, numberskill4
 //si no hay enemy poned "no enemy"
 Post_text
-- Option1desripton mm //Si es un nodo final poned (- end node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
-- Option2description mm //Si es un nodo final poned (- end node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
+- Option1desripton mm //Si es un nodo final poned (- End node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
+- Option2description mm //Si es un nodo final poned (- End node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
 
 Save_game format
 Name_character

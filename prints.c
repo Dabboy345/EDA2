@@ -39,6 +39,20 @@ void print_menu(){//This will be the print function which will print the users m
     printf("4. Exit GAME\n");
 }
 
+void print_skills(Skill* skills){
+    printf("\nType 0 to see skills by default\n");
+    printf("Type 1 to see skills ordered by attack stat\n");
+    printf("Type 2 to see skills ordered by defense stat\n");
+    printf("Type 3 to see skills ordered by health stat\n");
+    int n = get_valid_input(0,3);
+    printf("\n");
+    if(n==0){
+        for(int i = 0; i<20; i++){
+        printf("%d.%s",i+1, skills[i].name);
+        }
+    }else{order_skills(n);}
+    
+}
 
 void print_decision(Decision *choice, Character* plyr) { //This fucntion helps us to print the informacion that we have in the decision
     printf("%s\n", choice->option.description);//Print the description
@@ -52,6 +66,18 @@ void print_decision(Decision *choice, Character* plyr) { //This fucntion helps u
             choice->option.enemy.skill[2],
             choice->option.enemy.skill[3]);
         while(combat(plyr, &choice->option.enemy, 20)==2){
+            printf("\nDo you want to change skills? Yes->0, No->1: ");
+            if(get_valid_input(0, 1)==0){
+                Skill *skill = (Skill*)calloc(20, sizeof(Skill));
+                if(skill == NULL){
+                    printf("Memory allocation failed\n");
+                    return;
+                }
+                for(int i =0; i<19;i++){
+                    get_skill(&skill[i], i);
+                }
+                choose_skill(skill, plyr);
+                }
             for(int i=0;i<4;i++){plyr->stats[2]+=plyr->skill[i].stats_plyr[2];}//Reset health
         }
     }
