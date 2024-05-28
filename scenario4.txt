@@ -44,16 +44,16 @@ You go to the investigation room, it seems to be empty, however there are a lot 
 While you are going to grab the files someone grabs you and throws you to the ground. This person is wearing a white coat and looks bigger than a normal person
 White coat: ()
 Now you can look through the files, you see that they have been experimenting on how to improve people thanks to all the information and resources that they got from you and all the subjects in the simulations. What do you do ?
-- Wake the other subjects from their simulations
 - Go look for the subject they have been trying to improve
+- Wake the other subjects, that just as you were, are unconcious in beds.
 
 7node
 You enter to the room where your friend is, he is conected to a lot of cables, just like you where. All this cables are connected to screen where you can see the medieval world that you where a while ago.
 You disconect him, and he starts to wake up.
 no enemy
 You explain him the situation that you are in, but now you can't stay in that room for long or someone will discover you. What do you do?
-- 
-- 
+- Go wake up the other subjects
+- Get out of the hospital
 
 8node
 You are investigating in the hospital, suddenly you see a table full of files and fotos.
@@ -81,7 +81,168 @@ Now that the bracelet is off, the monkey doesn't look angry anymore he is back t
 
 11node
 You take the files and go looking for the animals that they have to experiment on
-When you go to the room 
+When you go to the room it seems suprisingly empty, there is only the animals inside their cages, but this scilence is too suspicious. When you hear a noise behind you there is this dangerous and angry wolf.
+wolf:()
+You've left the wolf unconcious, but you need to leave fast so it doesn't wake up. What do you do?
+- Go to the police
+- Make public what you have discovered
 
+12node
+You decide to go look for the subjects that they have been trying to modify
+When you finally find them there is a hallway full of cages with animals inside, you find a monkey, he looks angry and is in a jail making a lot of noise, and hitting the bars. You see a bracelet on his foot with some lights on with which they are controlling him.
+Modified monkey: ()
+Now that the bracelet is off, the monkey doesn't look angry anymore he is back to his true nature. What do you decide to do?
+- Free the monkey and all the animals
+- Go to the police to report the experiments
 
+13node
+You decide to wake the other subjects, when you arrive to the hallway where you first wake up it is full of rooms with subjects just as you.
+As you are looking at the different rooms you suddenly freeze, your best friend is in one of the rooms, you enter to wake him up and you see that all the cables connected to his body go to a screen where you can see a simulation of where he is, the same as you went through. When you wake him he attacks you as he thinks he is in the simulation.
+Friend:()
+Now that you have beat him, he wakes up and recognizes you. You explain him what has happened. What do you do?
+- Go to the police
+- Make pulbic what you have discovered
 
+14node
+You decide to go wake the other subjects just as you did with your friend
+When you wake him, you are planning to explain what has happened but he reacts differentlly and attacks you as he thinks he is in the simulation
+Subject:()
+Now that you have beat him, he wakes up more relaxed and you get the chance to explain what has happened. When you have finally waked up the other subjects whith each others help, what do you decide to do?
+- Go to the police
+- Make public what you have discovered
+
+15node
+You decide to leave the hospital with your friend, he is still weak from the simulation
+As you are leaving a guard caughts you at the door and tries to stop 
+Outside guard: ()
+Now that you are outside and are free to scape, what do you want to do?
+- Go to the police 
+- Make public what you have discovered
+
+16node 
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+17node
+You decide to make public all the bad things that the hospital is doing. In order to do that you need pictures and proof.
+You have the proof as you took the files with you, so you decide to meet with a journalist. You are in his office showing him the proff and then he starts to attack you and you realise he is helping the scientists and they gave him some of the modifications to his body.
+Journalist:()
+Now that you have beat him you take your proof and find a real journalist who publishes everything and the police shut the place down.
+- End node
+- End node
+
+18node
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+19node
+You decide to make public all the bad things that the hospital is doing. In order to do that you need pictures and proof.
+You have the proof as you took the files with you, so you decide to meet with a journalist. You are in his office showing him the proff and then he starts to attack you and you realise he is helping the scientists and they gave him some of the modifications to his body.
+Journalist:()
+Now that you have beat him you take your proof and find a real journalist who publishes everything and the police shut the place down.
+- End node
+- End node
+
+20node
+You decide to free the monkey and the other animals
+As you are looking for the key to open the cages, someone grabs you and throws you to the ground. He looks bigger than any person and his eyes are red. You can see that he has the key hanging of his belt.
+Crazy scientist: ()
+Now that you have beat him, you finally have the key. You open the cages carefully and leave as fast as you can. The animals, espacially the ones that are modified take care of tearing up the whole hospital.
+- End node
+- End node
+
+21node
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+22node
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+23node
+You decide to make public all the bad things that the hospital is doing. In order to do that you need pictures and proof.
+You have the proof as you took the files with you, so you decide to meet with a journalist. You are in his office showing him the proff and then he starts to attack you and you realise he is helping the scientists and they gave him some of the modifications to his body.
+Journalist:()
+Now that you have beat him you take your proof and find a real journalist who publishes everything and the police shut the place down.
+- End node
+- End node
+
+24node
+You decide to free the monkey and the other animals
+As you are looking for the key to open the cages, someone grabs you and throws you to the ground. He looks bigger than any person and his eyes are red. You can see that he has the key hanging of his belt.
+Crazy scientist: ()
+Now that you have beat him, you finally have the key. You open the cages carefully and leave as fast as you can. The animals, espacially the ones that are modified take care of tearing up the whole hospital.
+- End node
+- End node
+
+25node
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+26node
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+27node
+You decide to make public all the bad things that the hospital is doing. In order to do that you need pictures and proof.
+You have the proof as you took the files with you, so you decide to meet with a journalist. You are in his office showing him the proff and then he starts to attack you and you realise he is helping the scientists and they gave him some of the modifications to his body.
+Journalist:()
+Now that you have beat him you take your proof and find a real journalist who publishes everything and the police shut the place down.
+- End node
+- End node
+
+28node
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+29node
+You decide to make public all the bad things that the hospital is doing. In order to do that you need pictures and proof.
+You have the proof as you took the files with you, so you decide to meet with a journalist. You are in his office showing him the proff and then he starts to attack you and you realise he is helping the scientists and they gave him some of the modifications to his body.
+Journalist:()
+Now that you have beat him you take your proof and find a real journalist who publishes everything and the police shut the place down.
+- End node
+- End node
+
+30node
+You decide to go to the police to explain what are the scientist doing in that supposed hospital
+After talking a while and giving your statment, the police officer tells you that they will take care of the case, and asks you to follow him to a room, when you are alone he takes out a gun, and as it truns out he is a undercover scientist of the hospital
+Bad cop: ()
+When you finally beat him, you go outside the room and some officers had heard you but the door was block so they could help you, now you can finally explain what has happened and the police will take care of the hospital.
+- End node
+- End node
+
+31node
+You decide to make public all the bad things that the hospital is doing. In order to do that you need pictures and proof.
+You have the proof as you took the files with you, so you decide to meet with a journalist. You are in his office showing him the proff and then he starts to attack you and you realise he is helping the scientists and they gave him some of the modifications to his body.
+Journalist:()
+Now that you have beat him you take your proof and find a real journalist who publishes everything and the police shut the place down.
+- End node
+- End node
