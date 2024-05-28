@@ -119,12 +119,21 @@ int combat(Character *plyr, Enemy *enmy, int size){
             print_enemy(enmy);
             printf("\n");//Print enemy?
             print_player(plyr);
+            for(int i = 0;i<4;i++){
+                if((plyr->skill[i].mod.n!=plyr->skill[i].mod.max)||(plyr->skill[i].mod.chr=='n')){break;}
+                if(i==3){
+                    printf("\nYou lost against %s because you ran out of skills\nTry again next time\n", enmy->name);
+                    return 2;
+                }
+            }
+            
+
         choose_skill:
             for(int j = 0; j<4; j++){printf("%d - %s",j+1, plyr->skill[j]);}
             printf("Choose skill: ");
-            scanf("%d", &a);
+            a = get_valid_input(1,4);
             a--;
-            int p_dmg = (plyr->skill[a].of_def)*(plyr->skill[a].dmg_skll + plyr->stats[0]);//Segmentation fault?
+            int p_dmg = (plyr->skill[a].of_def)*(plyr->skill[a].dmg_skll + plyr->stats[0]);
 
     /////////////////////////////////////////////7
 
@@ -135,12 +144,12 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
             result = attack(&plyr->skill[a], plyr->name, enmy->name, plyr->stats, enmy->stats, max_hp_plyr, &pvenom, &prob);
 
-            if(result == 1){printf("You won the fight against %s\nCongratulations!\n\n", enmy->name);return 1;}
+            if(result == 1){printf("\nYou won the fight against %s\nCongratulations!\n\n", enmy->name);return 1;}
             else if(result == 2){
                 dequeue(q);
                 printf("\n%d turns remaining\n", q->elements);
                 print_enemy(enmy);
-                printf("\n");//Print enemy?
+                printf("\n");
                 print_player(plyr);
                 goto choose_skill;
             }
@@ -152,7 +161,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
         if(turn==1){
             print_enemy(enmy);
-            printf("\n");//Print enemy?
+            printf("\n");
             print_player(plyr);
             pause();
 
@@ -166,7 +175,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
 
             result = attack(&enmy->skill[b], enmy->name, plyr->name, enmy->stats, plyr->stats, max_hp_enmy, &evenom, &prob);
 
-            if(result==1){printf("You lost against %s\nTry again next time\n", enmy->name);return 2;}
+            if(result==1){printf("\nYou lost against %s\nTry again next time\n", enmy->name);return 2;}
             else if(result==2){
                 dequeue(q);
                 printf("%d turns remaining\n", q->elements);

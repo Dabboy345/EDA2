@@ -47,7 +47,7 @@ int load_game_and_play(char* buffer, Character* plyr, int* last_node_number);
 void swap(Skill* p1, Skill* p2);
 int partition(Skill arr[], int low, int high, int n);
 void quickSort(Skill arr[], int low, int high, int n);
-void order_skills(int n);
+void order_skills(int n, Skill* skills);
 
 
 

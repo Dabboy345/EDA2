@@ -93,15 +93,6 @@ void get_skill(Skill *skill, int n){
                     skill->mod.max = 4;
                     break;
             }
-
-            /*printf("\n");
-            printf("_______________%s\n", skill->name);
-            printf("%s\n", skill->description);
-            printf("%d\n", skill->of_def);
-            printf("%d\n", skill->dmg_skll);
-            printf("%c\n", skill->mod.chr);
-            printf("%d, %d, %d\n", skill->stats_plyr[0], skill->stats_plyr[1], skill->stats_plyr[2]);*/
-            
             fclose(fp); 
             return;
         }
@@ -111,7 +102,7 @@ void get_skill(Skill *skill, int n){
 void change_skill(Skill* skill, Character*plyr){
     printf("\nDo you want to change skills? Yes->0, No->1: ");
     if(get_valid_input(0, 1)==0){
-        for(int i =0; i<19;i++){
+        for(int i =0; i<MAX_NUMBER_SKILL_PLAYER;i++){
             get_skill(&skill[i], i);
         }
         choose_skill(skill, plyr);
@@ -133,8 +124,7 @@ void choose_skill(Skill *skills, Character *player){
     for(int i = 0; i<4; i++){
         repeated_skill:
         printf("Choose skill %d: ", i+1);
-        temp = get_valid_input(1, 21); //We need to code so that the player can't have repeated skills
-        //for(int j = 0;j<i;i++){}
+        temp = get_valid_input(1, 21); 
         for(int j=0;j<i;j++){if(player->skill[j].skill_number==temp-1){
             printf("\nYou can't have %stwice\n\n", player->skill[j].name);goto repeated_skill;}}
         player->skill[i] = skills[temp-1];
@@ -159,7 +149,7 @@ Character* create_character(Skill *skills){
     printf("Choose you character's name (no spaces): ");
     scanf("%s", &player->name);
     while (getchar() != '\n');
-    for(int i=0;i<strlen(player->name);i++){rand();}//More random factor
+    for(int i=0;i<strlen(player->name);i++){rand();} //More random factor
     printf("\n");
     choose_skill(skills, player);
     printf("\n\nFinal character:\n%s\n\n", player->name);
@@ -274,7 +264,7 @@ void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Characte
     get_info_decision(test, node, filename); //We take the relative information in the decision 
     addDecisionToScenario(scene, test); //We add it to scenario link list 
     save_game(scene, plyr, "auto_save.txt"); //We auto save the game 
-    print_decision(test, plyr); //We print the information that we had in the desicion
+    print_decision(test, plyr, scene); //We print the information that we had in the desicion
 } 
 
 void freeScenario(Scenario *scenario) { //Function to free the scenario
@@ -495,16 +485,8 @@ void quickSort(Skill arr[], int low, int high, int n) {
 }
 
 // Function to read skills from a file and sort them by damage
-void order_skills(int n) {
-    Skill *skills = (Skill*)calloc(21, sizeof(Skill));
-    if(skills == NULL){
-        printf("Memory allocation failed\n");
-        return;
-    }
-    for(int i =0; i<21;i++){
-        get_skill(&skills[i], i);
-    }
-    int count = 21;
+void order_skills(int n, Skill* skills) {
+    int count = MAX_NUMBER_SKILL_PLAYER;
     // Sort the skills by damage
     quickSort(skills, 0, count - 1, n-1);
 

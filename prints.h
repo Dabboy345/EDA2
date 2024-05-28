@@ -8,7 +8,7 @@
 void print_game_name();
 void print_menu();
 void print_skills(Skill* skills);
-void print_decision(Decision *choice, Character* plyr);
+void print_decision(Decision *choice, Character* plyr, Scenario* scene);
 void print_menu_option();
 
 #endif

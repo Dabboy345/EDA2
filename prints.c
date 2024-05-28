@@ -50,11 +50,11 @@ void print_skills(Skill* skills){
         for(int i = 0; i<21; i++){
         printf("%d.%s",i+1, skills[i].name);
         }
-    }else{order_skills(n);}
+    }else{order_skills(n, skills);}
     printf("\n");
 }
 
-void print_decision(Decision *choice, Character* plyr) { //This fucntion helps us to print the informacion that we have in the decision
+void print_decision(Decision *choice, Character* plyr, Scenario* scene) { //This fucntion helps us to print the informacion that we have in the decision
     printf("%s\n", choice->option.description);//Print the description
     printf("%s\n", choice->option.pre_txt);//Print pre text
     if (strcmp(choice->option.enemy.name, "None") == 0) {//If there is no enemy then we don't print anything 
@@ -68,17 +68,19 @@ void print_decision(Decision *choice, Character* plyr) { //This fucntion helps u
         while(combat(plyr, &choice->option.enemy, 20)==2){ 
             printf("\nDo you want to change skills? Yes->0, No->1: ");
             if(get_valid_input(0, 1)==0){
-                Skill *skill = (Skill*)calloc(20, sizeof(Skill));
+                Skill *skill = (Skill*)calloc(MAX_NUMBER_SKILL_PLAYER, sizeof(Skill));
                 if(skill == NULL){
                     printf("Memory allocation failed\n");
                     return;
                 }
-                for(int i =0; i<19;i++){
+                for(int i =0; i<MAX_NUMBER_SKILL_PLAYER;i++){
                     get_skill(&skill[i], i);
                 }
                 choose_skill(skill, plyr);
             }
+            plyr->stats[2] = 0;
             for(int i=0;i<4;i++){plyr->stats[2]+=plyr->skill[i].stats_plyr[2];}//Reset health
+            save_game(scene, plyr, "auto_save.txt");
         }
     }
     int a = (choice->option.option1[2]=='E' && choice->option.option1[6]=='n')? 0:1; //We check if the recived information is for end node or not 
