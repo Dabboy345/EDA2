@@ -28,23 +28,23 @@ Bow crafted by the elves
 1
 40
 r
-2, 4, 30,
+2, 3, 30,
 
 4skill
 Flail
 Mantain your distance if not you are getting punished
 1
-15
+23
 n
-1, 5, 25,
+1, 5, 27,
 
 5skill
 Fireball 
 Invoking a star from the heaven 
 1
-25
+22
 v
-2, 2, 15,
+2, 2, 17,
 
 6skill
 The force
@@ -90,17 +90,17 @@ h
 KFC wings
 They taste so good that they heal you
 0
-37
+35
 h
-1, 5, 40,
+1, 5, 34,
 
 12skill
 Electroshock 
 Unleashes a burst of electrical energy to stun and damage enemies.
 1
-18
+20
 s
-2, 3, 30,
+1, 4, 30,
 
 13skill
 Veil of Shadows
@@ -108,7 +108,7 @@ Cloaks the user in darkness, making them nearly invisible.
 0
 30
 p
-1, 0, 25,
+1, 4, 25,
 
 14skill
 Defender's Shield
@@ -116,7 +116,7 @@ A summoned defender creates a temporary barrier that absorbs damage.
 0
 10
 d
-1, 3, 25,
+1, 5, 27,
 
 15skill
 Summon Berserker
@@ -124,7 +124,7 @@ Calls forth a fierce attacker to assault enemies with powerful strikes.
 1
 14
 v
-2, 6, 30,
+2, 5, 33,
 
 16skill
 Redbull
@@ -172,7 +172,7 @@ Stick enables the user to give a damage to the opponent with a hit with the stic
 1
 7
 s
-5, 3, 5,
+1, 3, 34,
 
 51skill
 Denture
@@ -180,7 +180,7 @@ Denture is a skill that takes a turn to equip and another turn to use, it has on
 1
 30
 r
-3, 6, 25,
+3, 5, 18,
 
 52skill
 Carnivorus Plant
@@ -188,23 +188,23 @@ Giant carnivorus plant two meters tall bites you and deals damage
 1
 15
 n
-4, 7, 37,
+2, 4, 33,
 
 53skill
 Life Medicine
 Life medicine adds some points to your health points
 0
-40
+14
 h
-3, 4, 45,
+3, 3, 36,
 
 54skill
 Punch
 Punch enables attacker to throw punch at you and deal damage
 1
-25
+19
 s
-5, 2, 30,
+3, 2, 30,
 
 55skill
 Knife 
@@ -212,15 +212,15 @@ The user can attack you with the Knife
 1
 30
 n
-7, 3, 30,
+1, 4, 26,
 
 56skill
 Lighter
 The user burns you
 1
-20
+23
 v
-6, 2, 30,
+1, 2, 33,
 
 57skill
 Microphone 
@@ -228,7 +228,7 @@ The user is able to use a microphone which will do damage to the opponent
 1
 20
 v
-4, 2, 25,
+1, 2, 26,
 
 58skill
 Stomp
@@ -236,7 +236,7 @@ The user steps on you very strongly
 1
 25
 n
-4, 2, 25,
+0, 5, 30,
 
 59skill
 Newspaper Hit 
@@ -244,7 +244,7 @@ This skills enables the user to attack with newspaper
 1
 25
 n
-4, 1, 25,
+1, 2, 20,
 
 60skill
 Shout
@@ -258,9 +258,9 @@ v
 Self Defence Blind 
 It permits the user to defend himself with a blind
 0
-15
+13
 d
-3, 5, 25, 
+1, 5, 30, 
 
 62skill
 Venom
@@ -274,9 +274,9 @@ v
 Clamp
 The user attack you with a Clamp
 1
-20
+22
 n
-3, 5, 20,
+1, 4, 17,
 
 64skill
 Wings
@@ -284,7 +284,7 @@ it allows the user to protect its self creating a shield
 0
 15
 d
-2, 3, 25,
+1, 3, 25,
 
 65skill
 Double
@@ -292,7 +292,7 @@ The user make twice the damage in that hit
 1
 15
 f
-2, 5, 30,
+2, 3, 30,
 
 66skill
 Peper spray
@@ -300,7 +300,7 @@ The user throws spray and make you blind during some time
 1
 15
 s
-2, 3, 25,
+2, 4, 15,
 
 67skill
 Backflip
@@ -308,7 +308,7 @@ It allows the user to scape a hit
 0
 17
 p
-1, 5, 25,
+1, 3, 20,
 
 68skill
 Belt
@@ -316,7 +316,7 @@ The user hits with a belt
 1
 25
 n
-2, 5, 30,
+1, 5, 24,
 
 69skill
 Bite
@@ -324,7 +324,7 @@ The user bites you
 1
 25
 n
-2, 5, 25,
+1, 3, 28,
 
 70skill 
 Jump
@@ -348,7 +348,7 @@ The user attacks with a broken glass bottle
 1
 25
 n
-2, 5, 30,
+2, 5, 22,
 
 73skill
 Punch
@@ -356,7 +356,7 @@ Punch enables attacker to throw punch at you and deal damage
 1
 25
 n
-2, 2, 30,
+2, 2, 15,
 
 74skill
 Fall
@@ -364,7 +364,7 @@ The user falls on you very strongly
 1
 25
 n
-4, 2, 25,
+2, 1, 20,
 
 75skill
 Stink
@@ -380,15 +380,15 @@ The root of the plant sorrounds you chocking you
 1
 25
 s
-2, 3, 25,
+2, 4, 27,
 
 77skill
 Growth
 The plant regenerates itself and it recuperates hp
 0
-35
+15
 h
-2, 3, 40,
+1, 4, 40,
 
 78skill
 Camouflage
@@ -396,7 +396,7 @@ The user camouflages and can't be seen
 0
 15
 d
-3, 5, 25,
+1, 5, 30,
 
 79skill
 Bomb
@@ -404,15 +404,15 @@ The user throws a bomb from above
 1
 25
 s
-2, 5, 30,
+2, 5, 25,
 
 80skill
 Flash 
 The user is able to activate a flash that blinds the user 
 0
-10
+14
 s
-4, 2, 25,
+1, 2, 25,
 
 81skill
 Sticky
@@ -426,32 +426,33 @@ s
 Spikes
 the user trows spikes
 1
-20
+25
 n
-2, 5, 25,
+3, 2, 30,
 
 83skill
 Electric_Pistol
 User is able to use a electric pistol
 1
-12
+15
 s
-1, 6, 30,
+2, 3, 34,
 
 84skill
 Mjolnir 
 Able to use the thor hammer
 1
-17
+20
 r
-3, 5, 20,
+2, 5, 20,
 
 85skill
 needle
+You might get some small holes
 1
 15
 d
-3, 3, 20,
+1, 3, 25,
 
 86skill
 Cable
