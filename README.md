@@ -5,7 +5,7 @@ PRACTICE: 102
 
 GROUP: 14
 
-MEMBERS: Noel, Arlet, Sushant 
+MEMBERS: Noel(U232376), Arlet(U230940), Sushant(U233578)
 
 DATE OF SUBMISSION: ...
 ## TABLE OF CONTENTS
@@ -34,7 +34,10 @@ DATE OF SUBMISSION: ...
 5. REFERENCES
 
 ### 1. INTRODUCTION 
-  Our game is called Prosmoiosi which is the word for simulation in greek. Our game is RPG game which consists of getting out of a simulation that you are in.
+Our game name is PROSOMOIOSI which is the word for simulation in Greek. We chose this name because our game is situated that you are inside a simulation in which your objective is to discover that you are in a simulation and try to get outside of this simulation. 
+
+Now that you know what is the context of our game let’s dig into the problems we had during the progress of completing this game. The first dilemma that we had was to choose to use the file JSON or not, in our case, we decided to not ot use it because we hadn’t used it before. Another important problem we had was how to structure the information we wanted to be taken from the text file, this problem was solved by trying many different formats until our functions worked. 
+
 
 ### 2. PROJECT OBJECTIVE
 ....
