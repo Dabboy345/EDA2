@@ -1,6 +1,6 @@
 #include "combat.h"
 
-void print_enemy(Enemy* e){
+void print_enemy(Enemy* e){//Function to print the hp and def of the enemy
     printf("\n___________________________________________________________________________________________\n");
     printf("- %s\n", e->name); //Print enemy's name
     printf("HP: ");
@@ -13,7 +13,7 @@ void print_enemy(Enemy* e){
     printf("\n___________________________________________________________________________________________\n");
 }
 
-void print_player(Character* p){
+void print_player(Character* p){//Function to print the hp and def of the player
     printf("\n___________________________________________________________________________________________\n");
     printf("- You (%s)\n", p->name);//Print player's name
     printf("HP: ");
@@ -28,14 +28,24 @@ void print_player(Character* p){
 
 /////////////////////////////////////////////7
 
+//Function to execute the attack
+//a-atck is the one who uses the skill and d-def is the receiver
 int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int max_hp, int* venom, int* prob){
-    printf("\n%s used %s\n", n_atck, skll->name);
-    if(skll->mod.chr == 'r'){
-        if(skll->of_def==1){skll->of_def=0;
-            printf("Charging %s...\n\n", skll->name);}
-        else{skll->of_def=1;printf("%sis charged\n\n", skll->name);}   
-    }else if(skll->mod.chr == 'f'){printf("%s feels %d times stronger\n\n", n_atck, skll->dmg_skll);stats_a[0]+=skll->dmg_skll;}
+    printf("\n%s used %s\n", n_atck, skll->name); //print the skill used
+    if(skll->mod.chr == 'r'){//If mod is recharge
+        if(skll->of_def==1){//If of_def is 1, it's not charged
+            skll->of_def=0;//Change of_def so it doesn't deal dmg when is not charged
+            printf("Charging %s...\n\n", skll->name);
+        }
+        else{skll->of_def=1;printf("%sis charged\n\n", skll->name);}//If of_def is 0, it's charged
+        //Change of_def so it  deals dmg when is charged
+    }else if(skll->mod.chr == 'f'){//If mod is 
+        printf("%s feels %d times stronger\n\n", n_atck, skll->dmg_skll);
+        stats_a[0]+=skll->dmg_skll;
+    }
+
     int dmg = (skll->of_def)*(skll->dmg_skll + stats_a[0]);
+
     if(skll->mod.chr == 'd'){
         stats_a[1]+=skll->dmg_skll;
         printf("%s gained %d defense\n\n", n_atck, skll->dmg_skll);
@@ -45,7 +55,7 @@ int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int m
         if(stats_a[2]>max_hp){stats_a[2]=max_hp;}
     }else if(skll->mod.chr == 'v'){*venom = 3;}
     
-   int prob_attack = rand()%100;
+    int prob_attack = rand()%100;
 
     if(*venom>0){dmg+=stats_a[0];}
     if(*prob<=prob_attack){
