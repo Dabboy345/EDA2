@@ -75,22 +75,55 @@ typedef struct{
     char filename[MAX_NAME];
 }Scenario;
 
-/*
-typedef struct dic_element{
-    Skill skill; //We save the skill usde
-    char *key;//The key will be the name of the skill 
-    int usage_counter;//We will updrage the counter if it used
-    bool isempty;
-    struct dic_element *next; // Pointer to the next element in the linked list
-}dic_element; 
 
+/* //Pondria como mucho 50 el capacity de este stack 
+typedef struct{ //Todo el codigo pillado desde geeksforgeeks
+    int capacity
+    Skill top;
+    Skill *stack;
+}Timestrike;
 
-typedef struct{
-    dic_element *hashmap;
-    int skills_added; // Count of skills added to the dictionary
-    int size_dicionary; // Size of the hashmap array
-}Skill_usuage_dicionary;
+void *createTimestrike(int capacity)
+{
+    Stack* Timestrike = (Timestrike*)malloc(sizeof(Timestrike));
+    stack->capacity = capacity;
+    stack->top = -1;
+    stack->stack = (Skill*)malloc(stack->capacity * sizeof(Skill));
+    return stack;
+}
+// Stack is full when top is equal to the last index
+int isFull(Timestrike *stack){
+    return stack->top == stack->capacity - 1;
+}
 
+// Stack is empty when top is equal to -1
+int isEmpty(Timestrike* stack)
+{
+    return stack->top == -1;
+}
+
+void push(Timestrike* stack, Skill skill){
+    if (isFull(stack))
+        return;
+    stack->array[++stack->top] = item;
+    printf("%d pushed to stack\n", item);
+}
+
+Skill pop(Timestrike* stack)
+{
+    if (isEmpty(stack))
+        return INT_MIN;
+    return stack->array[stack->top--];
+}
+
+// Function to return the top from stack without removing it
+int peek(Timestrike* stack)
+{
+    if (isEmpty(stack))
+        return INT_MIN;
+    return stack->array[stack->top];
+}
 */
+
 
 #endif
