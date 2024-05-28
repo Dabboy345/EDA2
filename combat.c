@@ -2,11 +2,11 @@
 
 void print_enemy(Enemy* e){
     printf("\n___________________________________________________________________________________________\n");
-    printf("- %s\n", e->name);
+    printf("- %s\n", e->name); //Print enemy's name
     printf("HP: ");
-    for(int i=0;i<=(e->stats[2]+1)/2;i++){printf("|");}
+    for(int i=0;i<=(e->stats[2]+1)/2;i++){printf("|");}//Print visual representation of health
     if(e->stats[1]>0){
-        for(int i=0;i<=(e->stats[1]+1)/2;i++){printf("]");}
+        for(int i=0;i<=(e->stats[1]+1)/2;i++){printf("]");}//Print visual representation of defense
         printf(" %d", e->stats[2]);
         printf(" + [%d]", e->stats[1]);
     }else{printf(" %d", e->stats[2]);}
@@ -15,11 +15,11 @@ void print_enemy(Enemy* e){
 
 void print_player(Character* p){
     printf("\n___________________________________________________________________________________________\n");
-    printf("- You (%s)\n", p->name);
+    printf("- You (%s)\n", p->name);//Print player's name
     printf("HP: ");
-    for(int i=0;i<=(p->stats[2]+1)/2;i++){printf("|");}
+    for(int i=0;i<=(p->stats[2]+1)/2;i++){printf("|");}//Print visual representation of health
     if(p->stats[1]>0){
-        for(int i=0;i<=(p->stats[1]+1)/2;i++){printf("]");}
+        for(int i=0;i<=(p->stats[1]+1)/2;i++){printf("]");}//Print visual representation of defense
         printf(" %d", p->stats[2]);
         printf(" + [%d]", p->stats[1]);
     }else{printf(" %d", p->stats[2]);}
