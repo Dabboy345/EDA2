@@ -10,9 +10,8 @@
 
 #define MAX_NAME 50 
 #define MAX_TXT 350 
-#define MAX_SKILL 4
-#define MAX_NUMBER_SKILL_PLAYER 20
-#define MAX_DICTONARY_SIZE 20 //IT is becuase we have maximum number of 20 skills  
+#define MAX_SKILL_PICKED 4
+#define MAX_NUMBER_SKILL_PLAYER 21
 
 int get_valid_input(int first, int size); 
 
@@ -74,7 +73,6 @@ typedef struct{
     int decisions_added;
     char filename[MAX_NAME];
 }Scenario;
-
 
 /* //Pondria como mucho 50 el capacity de este stack 
 typedef struct{ //Todo el codigo pillado desde geeksforgeeks

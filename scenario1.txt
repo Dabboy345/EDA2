@@ -8,7 +8,7 @@ Your first decision, What would you like to do?
 
 2node
 You decide to go look for food because you are starving
-while the seller is distracted you try to grab some fruits, but he sees you and gets very angry
+While the seller is distracted you try to grab some fruits, but he sees you and gets very angry
 Seller: 53, 51, 52, 50
 Now that you have eaten, what do you want do?
 - Go to the center, you will know what is happening
@@ -40,7 +40,7 @@ After this attack, you can figure out that animals aren't exactly how you used t
 
 6node
 You decide to go look for food because you are starving
-while the seller is distracted you try to grab some fruits, but he sees you and gets very angry
+While the seller is distracted you try to grab some fruits, but he sees you and gets very angry
 Seller: 50, 51, 52, 53 
 Now you have eaten. What do you do now?
 - You see a person and follow them
@@ -72,7 +72,7 @@ After surviving so many obstacles you need a secure place and some answers. What
 
 10node
 You decide to go explore the streets of the city to see what you can possibly discover
-when you hear a gentile noise from a possible machine, you look up and there is a drone above your head 
+When you hear a gentile noise from a possible machine, you look up and there is a drone above your head 
 Drone: 79, 60, 80, 74
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening
@@ -80,7 +80,7 @@ After surviving so many obstacles you need a secure place and some answers. What
 
 11node
 You go inside a hotel in order to rest and try to recover from all that has happened to you
-but you see a figure inside that does not have a form, his body is made of a slimy matter and goes towards you
+But you see a figure inside that does not have a form, his body is made of a slimy matter and goes towards you
 Slipy: 78, 62, 79, 81
 After surviving so many obstacles you need a secure place and some answers. What do you want to do?
 - You ask a person to explain what is really happening

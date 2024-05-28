@@ -10,23 +10,23 @@ You see some kind of jester looking directly at your pockets, he wants to rob yo
 2node
 You decide to call out the jester for trying to steal from you
 He gets angry and starts shouting and attacking you
-Jester: 2, 2, 2, 2 (surprise box , tomato throw, mockery, smoke bomb)
-You knock him down, but you find out he is the personal king’s jester and two knights enter the hut and try to arrest you
+Jester: 92, 93, 94, 95
+You knock him down, but you find out he is the personal king's jester and two knights enter the hut and try to arrest you
 - Fight the knights
 - Try to explain the situation
 
 3node
 You exit the door running without looking and you encounter a hooded figure
 At first it doesn't seem like a big deal but then you see his face, he is all over the wanted signs
-Hooded figure: 2, 2, 2, 2 (venomous dagger, magic dust(stun))shield cloak, heal potion
+Hooded figure: 96, 97, 98, 73
 After looking through his stuff you found out he was a wanted serial killer, what do you want to do?
 - Steal his hooded cloak
 - Steal his gold and go to the local market
 
 4node
-When they try to aprehend you you engage in combat
+When they try to aprehend you engage in combat
 They quickly pull out their swords and shields, its about to be a fight to the death
-Knights: 2, 2, 2, 2 (Sword, flail, shield block, silver gauntlet punch)
+Knights: 4, 99, 14, 100
 After your victory you pick their armor, you go outside and you see two posters both with rewards one about catching a hooded guy and the other about a jousting tournament, what do you do?
 - Look for the murderer
 - Participate in the tournament
@@ -34,7 +34,7 @@ After your victory you pick their armor, you go outside and you see two posters 
 5node
 You try to explain but the knights apprehend you and bring you to their prison to answer for your crimes in front of the king
 They put you in jail with a crazy man that tries to eat you alive
-Crazy old man: 2, 2, 2, 2 (sharp nails, bite, shouting(does nothing), choke you)
+Crazy old man: 102, 101, 69, 103
 After barely surviving you see a hole in the walls that trap you, what do you want to do?
 - Try to scape
 - Wait to see the king
@@ -42,7 +42,7 @@ After barely surviving you see a hole in the walls that trap you, what do you wa
 6node
 You put on his cloak and it suits you perfectly so you start to walk around to try to impress som ladies
 Suddenly a bounty hunter shouts "It's him! The murderer! While pointing at you" and starts running towards you
-Bounty hunter: 2, 2, 2, 2 crossbow, venomous dagger, grapling hook, punch
+Bounty hunter: 73, 96, 104, 105
 It appears that you were mistaken by the serial killer himself by wearing his cloak, what do you want to do?
 - Keep the cloak
 - Sell it in the local market
@@ -50,68 +50,509 @@ It appears that you were mistaken by the serial killer himself by wearing his cl
 7node
 You arrive to the local market and you see its crowded and full of all kinds of characters
 While you are distracted a misterious wizard steals all your gold and makes fun of you, for no reason
-Evil wizard: 2, 2, 2, 2 (mockery, holy blessing, fireball, )
+Evil wizard: 94, 10, 5, 106
 Fortunately you get back all you gold, what do you want to buy?
-- Buy some fresh meat to fill your stomach 14
-- Check out the potionary 15
+- Buy some fresh meat to fill your stomach
+- Check out the potionary
 
 8node
 You decide to go around the kingdom to see if you can claim his reward
 After looking for hours you see in the distance a hooded figure that seems to be who you have been looking for
-Hooded figure: 2, 2, 2, 2 (venomous dagger, magic dust(stun))shield cloak, heal potion
+Hooded figure: 96, 97, 98, 73
 After looking through his stuff you found out he was a wanted serial killer, what do you want to do?
-- Steal his hooded cloak 16
-- Steal his gold and go to the local market 17
+- Steal his hooded cloak
+- Steal his gold and go to the local market
 
 9node
 Since you recently acquired a brand new armor you decide to try luck in the jousting tournament. You see a lot of skilled knights sharpening their swords and polishing their armor
 While looking at the others contestants the referee of the tournament confronts you about not being able to participate
-Jousting referee: 2, 2, 2, 2 nose
+Jousting referee: 54, 73, 99, 60
 After showing off you fighting capabilities he allows you to choose your opponent for the tournament
-- Fight againts the bigger knight there, the "Soul Eater" 18
-- Fight againts some plant knight covered in roots and leaves 19 (druid)
+- Fight againts the bigger knight there, the "Soul Eater"
+- Fight againts some plant knight covered in roots and leaves
 
 10node
 When trying, you see you fit through that hole so you get out the prison. When you are far gone you start to hear the alarm bell because of your scape
 After running and running you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
-Druid: 2, 2, 2, 2 (root, healing flower, wolf friend, water bubble)
+Druid: 76, 107, 108, 109
 When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
-- End node 20
-- End node 21
+- End node
+- End node
 
 11node
 You decide to wait, since getting to meet the king in person seems very difficult in any other circunstance. After what seemed to be an eternety some guards come to your cell and bring you to the king
 You look around and see a bunch of royal guards surrounding a throne made with gold and bones, where the intimidating king is sitting
 no enemy
 The king looks at you repulsively and asks: "You certanly now how to fight, would you like to work for me? I can give you everything you've ever dreamed for"
-- Accept the king's offer 22
-- Try to assasinate the king 23
+- Accept the king's offer
+- Try to assasinate the king
 
 12node
 For some reason you decide to keep the cloak and start wandering around looking for something to do
 But as you should have expected, someone else missidentified you with the owner of the cloak, but this time it was a group of knights
 no enemy
 They are getting closer and they don't to ask first and kill later...
-- Fight the knights 24
-- Try to explain the situation 25
+- Fight the knights
+- Try to explain the situation
 
 13node
 You find a fabric stall where some old lady agrees to buy your cloak for two gold coins
 When you are about to agree the trade some random guy whispers you that "she is scamming you", and upon hearing that she reveals herself as a witch and tries to curse you
-Witch: curse, black cat bad luck, broom, magic lightning
+Witch: 110, 111, 112, 106
 After defeating the witch, she drops the gold and you decide to take it, what would you like to buy
-- Buy some fresh meat to fill your stomach 26
-- Check out the potionary 27
+- Buy some fresh meat to fill your stomach
+- Check out the potionary
 
 14node
 You can't take any more the hunger so you rush to the nearest butcher stall, where you find a robust butcher
 He agrees to sell you some fresh ribs, but if you are worty of them in combat
-Butcher: meat clever, pork throw, garlic sausajes(heal), 
+Butcher: 0, 73, 113, 114
 After getting back the ribs you make a campfire and you cook it, but when you are starting to state the delicous food to start to feel weird and realize that its was poisoned
-- End node 28
-- End node 29
+- End node
+- End node
 
 15node
-You enter a misterious hut with a potion shape to check out the brebages of this world
+You enter a misterious hut with potion shape to check out the brebages of this world
+Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
+Alquemist: 97, 62, 115, 95
+You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
+- Go to eat with the family
+- Steal some of the potions
+
+16node
+You put on his cloak and it suits you perfectly so you start to walk around to try to impress som ladies
+Suddenly a bounty hunter shouts "It's him! The murderer! While pointing at you" and starts running towards you
+Bounty hunter: 73, 96, 104, 105
+It appears that you were mistaken by the serial killer himself by wearing his cloak, what do you want to do?
+- Keep the cloak
+- Sell it in the local market
+
+17node
+You arrive to the local market and you see its crowded and full of all kinds of characters
+While you are distracted a misterious wizard steals all your gold and makes fun of you, for no reason
+Evil wizard: 94, 10, 5, 106
+Fortunately you get back all you gold, what do you want to buy?
+- Buy some fresh meat to fill your stomach
+- Check out the potionary
+
+18node
+After getting some courage from out of nowhere you decide to compete againts the strongest knight, the Soul Eater
+Legends say he used the bones of his defeated enemies to sharpen his weapons. He looks at you and starts laughing while preparing his sword
+Soul Eater: 13, 15, 116, 117
+Defeating him gives you a lot of reputation and you are summoned to see the king, what do you do?
+- Go see the king
+- Go to explore the woods
+
+19node
+You decide to find against what it appears to be a druid, a kind of wizzard whose art of magic derivates from the nature
+Fauna, flora, water or earth, all their surroundings give the power, let the battle begin!
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+22node
+You decide to accept the king's offer and work for him as a mercenary. He tells you that you will have everuthing, power, gold, influence...
+He tells you that you will only have to do some dirty work for him in exchange of all promised
+no enemy
+When you are about to shake hands you hear and explosion, everything is in flames, you vision fades
+- End node
+- End node
+
+23node
+When everyone is expecting your answer, you pull your weapons and rush to assasinate the king
+The royal guards try to stop you but they aren't fast enough, when you are about to kill him, the king blocks your attack with his sword
+King Paco: 1, 10, 88, 118
+You manage to kill the king and while everyone in the kingdom starts to panic, one of the gurads fires an arrow stright to your head
+- End node
+- End node
+
+24node
+When they try to aprehend you engage in combat
+They quickly pull out their swords and shields, its about to be a fight to the death
+Knights: 4, 99, 14, 100
+After your victory you pick their armor, you go outside and you see a poster about a jousting tournament, what do you do?
+- Go to explore the woods
+- Participate in the tournament
+
+25node
+You try to explain but the knights apprehend you and bring you to their prison to answer for your crimes in front of the king
+They put you in jail with a crazy man that tries to eat you alive
+Crazy old man: 102, 101, 69, 103
+After barely surviving you see a hole in the walls that trap you, what do you want to do?
+- Try to scape
+- Wait to see the king
+
+26node
+You can't take any more the hunger so you rush to the nearest butcher stall, where you find a robust butcher
+He agrees to sell you some fresh ribs, but if you are worty of them in combat
+Butcher: 0, 73, 113, 114
+After getting back the ribs you make a campfire and you cook it, but when you are starting to state the delicous food to start to feel weird and realize that its was poisoned
+- End node
+- End node
+
+27node
+You enter a misterious hut with potion shape to check out the brebages of this world
+Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
+Alquemist: 97, 62, 115, 95 
+You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
+- Go to eat with the family
+- Steal some of the potions
+
+30node
+The family guides you inside their home. It appears to be a tiny house in the worst part of the kingdom
+They don't have much but they serve you with the best food they got
+no enemy
+While you are eating you start to feel dizzy and realise they had poisoned the food. Why? We will never know...
+- End node
+- End node
+
+31node
+You start throwing bottles to your bag but one in particular ctaches your attention, its in the top of the loan and you can't see the inscription on it
+You look around and see an old ladder in the corner, so you grab it and try to reach that misterious potion
+no enemy
+When you are about to see what is that potion you trip and fall, while all the potion bottles in your bag break on you
+- End node
+- End node
+
+32node
+For some reason you decide to keep the cloak and start wandering around looking for something to do
+But as you should have expected, someone else missidentified you with the owner of the cloak, but this time it was a group of knights
+no enemy
+They are getting closer and they don't to ask first and kill later...
+- Fight the knights
+- Try to explain the situation
+
+33node
+You find a fabric stall where some old lady agrees to buy your cloak for two gold coins
+When you are about to agree the trade some random guy whispers you that "she is scamming you", and upon hearing that she reveals herself as a witch and tries to curse you
+Witch: 110, 111, 112, 106
+After defeating the witch, she drops the gold and you decide to take it, what would you like to buy
+- Buy some fresh meat to fill your stomach
+- Check out the potionary
+
+34node
+You can't take any more the hunger so you rush to the nearest butcher stall, where you find a robust butcher
+He agrees to sell you some fresh ribs, but if you are worty of them in combat
+Butcher: 0, 73, 113, 114
+After getting back the ribs you make a campfire and you cook it, but when you are starting to state the delicous food to start to feel weird and realize that its was poisoned
+- End node
+- End node
+
+35node
+You enter a misterious hut with potion shape to check out the brebages of this world
+Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
+Alquemist: 97, 62, 115, 95
+You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
+- Go to eat with the family
+- Steal some of the potions
+
+36node
+You decide to go to the castle, since getting to meet the king in person seems very difficult in any other circunstance
+You look around and see a bunch of royal guards surrounding a throne made with gold and bones, where the intimidating king is sitting
+no enemy
+The king looks at you repulsively and asks: "You certanly now how to fight, would you like to work for me? I can give you everything you've ever dreamed for"
+- Accept the king's offer
+- Try to assasinate the king
+
+37node
+You start heading to the green lands of the kingdom
+After wandering around you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+48node
+You start heading to the green lands of the kingdom
+After wandering around you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+49node
+Since you recently acquired a brand new armor you decide to try luck in the jousting tournament. You see a lot of skilled knights sharpening their swords and polishing their armor
+While looking at the others contestants the referee of the tournament confronts you about not being able to participate
+Jousting referee: 54, 73, 99, 60
+After showing off you fighting capabilities he allows you to choose your opponent for the tournament
+- Fight againts the bigger knight there, the "Soul Eater"
+- Fight againts some plant knight covered in roots and leaves
+
+50node
+When trying, you see you fit through that hole so you get out the prison. When you are far gone you start to hear the alarm bell because of your scape
+After running and running you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+51node
+You decide to wait, since getting to meet the king in person seems very difficult in any other circunstance. After what seemed to be an eternety some guards come to your cell and bring you to the king
+You look around and see a bunch of royal guards surrounding a throne made with gold and bones, where the intimidating king is sitting
+no enemy
+The king looks at you repulsively and asks: "You certanly now how to fight, would you like to work for me? I can give you everything you've ever dreamed for"
+- Accept the king's offer
+- Try to assasinate the king
+
+54node
+The family guides you inside their home. It appears to be a tiny house in the worst part of the kingdom
+They don't have much but they serve you with the best food they got
+no enemy
+While you are eating you start to feel dizzy and realise they had poisoned the food. Why? We will never know...
+- End node
+- End node
+
+55node
+You start throwing bottles to your bag but one in particular ctaches your attention, its in the top of the loan and you can't see the inscription on it
+You look around and see an old ladder in the corner, so you grab it and try to reach that misterious potion
+no enemy
+When you are about to see what is that potion you trip and fall, while all the potion bottles in your bag break on you
+- End node
+- End node
+
+64node
+When they try to aprehend you engage in combat
+They quickly pull out their swords and shields, its about to be a fight to the death
+Knights: 4, 99, 14, 100
+After your victory you pick their armor, you go outside and you see a poster about a jousting tournament, what do you do?
+- Go to explore the woods
+- Participate in the tournament
+
+65node
+You try to explain but the knights apprehend you and bring you to their prison to answer for your crimes in front of the king
+They put you in jail with a crazy man that tries to eat you alive
+Crazy old man: 102, 101, 69, 103
+After barely surviving you see a hole in the walls that trap you, what do you want to do?
+- Try to scape
+- Wait to see the king
+
+66node
+You can't take any more the hunger so you rush to the nearest butcher stall, where you find a robust butcher
+He agrees to sell you some fresh ribs, but if you are worty of them in combat
+Butcher: 0, 73, 113, 114 
+After getting back the ribs you make a campfire and you cook it, but when you are starting to state the delicous food to start to feel weird and realize that its was poisoned
+- End node
+- End node
+
+67node
+You enter a misterious hut with potion shape to check out the brebages of this world
+Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
+Alquemist: 97, 62, 115, 95
+You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
+- Go to eat with the family
+- Steal some of the potions
+
+70node
+The family guides you inside their home. It appears to be a tiny house in the worst part of the kingdom
+They don't have much but they serve you with the best food they got
+no enemy
+While you are eating you start to feel dizzy and realise they had poisoned the food. Why? We will never know...
+- End node
+- End node
+
+71node
+You start throwing bottles to your bag but one in particular ctaches your attention, its in the top of the loan and you can't see the inscription on it
+You look around and see an old ladder in the corner, so you grab it and try to reach that misterious potion
+no enemy
+When you are about to see what is that potion you trip and fall, while all the potion bottles in your bag break on you
+- End node
+- End node
+
+72node
+You decide to accept the king's offer and work for him as a mercenary. He tells you that you will have everuthing, power, gold, influence...
+He tells you that you will only have to do some dirty work for him in exchange of all promised
+no enemy
+When you are about to shake hands you hear and explosion, everything is in flames, you vision fades
+- End node
+- End node
+
+73node
+When everyone is expecting your answer, you pull your weapons and rush to assasinate the king
+The royal guards try to stop you but they aren't fast enough, when you are about to kill him, the king blocks your attack with his sword
+King Paco: 1, 10, 88, 118
+You manage to kill the king and while everyone in the kingdom starts to panic, one of the gurads fires an arrow stright to your head
+- End node
+- End node
+
+98node
+After getting some courage from out of nowhere you decide to compete againts the strongest knight, the Soul Eater
+Legends say he used the bones of his defeated enemies to sharpen his weapons. He looks at you and starts laughing while preparing his sword
+Soul Eater: 13, 15, 116, 117
+Defeating him gives you a lot of reputation and you are summoned to see the king, what do you do?
+- Go see the king
+- Go to explore the woods
+
+99node
+You decide to find against what it appears to be a druid, a kind of wizzard whose art of magic derivates from the nature
+Fauna, flora, water or earth, all their surroundings give the power, let the battle begin!
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+102node
+You decide to accept the king's offer and work for him as a mercenary. He tells you that you will have everuthing, power, gold, influence...
+He tells you that you will only have to do some dirty work for him in exchange of all promised
+no enemy
+When you are about to shake hands you hear and explosion, everything is in flames, you vision fades
+- End node
+- End node
+
+103node
+When everyone is expecting your answer, you pull your weapons and rush to assasinate the king
+The royal guards try to stop you but they aren't fast enough, when you are about to kill him, the king blocks your attack with his sword
+King Paco: 1, 10, 88, 118
+You manage to kill the king and while everyone in the kingdom starts to panic, one of the gurads fires an arrow stright to your head
+- End node
+- End node
+
+128node
+You start heading to the green lands of the kingdom
+After wandering around you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+129node
+Since you recently acquired a brand new armor you decide to try luck in the jousting tournament. You see a lot of skilled knights sharpening their swords and polishing their armor
+While looking at the others contestants the referee of the tournament confronts you about not being able to participate
+Jousting referee: 54, 73, 99, 60
+After showing off you fighting capabilities he allows you to choose your opponent for the tournament
+- Fight againts the bigger knight there, the "Soul Eater"
+- Fight againts some plant knight covered in roots and leaves
+
+130node
+When trying, you see you fit through that hole so you get out the prison. When you are far gone you start to hear the alarm bell because of your scape
+After running and running you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+131node
+You decide to wait, since getting to meet the king in person seems very difficult in any other circunstance. After what seemed to be an eternety some guards come to your cell and bring you to the king
+You look around and see a bunch of royal guards surrounding a throne made with gold and bones, where the intimidating king is sitting
+no enemy
+The king looks at you repulsively and asks: "You certanly now how to fight, would you like to work for me? I can give you everything you've ever dreamed for"
+- Accept the king's offer
+- Try to assasinate the king
+
+134node
+The family guides you inside their home. It appears to be a tiny house in the worst part of the kingdom
+They don't have much but they serve you with the best food they got
+no enemy
+While you are eating you start to feel dizzy and realise they had poisoned the food. Why? We will never know...
+- End node
+- End node
+
+135node
+You start throwing bottles to your bag but one in particular ctaches your attention, its in the top of the loan and you can't see the inscription on it
+You look around and see an old ladder in the corner, so you grab it and try to reach that misterious potion
+no enemy
+When you are about to see what is that potion you trip and fall, while all the potion bottles in your bag break on you
+- End node
+- End node
+
+196node
+You decide to go to the castle, since getting to meet the king in person seems very difficult in any other circunstance
+You look around and see a bunch of royal guards surrounding a throne made with gold and bones, where the intimidating king is sitting
+no enemy
+The king looks at you repulsively and asks: "You certanly now how to fight, would you like to work for me? I can give you everything you've ever dreamed for"
+- Accept the king's offer
+- Try to assasinate the king
+
+197node
+You start heading to the green lands of the kingdom
+After wandering around you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+258node
+After getting some courage from out of nowhere you decide to compete againts the strongest knight, the Soul Eater
+Legends say he used the bones of his defeated enemies to sharpen his weapons. He looks at you and starts laughing while preparing his sword
+Soul Eater: 13, 15, 116, 117
+Defeating him gives you a lot of reputation and you are summoned to see the king, what do you do?
+- Go see the king
+- Go to explore the woods
+
+259node
+You decide to find against what it appears to be a druid, a kind of wizzard whose art of magic derivates from the nature
+Fauna, flora, water or earth, all their surroundings give the power, let the battle begin!
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+262node
+You decide to accept the king's offer and work for him as a mercenary. He tells you that you will have everuthing, power, gold, influence...
+He tells you that you will only have to do some dirty work for him in exchange of all promised
+no enemy
+When you are about to shake hands you hear and explosion, everything is in flames, you vision fades
+- End node
+- End node
+
+263node
+When everyone is expecting your answer, you pull your weapons and rush to assasinate the king
+The royal guards try to stop you but they aren't fast enough, when you are about to kill him, the king blocks your attack with his sword
+King Paco: 1, 10, 88, 118
+You manage to kill the king and while everyone in the kingdom starts to panic, one of the gurads fires an arrow stright to your head
+- End node
+- End node
+
+392node
+You decide to accept the king's offer and work for him as a mercenary. He tells you that you will have everuthing, power, gold, influence...
+He tells you that you will only have to do some dirty work for him in exchange of all promised
+no enemy
+When you are about to shake hands you hear and explosion, everything is in flames, you vision fades
+- End node
+- End node
+
+393node
+When everyone is expecting your answer, you pull your weapons and rush to assasinate the king
+The royal guards try to stop you but they aren't fast enough, when you are about to kill him, the king blocks your attack with his sword
+King Paco: 1, 10, 88, 118
+You manage to kill the king and while everyone in the kingdom starts to panic, one of the gurads fires an arrow stright to your head
+- End node
+- End node
+
+516node
+You decide to go to the castle, since getting to meet the king in person seems very difficult in any other circunstance
+You look around and see a bunch of royal guards surrounding a throne made with gold and bones, where the intimidating king is sitting
+no enemy
+The king looks at you repulsively and asks: "You certanly now how to fight, would you like to work for me? I can give you everything you've ever dreamed for"
+- Accept the king's offer
+- Try to assasinate the king
+
+517node
+You start heading to the green lands of the kingdom
+After wandering around you go inside an ash forest and you encounter and old druid performing magic with the flora of the place. When he sees you his spell breaks and pisses him off
+Druid: 76, 107, 108, 109
+When you think you have defeated him he throws you some kind of potion and you start to thorw up and faint
+- End node
+- End node
+
+1032node
+You decide to accept the king's offer and work for him as a mercenary. He tells you that you will have everuthing, power, gold, influence...
+He tells you that you will only have to do some dirty work for him in exchange of all promised
+no enemy
+When you are about to shake hands you hear and explosion, everything is in flames, you vision fades
+- End node
+- End node
+
+1033node
+When everyone is expecting your answer, you pull your weapons and rush to assasinate the king
+The royal guards try to stop you but they aren't fast enough, when you are about to kill him, the king blocks your attack with his sword
+King Paco: 1, 10, 88, 118
+You manage to kill the king and while everyone in the kingdom starts to panic, one of the gurads fires an arrow stright to your head
+- End node
+- End node
+
+
+
+
 
 

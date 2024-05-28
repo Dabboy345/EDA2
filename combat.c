@@ -123,7 +123,6 @@ int combat(Character *plyr, Enemy *enmy, int size){
             for(int j = 0; j<4; j++){printf("%d - %s",j+1, plyr->skill[j]);}
             printf("Choose skill: ");
             scanf("%d", &a);
-            printf("----%d---\n", plyr->skill[0].of_def);
             a--;
             int p_dmg = (plyr->skill[a].of_def)*(plyr->skill[a].dmg_skll + plyr->stats[0]);//Segmentation fault?
 

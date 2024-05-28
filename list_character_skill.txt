@@ -199,8 +199,8 @@ h
 3, 3, 36,
 
 54skill
-Punch
-Punch enables attacker to throw punch at you and deal damage
+Knockout
+It enables attacker to throw punch to KO the opponent
 1
 19
 s
@@ -447,7 +447,7 @@ r
 2, 5, 20,
 
 85skill
-needle
+Needle
 You might get some small holes
 1
 15
@@ -463,7 +463,7 @@ s
 1, 4, 28,
 
 87skill
-white noise
+White noise
 activates a noise that hurts your head
 1
 27
@@ -471,7 +471,7 @@ v
 1, 1, 25,
 
 88skill
-shield
+Shield
 blocks the damage of the attack 
 0
 14
@@ -479,7 +479,7 @@ p
 1, 5, 30,
 
 89skill
-pickup
+Pickup
 grabs the enemy and throws him to the floor
 1
 30
@@ -495,14 +495,230 @@ n
 1, 3, 20,
 
 91skill
-gun
+Gun
 There is a gun that can shoot you
 1
 35
 s
 2, 2, 30,
 
+92skill
+Surprise box
+What could possibly be inside, let's hope it's nothing explosive
+1
+30
+s
+2, 0, 25,
+
+93skill
+Tomato throw
+Tomatos go flying
+1
+20
+n
+1, 2, 30,
+
+94skill
+Mockery
+Emotional damage
+1
+40
+v
+3, 6, 30,
+
+95skill
+Smoke bomb
+The smoke blinds the opponent
+0
+20
+p
+0, 5, 25,
+
+96skill
+Venomous daggers
+You can throw daggers covered in snake venom
+1
+10
+v
+3, 1, 30,
+
+97skill
+Magic dust
+You throw a sack of magic dust that blinds the enemy
+1
+15
+p
+2, 2, 40,
+
+98skill
+Shield cloak
+It can use the cloak as a shield
+0
+20
+d
+0, 8, 40
+
+99skill
+Sword
+It allows you to swing a sword at your enemies
+1
+20
+n
+2, 4, 25,
+
 100skill
+Silver gauntlet
+Stronger punch with a gauntlet made out of silver
+1
+34
+n
+2, 7, 40,
+
+101skill
+Crazy shouting
+It does nothing
+0
+0
+n
+3, 0, 50, 
+
+102skill
+Sharp nails
+Two years to grow nails sharp as a sword
+1
+37
+n
+3, 0, 30,
+
+103skill
+Choke
+You can choke your enemies with your bare hands
+1
+31
+n
+2, 0, 27,
+
+104skill
+Crossbow
+Charge your arrows and FIRE!!!
+1
+40
+r
+1, 5, 30,
+
+105skill
+Graplinghook
+You can dodge attacks with the fast movements of a graplinghook
+0
+25
+p
+1, 3, 25,
+
+106skill
+Magic beam
+A magic beam created from nothing and pure of magic and damage
+1
+31
+n
+2, 3, 40,
+
+107skill
+Healing flower
+The power of the nature can heal any wound
+0
+40
+h
+0, 4, 42,
+
+108skill
+Wolf friend
+Similar to a dog, the wolves will fight along their loved ones
+1
+27
+n
+2, 2, 25,
+
+109skill
+Water bubble
+Use the water of your surroundings to trap your opponent in water, unable to move
+1
+5
+s
+1, 6, 27,
+
+110skill
+Curse
+When you get cursed you start receiving damage out of nowhere
+0
+0
+v
+3, 3, 30,
+
+111skill
+Black cat bad luck
+Bad luck can make you miss your attacks, be carefull
+0
+29
+p
+2, 6, 37,
+
+112skill
+Broom
+A strong hit with a simple broom can deal a lot of damage
+1
+32
+n
+2, 2, 25,
+
+113skill
+Pork throw
+A pig literally falls on top of you, and the weight doesn't let you move
+1
+32
+s
+1, 4, 30,
+
+114skill
+Sausages with some garlic
+A good pair of sausages always heals all the panic
+0
+30
+h
+0, 3, 43,
+
+115skill
+Healing potion
+No need to explain, a potion that heals you
+0
+40
+h
+0, 2, 46,
+
+116skill
+Blackhole sword
+An ancient magic that grants strength to its owner
+1
+20
+f
+3, 2, 25,
+
+117skill
+Dragon armor
+Extra defense thanks to the dragon scutes covering the armor
+0
+40
+d
+0, 7, 30,
+
+118
+Golden beer
+Made with the finest ingredients, and only for the richest, this beer fills one with pure strength
+1
+20
+3, 8, 40,
+
+
+200skill
 None
 None
 0

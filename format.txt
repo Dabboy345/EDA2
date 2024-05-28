@@ -1,13 +1,22 @@
-1node
-Description
-Pre_text //No dejad lo en blanco
-Enemy_name: numberskill1, numberskill2, numberskill3, numberskill4
-//si no hay enemy poned "no enemy"
-Post_text //No dejad lo en blanco
-- Option1desripton mm //Si es un nodo final poned (- End node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
-- Option2description mm //Si es un nodo final poned (- End node) copiad lo q hay dentro de parentesis, los dos opciones tiene que ser end node
+//Structure for skills 
+numberskill
+Name
+Skill Description
+Type of skill - 0 is defensive and 1 is offesnive 
+The basic damge of the skill
+Letter of the modifiers that the skill has 
+Damage, Defense, Health, 
 
-Save_game format
+//Structure for scenario
+numbernode
+Description
+Pre_text 
+Enemy_name: numberskill1, numberskill2, numberskill3, numberskill4
+Post_text 
+- Option1desripton 
+- Option2description 
+
+//Structure for saving game
 Name_character
 stat1
 stat2
@@ -16,8 +25,8 @@ Skill_number1
 Skill_number2
 Skill_number3
 Skill_number4
-Ultimo_numero_de_nodo //Si aqui hay un -1 pues diremos q hubo error al guard partida y q no se puede cargar 
-Filename //Con esto podremos saber en que escenario se encuentra ese nodo
+Last_node_played 
+Scenario_played
 
 
 

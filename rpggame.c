@@ -183,8 +183,8 @@ void put_enemy_info(char *line, Enemy *boss) { //Function to helps us put the en
         for (int i = 0; i < 3; i++) { //We put the stats to 0
             boss->stats[i] = 0;
         }
-        for (int i = 0; i < MAX_SKILL; i++) {
-            get_skill(&boss->skill[i], 100); //in the list_character skill the skill 100 is for the when ther is no enemy
+        for (int i = 0; i < MAX_SKILL_PICKED; i++) {
+            get_skill(&boss->skill[i], 200); //in the list_character skill the skill 200 is for the when ther is no enemy
         }
         return;
     }
@@ -199,7 +199,7 @@ void put_enemy_info(char *line, Enemy *boss) { //Function to helps us put the en
     }
 
     // Get the skill numbers
-    for (int i = 0; i < MAX_SKILL; i++) { //We do the same thing as we did before to get the information about the skills
+    for (int i = 0; i < MAX_SKILL_PICKED; i++) { //We do the same thing as we did before to get the information about the skills
         token = strtok(NULL, ",");
         if (token != NULL) {
             list_n_skills[i] = atoi(token);
@@ -528,45 +528,3 @@ void order_skills(int n) {
     }
     printf("\n\n");
 }
-
-/*int main() {
-    order_skills_dmg();
-    return 0;
-}*/
-
-
-//Functions related with dictionary
-/*
-long int hash_function(char *skill_name){
-    int name_skill_size = strlen(skill_name);
-    int addition_ascii_value = 0;
-    for(int i =0; i<name_skill_size; i++){
-        addition_ascii_value += (int)skill_name[i]; //This int insisde paraentesis helps us to get Ascii value of each character
-    }
-    
-    return addition_ascii_value % MAX_DICTONARY_SIZE;
-}
-
-void create_inizialize_dic(int size){
-    Skill_usuage_dicionary *dicionary = (Skill_usuage_dicionary*)malloc(sizeof(Skill_usuage_dicionary));
-    dicionary->size_dicionary = size;
-    dicionary->hashmap= (dic_element*)calloc(size,sizeof(dic_element));
-    for (int i = 0; i < MAX_DICTONARY_SIZE; i++) {
-        dicionary->hashmap[i].isempty = true;
-    }
-    dicionary->skills_added = 0;
-}
-
-void insert_skill (Skill_usuage_dicionary *dic, Skill skill){
-    long int index = hash_function(skill.name); //We do the hash function of the skill name
-    dic_element *new_element = (dic_element*)malloc(sizeof(dic_element)); //We create a new element 
-    strcpy(new_element->key,skill.name);//We put the key as the item
-    new_element->skill = skill; //We put the skill info in the dictionary
-    new_element->usage_counter = 0; //When we put it to the dictionary it will have 0 usage
-    while(dic->hashmap[index] != true){
-        index++;
-    }
-
-}
-
-*/
