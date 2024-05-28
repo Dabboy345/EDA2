@@ -21,7 +21,7 @@ But you remember that to go to the hospital you will need an ID. Suddenly a big 
 Big_Bully: 54, 50, 60, 69
 After teaching a lesson to the big bully about the life, what would you like to do?
 - Find a way to create a Fake ID
-- Cancel the plan to go to the hospital 
+- Cancel the plan to go to the hospital
 
 4node
 You are on your way to the library
@@ -53,7 +53,7 @@ You are thinking about what to do now, suddenly you see some people going to the
 no enemy
 Some people beside you take that this market has very rich history adn there are many intresting things. What would you like to do?
 - Go to the local market
-- Not go to the market and serach another thing for fun 
+- Not go to the market and serach another thing for fun
 
 8node 
 You enter the library. You start to read the books and see everything that has happened.
@@ -66,7 +66,7 @@ After this, you start fainting, you start to lose consciousness
 9node
 You decide not to go to the library. You go to the park and join a group of elder's
 They are very humble and they respond to all your questions. But a specific old grandpa is not very happy and he attacks you
-Angry_grandpa: 50, 60, 53, 59
+Angry grandpa: 50, 60, 53, 59
 After convencing the grandpa that you are not dangerous. You start having flashbacks of something that seems like it was in your memory. After this, you start fainting, you start to lose consciousness
 - End node
 - End node

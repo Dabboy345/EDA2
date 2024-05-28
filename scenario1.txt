@@ -20,7 +20,7 @@ You rob a newspaper but you encounter a big man who is the seller
 Fight
 Big seller: 58, 59, 60, 61 
 You read the newspaper "Celebrating 100th anniversary of radioactive rain in the center". There are group people going to the center. What would you like to do?
-- Search for the food 
+- Search for the food
 - Follow the crowd of people to the center
 
 4node
@@ -28,7 +28,7 @@ Going to the center of the city, a person sees that you are wearing a good jacke
 Fight
 Thief: 55, 66, 67, 68
 After surviving this attack you realise that not many people can be trusted. What do you do now?
-- You go to a bar with TV 
+- You go to a bar with TV
 - You escape to a tall building to see the city
 
 5node
@@ -36,8 +36,8 @@ You go to the mall, as it usually is a big place with a lot of resources. You en
 Fight
 Dog: 69, 70, 62, 71
 After this attack, you can figure out that animals aren't exactly how you used to know them. What do you want to do now?
-- You decide to leave and explore the city 
-- You get inside a hotel to rest 
+- You decide to leave and explore the city
+- You get inside a hotel to rest
 
 6node
 You decide to grab the food while the seller is distracted 
@@ -128,6 +128,118 @@ Now you know what is happening, it starts to rain acid rain, and your feet start
 - End node
 
 17node
+You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
+Pretxt
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
+- End node
+- End node
+
+18node
+You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious
+Pretxt
+Suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
+- End node
+- End node
+
+19node
+You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
+Pretxt
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
+- End node
+- End node
+
+20node
+You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious
+Pretxt
+Suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
+- End node
+- End node
+
+21node
+You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
+Pretxt
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
+- End node
+- End node
+
+22node
+You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious
+Pretxt
+Suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
+- End node
+- End node
+
+23node
+You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
+Pretxt
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
+- End node
+- End node
+
+24node
+You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious
+Pretxt
+Suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
+- End node
+- End node
+
+25node
+You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
+Pretxt
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
+- End node
+- End node
+
+26node
+You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious
+Pretxt
+Suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
+- End node
+- End node
+
+27node
+You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
+Pretxt
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
+- End node
+- End node
+
+28node
+You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious
+Pretxt
+Suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
+- End node
+- End node
+
+29node
+You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
+Pretxt
+Giant insect: 62, 63, 64, 65
+You fall into the ground exhausted. Final move
+- End node
+- End node
+
+30node
+You decide to ask what is happening, they explain you the situation while you are asking a person attacks you because he thinks that you are suspicious
+Pretxt
+Suspicious attacker: 73, 55, 57, 62 
+Now you know what is happening, it starts to rain acid rain, and your feet start hurting.
+- End node
+- End node
+
+31node
 You go inside a venue where you can be safe. But suddenly there is a huge noise and as you turn around there is a giant insect (injured) going to attack you 
 Pretxt
 Giant insect: 62, 63, 64, 65
