@@ -446,6 +446,44 @@ Able to use the thor hammer
 r
 3, 5, 20,
 
+85skill
+needle
+1
+15
+d
+3, 3, 20,
+
+86skill
+Cable
+The root of the plant sorrounds you chocking you
+1
+25
+s
+2, 3, 25,
+
+87skill
+white noise
+activates a noise that hurts your head
+1
+30
+v
+5, 0, 25,
+
+88skill
+shield
+blocks the damage of the attack 
+0
+17
+p
+1, 5, 25,
+
+89skill
+pickup
+grabs the enemy and throws him to the floor
+1
+30
+n
+3, 5, 25
 
 100skill
 None

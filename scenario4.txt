@@ -10,7 +10,7 @@ As you open the door there is an aisle full of rooms. Where do you go?
 2node
 You decide to go look at the computers of the reception. 
 As you aproach the computer the nurse that works there caughts you and tries to stop you.
-Nurse: (needle, punch, cable, knife)
+Nurse: 85, 54, 86 ,55
 Looking at the computer you see a list of name in which you see the name of your best friend, but you also see the room where a reunion is happening. What are you going to do?
 - Go at your friends room
 - Go at the reunion to find out why are you there
@@ -18,7 +18,7 @@ Looking at the computer you see a list of name in which you see the name of your
 3node
 You enter the control room which is full of screens of the whole place.
 You start to look but the security guard that is there sees you and wants to kick you out.
-Security guard: 2, 2, 2, 2(punch, knife, heals it self, ...)
+Security guard: 54, 55, 53, 50
 Now you have the room to yourself, as you look through the different cameras, you see your best firend in a room conected as you were, and a room with files and fotos. What do you do?
 - Go to your best friends room 
 - Go to the investigation room
@@ -34,7 +34,7 @@ You explain him the situation that you are in, but now you can't stay in that ro
 5node
 You arrive to the reunion room, it seems to be empty, however there are a lot of files and fotos at the table.
 While you are going to grab the files someone grabs you and throws you to the ground. This person is wearing a white coat and looks bigger than a normal person
-White coat: ()
+White coat: 68, 80, 59, 56
 Now you can look through the files and fotos and you discover that they have been experimenting on animals with the resources that they have been taking from you and all the other subjects while you where at the simulation. What do you do now?
 - Look for the monkey that has allready been modified to have more proof.
 - Take the files and try to free the animals that haven allready been modified.
@@ -42,7 +42,7 @@ Now you can look through the files and fotos and you discover that they have bee
 6node
 You go to the investigation room, it seems to be empty, however there are a lot of files and fotos at the table.
 While you are going to grab the files someone grabs you and throws you to the ground. This person is wearing a white coat and looks bigger than a normal person
-White coat: ()
+White coat: 68, 80, 59, 56
 Now you can look through the files, you see that they have been experimenting on how to improve people thanks to all the information and resources that they got from you and all the subjects in the simulations. What do you do ?
 - Go look for the subject they have been trying to improve
 - Wake the other subjects, that just as you were, are unconcious in beds.
@@ -58,7 +58,7 @@ You explain him the situation that you are in, but now you can't stay in that ro
 8node
 You are investigating in the hospital, suddenly you see a table full of files and fotos.
 While you are going to grab the files someone grabs you and throws you to the ground. He looks bigger than any person and his eyes are red.
-Crazy scientist: ()
+Crazy scientist: 60, 67, 73, 89
 Now you can look through the files, you see that they have been experimenting on how to improve people thanks to all the information and resources that they got from you and all the subjects in the simulations. You connect the ideas and realise that the scientist that you just fought had injected those discover What do you do ?
 - Go to the police 
 - Get out and publish everything to social media
@@ -66,7 +66,7 @@ Now you can look through the files, you see that they have been experimenting on
 9node
 You decide to leave the bulding and try to investigate from the outside
 As you are leaving a guard caughts you at the door and tries to stop 
-Outside guard: ()
+Outside guard: 73, 83, 87, 88
 Now that you are outside and are free to scape, what do you want to do?
 - Go to the police 
 - Make public what you have discovered
@@ -74,7 +74,7 @@ Now that you are outside and are free to scape, what do you want to do?
 10node
 You decide to go looking for the modified monkey
 When you finally find the monkey, he looks angry and is in a jail making a lot of noise, and hitting the bars. You see a bracelet on his foot with some lights on with which they are controlling him.
-modified monkey: ()
+modified monkey: 58, 65, 70, 69
 Now that the bracelet is off, the monkey doesn't look angry anymore he is back to his true nature. What do you decide to do?
 - Free the monkey and all the animals
 - Go to the police to report the experiments
