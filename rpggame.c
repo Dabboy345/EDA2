@@ -267,13 +267,15 @@ void addDecisionToScenario(Scenario *scenario, Decision *decision) { //Function 
     scenario->decisions_added++; //We increemt the number of decision added to the list 
 }
 
-void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr){ 
-    Decision *test = create_desicion();
-    get_info_decision(test, node, filename);
-    addDecisionToScenario(scene, test);
-    save_game(scene, plyr, "auto_save.txt");
-    print_decision(test, plyr);
-} //This function helps us create a desicion, get the information, add it to the the link list and print its information
+
+
+void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr){ //This function helps us tot get the decision number and add it to the link list of the scenario
+    Decision *test = create_desicion(); //We create a decision
+    get_info_decision(test, node, filename); //We take the relative information in the decision 
+    addDecisionToScenario(scene, test); //We add it to scenario link list 
+    save_game(scene, plyr, "auto_save.txt"); //We auto save the game 
+    print_decision(test, plyr); //We print the information that we had in the desicion
+} 
 
 void freeScenario(Scenario *scenario) { //Function to free the scenario
     Decision *current = scenario->start; //We create a temporary pointer and point at the start 
@@ -314,11 +316,11 @@ int is_terminal(Decision *scene) { // This function will check if a node is an e
         return 0; // If the scene is NULL, it's not a valid end node
     }
 
-    int a = (scene->option.option1[2]=='E' && scene->option.option1[6]=='n')? 0:1;
+    int a = (scene->option.option1[2]=='E' && scene->option.option1[6]=='n')? 0:1; //We check if the description is End Node 
     int b = (scene->option.option2[2]=='E' && scene->option.option2[6]=='n')? 0:1;
     
     if (a == 0 && b == 0) {
-        return 1; // The node is an end node the both options description is "- end node"
+        return 1; // The node is an end node the both options description is "End node", we return 1 if it an end node
     } else {
         return 0; // The node is not an end node
     }
@@ -330,7 +332,7 @@ int get_last_node_numeber(Scenario *scenario) {
     }
 
     Decision *current = scenario->start; //Traverse the list until we find the last node
-    while (current->next != NULL) {
+    while (current->next != NULL) { //We go the end of the list 
         current = current->next;
     }
 
@@ -360,7 +362,7 @@ void save_game(Scenario *scene, Character *character, char* buffer){
         fclose(fp); //We close the file 
         return;
     }
-    else {
+    else { //Error Handeling 
         printf("Error saving the file\n");
         fclose(fp);
         return;
@@ -369,49 +371,45 @@ void save_game(Scenario *scene, Character *character, char* buffer){
 }
 
 
-int run_game(int node_number, char *filename, Character *plyr){
-    Scenario *scene = create_inizialize_Scenario();
-    strcpy(scene->filename,filename);
-    go_to_node_select_and_add(node_number,scene->filename,scene, plyr);
-    Decision temporary_checker;
-    saveLastDecisionData(scene, &temporary_checker);
-    int a;
-    int option_selected;
+int run_game(int node_number, char *filename, Character *plyr){ //This function helps us to run our game as parameter we recive a player, a filename and a node number where we want to start from
+    Scenario *scene = create_inizialize_Scenario();//We create a scenario 
+    strcpy(scene->filename,filename);// We go put the scenario filename 
+    go_to_node_select_and_add(node_number,scene->filename,scene, plyr); //We add the desicion made by the user to the link list 
+    Decision temporary_checker;//We create a temporary decision which will be useful to check if it a end desicion or not 
+    saveLastDecisionData(scene, &temporary_checker); //We save the last desiion informartion 
+    int a; //We will use this variable to verify the input 
+    int option_selected; //This option will have the value selected by the user 
     char* buffer;
     do{
-        print_menu_option();
+        print_menu_option();//We print the option that user has 
         printf("Your choice: ");
-        a= get_valid_input(1, 4);
+        a= get_valid_input(1, 4);//We ask for the input for the user 
         printf("\n");
-        switch(a){
-            case 1:
-
-                option_selected = (temporary_checker.node_number) *2;
-                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr);
-                saveLastDecisionData(scene, &temporary_checker);
+        switch(a){ //Depending on what he choose we do one thing or another 
+            case 1: //This case is when the user selects the option 1
+                option_selected = (temporary_checker.node_number) *2;//We check the node number he had and multiply it by 2
+                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr); //We get the infomation and add it to the link list and print the information 
+                saveLastDecisionData(scene, &temporary_checker); //We actualize the last node and save its information 
                 break;
-            case 2:
-                option_selected = ((temporary_checker.node_number) *2)+1;
-                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr);
-                saveLastDecisionData(scene, &temporary_checker);
+            case 2://This case is when the user selects the option 1
+                option_selected = ((temporary_checker.node_number) *2)+1;//We check the node number he had and multiply it by 2 and then add 1 
+                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr);//We get the infomation and add it to the link list and print the information 
+                saveLastDecisionData(scene, &temporary_checker);//We actualize the last node and save its information 
                 break;
-            case 3:
-                printf("Write the file name(with txt): "); //We ask the user to what would he like teh file to be called 
-                scanf("%s", buffer);
-                save_game(scene, plyr, buffer);
+            case 3://This case is when the user selects the to save the game 
+                printf("Write the file name(with txt): ");
+                scanf("%s", buffer);//We ask for the name of the file that he wants to save 
+                save_game(scene, plyr, buffer);//We save the process
                 break;
-            case 4:
+            case 4: //This case is when the user decides to exit 
                 return 0;
                 break;
 
         }
         printf("________________________________________________________________________________\n\n");
     }while(is_terminal(&temporary_checker)==0);
-    //printf("You have the scenario\n");
-    //printf("Thanks for playing our game\n");
     freeScenario(scene);
-    return 1;
-    //free(plyr);
+    return 1;//If this return 1 means that the whole process was correctly excuted 
 }
  
 
@@ -436,27 +434,25 @@ int load_game_and_play(char *buffer, Character* plyr, int* last_node_number){
     }
 
     fscanf(fp, "%d\n", last_node_number);//We get the node played
-    fscanf(fp,"%s\n",scene->filename );
+    fscanf(fp,"%s\n",scene->filename );//We get the scenario name that he was playing 
     fclose(fp);
 
     printf("Game loaded successfully. Starting from node %d...\n", *last_node_number);
     printf("Starting to play\n\n. . .\n\n");
 
-    //run_game(last_node_number,scene->filename, plyr);
-
-    if(scene->filename[8]=='1'){
+    if(scene->filename[8]=='1'){ //If the scenario is 1 then we return 1 
         number_scenario = 1;
     }
 
-    else if(scene->filename[8]=='2'){
+    else if(scene->filename[8]=='2'){//If the scenario is 2 then we return 2
         number_scenario = 2;
     }
 
-    else if(scene->filename[8]=='3'){
+    else if(scene->filename[8]=='3'){//If the scenario is 3 then we return 3
         number_scenario = 3;
     }
 
-    else if(scene->filename[8]=='4'){
+    else if(scene->filename[8]=='4'){//If the scenario is 3 then we return 4
         number_scenario = 4;
     }
     return number_scenario;

@@ -1,6 +1,6 @@
 #include "common.h"
 
-int get_valid_input(int first, int size) {
+int get_valid_input(int first, int size) { //We were having many problems with the scanf so we asked Chat Gpt to help it with us 
     int a;
     int valid = 0;
     while (!valid) { //if valid is 1 it is true and then the while will stop        

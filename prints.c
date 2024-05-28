@@ -57,7 +57,7 @@ void print_skills(Skill* skills){
 void print_decision(Decision *choice, Character* plyr) { //This fucntion helps us to print the informacion that we have in the decision
     printf("%s\n", choice->option.description);//Print the description
     printf("%s\n", choice->option.pre_txt);//Print pre text
-    if (strcmp(choice->option.enemy.name, "None") == 0) { //If there is no enemy then we print no enemy
+    if (strcmp(choice->option.enemy.name, "None") == 0) {//If there is no enemy then we don't print anything 
     } else {     //If there is a enemy we print the enemy name and skills
         printf("Enemy is %s with skills:\n1.%s2.%s3.%s4.%s\n",
             choice->option.enemy.name,
@@ -65,7 +65,7 @@ void print_decision(Decision *choice, Character* plyr) { //This fucntion helps u
             choice->option.enemy.skill[1],
             choice->option.enemy.skill[2],
             choice->option.enemy.skill[3]);
-        while(combat(plyr, &choice->option.enemy, 20)==2){
+        while(combat(plyr, &choice->option.enemy, 20)==2){ 
             printf("\nDo you want to change skills? Yes->0, No->1: ");
             if(get_valid_input(0, 1)==0){
                 Skill *skill = (Skill*)calloc(20, sizeof(Skill));
@@ -81,7 +81,7 @@ void print_decision(Decision *choice, Character* plyr) { //This fucntion helps u
             for(int i=0;i<4;i++){plyr->stats[2]+=plyr->skill[i].stats_plyr[2];}//Reset health
         }
     }
-    int a = (choice->option.option1[2]=='E' && choice->option.option1[6]=='n')? 0:1;
+    int a = (choice->option.option1[2]=='E' && choice->option.option1[6]=='n')? 0:1; //We check if the recived information is for end node or not 
     int b = (choice->option.option2[2]=='E' && choice->option.option2[6]=='n')? 0:1;
     printf("%s\n", choice->option.post_txt);//We print the post text 
     if(a==1 || b==1){

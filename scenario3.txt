@@ -49,17 +49,17 @@ After deafiting the scammer he is begging you to spare hids life, what do you do
 
 7node 
 You decide not to go to the hospital 
-You are thinking about what to do now, suddenly you see some people going to the local market
-no enemy
-Some people beside you take that this market has very rich history adn there are many intresting things. What would you like to do?
+You are thinking about what to do now, suddenly you see some people going to the local market. A criminal was near you he suddenly attack you. 
+Thug: 66, 70, 55, 63
+After battling the criminal and giving him to the police. Some people beside you take that this market has very rich history and there are many intresting things. What would you like to do?
 - Go to the local market
 - Not go to the market and serach another thing for fun
 
 8node 
 You enter the library. You start to read the books and see everything that has happened.
-Your head starts hurting. After reading many books you start having flashbacks of scenes in your head that seem like another world
-no enemy
-After this, you start fainting, you start to lose consciousness  
+Your head starts hurting. After reading many books you start having flashbacks of scenes in your head that seem like another world. Another security guard notices you
+Security_guard: 83, 50, 58, 61
+You fight security guard, and now you are injured. You head starts to hurt and you start to lose consciousness
 - End node
 - End node 
 
@@ -73,9 +73,9 @@ After convencing the grandpa that you are not dangerous. You start having flashb
 
 10node
 You run far away from the glass shop. You go to a park
-You start to try the glasses. You start to play games about pasts. While you are playing at some point your head starts hurting. You take out the glasses
-no enemy
-You start having flashbacks of something that seems like it was in your memory. After this, you start fainting, you start to lose consciousness
+You start to try the glasses. You start to play games about pasts. While you are playing at some point your head starts hurting. You take out the glasses. After you take out a glass a theif tries to steal it.
+Burglar: 69, 70, 83, 63
+After you fight the burglar You start having flashbacks of something that seems like it was in your memory. After this, you start fainting, you start to lose consciousness
 - End node
 - End node
 
