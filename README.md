@@ -249,15 +249,15 @@ We use the function swap to swap the skills in the array. We use the partition f
 
 ![](Images_markdown/savinggame.png)
 
-    Well to save the game we have used a specific format that helps us to save the game and then to load the game we get the information from a saved file and then we put it into the corresponding variables. The main functions used for this objective is save_game and load_game_and_play. 
+Well to save the game we have used a specific format that helps us to save the game and then to load the game we get the information from a saved file and then we put it into the corresponding variables. The main functions used for this objective is save_game and load_game_and_play. 
 
 ```C
     void save_game(Scenario *scene, Character *character, char* buffer);
     int load_game_and_play(char* buffer, Character* plyr, int* last_node_number);
 ```
 
-    The save_game receives a scenario a character and a filename that the user wants to save. Then inside the save_game, we have a function called get_last_node_number which traves the scenario link list and gets the last node number.  After having these information we open a file pointer and  save it inside the file following the structure above.
-    The function load_game_and_play receives as parameters the file name where the information is saved, a character variable to save the information taken out of the file, and a pointer integer which will save the last_node_number played which will help us to play the game after by calling the function run game. Notice that if you have the skill timestrike when saving the file none of the information about it will be saved except the skill number and when we load a game the timestrike stack will be empty. The save_game function has complexity O(1) because it because it performs a constant number of operations and the big O for the load_game is O(n) where n is the number of the lines he has to read from the file. These functions required time to program because we didn’t know in which way would be more effective to save it, we tried many different formats until we reached the actual one. These functions are located in rpggame.c. Save_game is in line 354 and load_game_and_play is in line 428. 
+The save_game receives a scenario a character and a filename that the user wants to save. Then inside the save_game, we have a function called get_last_node_number which traves the scenario link list and gets the last node number.  After having these information we open a file pointer and  save it inside the file following the structure above.
+The function load_game_and_play receives as parameters the file name where the information is saved, a character variable to save the information taken out of the file, and a pointer integer which will save the last_node_number played which will help us to play the game after by calling the function run game. Notice that if you have the skill timestrike when saving the file none of the information about it will be saved except the skill number and when we load a game the timestrike stack will be empty. The save_game function has complexity O(1) because it because it performs a constant number of operations and the big O for the load_game is O(n) where n is the number of the lines he has to read from the file. These functions required time to program because we didn’t know in which way would be more effective to save it, we tried many different formats until we reached the actual one. These functions are located in rpggame.c. Save_game is in line 354 and load_game_and_play is in line 428. 
 
 
 ### 3. SOLUTION
