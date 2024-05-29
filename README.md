@@ -280,9 +280,6 @@ All functions programmed take into account the boundary conditions they could ha
 
 If some had some segmentation fault then we went to the place we had the error and we anlayized what the problem could be. By doing this we forced us to understand what what we were doing and by this way it was easy to look for the solution. 
 
-If some function didn't printed the c
-noitamrofni tcerr
-
 #### 3.3 DATA MODEL DESIGN
 ....
 
@@ -302,7 +299,7 @@ For the scenario, we follow the format provided in the image above. First, we ha
 To save the game, we follow we save the character name, the stat they had damage defense and health, the number of skills that they were using, the last node number that they played, and at last we save the last_scenario that he played. 
 
 ### 4. ETHICAL CONSIDERATIONS
-We have searched for information about different things on the internet we will put the link below to the consulted sites.  All the material from the theory classes was very useful. We have also made use of AI, especially Chat Gpt. The functions provided by Chat Gpt have been commented on as provided by Chat Gpt in the project code.  Most of the logical part was done by us but we asked them to improve our reasoning or to know what problems our algorithms could have. We also asked Chat Gpt for boundary cases for some functions.
+We have searched for information about different things on the internet we will put the link below to the consulted sites.  All the material from the theory classes was very useful. We have also made use of AI, especially Chat Gpt. The functions provided by Chat Gpt have been commented on as provided by Chat Gpt in the project code. We also asked Chat Gpt for boundary cases for some functions and error handling such as checking when opening a file for efficiency.
 
 ### 5. REFERENCES
 We principally looked at information provided in the theory class.  All the information about stack and queue, the sorting algorithm was useful and the theory we have seen about the graphs was also very useful. We would like to thank also our professor for the Lab sessions because he helped us clear our doubts regarding many things that we questioned during the process of making the games. Below there we will be some links to the websites we consulted information from: 

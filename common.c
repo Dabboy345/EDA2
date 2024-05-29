@@ -5,8 +5,10 @@ int get_valid_input(int first, int size) { //We were having many problems with t
     int valid = 0;
     while (!valid) { //if valid is 1 it is true and then the while will stop        
         if (scanf("%d", &a) != 1) {
-            // Clear the invalid input
+            
+            // Chat GPT offered a solution on how to clear the invalid input or extra input (when writing between spaces)
             while (getchar() != '\n'); // Discard invalid input until a newline is found
+
             printf("\n----> Invalid input. Please enter a number between %d and %d\n\n", first, size);
         } else if (a < first || a > size) {
             printf("\n----> Invalid input. Please enter a number between %d and %d\n\n", first, size);
