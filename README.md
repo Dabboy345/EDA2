@@ -292,6 +292,10 @@ If some had some segmentation fault then we went to the place we had the error a
 
 ![](Images_markdown/data_flow_diagram.png)
 
+Here we can see the data flow diagram from our code. We can see how the principal data of the game is extracted from the files (list_skill.txt and scenario.txt) and stores in the game data while playing. In the diagram it is represented where is stored the data from each file. The information of the list_skill.txt is used for the skills of  the character and for the skills of the enemies in each node. We can also see how the information in the scenario.txt files is used for both the node information and the enemies in it.
+
+Moreover there is another data flow whenever we move to a new node which is to the auto_save.txt. In this file we stored the node number, the scenario we are currently on and the information of the character and their skills. And the exchange of information is also bidirectional because we don’t only save the information in the txt file, but we also load the information from there when continuing a game. The same format would be followed if we saved the game state in another file and then we wanted to load it from that file.
+
 #### 3.4 DATASET DESCRIPTION AND PROCESSING 
 Each scenario has a text file for itself. The information about skills is also saved in a text file, in this text file we have saved both the information about the skills of the characters and the enemies. And for saving the game at a certain point we also use a certain structure. All this information is in the file name format.txt. 
 
