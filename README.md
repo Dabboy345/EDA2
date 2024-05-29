@@ -281,13 +281,15 @@ The main important function here is the run_game which helps us play the game fr
 
 When we load a game we use the function load_game_and_play this functions load the information to the scenario and characters with his skills saved from the text file. The load_game_and_play returns an integers which indicates the scenario that he is in, by this we would able to know where we are and it will help us to play the next scenarios. After doing this we call the function run_game which we do the same process as we mentioned above. 
 
-The Continue Game uses the function save_game and load_game and follows the same stpes mentioned above. 
+The Continue Game uses the function save_game and load_game and follows the same steps mentioned above. 
 
 #### 3.2 ERROR HANDLING
 
 All functions programmed take into account the boundary conditions they could have. All the functions that have to do with memory allocations and file manipulations have their error handling. In this case, if the created dynamic memory or the file pointer is null then we have a problem, if this occurs we just return from the function. While we were programming our functions, after programming we checked that they worked according to what we wanted. Until we didn’t solve the current error we didn't move to program other functions, so by doing this we made sure that everything worked well. 
 
 If some had some segmentation fault then we went to the place we had the error and we anlayized what the problem could be. By doing this we forced us to understand what what we were doing and by this way it was easy to look for the solution. 
+
+If there was a problem when we printed something then we went to print and checked if the variable had passed correctly to the print, if not we went to the functions which helped us to take the information and we analysed it and by doing so we were able to find solutions.
 
 #### 3.3 DATA MODEL DESIGN
 
