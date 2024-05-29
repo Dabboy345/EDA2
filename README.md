@@ -46,6 +46,7 @@ Let’s dig into the problems we had during the process of completing this game.
 **1. Creation of the main character with the basic attributes mentioned above (Name, abilities, HP, ATT, DEF, and any other attribute defined by the programmers) and the rest of the structs.**
 
     In our game, the character can have 4 skills, and every skill provides damage, defense, and health. So the stats he has will depend on the skills he chooses. These are the main data structures of your game: all of them are located in common.h.
+    
     ```C
         typedef struct { //Our data structure for the skills
             char name[MAX_NAME];
@@ -215,7 +216,7 @@ Let’s dig into the problems we had during the process of completing this game.
         Queue* enqueue(Queue* q, Character c, Enemy e);
         Queue* dequeue(Queue* q);
     ```
-    
+
     To implement the turns system first we had to code some basic functions for the queue data structure. Then at the start of each battle we initialize the queue and we enqueue 20 elements (20 turns for combat), both player and enemy and each time a character does an attack (player or enemy) it dequeues and element of the list and prints how many elements there are left in the queue (turns remaining)
 
 
