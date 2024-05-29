@@ -143,8 +143,9 @@ Let’s dig into the problems we had during the process of completing this game.
             }
         } 
     ```
-
     Then we also created a function in order to look in the adjacency list to find the next node number according to the variable opt (the decision of the player) and node_num (the current node the layer is on), which consists in looking through the adjecency list until finding an array that has the first element equal as the curren node number and then get the number of the second element of that array or the second element of the array next to that one (depending on the decision of the player)
+
+
 
 
 
@@ -155,7 +156,6 @@ Let’s dig into the problems we had during the process of completing this game.
 
         int combat(Character *plyr, Enemy *enmy, int size, Timestrike* stack)
     ```
-
     To create the battle system we mainly make use of two functions, the attack function and the combat function. The attack function is the one resposible for applying the effects of the skill selected and the combat function is the one responsible for handling the turns, initializing variables at the start of the battle and giving the result of the battle. The main variables used for this objective are the size, which determine how many turns will last at most the battle, the venom variable for both player (pvenom) and enemy (evenom) which are used to create the effect of the venom modifier of residual damage and the probability of avoiding an attack, which by default is 0 but can be modified temporaly by a skill with probability modifier. We also make use of the data structure of Character; which gives us all the stats of the player, aswell as the name of it (used in prints) and the set of skill the player can use; of Enemy which gives us the same information as the previous mentioned; and the Skill data structure which provides us with the name, damage and modifier of all the skills that the opponents have, essential to execute an attack.
 
     Basicaly the algorithm works by choosing a random number between 0 and 1 to choose the first opponent to attack (player or enemy) then in the case of the player it allows the player to choose a skill for the ones that it has available, and for the enemy it chooses a random skill. The basic functionality of a skill without modifier is to decrease the health of the opponent. In our combat instead of calculating the with the function given in above we took a different approach and calculate the damage that a skill deals with this formula -> dmg = of_def * (dmg_skll + atk_plyr), being of_def an integer from 0 to 1 used to determine if a skill deals damage or not, dmg_skll being the regular damage that the skill deals (taken from its definition in list_skill.txt) and atk_plyr being a little bit of bonus damage from the stats of the player. Since we didn't use the defense to calculate the attack_dmg we redesigned the defense stat as some extra health that serves as a shield, until the defense is 0, the attacker cannot deal damage to the main health. We took this approach because the player doesn't regenerate health by default and the enemies are always full health at the start of the battle so this makes the battles last a little bit longer since the defense does regenerate at the start of every battle.
@@ -197,7 +197,6 @@ Let’s dig into the problems we had during the process of completing this game.
             return attack(skill_time, n_atck, n_def, stats_a, stats_d, max_hp, venom, prob, stack);
         }
     ```
-
     This is the part of the code in the attack function that executes whenever the modifier of a skill is t (only Timestrike has that modifier) then we choose a random number from 0 to the stack top - 1 (basicaly all index of the stack) and select a random hability from the stack. Then to not change the atributes of the original skill, we create a Skill pointer, copy the random skill selected into that pointer and then add the double power. Then we simply return the result of the attack with this new skill. This part of te code is on top of the attack function so when executed it will return the result of the attack and will not execute the rest of the attack function for the timestrike because it already did what it was suposed to. The stack has a limit of 50 elements and will be reset if you restart the code or win the game.
 
 
@@ -217,7 +216,6 @@ Let’s dig into the problems we had during the process of completing this game.
         Queue* enqueue(Queue* q, Character c, Enemy e);
         Queue* dequeue(Queue* q);
     ```
-    
     To implement the turns system first we had to code some basic functions for the queue data structure. Then at the start of each battle we initialize the queue and we enqueue 20 elements (20 turns for combat), both player and enemy and each time a character does an attack (player or enemy) it dequeues and element of the list and prints how many elements there are left in the queue (turns remaining)
 
 
