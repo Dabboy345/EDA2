@@ -58,7 +58,7 @@ f
 Aegis
 ZEUS shield
 0
-10
+31
 d
 1, 7, 40,
 
@@ -114,7 +114,7 @@ p
 Defender's Shield
 A summoned defender creates a temporary barrier that absorbs damage.
 0
-10
+19
 d
 1, 5, 27,
 
@@ -411,7 +411,7 @@ Bomb
 The user throws a bomb from above
 1
 25
-s
+n
 2, 5, 25,
 
 80skill

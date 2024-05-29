@@ -67,7 +67,7 @@ void get_skill(Skill *skill, int n){
 //Function to store in a skill pointer the skill information of the nskill from a text file
     FILE *fp;
     char c[MAX_TXT];
-    fp = fopen("list_character_skill.txt", "r");//Open the file where all skills are written
+    fp = fopen("list_skill.txt", "r");//Open the file where all skills are written
     if (fp==NULL){//Check for errors upon oppening the file
         printf("Error opening opening the file\n");
         fclose(fp);
