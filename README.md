@@ -272,7 +272,13 @@ To initialize the program, in the main function, we have the main function in wh
 
 For the initialization of the game have a function called run_game, which starts the game preparing the scenario and the option the user has as nodes, each node the user selects will be stored in a linked list.
 
-The development of the game is preceded by the combat function, which after each decision (node) it will happen. The function, initializes a queue for saving the rounds of the combat, then applies the skill stats of damage, defense, health points, and modifiers to affect the character and enemy‘s life and keep on happening at each round with the attack function. Until finally, someone wins and the user selects the next option (node).
+The development of the game is preceded by the combat function, which after each decision (node) it will happen. The function, initializes a queue for saving the rounds of the combat, then applies the skill stats of damage, defense, health points, and modifiers to affect the character and enemy‘s life and keep on happening at each round with the attack function. 
+
+After having played the combat the user is able to choose another optins, save the game progress or exit. If the user uses the save game then we will save the with the save game functions that saves the information about character, skills that he had, the scenario he played and the last node that he played. 
+
+The main important function here is the run_game which helps us play the game from anypoint. Basically what the run_game function does is that it creates a scenario and then inziliazes it and then it add the selected node to scenario link list and then the process is repeated until we finish the scenario. Then after we finish a scenario we call the run_game function with the node number 1 because it is the first number node number. 
+
+When we load a game we use the function load_game_and_play this functions load the information to the scenario and characters with his skills saved from the text file. The load_game_and_play returns an integers in After doing this we call the function run_game which we do the same process as we mentioned above. 
 
 #### 3.2 ERROR HANDLING
 
