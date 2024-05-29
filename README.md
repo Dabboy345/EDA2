@@ -173,11 +173,9 @@ Let’s dig into the problems we had during the process of completing this game.
     When taking the information of the skills out of the list_skill.txt, we manually save a number in the data structure of Mod (modifier) of the skill which makes reference of the times a skill with modifier can be used during a battle
 
 **5. The game must feature several types of enemies (minimum 3 different ones). The enemy selection system for battle is left to the programmers (it can be fixed, random, or designed with an algorithm). Attacks for these enemies should also be pre-configured.**
-
     There is almost a different enemy for each battle, since our game is mostly story oriented, so for the better experience of the game we created new enemys with each node.
 
     ![](Images_markdown/scenariotxt.png)
-
     We can see that in the format of the text file where we store the nodes for each scenario there is a line dedicated to the enemy in that node. The line constists on the name of the enemy and the 4 numbers corresponding to their skills, which will also give the enemy their stats (the skills used by enemies are also stored in list_skills).
 
 
@@ -248,7 +246,7 @@ Let’s dig into the problems we had during the process of completing this game.
 #### 2.3 EXPLORATORY OBJECTIVES MET
 **1. Implementation of a system for saving and loading the game state based on files.**
 
-    ![](Images_markdown/savinggame.png)
+![](Images_markdown/savinggame.png)
 
     Well to save the game we have used a specific format that helps us to save the game and then to load the game we get the information from a saved file and then we put it into the corresponding variables. The main functions used for this objective is save_game and load_game_and_play. 
 
