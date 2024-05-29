@@ -118,9 +118,32 @@ Let’s dig into the problems we had during the process of completing this game.
     
     In our game, we have 1 vs 1 combat but there are at least 2 enemies that you have to fight per scenario. Talking about big O, there are functions many functions that are used to read from files all of these functions have O(n) complexity n will be the number of the lines that the files have. The functions that create and allocate memory have complexity of O(1) because these function performs a constant number of operations regardless of the size of the scenario. There are many improvements that we would like to add if there was more time for example if the user wanted to go back to the previous node and make another decision. We would have also liked to have some images that represent each scenario, we would have also liked to add the graphical part for the combat. We weren't certain how to implement all these functions so this part was one of the parts that took most of the time. The majority of the functions mentioned above are in rpggame.c except print decision which is in print.c at line 57. The function get_skill is in line 51, put_enemy_info is in line 170 and all other functions are below it. 
 
-3. 
+3. Creation of a graph (by adjacency matrix or adjacency list) of 4 scenarios
 
+    For the creation of the graph we created the data structure Scenario, where we will store the adjaceny list for each scenario. For that we will use a function to initialize all the conections between the node numbers with a simple formula. The node number N will always be connected to the node number N*2 and the node number (N*2)+1. So for each scenario we create the adjacency matrix following this pattern, getting always two arrays of two following the structure -> (N, N*2) and (N, (N*2)+1)
 
+    ```C
+        void init_adj_mat_scenario(Scenario* scene, int max_node){
+            int j = 0;
+            for(int i=1;i<=max_node;i++){
+                scene->edges[j][0]= i;
+                scene->edges[j][1]= j+2;
+                j++;
+                scene->edges[j][0]= i;
+                scene->edges[j][1]= j+2;
+                j++;
+            }       
+        }
+
+        int get_next_num_node(int opt, int node_num, Scenario* scene, int max_node){
+            for(int i=0;i<=(max_node*2)+1;i++){
+                if(scene->edges[i][0]==node_num){
+                    return scene->edges[i+(opt-1)][1];
+                }
+            }
+        } 
+    ```
+    Then we also created a function in order to look in the adjacency list to find the next node number according to the variable opt (the decision of the player) and node_num (the current node the layer is on), which consists in looking through the adjecency list until finding an array that has the first element equal as the curren node number and then get the number of the second element of that array or the second element of the array next to that one (depending on the decision of the player)
 
 
 
