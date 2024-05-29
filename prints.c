@@ -47,14 +47,14 @@ void print_skills(Skill* skills){
     int n = get_valid_input(0,3);
     printf("\n");
     if(n==0){
-        for(int i = 0; i<21; i++){
+        for(int i = 0; i<MAX_NUMBER_SKILL_PLAYER; i++){
         printf("%d.%s",i+1, skills[i].name);
         }
     }else{order_skills(n, skills);}
     printf("\n");
 }
 
-void print_decision(Decision *choice, Character* plyr, Scenario* scene) { //This fucntion helps us to print the informacion that we have in the decision
+void print_decision(Decision *choice, Character* plyr, Scenario* scene, Timestrike* stack) { //This fucntion helps us to print the informacion that we have in the decision
     printf("%s\n", choice->option.description);//Print the description
     printf("%s\n", choice->option.pre_txt);//Print pre text
     if (strcmp(choice->option.enemy.name, "None") == 0) {//If there is no enemy then we don't print anything 
@@ -65,7 +65,7 @@ void print_decision(Decision *choice, Character* plyr, Scenario* scene) { //This
             choice->option.enemy.skill[1],
             choice->option.enemy.skill[2],
             choice->option.enemy.skill[3]);
-        while(combat(plyr, &choice->option.enemy, 20)==2){ 
+        while(combat(plyr, &choice->option.enemy, 20, stack)==2){ 
             printf("\nDo you want to change skills? Yes->0, No->1: ");
             if(get_valid_input(0, 1)==0){
                 Skill *skill = (Skill*)calloc(MAX_NUMBER_SKILL_PLAYER, sizeof(Skill));

@@ -1,49 +1,51 @@
 #include "rpgbase.h"
 
 void new_game(){//Our new game function
-    Skill *skill = (Skill*)calloc(21, sizeof(Skill));
+    Timestrike* stack = createTimestrike(50);
+    Skill *skill = (Skill*)calloc(MAX_NUMBER_SKILL_PLAYER, sizeof(Skill));
     if(skill == NULL){ 
         printf("Memory allocation failed\n");
         return;
     }
-    for(int i =0; i<21;i++){
+    for(int i =0; i<MAX_NUMBER_SKILL_PLAYER;i++){
         get_skill(&skill[i], i);
     }
     Character *plyr = create_character(skill);
 
     //Scenario1
-    if(run_game(1,"scenario1.txt",plyr)==0){
+    if(run_game(1,"scenario1.txt",plyr, stack)==0){
         return;
     }
     change_skill(skill, plyr);
 
     //Scenario2
-    if(run_game(1,"scenario2.txt",plyr)==0){
+    if(run_game(1,"scenario2.txt",plyr, stack)==0){
         return;
     }
     change_skill(skill, plyr);
 
     //Scenario3
-    if(run_game(1,"scenario3.txt",plyr)==0){
+    if(run_game(1,"scenario3.txt",plyr, stack)==0){
         return;
     }
     change_skill(skill, plyr);
 
     //Scenario4
-    if(run_game(1,"scenario4.txt",plyr)==0){
+    if(run_game(1,"scenario4.txt",plyr, stack)==0){
         return;
     }else{printf("\nYou won the game!!!!!!!!!!!!!\n");remove("auto_save.txt");}
 }
 
 void load_game(char* buffer){//Our load game function
-    Skill *skill = (Skill*)calloc(21, sizeof(Skill));
+    Timestrike* stack = createTimestrike(50);
+    Skill *skill = (Skill*)calloc(MAX_NUMBER_SKILL_PLAYER, sizeof(Skill));
     Character *plyr = (Character*)malloc(sizeof(Character));
 
     if(skill == NULL){
         printf("Memory allocation failed\n");
         return;
     }
-    for(int i =0; i<21;i++){
+    for(int i =0; i<MAX_NUMBER_SKILL_PLAYER;i++){
         get_skill(&skill[i], i);
     }
     int* node_num = (int*)malloc(sizeof(int));
@@ -51,7 +53,7 @@ void load_game(char* buffer){//Our load game function
     switch(a){
         case 1:
             //Scenario1
-            if(run_game(*node_num,"scenario1.txt",plyr)==0){
+            if(run_game(*node_num,"scenario1.txt",plyr, stack)==0){
                 break;
             }
             *node_num = 1;
@@ -59,7 +61,7 @@ void load_game(char* buffer){//Our load game function
 
         case 2:
             //Scenario2
-            if(run_game(*node_num,"scenario2.txt",plyr)==0){
+            if(run_game(*node_num,"scenario2.txt",plyr, stack)==0){
                 break;
             }
             *node_num = 1;
@@ -68,7 +70,7 @@ void load_game(char* buffer){//Our load game function
             
         case 3: 
             //Scenario3
-            if(run_game(*node_num,"scenario3.txt",plyr)==0){
+            if(run_game(*node_num,"scenario3.txt",plyr, stack)==0){
                 break;
             }
             *node_num = 1;
@@ -76,7 +78,7 @@ void load_game(char* buffer){//Our load game function
         
         case 4: 
             //Scenario4
-            if(run_game(*node_num,"scenario4.txt",plyr)==0){
+            if(run_game(*node_num,"scenario4.txt",plyr, stack)==0){
                 break;
             }else{printf("\nYou won the game!!!!!!!!!!!!!\n");remove("auto_save.txt");}
     }   

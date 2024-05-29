@@ -7,12 +7,12 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${fileDirname}/queue.c",
                 "${fileDirname}/rpggame.c",
                 "${fileDirname}/rpgbase.c",
                 "${fileDirname}/combat.c",
                 "${fileDirname}/common.c",
                 "${fileDirname}/prints.c",
+                "${fileDirname}/utils.c",
                 "-o",
                 "${fileDirname}/rpgbase"
             ],

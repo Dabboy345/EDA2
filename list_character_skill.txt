@@ -10,7 +10,7 @@ n
 Excalibur
 King Arthur sword taken out from a craved stone
 1
-23
+230
 n
 1, 2, 25,
 
@@ -165,6 +165,14 @@ Unleashes a attack that phases through dealing damage to the target
 33
 n
 2, 3, 34,
+
+21skill
+Timestrike
+Go back in time and use a skill from the past
+0
+0
+t
+1, 4, 40,
 
 50skill
 Stick

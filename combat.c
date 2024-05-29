@@ -30,9 +30,16 @@ void print_player(Character* p){//Function to print the hp and def of the player
 
 //Function to execute the attack
 //a-atck is the one who uses the skill and d-def is the receiver
-int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int max_hp, int* venom, int* prob){
+int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int max_hp, int* venom, int* prob, Timestrike* stack){
     printf("\n%s used %s\n", n_atck, skll->name); //print the skill used
-    if(skll->mod.chr == 'r'){//If mod is recharge
+    if(skll->mod.chr == 't'){
+        int t = rand()%(stack->top-1);
+        Skill* skill_time = (Skill*)malloc(sizeof(Skill));
+        *skill_time = stack->arr[t];
+        skill_time->dmg_skll*=2;
+        printf("Random hability chosen %s\n", skill_time);
+        return attack(skill_time, n_atck, n_def, stats_a, stats_d, max_hp, &venom, &prob, stack);
+    }else if(skll->mod.chr == 'r'){//If mod is recharge
         if(skll->of_def==1){//If of_def is 1, it's not charged
             skll->of_def=0;//Change of_def so it doesn't deal dmg when is not charged
             printf("Charging %s...\n\n", skll->name);
@@ -81,7 +88,7 @@ int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int m
 
 /////////////////////////////////////////////7
 
-int combat(Character *plyr, Enemy *enmy, int size){
+int combat(Character *plyr, Enemy *enmy, int size, Timestrike *stack){
     Queue* q = init_queue(size);
     for(int i = 0; i<size; i++){
         q = enqueue(q, *plyr, *enmy);
@@ -124,6 +131,8 @@ int combat(Character *plyr, Enemy *enmy, int size){
     if(turn == 0){printf("The player %s starts\n\n", plyr->name);
     }else{printf("The enemy %s starts\n\n", enmy->name);}
 
+///////////////////////////////////////////////////////////////////////////7
+
     while(q->elements>0){
         if(turn==0){
             print_enemy(enmy);
@@ -152,7 +161,9 @@ int combat(Character *plyr, Enemy *enmy, int size){
                 goto choose_skill;}
             plyr->skill[a].mod.n++;
 
-            result = attack(&plyr->skill[a], plyr->name, enmy->name, plyr->stats, enmy->stats, max_hp_plyr, &pvenom, &prob);
+            push(stack, plyr->skill[a]);
+
+            result = attack(&plyr->skill[a], plyr->name, enmy->name, plyr->stats, enmy->stats, max_hp_plyr, &pvenom, &prob, stack);
 
             if(result == 1){printf("\nYou won the fight against %s\nCongratulations!\n\n", enmy->name);return 1;}
             else if(result == 2){
@@ -183,7 +194,7 @@ int combat(Character *plyr, Enemy *enmy, int size){
             if((enmy->skill[b].mod.n==enmy->skill[b].mod.max)&&(enmy->skill[b].mod.chr!='n')){goto enemy_combat;}
             enmy->skill[b].mod.n++;
 
-            result = attack(&enmy->skill[b], enmy->name, plyr->name, enmy->stats, plyr->stats, max_hp_enmy, &evenom, &prob);
+            result = attack(&enmy->skill[b], enmy->name, plyr->name, enmy->stats, plyr->stats, max_hp_enmy, &evenom, &prob, stack);
 
             if(result==1){printf("\nYou lost against %s\nTry again next time\n", enmy->name);return 2;}
             else if(result==2){

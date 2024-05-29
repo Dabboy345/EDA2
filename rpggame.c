@@ -92,6 +92,9 @@ void get_skill(Skill *skill, int n){
                 case 'p':
                     skill->mod.max = 4;
                     break;
+                case 't':
+                    skill->mod.max = 1;
+                    break;
             }
             fclose(fp); 
             return;
@@ -115,8 +118,8 @@ void choose_skill(Skill *skills, Character *player){
     int temp=1;
     int test=0;
     while(temp!=0){
-        printf("\nType 0 to choose final skills\nTry a skill (1-21): ");
-        temp = get_valid_input(0, 21);
+        printf("\nType 0 to choose final skills\nTry a skill (1-%d): ", MAX_NUMBER_SKILL_PLAYER);
+        temp = get_valid_input(0, MAX_NUMBER_SKILL_PLAYER);
         printf("\n");
         if(0!=temp){try_skill(&(skills[temp-1]));}
     }
@@ -124,7 +127,7 @@ void choose_skill(Skill *skills, Character *player){
     for(int i = 0; i<4; i++){
         repeated_skill:
         printf("Choose skill %d: ", i+1);
-        temp = get_valid_input(1, 21); 
+        temp = get_valid_input(1, MAX_NUMBER_SKILL_PLAYER); 
         for(int j=0;j<i;j++){if(player->skill[j].skill_number==temp-1){
             printf("\nYou can't have %stwice\n\n", player->skill[j].name);goto repeated_skill;}}
         player->skill[i] = skills[temp-1];
@@ -259,12 +262,12 @@ void addDecisionToScenario(Scenario *scenario, Decision *decision) { //Function 
 
 
 
-void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr){ //This function helps us tot get the decision number and add it to the link list of the scenario
+void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr, Timestrike* stack){ //This function helps us tot get the decision number and add it to the link list of the scenario
     Decision *test = create_desicion(); //We create a decision
     get_info_decision(test, node, filename); //We take the relative information in the decision 
     addDecisionToScenario(scene, test); //We add it to scenario link list 
     save_game(scene, plyr, "auto_save.txt"); //We auto save the game 
-    print_decision(test, plyr, scene); //We print the information that we had in the desicion
+    print_decision(test, plyr, scene, stack); //We print the information that we had in the desicion
 } 
 
 void freeScenario(Scenario *scenario) { //Function to free the scenario
@@ -361,10 +364,11 @@ void save_game(Scenario *scene, Character *character, char* buffer){
 }
 
 
-int run_game(int node_number, char *filename, Character *plyr){ //This function helps us to run our game as parameter we recive a player, a filename and a node number where we want to start from
+int run_game(int node_number, char *filename, Character *plyr, Timestrike* stack){ //This function helps us to run our game as parameter we recive a player, a filename and a node number where we want to start from and the stack of timestrike
     Scenario *scene = create_inizialize_Scenario();//We create a scenario 
+    init_adj_mat_scenario(scene, 600);//Initialize the adjacency matrix for the scenario
     strcpy(scene->filename,filename);// We go put the scenario filename 
-    go_to_node_select_and_add(node_number,scene->filename,scene, plyr); //We add the desicion made by the user to the link list 
+    go_to_node_select_and_add(node_number,scene->filename,scene, plyr, stack); //We add the desicion made by the user to the link list 
     Decision temporary_checker;//We create a temporary decision which will be useful to check if it a end desicion or not 
     saveLastDecisionData(scene, &temporary_checker); //We save the last desiion informartion 
     int a; //We will use this variable to verify the input 
@@ -377,13 +381,13 @@ int run_game(int node_number, char *filename, Character *plyr){ //This function 
         printf("\n");
         switch(a){ //Depending on what he choose we do one thing or another 
             case 1: //This case is when the user selects the option 1
-                option_selected = (temporary_checker.node_number) *2;//We check the node number he had and multiply it by 2
-                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr); //We get the infomation and add it to the link list and print the information 
+                option_selected = get_next_num_node(a, temporary_checker.node_number, scene, 600);//We get the node number from the adjacency matrix
+                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr, stack); //We get the infomation and add it to the link list and print the information 
                 saveLastDecisionData(scene, &temporary_checker); //We actualize the last node and save its information 
                 break;
             case 2://This case is when the user selects the option 1
-                option_selected = ((temporary_checker.node_number) *2)+1;//We check the node number he had and multiply it by 2 and then add 1 
-                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr);//We get the infomation and add it to the link list and print the information 
+                option_selected = get_next_num_node(a, temporary_checker.node_number, scene, 600);//We get the node number from the adjacency matrix
+                go_to_node_select_and_add(option_selected,scene->filename,scene, plyr, stack);//We get the infomation and add it to the link list and print the information 
                 saveLastDecisionData(scene, &temporary_checker);//We actualize the last node and save its information 
                 break;
             case 3://This case is when the user selects the to save the game 
@@ -451,7 +455,7 @@ int load_game_and_play(char *buffer, Character* plyr, int* last_node_number){
 
 
 // order skills
-// Utility function to swap two Skill structures
+// Utility function to swap two Skill structures, for quicksort
 void swap(Skill* p1, Skill* p2) {
     Skill temp = *p1;
     *p1 = *p2;
@@ -484,7 +488,7 @@ void quickSort(Skill arr[], int low, int high, int n) {
     }
 }
 
-// Function to read skills from a file and sort them by damage
+// Function to read skills from a file and sort them
 void order_skills(int n, Skill* skills) {
     int count = MAX_NUMBER_SKILL_PLAYER;
     // Sort the skills by damage
@@ -505,7 +509,7 @@ void order_skills(int n, Skill* skills) {
     }
     printf("Sorted skills by %s stat given to the player:\n\n", stat);
 
-    for(int i = 0; i<21; i++){
+    for(int i = 0; i<MAX_NUMBER_SKILL_PLAYER; i++){
         printf("%d.(%d) %s\n", i+1, skills[i].stats_plyr[n-1], skills[i].name);
     }
     printf("\n\n");

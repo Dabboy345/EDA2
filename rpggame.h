@@ -23,7 +23,7 @@ Scenario *create_inizialize_Scenario();
 //Function to add a Decision to the Scenario
 void addDecisionToScenario(Scenario *scenario, Decision *decision);
 
-void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr);
+void go_to_node_select_and_add(int node,char *filename,Scenario *scene, Character* plyr, Timestrike* stack);
 
 void freeScenario(Scenario *scenario);
 
@@ -37,7 +37,7 @@ int get_last_node_numeber(Scenario *scenario);
 
 void save_game(Scenario *scene, Character *character, char* buffer);
 
-int run_game(int node_number, char *filename, Character *plyr);
+int run_game(int node_number, char *filename, Character *plyr, Timestrike* stack);
 
 void change_skill(Skill* skill, Character*plyr);
 

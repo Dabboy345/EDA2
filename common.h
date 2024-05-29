@@ -11,7 +11,8 @@
 #define MAX_NAME 50 
 #define MAX_TXT 350 
 #define MAX_SKILL_PICKED 4
-#define MAX_NUMBER_SKILL_PLAYER 21
+#define MAX_NUMBER_SKILL_PLAYER 22
+#define MAX_NODE 1200
 
 int get_valid_input(int first, int size); 
 
@@ -60,7 +61,6 @@ typedef struct{
 //narrative text (after battling the enemies)
 
 typedef struct{
-    //char question_txt[MAX_TXT];
     Option option;
     struct Decision *next;
     int node_number;//This will help us to save the game 
@@ -72,56 +72,7 @@ typedef struct{
     Decision *end;
     int decisions_added;
     char filename[MAX_NAME];
+    int edges[MAX_NODE][2];
 }Scenario;
-
-/* //Pondria como mucho 50 el capacity de este stack 
-typedef struct{ //Todo el codigo pillado desde geeksforgeeks
-    int capacity
-    Skill top;
-    Skill *stack;
-}Timestrike;
-
-void *createTimestrike(int capacity)
-{
-    Stack* Timestrike = (Timestrike*)malloc(sizeof(Timestrike));
-    stack->capacity = capacity;
-    stack->top = -1;
-    stack->stack = (Skill*)malloc(stack->capacity * sizeof(Skill));
-    return stack;
-}
-// Stack is full when top is equal to the last index
-int isFull(Timestrike *stack){
-    return stack->top == stack->capacity - 1;
-}
-
-// Stack is empty when top is equal to -1
-int isEmpty(Timestrike* stack)
-{
-    return stack->top == -1;
-}
-
-void push(Timestrike* stack, Skill skill){
-    if (isFull(stack))
-        return;
-    stack->array[++stack->top] = item;
-    printf("%d pushed to stack\n", item);
-}
-
-Skill pop(Timestrike* stack)
-{
-    if (isEmpty(stack))
-        return INT_MIN;
-    return stack->array[stack->top--];
-}
-
-// Function to return the top from stack without removing it
-int peek(Timestrike* stack)
-{
-    if (isEmpty(stack))
-        return INT_MIN;
-    return stack->array[stack->top];
-}
-*/
-
 
 #endif
