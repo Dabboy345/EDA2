@@ -278,7 +278,9 @@ After having played the combat the user is able to choose another optins, save t
 
 The main important function here is the run_game which helps us play the game from anypoint. Basically what the run_game function does is that it creates a scenario and then inziliazes it and then it add the selected node to scenario link list and then the process is repeated until we finish the scenario. Then after we finish a scenario we call the run_game function with the node number 1 because it is the first number node number. 
 
-When we load a game we use the function load_game_and_play this functions load the information to the scenario and characters with his skills saved from the text file. The load_game_and_play returns an integers in After doing this we call the function run_game which we do the same process as we mentioned above. 
+When we load a game we use the function load_game_and_play this functions load the information to the scenario and characters with his skills saved from the text file. The load_game_and_play returns an integers which indicates the scenario that he is in, by this we would able to know where we are and it will help us to play the next scenarios. After doing this we call the function run_game which we do the same process as we mentioned above. 
+
+The Continue Game uses the function save_game and load_game and follows the same stpes mentioned above. 
 
 #### 3.2 ERROR HANDLING
 
