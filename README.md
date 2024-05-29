@@ -147,9 +147,7 @@ Let’s dig into the problems we had during the process of completing this game.
 
 
 
-
-
-**4. A basic battle system that allows the player to choose one of 4 moves with a simple effect (damage_p2 = attack_p1 - defense_p2) in turns, taking into account multipliers and effects of the abilities.**
+4. A basic battle system that allows the player to choose one of 4 moves with a simple effect (damage_p2 = attack_p1 - defense_p2) in turns, taking into account multipliers and effects of the abilities. 
 
     ```C
         int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int max_hp, int* venom, int* prob, Timestrike* stack)
