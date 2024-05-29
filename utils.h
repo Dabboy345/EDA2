@@ -20,8 +20,7 @@ Queue* enqueue(Queue* q, Character c, Enemy e);
 
 Queue* dequeue(Queue* q);
 
- //Pondria como mucho 50 el capacity de este stack 
-typedef struct{ //Todo el codigo pillado desde geeksforgeeks
+typedef struct{ 
     int capacity;
     int top;
     Skill *arr;

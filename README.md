@@ -145,7 +145,7 @@ For the creation of the graph we created the data structure Scenario, where we w
     } 
 ```
 
-Then we also created a function in order to look in the adjacency list to find the next node number according to the variable opt (the decision of the player) and node_num (the current node the layer is on), which consists in looking through the adjecency list until finding an array that has the first element equal as the curren node number and then get the number of the second element of that array or the second element of the array next to that one (depending on the decision of the player)
+Then we also created a function in order to look in the adjacency list to find the next node number according to the variable opt (the decision of the player) and node_num (the current node the layer is on), which consists in looking through the adjecency list until finding an array that has the first element equal as the curren node number and then get the number of the second element of that array or the second element of the array next to that one (depending on the decision of the player). The time complexity for the init_adj_mat_scenario is O(n) where n is number of max_node is 1200. The time complexity for get_next_num_node is also O(n) where n is total number edges in the scenario. These functions are located in utils.c, init_adj_mat_scenario is in the line 5 and get_next_num_node is in line 17. 
 
 
 
