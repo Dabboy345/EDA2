@@ -1,6 +1,7 @@
 #include"rpggame.h"
 
 void print_mod(Skill* skll){
+    //Function to print modifier descriptions of each skill
     switch(skll->mod.chr){
         case 'h':
             printf("It heals you %d hp\n\n", skll->dmg_skll);
@@ -23,54 +24,71 @@ void print_mod(Skill* skll){
         case 'p':
             printf("It gives you a %d%% chance of dodging the next attack\n\n", skll->dmg_skll*3);
             break;
+        case 't':
+            printf("It chooses a random habilities from the ones you have been using during you run and uses it with double power\n\n");
+            break;
     }
     if(skll->mod.max!=0){printf("You can only use this habilities %d times in combat\n\n", skll->mod.max);}
+    //Print the times you can use an hability with modifier during a combat
 }
 
 
 
 void try_skill(Skill *skll){
+//Function to show the player information of a skill
     printf("\n---------------------------\n");
-    printf("%s", skll->name);
+    printf("%s", skll->name); //Print skill name
     printf("---------------------------\n\n");
-    printf("%s\n", skll->description);
+    printf("%s\n", skll->description);//Print skill description
+
+    //The stats of the player (atk, def, hp) are given by the atributes of the 4 skills they choose so each
+    //skill contributes a number of points to the stats and the final stats are the total sum of the 4 skills
+
     printf("Health points: %d\n", skll->stats_plyr[2]);
-    for(int i = 0; i<skll->stats_plyr[2]; i++){printf("/");}
+    //Show how many health points that skills contributes to the player
+    for(int i = 0; i<skll->stats_plyr[2]; i++){printf("/");}//Visual representation
     printf("\n");
     printf("Defense: %d\n", skll->stats_plyr[1]);
-    for(int i = 0; i<skll->stats_plyr[1]; i++){printf("/");}
+    //Show how many defense points that skills contributes to the player
+    for(int i = 0; i<skll->stats_plyr[1]; i++){printf("/");}//Visual representation
     printf("\n");
     printf("Damage: %d\n", skll->stats_plyr[0]);
-    for(int i = 0; i<skll->stats_plyr[0]; i++){printf("/");};
+    //Show how many damage points that skills contributes to the player
+    for(int i = 0; i<skll->stats_plyr[0]; i++){printf("/");};//Visual representation
     printf("\n\n");
     if(skll->of_def==0){printf("It doesn't deal damage\n\n");}
+    //Print if the skill deals damage or not and if it does print how much damage
     else if(skll->of_def==1){printf("It deals %d damage\n\n", skll->dmg_skll);};
+    //Print description of the modifier of the skill
     print_mod(skll);
 }
 
 void get_skill(Skill *skill, int n){
+//Function to store in a skill pointer the skill information of the nskill from a text file
     FILE *fp;
     char c[MAX_TXT];
-    fp = fopen("list_character_skill.txt", "r");
-    if (fp==NULL){
+    fp = fopen("list_character_skill.txt", "r");//Open the file where all skills are written
+    if (fp==NULL){//Check for errors upon oppening the file
         printf("Error opening opening the file\n");
         fclose(fp);
         return;
     }
-    int a;
+    int a;//Initialize integer where we will store the number of skill we are checking
     while(!feof(fp)){
+        //Get all the skill information from the file
         fscanf(fp, "%dskill\n", &a);
         fgets(skill->name, MAX_NAME, fp);
         fgets(skill->description, MAX_TXT, fp);
         fscanf(fp, "%d\n%d\n", &skill->of_def, &skill->dmg_skll);
         skill->mod.chr = fgetc(fp);
         for(int i=0;i<3;i++){fscanf(fp, "%d,", &skill->stats_plyr[i]);}
-        if(n==a){
+        if(n==a){//If the number of skill is equal to the one we are asking to save the skill information in the pointer and end the function
             skill->skill_number = a;
-            skill->mod.temp = 0;
+            skill->mod.temp = 0;//Initialize modifiers
             skill->mod.n = 0;
             skill->mod.max = 0;
             switch(skill->mod.chr){
+                //Set the limited uses of modified skills during a combat
                 case 'h':
                     skill->mod.max = 2;
                     break;
@@ -96,35 +114,38 @@ void get_skill(Skill *skill, int n){
                     skill->mod.max = 1;
                     break;
             }
-            fclose(fp); 
-            return;
+            fclose(fp); //Close file
+            return;//End the function
         }
     }
 }
 
 void change_skill(Skill* skill, Character*plyr){
+//Function to allow the player to change skills
     printf("\nDo you want to change skills? Yes->0, No->1: ");
-    if(get_valid_input(0, 1)==0){
+    //Ask the player if they want to change skills
+    if(get_valid_input(0, 1)==0){//If answer is yes change skills
         for(int i =0; i<MAX_NUMBER_SKILL_PLAYER;i++){
-            get_skill(&skill[i], i);
+            get_skill(&skill[i], i);//Get all skills from the text file
         }
-        choose_skill(skill, plyr);
+        choose_skill(skill, plyr);//Let the player choose the new skills
     }
 }
 
 
 void choose_skill(Skill *skills, Character *player){
-    print_skills(skills);
+//Function to make the user choose the 4 skills for the player character
+    print_skills(skills);//Print all available skills
     int temp=1;
-    int test=0;
-    while(temp!=0){
-        printf("\nType 0 to choose final skills\nTry a skill (1-%d): ", MAX_NUMBER_SKILL_PLAYER);
-        temp = get_valid_input(0, MAX_NUMBER_SKILL_PLAYER);
+    while(temp!=0){//Ask the player to try skills until they are ready to choose their final skills
+        printf("\nType 0 to choose final skills (remember that some skills have limited uses during combat)\nTry a skill (1-%d): ", MAX_NUMBER_SKILL_PLAYER);
+        temp = get_valid_input(0, MAX_NUMBER_SKILL_PLAYER);//Get a valid input from the player
         printf("\n");
-        if(0!=temp){try_skill(&(skills[temp-1]));}
+        if(0!=temp){try_skill(&(skills[temp-1]));}//If input is not zero and valid try the skill the player selected
     }
+    //When player is ready to choose final skills print again all available skills
     print_skills(skills);
-    for(int i = 0; i<4; i++){
+    for(int i = 0; i<4; i++){//Choose the 4 skills and store ir in player->skills
         repeated_skill:
         printf("Choose skill %d: ", i+1);
         temp = get_valid_input(1, MAX_NUMBER_SKILL_PLAYER); 
@@ -464,15 +485,14 @@ void swap(Skill* p1, Skill* p2) {
 
 // Partition function for quicksort
 int partition(Skill arr[], int low, int high, int n) {
-    // Choose the pivot as the damage value of the high element
-    int pivot = arr[high].stats_plyr[n];
+    // Choose the pivot as the damage, defens or hp value of the high element
+    int pivot = arr[high].stats_plyr[n]; //user chooses the n, according to what value of the array stats_plyr he wants(dmg, def, hp)
     int i = low - 1;
 
     for (int j = low; j <= high - 1; j++) {
-        // If the current element's damage is greater than the pivot
-        if (arr[j].stats_plyr[n] > pivot) {
+        if (arr[j].stats_plyr[n] > pivot) { // If the current element of stats_plyr is greater than the pivot
             i++;
-            swap(&arr[i], &arr[j]);
+            swap(&arr[i], &arr[j]); // swap the order of the skills
         }
     }
     swap(&arr[i + 1], &arr[high]);
@@ -488,22 +508,22 @@ void quickSort(Skill arr[], int low, int high, int n) {
     }
 }
 
-// Function to read skills from a file and sort them
+// Function to order the skills according to the element the user selects
 void order_skills(int n, Skill* skills) {
     int count = MAX_NUMBER_SKILL_PLAYER;
-    // Sort the skills by damage
+    // Sort the skills
     quickSort(skills, 0, count - 1, n-1);
 
     // Print sorted skills
     char *stat;
     switch(n){
-        case 1:
-            stat = "attack";
+        case 1: //put the skills in order of the damage integer they have
+            stat = "attack"; 
             break;
-        case 2:
+        case 2: //put the skills in order of the defense integer they have
             stat = "defense";
             break;
-        case 3:
+        case 3: //put the skills in order of the health points integer they have
             stat = "health";
             break;
     }

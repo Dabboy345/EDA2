@@ -1,11 +1,7 @@
-Time strike (stack)
-Writing info os scenarios 2 
-Balancing habilities //(Sushant): Creo q he balancedo algunas, falta probarlo
-when winning game erase auto_save
-check if autosave empty
-time strike
+
+
+Balancing habilities //
 video
 readme
 
-Maybe
-Easter egg names
+

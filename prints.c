@@ -65,22 +65,23 @@ void print_decision(Decision *choice, Character* plyr, Scenario* scene, Timestri
             choice->option.enemy.skill[1],
             choice->option.enemy.skill[2],
             choice->option.enemy.skill[3]);
-        while(combat(plyr, &choice->option.enemy, 20, stack)==2){ 
-            printf("\nDo you want to change skills? Yes->0, No->1: ");
+        while(combat(plyr, &choice->option.enemy, 20, stack)==2){ //Do combat until player wins
+            printf("\nDo you want to change skills? Yes->0, No->1: ");//If player loses allow to choose skills and try again
             if(get_valid_input(0, 1)==0){
                 Skill *skill = (Skill*)calloc(MAX_NUMBER_SKILL_PLAYER, sizeof(Skill));
+                //Get all the skills from the txt file of skills into an poineter of all the skills the player can choose
                 if(skill == NULL){
                     printf("Memory allocation failed\n");
                     return;
                 }
                 for(int i =0; i<MAX_NUMBER_SKILL_PLAYER;i++){
-                    get_skill(&skill[i], i);
+                    get_skill(&skill[i], i);//Get 1 skill from list_skills
                 }
-                choose_skill(skill, plyr);
+                choose_skill(skill, plyr);//Choose skills
             }
             plyr->stats[2] = 0;
             for(int i=0;i<4;i++){plyr->stats[2]+=plyr->skill[i].stats_plyr[2];}//Reset health
-            save_game(scene, plyr, "auto_save.txt");
+            save_game(scene, plyr, "auto_save.txt");//save progress in autosave
         }
     }
     int a = (choice->option.option1[2]=='E' && choice->option.option1[6]=='n')? 0:1; //We check if the recived information is for end node or not 
