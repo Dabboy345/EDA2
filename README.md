@@ -266,7 +266,7 @@ Let’s dig into the problems we had during the process of completing this game.
 ### 3. SOLUTION
 
 #### 3.1 SYSTEM ARHITECTURE
-.....
+![](Images_markdown/system_architecture_diagram.png)
 
 #### 3.2 ERROR HANDLING
 
