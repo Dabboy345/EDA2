@@ -287,7 +287,8 @@ All functions programmed take into account the boundary conditions they could ha
 If some had some segmentation fault then we went to the place we had the error and we anlayized what the problem could be. By doing this we forced us to understand what what we were doing and by this way it was easy to look for the solution. 
 
 #### 3.3 DATA MODEL DESIGN
-....
+
+![](Images_markdown/data_flow_diagram.png)
 
 #### 3.4 DATASET DESCRIPTION AND PROCESSING 
 Each scenario has a text file for itself. The information about skills is also saved in a text file, in this text file we have saved both the information about the skills of the characters and the enemies. And for saving the game at a certain point we also use a certain structure. All this information is in the file name format.txt. 
