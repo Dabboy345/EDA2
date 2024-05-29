@@ -43,7 +43,7 @@ Let’s dig into the problems we had during the process of completing this game.
 ### 2. PROJECT OBJECTIVE
 
 #### 2.1 MANDATORY OBJECTIVES MET 
-1. Creation of the main character with the basic attributes mentioned above (Name, abilities, HP, ATT, DEF, and any other attribute defined by the programmers) and the rest of the structs.
+**1. Creation of the main character with the basic attributes mentioned above (Name, abilities, HP, ATT, DEF, and any other attribute defined by the programmers) and the rest of the structs.**
 
     In our game, the character can have 4 skills, and every skill provides damage, defense, and health. So the stats he has will depend on the skills he chooses. These are the main data structures of your game: all of them are located in common.h.
     ```C
@@ -100,7 +100,7 @@ Let’s dig into the problems we had during the process of completing this game.
 
     The big O for the function create character is also O(n) because all the functions it uses are printed with for loops which do not affect the the big O. At the beginning these functions were simple but as we progressed we added elements to them. The function create_caracter is located in rpggame.c at line 143 and the function chose_skill is in the same file but in line 113. In terms of improving it, we could have added more skills to choose for the user. If we had more time we would have liked to add many more functions that could help him more personalize the character. 
 
-2. Each scenario must present a text telling a piece of the story and a decision. Depending on the player's decision, a narrative text and between zero and two battles with enemies should be presented.
+**2. Each scenario must present a text telling a piece of the story and a decision. Depending on the player's decision, a narrative text and between zero and two battles with enemies should be presented.**
 
     ```C
         Scenario *create_inizialize_Scenario();
@@ -118,7 +118,7 @@ Let’s dig into the problems we had during the process of completing this game.
     
     In our game, we have 1 vs 1 combat but there are at least 2 enemies that you have to fight per scenario. Talking about big O, there are functions many functions that are used to read from files all of these functions have O(n) complexity n will be the number of the lines that the files have. The functions that create and allocate memory have complexity of O(1) because these function performs a constant number of operations regardless of the size of the scenario. There are many improvements that we would like to add if there was more time for example if the user wanted to go back to the previous node and make another decision. We would have also liked to have some images that represent each scenario, we would have also liked to add the graphical part for the combat. We weren't certain how to implement all these functions so this part was one of the parts that took most of the time. The majority of the functions mentioned above are in rpggame.c except print decision which is in print.c at line 57. The function get_skill is in line 51, put_enemy_info is in line 170 and all other functions are below it. 
 
-3. Creation of a graph (by adjacency matrix or adjacency list) of 4 scenarios
+**3. Creation of a graph (by adjacency matrix or adjacency list) of 4 scenarios**
 
     For the creation of the graph we created the data structure Scenario, where we will store the adjaceny list for each scenario. For that we will use a function to initialize all the conections between the node numbers with a simple formula. The node number N will always be connected to the node number N*2 and the node number (N*2)+1. So for each scenario we create the adjacency matrix following this pattern, getting always two arrays of two following the structure -> (N, N*2) and (N, (N*2)+1)
 
@@ -147,7 +147,7 @@ Let’s dig into the problems we had during the process of completing this game.
 
 
 
-4. A basic battle system that allows the player to choose one of 4 moves with a simple effect (damage_p2 = attack_p1 - defense_p2) in turns, taking into account multipliers and effects of the abilities. 
+**4. A basic battle system that allows the player to choose one of 4 moves with a simple effect (damage_p2 = attack_p1 - defense_p2) in turns, taking into account multipliers and effects of the abilities.**
 
     ```C
         int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int max_hp, int* venom, int* prob, Timestrike* stack)
@@ -171,7 +171,7 @@ Let’s dig into the problems we had during the process of completing this game.
 
 
 
-5. The game must feature several types of enemies (minimum 3 different ones). The enemy selection system for battle is left to the programmers (it can be fixed, random, or designed with an algorithm). Attacks for these enemies should also be pre-configured.
+**5. The game must feature several types of enemies (minimum 3 different ones). The enemy selection system for battle is left to the programmers (it can be fixed, random, or designed with an algorithm). Attacks for these enemies should also be pre-configured.**
 
     There is almost a different enemy for each battle, since our game is mostly story oriented, so for the better experience of the game we created new enemys with each node.
 
@@ -181,7 +181,7 @@ Let’s dig into the problems we had during the process of completing this game.
 
 
 
-6. There must be a move called "Time Strike," or an equivalent representative name according to the narrative, which allows access to the history of moves executed by the player (which is a stack) and randomly selects the k-th move executed counting from the last one, then executes it again with double power. This move can only be used once during the battle.
+**6. There must be a move called "Time Strike," or an equivalent representative name according to the narrative, which allows access to the history of moves executed by the player (which is a stack) and randomly selects the k-th move executed counting from the last one, then executes it again with double power. This move can only be used once during the battle.**
 
     Since we already created the modifiers to create special habilities in some skills, we took advantage into that and created a modifier (t) just for the timestrike hability with one use for battle (like other modfiers that have limited uses for battle). The created some basic functions for the stack and we pushed a skill to the stack whenever the player used it
 
@@ -199,7 +199,7 @@ Let’s dig into the problems we had during the process of completing this game.
 
 
 
-7. The game turns are defined at the beginning of the battle using a queue, which randomly decides with a probability the N turns that the battle should last (or fixes the limit to a fixed number).
+**7. The game turns are defined at the beginning of the battle using a queue, which randomly decides with a probability the N turns that the battle should last (or fixes the limit to a fixed number).**
 
     ```C
         typedef struct{
@@ -220,7 +220,7 @@ Let’s dig into the problems we had during the process of completing this game.
 
 
 #### 2.2 DESIRABLE OBJECTIVES MET
-1. Implementation of a data reading (loading) system from an external file for the initial configuration of the Character, the Scenarios, the skills, and the Enemies. The base file should be a plain text or a JSON formatted file.
+**1. Implementation of a data reading (loading) system from an external file for the initial configuration of the Character, the Scenarios, the skills, and the Enemies. The base file should be a plain text or a JSON formatted file.**
 
     In our case we haven’t used JSON we have used text files. All the information is structured in a certain order that helps the algorithm to get the information. You can see the structures for the text of the skills and the decisions in the format.txt file. The main functions that helps us to get the information are get_skill which helps to get the information about the skill, the function put_enemy_info which helps us to the enemy information, and get_info_decision which helps us to get the information about a certain decision. 
 
@@ -233,7 +233,7 @@ Let’s dig into the problems we had during the process of completing this game.
     The function get skill receives as a parameter a skill where to save the information about the skill and the number of skill. Every skill has a number so by the number it will be easy to look for the information. 
     The function put_enemy receives as a parameter a string that has the enemy's information and an enemy where to save the information. The function get_info_decision receives as parameters a decision where to save the information, the node number of the decision, and the filename where he has to look the information from. Let’s talk about the Big O of the get_skill it has a complexity of O(n) where n is the number of the lines he has to read from the file. The put_enenmy_info also has complexity O(n) where n will be the length of the string. And at last, we have get_info_decision which also has the complexity of O(n) where n is the number of the lines he has read from the file. Well, these functions were not easy to program the difficulty here was how to structure the information, we tried many different formats and algorithms until we found the correct one. Here we would have liked to add more options for the user to choose rather than having just two. All the functions mentioned above are in rpggame.c. Get_skill is in line 51, put_enemy_info is in line 170 and get_info_decision is in line 201.
 
-2. Functional implementation of one of the search and/or sorting algorithms seen in theory classes. 
+**2. Functional implementation of one of the search and/or sorting algorithms seen in theory classes.**
 
     In our case, we have used the sorting algorithm just for one case which is when we asked the user to choose skill. We ask the user in which order he wants the skills to be shown prioritizing damage, defense, or attack. If you look at our skill data structure there is an array of called stat players, where the first index is damage, the second index is defense and the third index is health. When we sort the skills we take into account these variables. To sort our skills we used QuickSort, this function was provided to us in one of the seminars that we did. What we do first is sort out the array of skills taking into account what the user has asked for and then print them. The main functions that we use here are all the functions related to Quicksort and the function order skill which helps us to order the skill. 
 
@@ -248,7 +248,7 @@ Let’s dig into the problems we had during the process of completing this game.
     We use the function swap to swap the skills in the array. We use the partition function which helps us to make sure that all the elements on the left are smaller than the pivot and all the elements on the right are greater than the pivot, the n we receive as parameters here helps us to indicate in which stats he would like the skills to be ordered. And at last, the function order_skills uses the quicksort. This function receives a skill array and the n which is the number that indicates to us in which order he wants to arrange it. The Big O of the quicksort is O(n log n) and the worst case is O(n^2). These functions were already provided so we just had to adapt them to our data structures. 
 
 #### 2.3 EXPLORATORY OBJECTIVES MET
-1. Implementation of a system for saving and loading the game state based on files. 
+**1. Implementation of a system for saving and loading the game state based on files.**
 
     ![](Images_markdown/savinggame.png)
 
