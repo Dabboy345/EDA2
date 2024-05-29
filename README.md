@@ -262,10 +262,17 @@ The function load_game_and_play receives as parameters the file name where the i
 
 ### 3. SOLUTION
 
-#### 3.1 SYSTEM ARCHITECTURE 
+#### 3.1 SYSTEM ARCHITECTURE
+
+The figure below shows you the representation of our system architecture. It represent the rpgbase.c. Here in this .c we have different options. The player can choose between creating a new game, continuing the game from the autosave file, loading the game from another file that they have to previoulsy have saved and exit the game.
+
 ![](Images_markdown/system_architecture_diagram.png)
 
-The figure above shows you the reperesentation of our system architecture. It represent the rpgbase.c. Here in this .c we have diffrent options. We have the function new_game, we have the function Continue game and we have the function load game. 
+To initialize the program, in the main function, we have the main function in which calls the necessary function to start the program, in our case we have “print_menu”, “get_valid_input”, “new_game”, “load_game” to save the game, and the option to keep playing the same game. 
+
+For the initialization of the game have a function called run_game, which starts the game preparing the scenario and the option the user has as nodes, each node the user selects will be stored in a linked list.
+
+The development of the game is preceded by the combat function, which after each decision (node) it will happen. The function, initializes a queue for saving the rounds of the combat, then applies the skill stats of damage, defense, health points, and modifiers to affect the character and enemy‘s life and keep on happening at each round with the attack function. Until finally, someone wins and the user selects the next option (node).
 
 #### 3.2 ERROR HANDLING
 
