@@ -170,7 +170,7 @@ To add more variety we added modifiers to some skills, allowing to make some int
 - Force (f), it increases the general damage of the character (dmg stat), overall increasing the damage of next attacks
 - Recharge (r), it takes 1 turn to recharge the skill an another one to be able to use it (after  battle ends the skill goes back to uncharged)
 
-When taking the information of the skills out of the list_skill.txt, we manually save a number in the data structure of Mod (modifier) of the skill which makes reference of the times a skill with modifier can be used during a battle
+When taking the information of the skills out of the list_skill.txt, we manually save a number in the data structure of Mod (modifier) of the skill which makes reference of the times a skill with modifier can be used during a battle. The time complexity for attack is O(1) because it performs the same number of calculations for the skills provided. The Big O for combat is O(n). Both of these functions are in combat.c, attack is in line 33, combat is in 112. 
 
 **5. The game must feature several types of enemies (minimum 3 different ones). The enemy selection system for battle is left to the programmers (it can be fixed, random, or designed with an algorithm). Attacks for these enemies should also be pre-configured.**
 There is almost a different enemy for each battle, since our game is mostly story oriented, so for the better experience of the game we created new enemys with each node.
@@ -196,7 +196,7 @@ Since we already created the modifiers to create special habilities in some skil
     }
 ```
 
-This is the part of the code in the attack function that executes whenever the modifier of a skill is t (only Timestrike has that modifier) then we choose a random number from 0 to the stack top - 1 (basicaly all index of the stack) and select a random hability from the stack. Then to not change the atributes of the original skill, we create a Skill pointer, copy the random skill selected into that pointer and then add the double power. Then we simply return the result of the attack with this new skill. This part of te code is on top of the attack function so when executed it will return the result of the attack and will not execute the rest of the attack function for the timestrike because it already did what it was suposed to. The stack has a limit of 50 elements and will be reset if you restart the code or win the game.
+This is the part of the code in the attack function that executes whenever the modifier of a skill is t (only Timestrike has that modifier) then we choose a random number from 0 to the stack top - 1 (basicaly all index of the stack) and select a random hability from the stack. Then to not change the atributes of the original skill, we create a Skill pointer, copy the random skill selected into that pointer and then add the double power. Then we simply return the result of the attack with this new skill. This part of te code is on top of the attack function so when executed it will return the result of the attack and will not execute the rest of the attack function for the timestrike because it already did what it was suposed to. The stack has a limit of 50 elements and will be reset if you restart the code or win the game. This part of the function has the same comeplexity as the function attack mentioned above whihc has is O(1). This function is in inside the attack which is located in line 33 of comabt.c. 
 
 **7. The game turns are defined at the beginning of the battle using a queue, which randomly decides with a probability the N turns that the battle should last (or fixes the limit to a fixed number).**
 
@@ -214,7 +214,7 @@ This is the part of the code in the attack function that executes whenever the m
     Queue* dequeue(Queue* q);
 ```
 
-To implement the turns system first we had to code some basic functions for the queue data structure. Then at the start of each battle we initialize the queue and we enqueue 20 elements (20 turns for combat), both player and enemy and each time a character does an attack (player or enemy) it dequeues and element of the list and prints how many elements there are left in the queue (turns remaining)
+To implement the turns system first we had to code some basic functions for the queue data structure. Then at the start of each battle we initialize the queue and we enqueue 20 elements (20 turns for combat), both player and enemy and each time a character does an attack (player or enemy) it dequeues and element of the list and prints how many elements there are left in the queue (turns remaining). The big O O(1) because these functions are constant. The functions are located in utils.c and the queue data structure is located utils.h. The init_quue is located in line 27, enqueue is located in line 35, dequeue is in line 43. 
 
 #### 2.2 DESIRABLE OBJECTIVES MET
 **1. Implementation of a data reading (loading) system from an external file for the initial configuration of the Character, the Scenarios, the skills, and the Enemies. The base file should be a plain text or a JSON formatted file.**
