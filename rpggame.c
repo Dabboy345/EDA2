@@ -145,7 +145,7 @@ void choose_skill(Skill *skills, Character *player){
     }
     //When player is ready to choose final skills print again all available skills
     print_skills(skills);
-    for(int i = 0; i<4; i++){//Choose the 4 skills and store ir in player->skills
+    for(int i = 0; i<MAX_SKILL_PICKED; i++){//Choose the 4 skills and store ir in player->skills
         repeated_skill:
         printf("Choose skill %d: ", i+1);
         temp = get_valid_input(1, MAX_NUMBER_SKILL_PLAYER); 
@@ -396,7 +396,7 @@ int run_game(int node_number, char *filename, Character *plyr, Timestrike* stack
     saveLastDecisionData(scene, &temporary_checker); //We save the last desiion informartion 
     int a; //We will use this variable to verify the input 
     int option_selected; //This option will have the value selected by the user 
-    char* buffer;
+    char buffer[MAX_NAME];
     do{
         print_menu_option();//We print the option that user has 
         printf("Your choice: ");

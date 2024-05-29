@@ -114,7 +114,7 @@ After getting back the ribs you make a campfire and you cook it, but when you ar
 15node
 You enter a misterious hut with potion shape to check out the brebages of this world
 Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
-Alquemist: 97, 62, 115, 95
+Alquemist: 97, 62, 115, 72
 You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
 - Go to eat with the family
 - Steal some of the potions
@@ -138,7 +138,7 @@ Fortunately you get back all you gold, what do you want to buy?
 18node
 After getting some courage from out of nowhere you decide to compete againts the strongest knight, the Soul Eater
 Legends say he used the bones of his defeated enemies to sharpen his weapons. He looks at you and starts laughing while preparing his sword
-Soul Eater: 13, 15, 116, 117
+Soul Eater: 13, 82, 116, 117
 Defeating him gives you a lot of reputation and you are summoned to see the king, what do you do?
 - Go see the king
 - Go to explore the woods
@@ -194,7 +194,7 @@ After getting back the ribs you make a campfire and you cook it, but when you ar
 27node
 You enter a misterious hut with potion shape to check out the brebages of this world
 Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
-Alquemist: 97, 62, 115, 95 
+Alquemist: 97, 62, 115, 72
 You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
 - Go to eat with the family
 - Steal some of the potions
@@ -242,7 +242,7 @@ After getting back the ribs you make a campfire and you cook it, but when you ar
 35node
 You enter a misterious hut with potion shape to check out the brebages of this world
 Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
-Alquemist: 97, 62, 115, 95
+Alquemist: 97, 62, 115, 72
 You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
 - Go to eat with the family
 - Steal some of the potions
@@ -338,7 +338,7 @@ After getting back the ribs you make a campfire and you cook it, but when you ar
 67node
 You enter a misterious hut with potion shape to check out the brebages of this world
 Upon entering you see an alquemist preparing some weird orange liquid while murmuring "I'll kill them all"
-Alquemist: 97, 62, 115, 95
+Alquemist: 97, 62, 115, 72
 You find out you just saved an entire family that accused the alquemist of scammer and you stopped his revenge. In return they want invite you on dinner
 - Go to eat with the family
 - Steal some of the potions
@@ -378,7 +378,7 @@ You manage to kill the king and while everyone in the kingdom starts to panic, o
 98node
 After getting some courage from out of nowhere you decide to compete againts the strongest knight, the Soul Eater
 Legends say he used the bones of his defeated enemies to sharpen his weapons. He looks at you and starts laughing while preparing his sword
-Soul Eater: 13, 15, 116, 117
+Soul Eater: 13, 82, 116, 117
 Defeating him gives you a lot of reputation and you are summoned to see the king, what do you do?
 - Go see the king
 - Go to explore the woods
@@ -474,7 +474,7 @@ When you think you have defeated him he throws you some kind of potion and you s
 258node
 After getting some courage from out of nowhere you decide to compete againts the strongest knight, the Soul Eater
 Legends say he used the bones of his defeated enemies to sharpen his weapons. He looks at you and starts laughing while preparing his sword
-Soul Eater: 13, 15, 116, 117
+Soul Eater: 13, 82, 116, 117
 Defeating him gives you a lot of reputation and you are summoned to see the king, what do you do?
 - Go see the king
 - Go to explore the woods

@@ -34,7 +34,7 @@ void new_game(){//Our new game function
     //Scenario4
     if(run_game(1,"scenario4.txt",plyr, stack)==0){
         return;
-    }else{printf("\nYou won the game!!!!!!!!!!!!!\n");remove("auto_save.txt");}
+    }else{printf("\nYou won the game!!!!!!!!!!!!!\n");remove("auto_save.txt");free(stack);}
 }
 
 void load_game(char* buffer){//Our load game function
@@ -82,7 +82,7 @@ void load_game(char* buffer){//Our load game function
             //Scenario4
             if(run_game(*node_num,"scenario4.txt",plyr, stack)==0){
                 break;
-            }else{printf("\nYou won the game!!!!!!!!!!!!!\n");remove("auto_save.txt");}
+            }else{printf("\nYou won the game!!!!!!!!!!!!!\n");remove("auto_save.txt");free(stack);}
     }   
 }
 

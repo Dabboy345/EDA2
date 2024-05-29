@@ -10,7 +10,7 @@ What would you like to do?
 2node 
 You ask a person in which year we are and then the person replies in the year 3535
 Now you are certain that you are in the future. Suddenly you are attacked by a Gangster
-Gangster: 54, 50, 60, 69
+Gangster: 54, 58, 60, 69
 After having a battle with gangster, what do you do?
 - Go to the library and see how the world has changed
 - Buy the glasses that everybody has to not be suspicious
@@ -18,7 +18,7 @@ After having a battle with gangster, what do you do?
 3node
 You ask the person and he gives you the address of the hospital
 But you remember that to go to the hospital you will need an ID. Suddenly a big bully attacks you
-Big_Bully: 54, 50, 60, 69
+Big_Bully: 54, 58, 60, 69
 After teaching a lesson to the big bully about the life, what would you like to do?
 - Find a way to create a Fake ID
 - Cancel the plan to go to the hospital

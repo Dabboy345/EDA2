@@ -37,7 +37,7 @@ DATE OF SUBMISSION: 29/05/2024
 
 Our game name is PROSOMOIOSI which is the word for simulation in Greek. We chose this name because our game is situated that you are inside a simulation in which your objective is to discover that you are in a simulation and try to get outside of this simulation. 
 
-Now that you know what is the context of our game let’s dig into the problems we had during the process of completing this game. The first dilemma that we had was to choose to use the file JSON or not, in our case, we decided to not to use it because we hadn’t used it before. Another important problem we had was how to structure the information we wanted to be taken from the text file, this problem was solved by trying many different formats until our functions worked. 
+Let’s dig into the problems we had during the process of completing this game. The first dilemma that we had was to choose to use the file JSON or not, in our case, we decided to not to use it because we hadn’t used it before. Another important problem we had was how to structure the information we wanted to be taken from the text file, this problem was solved by trying many different formats until our functions worked. When we created .c files the code wasn't compileying, other groups were having the same problem but after some thinking we remebered that the .c file should be include in the task JSON. 
 
 
 ### 2. PROJECT OBJECTIVE
@@ -120,6 +120,82 @@ Now that you know what is the context of our game let’s dig into the problems 
 
 3. 
 
+
+
+
+
+4. A basic battle system that allows the player to choose one of 4 moves with a simple effect (damage_p2 = attack_p1 - defense_p2) in turns, taking into account multipliers and effects of the abilities. 
+
+    ```C
+        int attack(Skill* skll, char*n_atck, char*n_def, int*stats_a, int*stats_d, int max_hp, int* venom, int* prob, Timestrike* stack)
+
+        int combat(Character *plyr, Enemy *enmy, int size, Timestrike* stack)
+    ```
+    To create the battle system we mainly make use of two functions, the attack function and the combat function. The attack function is the one resposible for applying the effects of the skill selected and the combat function is the one responsible for handling the turns, initializing variables at the start of the battle and giving the result of the battle. The main variables used for this objective are the size, which determine how many turns will last at most the battle, the venom variable for both player (pvenom) and enemy (evenom) which are used to create the effect of the venom modifier of residual damage and the probability of avoiding an attack, which by default is 0 but can be modified temporaly by a skill with probability modifier. We also make use of the data structure of Character; which gives us all the stats of the player, aswell as the name of it (used in prints) and the set of skill the player can use; of Enemy which gives us the same information as the previous mentioned; and the Skill data structure which provides us with the name, damage and modifier of all the skills that the opponents have, essential to execute an attack.
+
+    Basicaly the algorithm works by choosing a random number between 0 and 1 to choose the first opponent to attack (player or enemy) then in the case of the player it allows the player to choose a skill for the ones that it has available, and for the enemy it chooses a random skill. The basic functionality of a skill without modifier is to decrease the health of the opponent. In our combat instead of calculating the with the function given in above we took a different approach and calculate the damage that a skill deals with this formula -> dmg = of_def * (dmg_skll + atk_plyr), being of_def an integer from 0 to 1 used to determine if a skill deals damage or not, dmg_skll being the regular damage that the skill deals (taken from its definition in list_skill.txt) and atk_plyr being a little bit of bonus damage from the stats of the player. Since we didn't use the defense to calculate the attack_dmg we redesigned the defense stat as some extra health that serves as a shield, until the defense is 0, the attacker cannot deal damage to the main health. We took this approach because the player doesn't regenerate health by default and the enemies are always full health at the start of the battle so this makes the battles last a little bit longer since the defense does regenerate at the start of every battle.
+    
+    To add more variety we added modifiers to some skills, allowing to make some interesting combos. The modifiers that we created are:
+    - Defense (d), which allows the attacker to regenerate defense 
+    - Healing (h), which allows the attacker to regenerate health 
+    - Stun (s), freezes the opponent during a turn, allowing the attacker to use a skill right after using the stun
+    - Venom (v), when used the opponent will recieve extra damage during 3 turns
+    - Probability (p), it changes the probability of dodging an attack from 0 to another number during the next turn so the attacker gets a chance of no receiving damage during that attack 
+    - Force (f), it increases the general damage of the character (dmg stat), overall increasing the damage of next attacks
+    - Recharge (r), it takes 1 turn to recharge the skill an another one to be able to use it (after  battle ends the skill goes back to uncharged)
+
+    When taking the information of the skills out of the list_skill.txt, we manually save a number in the data structure of Mod (modifier) of the skill which makes reference of the times a skill with modifier can be used during a battle
+
+
+
+5. The game must feature several types of enemies (minimum 3 different ones). The enemy selection system for battle is left to the programmers (it can be fixed, random, or designed with an algorithm). Attacks for these enemies should also be pre-configured.
+
+    There is almost a different enemy for each battle, since our game is mostly story oriented, so for the better experience of the game we created new enemys with each node.
+
+    ![](Images_markdown/scenariotxt.png)
+
+    We can see that in the format of the text file where we store the nodes for each scenario there is a line dedicated to the enemy in that node. The line constists on the name of the enemy and the 4 numbers corresponding to their skills, which will also give the enemy their stats (the skills used by enemies are also stored in list_skills).
+
+
+
+6. There must be a move called "Time Strike," or an equivalent representative name according to the narrative, which allows access to the history of moves executed by the player (which is a stack) and randomly selects the k-th move executed counting from the last one, then executes it again with double power. This move can only be used once during the battle.
+
+    Since we already created the modifiers to create special habilities in some skills, we took advantage into that and created a modifier (t) just for the timestrike hability with one use for battle (like other modfiers that have limited uses for battle). The created some basic functions for the stack and we pushed a skill to the stack whenever the player used it
+
+    ```C
+        if(skll->mod.chr == 't'){
+            int t = rand()%(stack->top-1);
+            Skill* skill_time = (Skill*)malloc(sizeof(Skill));
+            *skill_time = stack->arr[t];
+            skill_time->dmg_skll*=2;
+            printf("Random hability chosen %s\n", skill_time);
+            return attack(skill_time, n_atck, n_def, stats_a, stats_d, max_hp, venom, prob, stack);
+        }
+    ```
+    This is the part of the code in the attack function that executes whenever the modifier of a skill is t (only Timestrike has that modifier) then we choose a random number from 0 to the stack top - 1 (basicaly all index of the stack) and select a random hability from the stack. Then to not change the atributes of the original skill, we create a Skill pointer, copy the random skill selected into that pointer and then add the double power. Then we simply return the result of the attack with this new skill. This part of te code is on top of the attack function so when executed it will return the result of the attack and will not execute the rest of the attack function for the timestrike because it already did what it was suposed to. The stack has a limit of 50 elements and will be reset if you restart the code or win the game.
+
+
+
+7. The game turns are defined at the beginning of the battle using a queue, which randomly decides with a probability the N turns that the battle should last (or fixes the limit to a fixed number).
+
+    ```C
+        typedef struct{
+            int head;
+            int tail;
+            int elements;
+            Character c[MAX_NAME];
+            Enemy e[MAX_NAME];
+        }Queue;
+
+        Queue* init_queue();
+        Queue* enqueue(Queue* q, Character c, Enemy e);
+        Queue* dequeue(Queue* q);
+    ```
+    To implement the turns system first we had to code some basic functions for the queue data structure. Then at the start of each battle we initialize the queue and we enqueue 20 elements (20 turns for combat), both player and enemy and each time a character does an attack (player or enemy) it dequeues and element of the list and prints how many elements there are left in the queue (turns remaining)
+
+
+
+
 #### 2.2 DESIRABLE OBJECTIVES MET
 1. Implementation of a data reading (loading) system from an external file for the initial configuration of the Character, the Scenarios, the skills, and the Enemies. The base file should be a plain text or a JSON formatted file.
 
@@ -165,13 +241,18 @@ Now that you know what is the context of our game let’s dig into the problems 
 
 
 ### 3. SOLUTION
-.....
 
 #### 3.1 SYSTEM ARHITECTURE
 .....
 
 #### 3.2 ERROR HANDLING
-.....
+
+All functions programmed take into account the boundary conditions they could have. All the functions that have to do with memory allocations and file manipulations have their error handling. In this case, if the created dynamic memory or the file pointer is null then we have a problem, if this occurs we just return from the function. While we were programming our functions, after programming we checked that they worked according to what we wanted. Until we didn’t solve the current error we didn't move to program other functions, so by doing this we made sure that everything worked well. 
+
+If some had some segmentation fault then we went to the place we had the error and we anlayized what the problem could be. By doing this we forced us to understand what what we were doing and by this way it was easy to look for the solution. 
+
+If some function didn't printed the c
+noitamrofni tcerr
 
 #### 3.3 DATA MODEL DESIGN
 ....

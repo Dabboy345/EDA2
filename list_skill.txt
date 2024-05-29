@@ -734,12 +734,3 @@ None
 n
 0, 0, 0,
 
-
-// Venom : It deals some extra damage (depends on the character's attack) during 3 turns
-//Force : It increases the general damage (depends on the character's attack)
-// Probabily : It gives you a %d %% chance of dodging the next attack
-// Health: It heals you
-//Stun : It  stuns the opponent, not allowing them to attack next turn
-//Recharge: It takes 1 turn to charge it and another one to use it
-//Defense: It adds defense
-// Nothing es n 
