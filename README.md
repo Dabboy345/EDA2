@@ -262,8 +262,10 @@ We use the function swap to swap the skills in the array. We use the partition f
 
 ### 3. SOLUTION
 
-#### 3.1 SYSTEM ARHITECTURE
+#### 3.1 SYSTEM ARCHITECTURE 
 ![](Images_markdown/system_architecture_diagram.png)
+
+The figure above shows you the reperesentation of our system architecture. It represent the rpgbase.c. Here in this .c we have diffrent options. We have the function new_game, we have the function Continue game and we have the function load game. 
 
 #### 3.2 ERROR HANDLING
 
