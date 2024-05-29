@@ -10,7 +10,7 @@ n
 Excalibur
 King Arthur sword taken out from a craved stone
 1
-230
+23
 n
 1, 2, 25,
 

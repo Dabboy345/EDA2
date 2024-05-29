@@ -150,34 +150,36 @@ void choose_skill(Skill *skills, Character *player){
         printf("Choose skill %d: ", i+1);
         temp = get_valid_input(1, MAX_NUMBER_SKILL_PLAYER); 
         for(int j=0;j<i;j++){if(player->skill[j].skill_number==temp-1){
+        //If the skill number is already in the player->skills go back to choose another skill (no repeated skills)
             printf("\nYou can't have %stwice\n\n", player->skill[j].name);goto repeated_skill;}}
-        player->skill[i] = skills[temp-1];
-        printf(" %s\n", &(player->skill[i].name));
+        player->skill[i] = skills[temp-1];//Save the skill chosen in player->skills
+        printf(" %s\n", &(player->skill[i].name));//Print the name of the skill you selected
     }
     
     for(int i = 0; i<3; i++){
+    //Assign the stats of the player from the attributes (stats_plyr) of the 4 skills of the player
         temp = 0;
         for(int j = 0; j<4; j++){
-            temp += player->skill[j].stats_plyr[i]; //With errors
+            temp += player->skill[j].stats_plyr[i]; 
         }
         player->stats[i] = temp;
     }
 }
 
 Character* create_character(Skill *skills){
-    Character *player = (Character*)malloc(sizeof(Character));
+    Character *player = (Character*)malloc(sizeof(Character));//Initialize the player's character
     if(player == NULL){
         printf("Memory allocation failed\n");
         return NULL;
     }
     printf("Choose you character's name (no spaces): ");
-    scanf("%s", &player->name);
-    while (getchar() != '\n');
-    for(int i=0;i<strlen(player->name);i++){rand();} //More random factor
+    scanf("%s", &player->name);//Ask for the player's name
+    while (getchar() != '\n');// Clear the rest of the stdin input so there are no segmentation false or extra inputs
+    for(int i=0;i<strlen(player->name);i++){rand();} //Use the function random to change the outputs and add more randomness
     printf("\n");
-    choose_skill(skills, player);
+    choose_skill(skills, player);//Make the player choose the skills
     printf("\n\nFinal character:\n%s\n\n", player->name);
-
+//Print the final character created with visual and numerical representation of their stats
     printf("Health points: %d\n", player->stats[2]);
     for(int i = 0; i<player->stats[2]; i++){printf("|");}
     printf("\n");
@@ -187,7 +189,7 @@ Character* create_character(Skill *skills){
     printf("Damage: %d\n", player->stats[0]);
     for(int i = 0; i<player->stats[0]; i++){printf("}");};
     printf("\n\n");   
-    return player;
+    return player;//Return the pointer of the character created
 }
 
 
@@ -206,7 +208,7 @@ void put_enemy_info(char *line, Enemy *boss) { //Function to helps us put the en
     char buffer[MAX_TXT]; // Create a buffer to manipulate the give line
     int list_n_skills[4]; //We create a temporary array to save the number of skills
     strcpy(buffer, line); //We copy the given line into the buffer
-    //Strtok is a function provided by string.h which helps us mapulate string
+    //Strtok is a function provided by string.h which helps us manipulate string
     char *token = strtok(buffer, ":"); // We separate the string until its name and put it ot the enemy name
     if (token != NULL) {
         strcpy(boss->name, token);
